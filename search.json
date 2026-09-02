@@ -2202,7 +2202,7 @@
     "href": "orientation/orientation.html#pitch-3",
     "title": "Orientation",
     "section": "Pitch",
-    "text": "Pitch\n\nI have over 10 years of experience teaching R to the UCSF community\nover that period of time, I have introduced R to several hundred UCSF learners\nthe prior iteration of this series (earlier this year) was well attended and well received"
+    "text": "Pitch\n\nI have over 10 years of experience teaching R to the UCSF community\nover that period of time, I have introduced R to several hundred UCSF learners\nthe prior iterations of this series were well attended and well received"
   },
   {
     "objectID": "orientation/orientation.html#format",
@@ -2226,25 +2226,11 @@
     "text": "Participation\n\n\n\n\n\n\nCaution\n\n\nPlease be mindful about seeking help during the mini lectures.\n\n\n\n\nif you’re trying things out during the mini lectures and get stuck, please wait until the next exercise portion to reach out for help\nsimilarly, I want the chat to be a useful space but I also don’t want it to be a distraction during the mini lectures"
   },
   {
-    "objectID": "orientation/orientation.html#learning-from-each-other",
-    "href": "orientation/orientation.html#learning-from-each-other",
-    "title": "Orientation",
-    "section": "Learning from each other",
-    "text": "Learning from each other\n\n\n\n\n\n\nTip\n\n\nTry to learn from each other.\n\n\n\n\nfor example, if you know other people who are participating in the series, you might even consider sitting together sometimes!"
-  },
-  {
-    "objectID": "orientation/orientation.html#even-more-practice",
-    "href": "orientation/orientation.html#even-more-practice",
-    "title": "Orientation",
-    "section": "Even more practice",
-    "text": "Even more practice\n\n\n\n\n\n\nTip\n\n\nTry to find other ways to practice R.\n\n\n\n\nfor example, if you are involved in an existing project that uses Stata, you can try to reproduce portions of the work"
-  },
-  {
     "objectID": "orientation/orientation.html#scope",
     "href": "orientation/orientation.html#scope",
     "title": "Orientation",
     "section": "Scope",
-    "text": "Scope\n\n\n\n\n\n\nCaution\n\n\nThis is not a statistics or biostatistics course.\n\n\n\n\nI’ll focus on R rather than underlying methods\nplease do seek out additional training in those areas if you think you could strengthen your understanding"
+    "text": "Scope\n\n\n\n\n\n\nCaution\n\n\nThis is not a statistics or biostatistics course.\n\n\n\n\nI’ll focus on R rather than underlying methods\nplease seek out additional training if you think you could strengthen your methodological understanding"
   },
   {
     "objectID": "orientation/orientation.html#what-is-statistical-software",
@@ -2314,7 +2300,14 @@
     "href": "orientation/orientation.html#what-is-rstudio-1",
     "title": "Orientation",
     "section": "What is RStudio?",
-    "text": "What is RStudio?\n\nRStudio adds numerous helpful features to R, including:\n\nsuggestions\nsyntax highlighting (color coding)\na script window (we’ll talk about this later)\n\nbut to be clear, RStudio does not allow for graphical operation of R (such as through drop-down menus)"
+    "text": "What is RStudio?\n\nRStudio adds numerous helpful features to R, including:\n\nsuggestions\nsyntax highlighting, such as color coding\na script window (we’ll talk about this later)\n\nbut to be clear, RStudio does not allow for graphical operation of R"
+  },
+  {
+    "objectID": "orientation/orientation.html#practice-practice-practice",
+    "href": "orientation/orientation.html#practice-practice-practice",
+    "title": "Orientation",
+    "section": "Practice, practice, practice",
+    "text": "Practice, practice, practice\n\n\n\n\n\n\nTip\n\n\nTry to find other ways to practice R.\n\n\n\n\nfor example, if you are involved in an existing project that uses Stata, you can try to reproduce portions of the work in R"
   },
   {
     "objectID": "orientation/orientation.html#other-resources-for-learning-r",
@@ -2433,7 +2426,7 @@
     "href": "orientation/orientation.html#fundamentals",
     "title": "Orientation",
     "section": "Fundamentals",
-    "text": "Fundamentals\n\n\n\n\n\n\nTip\n\n\nBe patient as you learn fundamentals and think about how you can piece skills together.\n\n\n\n\nR has many fundamentals\nan analogy is learning how to cook:\n\nin a professional cooking school, you might spend weeks practicing specific skills"
+    "text": "Fundamentals\n\n\n\n\n\n\nTip\n\n\nBe patient as you learn fundamentals and think about how you can piece skills together.\n\n\n\n\nR has many fundamentals\nan analogy is learning how to cook:\n\nin a professional cooking school, you might spend weeks practicing specific skills 🔪🍳"
   },
   {
     "objectID": "session_1/session_1.html#rstudios-panes-1",
@@ -2657,7 +2650,7 @@
     "href": "session_1/session_1.html#the-jar-analogy-1",
     "title": "Session 1: How can I do math?",
     "section": "The jar analogy",
-    "text": "The jar analogy\n\n&gt; popsize&lt;-54227015\n\n\n54227015: what I want to put in a jar\n&lt;-: the action of putting something in a jar\npopsize: a label that I place on the jar"
+    "text": "The jar analogy\n\n&gt; popsize&lt;-54227015\n\n\n54227015: what I want to put in a jar 🫘\n&lt;-: the action of putting something in a jar ⤵️ 🫙\npopsize: a label that I place on the jar 🏷️"
   },
   {
     "objectID": "session_1/session_1.html#terminology",

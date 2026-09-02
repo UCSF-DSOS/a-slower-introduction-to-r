@@ -226,13 +226,13 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>bpxosy1)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "integer"</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "integer"</span></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>bpxosy1)</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 135 121 111  NA  NA 110</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 135 121 111  NA  NA 110</span></span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>bpxodi1)</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "integer"</span></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "integer"</span></span>
 <span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>bpxodi1)</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 98 84 79 NA NA 72</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 98 84 79 NA NA 72</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="scatter-plots" class="slide level2">
@@ -269,9 +269,9 @@ Yea-Hung Chen, PhD, MS
 <h2>Pearson’s correlation coefficient</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(nhanes<span class="sc">$</span>bpxodi1,nhanes<span class="sc">$</span>bpxosy1)</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] NA</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] NA</span></span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(nhanes<span class="sc">$</span>bpxodi1,nhanes<span class="sc">$</span>bpxosy1,<span class="at">use=</span><span class="st">'complete.obs'</span>)</span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 0.6057034</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.6057034</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>the <strong><code>use=complete.obs</code> argument</strong> is similar to <code>na.rm=TRUE</code> in <code>mean()</code>, <code>sd()</code>, and other functions you saw last week
@@ -285,22 +285,22 @@ Yea-Hung Chen, PhD, MS
 <h2>Other measures of correlation</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(nhanes<span class="sc">$</span>bpxodi1,nhanes<span class="sc">$</span>bpxosy1,<span class="at">use=</span><span class="st">'complete.obs'</span>,<span class="at">method=</span><span class="st">'kendall'</span>)</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 0.4277319</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.4277319</span></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(nhanes<span class="sc">$</span>bpxodi1,nhanes<span class="sc">$</span>bpxosy1,<span class="at">use=</span><span class="st">'complete.obs'</span>,<span class="at">method=</span><span class="st">'spearman'</span>)</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 0.5832935</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.5832935</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="simple-linear-regression" class="slide level2">
 <h2>Simple linear regression</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(nhanes<span class="sc">$</span>bpxosy1<span class="sc">~</span>nhanes<span class="sc">$</span>bpxodi1)</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Call:</span></span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)</span></span>
-<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Coefficients:</span></span>
-<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     (Intercept)  nhanes$bpxodi1  </span></span>
-<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|          49.165           0.979</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Call:</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Coefficients:</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    (Intercept)  nhanes$bpxodi1  </span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|         49.165           0.979</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="simple-linear-regression-confint" class="slide level2">
@@ -308,34 +308,34 @@ Yea-Hung Chen, PhD, MS
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>my_model<span class="ot">&lt;-</span><span class="fu">lm</span>(nhanes<span class="sc">$</span>bpxosy1<span class="sc">~</span>nhanes<span class="sc">$</span>bpxodi1)</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(my_model)</span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      2.5 %    97.5 %</span></span>
-<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  (Intercept)    46.7210856 51.608631</span></span>
-<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  nhanes$bpxodi1  0.9467311  1.011178</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                     2.5 %    97.5 %</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| (Intercept)    46.7210856 51.608631</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| nhanes$bpxodi1  0.9467311  1.011178</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="simple-linear-regression-summary" class="slide level2">
 <h2>Simple linear regression: <code>summary()</code></h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my_model)</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Call:</span></span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)</span></span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Residuals:</span></span>
-<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      Min      1Q  Median      3Q     Max </span></span>
-<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  -32.629 -10.323  -2.271   7.361  89.203 </span></span>
-<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb9-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Coefficients:</span></span>
-<span id="cb9-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                 Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
-<span id="cb9-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  (Intercept)    49.16486    1.24660   39.44   &lt;2e-16 ***</span></span>
-<span id="cb9-13"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  nhanes$bpxodi1  0.97895    0.01644   59.56   &lt;2e-16 ***</span></span>
-<span id="cb9-14"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  ---</span></span>
-<span id="cb9-15"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
-<span id="cb9-16"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb9-17"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Residual standard error: 14.68 on 6121 degrees of freedom</span></span>
-<span id="cb9-18"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    (2030 observations deleted due to missingness)</span></span>
-<span id="cb9-19"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Multiple R-squared:  0.3669,    Adjusted R-squared:  0.3668 </span></span>
-<span id="cb9-20"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  F-statistic:  3547 on 1 and 6121 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Call:</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Residuals:</span></span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     Min      1Q  Median      3Q     Max </span></span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| -32.629 -10.323  -2.271   7.361  89.203 </span></span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb9-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Coefficients:</span></span>
+<span id="cb9-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb9-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| (Intercept)    49.16486    1.24660   39.44   &lt;2e-16 ***</span></span>
+<span id="cb9-13"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| nhanes$bpxodi1  0.97895    0.01644   59.56   &lt;2e-16 ***</span></span>
+<span id="cb9-14"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| ---</span></span>
+<span id="cb9-15"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb9-16"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb9-17"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Residual standard error: 14.68 on 6121 degrees of freedom</span></span>
+<span id="cb9-18"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   (2030 observations deleted due to missingness)</span></span>
+<span id="cb9-19"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Multiple R-squared:  0.3669, Adjusted R-squared:  0.3668 </span></span>
+<span id="cb9-20"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| F-statistic:  3547 on 1 and 6121 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="simple-linear-regression-summary-1" class="slide level2">
@@ -348,28 +348,28 @@ Yea-Hung Chen, PhD, MS
 <h2>Simple linear regression: <code>summary()</code></h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">summary</span>(my_model))</span>
-<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] "call"          "terms"         "residuals"     "coefficients" </span></span>
-<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [5] "aliased"       "sigma"         "df"            "r.squared"    </span></span>
-<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [9] "adj.r.squared" "fstatistic"    "cov.unscaled"  "na.action"</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "call"          "terms"         "residuals"     "coefficients" </span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [5] "aliased"       "sigma"         "df"            "r.squared"    </span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [9] "adj.r.squared" "fstatistic"    "cov.unscaled"  "na.action"</span></span>
 <span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my_model)<span class="sc">$</span>coefficients</span>
-<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                   Estimate Std. Error  t value      Pr(&gt;|t|)</span></span>
-<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  (Intercept)    49.1648582 1.24659908 39.43919 2.462317e-303</span></span>
-<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  nhanes$bpxodi1  0.9789544 0.01643749 59.55620  0.000000e+00</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                  Estimate Std. Error  t value      Pr(&gt;|t|)</span></span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| (Intercept)    49.1648582 1.24659908 39.43919 2.462317e-303</span></span>
+<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| nhanes$bpxodi1  0.9789544 0.01643749 59.55620  0.000000e+00</span></span>
 <span id="cb10-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my_model)<span class="sc">$</span>r.squared</span>
-<span id="cb10-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 0.3668766</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.3668766</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="simple-linear-regression-the-data-argument" class="slide level2">
 <h2>Simple linear regression: the <code>data</code> argument</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(bpxosy1<span class="sc">~</span>bpxodi1,<span class="at">data=</span>nhanes)</span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Call:</span></span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  lm(formula = bpxosy1 ~ bpxodi1, data = nhanes)</span></span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Coefficients:</span></span>
-<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  (Intercept)      bpxodi1  </span></span>
-<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       49.165        0.979</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Call:</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| lm(formula = bpxosy1 ~ bpxodi1, data = nhanes)</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Coefficients:</span></span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| (Intercept)      bpxodi1  </span></span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      49.165        0.979</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><strong>several R functions support the <code>data</code> argument</strong></li>
@@ -407,14 +407,14 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>bpxosy1)</span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "integer"</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "integer"</span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>bpxosy1)</span>
-<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 135 121 111  NA  NA 110</span></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 135 121 111  NA  NA 110</span></span>
 <span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>smoking)</span>
-<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "character"</span></span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "character"</span></span>
 <span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>smoking)</span>
-<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "History of smoking" "History of smoking" "No"                </span></span>
-<span id="cb12-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [4] "No"                 "No"                 "History of smoking"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "History of smoking" "History of smoking" "No"                </span></span>
+<span id="cb12-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [4] "No"                 "No"                 "History of smoking"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="box-plots" class="slide level2">
@@ -428,17 +428,17 @@ Yea-Hung Chen, PhD, MS
 <h2><em>t</em>-tests</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxosy1<span class="sc">~</span>nhanes<span class="sc">$</span>smoking)</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      Welch Two Sample t-test</span></span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  data:  nhanes$bpxosy1 by nhanes$smoking</span></span>
-<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  t = 7.4317, df = 4887.9, p-value = 1.258e-13</span></span>
-<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  alternative hypothesis: true difference in means between group History of smoking and group No is not equal to 0</span></span>
-<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  95 percent confidence interval:</span></span>
-<span id="cb14-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   2.672803 4.588225</span></span>
-<span id="cb14-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  sample estimates:</span></span>
-<span id="cb14-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  mean in group History of smoking                 mean in group No </span></span>
-<span id="cb14-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                          124.7512                         121.1207</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Welch Two Sample t-test</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| data:  nhanes$bpxosy1 by nhanes$smoking</span></span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| t = 7.4317, df = 4887.9, p-value = 1.258e-13</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| alternative hypothesis: true difference in means between group History of smoking and group No is not equal to 0</span></span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 95 percent confidence interval:</span></span>
+<span id="cb14-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  2.672803 4.588225</span></span>
+<span id="cb14-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| sample estimates:</span></span>
+<span id="cb14-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| mean in group History of smoking                 mean in group No </span></span>
+<span id="cb14-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                         124.7512                         121.1207</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="t-tests-1" class="slide level2">
@@ -446,15 +446,15 @@ Yea-Hung Chen, PhD, MS
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>my_test<span class="ot">&lt;-</span><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxosy1<span class="sc">~</span>nhanes<span class="sc">$</span>smoking)</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(my_test)</span>
-<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"   </span></span>
-<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [6] "null.value"  "stderr"      "alternative" "method"      "data.name"</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"   </span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [6] "null.value"  "stderr"      "alternative" "method"      "data.name"</span></span>
 <span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>my_test<span class="sc">$</span>estimate</span>
-<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  mean in group History of smoking                 mean in group No </span></span>
-<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                          124.7512                         121.1207</span></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| mean in group History of smoking                 mean in group No </span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                         124.7512                         121.1207</span></span>
 <span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a>my_test<span class="sc">$</span>conf.int</span>
-<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 2.672803 4.588225</span></span>
-<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  attr(,"conf.level")</span></span>
-<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 0.95</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 2.672803 4.588225</span></span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| attr(,"conf.level")</span></span>
+<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.95</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -494,25 +494,25 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>smoking)</span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "character"</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "character"</span></span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>smoking)</span>
-<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "History of smoking" "History of smoking" "No"                </span></span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [4] "No"                 "No"                 "History of smoking"</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "History of smoking" "History of smoking" "No"                </span></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [4] "No"                 "No"                 "History of smoking"</span></span>
 <span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>asthma)</span>
-<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "character"</span></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "character"</span></span>
 <span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>asthma)</span>
-<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "No"                "No"                "No"               </span></span>
-<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [4] "No"                "History of asthma" "No"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "No"                "No"                "No"               </span></span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [4] "No"                "History of asthma" "No"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="contingency-tables" class="slide level2">
 <h2>Contingency tables</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>smoking,nhanes<span class="sc">$</span>asthma)</span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      </span></span>
-<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                       History of asthma   No</span></span>
-<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    History of smoking               636 2603</span></span>
-<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    No                               844 4029</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                     </span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      History of asthma   No</span></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   History of smoking               636 2603</span></span>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   No                               844 4029</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><strong>the first variable</strong> will be placed along the rows</li>
@@ -522,11 +522,11 @@ Yea-Hung Chen, PhD, MS
 <h2>Contingency tables</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>smoking,nhanes<span class="sc">$</span>asthma,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      </span></span>
-<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                       History of asthma   No &lt;NA&gt;</span></span>
-<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    History of smoking               636 2603    4</span></span>
-<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    No                               844 4029    5</span></span>
-<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    &lt;NA&gt;                               6   25    1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                     </span></span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      History of asthma   No &lt;NA&gt;</span></span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   History of smoking               636 2603    4</span></span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   No                               844 4029    5</span></span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   &lt;NA&gt;                               6   25    1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>we can <strong>add the <code>useNA</code> argument to show missing values</strong></li>
@@ -555,20 +555,20 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>smoking,nhanes<span class="sc">$</span>asthma),<span class="at">margin=</span><span class="dv">1</span>)<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      </span></span>
-<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                       History of asthma       No</span></span>
-<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    History of smoking          19.63569 80.36431</span></span>
-<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    No                          17.31993 82.68007</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                     </span></span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      History of asthma       No</span></span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   History of smoking          19.63569 80.36431</span></span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   No                          17.31993 82.68007</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="column-wise-percents" class="slide level2">
 <h2>Column-wise percents</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>smoking,nhanes<span class="sc">$</span>asthma),<span class="at">margin=</span><span class="dv">2</span>)<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      </span></span>
-<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                       History of asthma       No</span></span>
-<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    History of smoking          42.97297 39.24910</span></span>
-<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    No                          57.02703 60.75090</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                     </span></span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                      History of asthma       No</span></span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   History of smoking          42.97297 39.24910</span></span>
+<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   No                          57.02703 60.75090</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>the <strong><code>margin=2</code> argument</strong> indicates that we want column-wise percents</li>
@@ -578,17 +578,17 @@ Yea-Hung Chen, PhD, MS
 <h2>Fisher’s exact tests</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>smoking,nhanes<span class="sc">$</span>asthma))</span>
-<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      Fisher's Exact Test for Count Data</span></span>
-<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  data:  table(nhanes$smoking, nhanes$asthma)</span></span>
-<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  p-value = 0.008981</span></span>
-<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  alternative hypothesis: true odds ratio is not equal to 1</span></span>
-<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  95 percent confidence interval:</span></span>
-<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   1.038673 1.309340</span></span>
-<span id="cb22-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  sample estimates:</span></span>
-<span id="cb22-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  odds ratio </span></span>
-<span id="cb22-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1.166346</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Fisher's Exact Test for Count Data</span></span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| data:  table(nhanes$smoking, nhanes$asthma)</span></span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| p-value = 0.008981</span></span>
+<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| alternative hypothesis: true odds ratio is not equal to 1</span></span>
+<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 95 percent confidence interval:</span></span>
+<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  1.038673 1.309340</span></span>
+<span id="cb22-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| sample estimates:</span></span>
+<span id="cb22-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| odds ratio </span></span>
+<span id="cb22-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   1.166346</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>notice that <strong>this also returns the odds ratio</strong></li>
@@ -598,11 +598,11 @@ Yea-Hung Chen, PhD, MS
 <h2>Chi-squared tests</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>smoking,nhanes<span class="sc">$</span>asthma))</span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      Pearson's Chi-squared test with Yates' continuity correction</span></span>
-<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  data:  table(nhanes$smoking, nhanes$asthma)</span></span>
-<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  X-squared = 6.8411, df = 1, p-value = 0.008908</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Pearson's Chi-squared test with Yates' continuity correction</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| data:  table(nhanes$smoking, nhanes$asthma)</span></span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| X-squared = 6.8411, df = 1, p-value = 0.008908</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>X-squared</code> is the <span class="math inline">\(\chi^2\)</span> statistic</li>
@@ -981,7 +981,7 @@ Yea-Hung Chen, PhD, MS
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/UCSF-DSOS\.github\.io\/a-slower-introduction-to-r\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

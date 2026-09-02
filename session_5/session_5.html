@@ -799,7 +799,7 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "/home/yea-hung/Academia/dsos/workshops and discussions/a slower introduction to r/session_5"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "/home/yea-hung/Academia/dsos/workshops and discussions/a slower introduction to r/session_5"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="how-can-i-set-the-working-directory-method-1" class="slide level2">
@@ -1211,7 +1211,7 @@ Yea-Hung Chen, PhD, MS
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/UCSF-DSOS\.github\.io\/a-slower-introduction-to-r\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

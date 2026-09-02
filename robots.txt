@@ -1,1 +1,0 @@
-Sitemap: https://UCSF-DSOS.github.io/a-slower-introduction-to-r/sitemap.xml

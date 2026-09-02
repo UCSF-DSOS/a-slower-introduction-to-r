@@ -227,16 +227,16 @@ Yea-Hung Chen, PhD, MS
 <h2>Hypertension</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Elevated       No  Stage 1  Stage 2 </span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       841     2657     1409     1216</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Elevated       No  Stage 1  Stage 2 </span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      841     2657     1409     1216</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="hypertension-2" class="slide level2">
 <h2>Hypertension</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>hypertension)</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "character"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "character"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>groups in <strong>character</strong> variables are always presented in alphabetical order</li>
@@ -268,21 +268,21 @@ Yea-Hung Chen, PhD, MS
 <h2>Hypertension</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ht)</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|        No Elevated  Stage 1  Stage 2 </span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      2657      841     1409     1216</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       No Elevated  Stage 1  Stage 2 </span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     2657      841     1409     1216</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="factors" class="slide level2">
 <h2>Factors</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>ht)</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "factor"</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "factor"</span></span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(nhanes<span class="sc">$</span>ht)</span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span>
 <span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>ht)</span>
-<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] Stage 2 Stage 1 No      &lt;NA&gt;    &lt;NA&gt;    No     </span></span>
-<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Levels: No Elevated Stage 1 Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] Stage 2 Stage 1 No      &lt;NA&gt;    &lt;NA&gt;    No     </span></span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Levels: No Elevated Stage 1 Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="factors-1" class="slide level2">
@@ -346,7 +346,7 @@ Yea-Hung Chen, PhD, MS
 <h2>Factor levels</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(nhanes<span class="sc">$</span>ht)</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "No"       "Elevated" "Stage 1"  "Stage 2"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "No"       "Elevated" "Stage 1"  "Stage 2"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>factor groups are known as <strong>levels</strong></li>
@@ -386,9 +386,9 @@ Yea-Hung Chen, PhD, MS
 <h2>Country of birth</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdborn4,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     1    2 &lt;NA&gt; </span></span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519 1617   17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2 &lt;NA&gt; </span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6519 1617   17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="country-of-birth-1" class="slide level2">
@@ -417,9 +417,9 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    USA Other  &lt;NA&gt; </span></span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="country-of-birth-3" class="slide level2">
@@ -439,9 +439,9 @@ Yea-Hung Chen, PhD, MS
 <h2>Country of birth</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    USA Other  &lt;NA&gt; </span></span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>base_match()</code> orders the groups in the order specified in the second argument</li>
@@ -454,22 +454,22 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdborn4,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     1    2 &lt;NA&gt; </span></span>
-<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519 1617   17</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2 &lt;NA&gt; </span></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6519 1617   17</span></span>
 <span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    USA Other  &lt;NA&gt; </span></span>
-<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
+<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="education" class="slide level2">
 <h2>Education</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     1    2    3    4    5    9 &lt;NA&gt; </span></span>
-<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   373  666 1749 2370 2625   11  359</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    9 &lt;NA&gt; </span></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  373  666 1749 2370 2625   11  359</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="education-1" class="slide level2">
@@ -504,15 +504,15 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     1    2    3    4    5    9 &lt;NA&gt; </span></span>
-<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   373  666 1749 2370 2625   11  359</span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    9 &lt;NA&gt; </span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  373  666 1749 2370 2625   11  359</span></span>
 <span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>education4,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  No high-school degree    High-school degree          Some college </span></span>
-<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                   1039                  1749                  2370 </span></span>
-<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|         College degree                  &lt;NA&gt; </span></span>
-<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                   2625                   370</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| No high-school degree    High-school degree          Some college </span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                  1039                  1749                  2370 </span></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|        College degree                  &lt;NA&gt; </span></span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                  2625                   370</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -567,7 +567,7 @@ Yea-Hung Chen, PhD, MS
 <h2>Total cholesterol</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(nhanes<span class="sc">$</span>lbxtc,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  62 438</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1]  62 438</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>lbxtc</code> &lt; 200 mg/dL → <strong>desirable</strong></li>
@@ -615,15 +615,15 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">200</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 3695</span></span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 3695</span></span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 1397</span></span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1397</span></span>
 <span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 625</span></span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 625</span></span>
 <span id="cb19-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb19-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb19-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|        Desirable Borderline high            High            &lt;NA&gt; </span></span>
-<span id="cb19-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|             3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb19-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb19-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -1034,7 +1034,7 @@ Yea-Hung Chen, PhD, MS
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/UCSF-DSOS\.github\.io\/a-slower-introduction-to-r\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

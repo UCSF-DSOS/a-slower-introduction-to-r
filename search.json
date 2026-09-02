@@ -11,14 +11,14 @@
     "href": "session_7/session_7.html#hypertension-1",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Hypertension",
-    "text": "Hypertension\n\ntable(nhanes$hypertension)\n#|  \n#|  Elevated       No  Stage 1  Stage 2 \n#|       841     2657     1409     1216"
+    "text": "Hypertension\n\ntable(nhanes$hypertension)\n#| \n#| Elevated       No  Stage 1  Stage 2 \n#|      841     2657     1409     1216"
   },
   {
     "objectID": "session_7/session_7.html#hypertension-2",
     "href": "session_7/session_7.html#hypertension-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Hypertension",
-    "text": "Hypertension\n\nclass(nhanes$hypertension)\n#|  [1] \"character\"\n\n\ngroups in character variables are always presented in alphabetical order"
+    "text": "Hypertension\n\nclass(nhanes$hypertension)\n#| [1] \"character\"\n\n\ngroups in character variables are always presented in alphabetical order"
   },
   {
     "objectID": "session_7/session_7.html#hypertension-3",
@@ -39,14 +39,14 @@
     "href": "session_7/session_7.html#hypertension-5",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Hypertension",
-    "text": "Hypertension\n\ntable(nhanes$ht)\n#|  \n#|        No Elevated  Stage 1  Stage 2 \n#|      2657      841     1409     1216"
+    "text": "Hypertension\n\ntable(nhanes$ht)\n#| \n#|       No Elevated  Stage 1  Stage 2 \n#|     2657      841     1409     1216"
   },
   {
     "objectID": "session_7/session_7.html#factors",
     "href": "session_7/session_7.html#factors",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Factors",
-    "text": "Factors\n\nclass(nhanes$ht)\n#|  [1] \"factor\"\nis.vector(nhanes$ht)\n#|  [1] FALSE\nhead(nhanes$ht)\n#|  [1] Stage 2 Stage 1 No      &lt;NA&gt;    &lt;NA&gt;    No     \n#|  Levels: No Elevated Stage 1 Stage 2"
+    "text": "Factors\n\nclass(nhanes$ht)\n#| [1] \"factor\"\nis.vector(nhanes$ht)\n#| [1] FALSE\nhead(nhanes$ht)\n#| [1] Stage 2 Stage 1 No      &lt;NA&gt;    &lt;NA&gt;    No     \n#| Levels: No Elevated Stage 1 Stage 2"
   },
   {
     "objectID": "session_7/session_7.html#factors-1",
@@ -81,7 +81,7 @@
     "href": "session_7/session_7.html#factor-levels",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Factor levels",
-    "text": "Factor levels\n\nlevels(nhanes$ht)\n#|  [1] \"No\"       \"Elevated\" \"Stage 1\"  \"Stage 2\"\n\n\nfactor groups are known as levels"
+    "text": "Factor levels\n\nlevels(nhanes$ht)\n#| [1] \"No\"       \"Elevated\" \"Stage 1\"  \"Stage 2\"\n\n\nfactor groups are known as levels"
   },
   {
     "objectID": "session_7/session_7.html#factors-in-regression-models",
@@ -109,7 +109,7 @@
     "href": "session_7/session_7.html#country-of-birth",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\ntable(nhanes$dmdborn4,useNA='always')\n#|  \n#|     1    2 &lt;NA&gt; \n#|  6519 1617   17"
+    "text": "Country of birth\n\ntable(nhanes$dmdborn4,useNA='always')\n#| \n#|    1    2 &lt;NA&gt; \n#| 6519 1617   17"
   },
   {
     "objectID": "session_7/session_7.html#country-of-birth-1",
@@ -123,7 +123,7 @@
     "href": "session_7/session_7.html#country-of-birth-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\nto label the groups, convert the variable to a factor and include the labels argument:\n\n\nnhanes$country&lt;-factor(nhanes$dmdborn4,\n                       levels=c(1,2),\n                       labels=c('USA','Other'))\n\n\nthe order of the groups in levels and labels must match\n\n\ntable(nhanes$country,useNA='always')\n#|  \n#|    USA Other  &lt;NA&gt; \n#|   6519  1617    17"
+    "text": "Country of birth\n\nto label the groups, convert the variable to a factor and include the labels argument:\n\n\nnhanes$country&lt;-factor(nhanes$dmdborn4,\n                       levels=c(1,2),\n                       labels=c('USA','Other'))\n\n\nthe order of the groups in levels and labels must match\n\n\ntable(nhanes$country,useNA='always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17"
   },
   {
     "objectID": "session_7/session_7.html#country-of-birth-3",
@@ -137,21 +137,21 @@
     "href": "session_7/session_7.html#country-of-birth-4",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\ntable(nhanes$country,useNA='always')\n#|  \n#|    USA Other  &lt;NA&gt; \n#|   6519  1617    17\n\n\nbase_match() orders the groups in the order specified in the second argument"
+    "text": "Country of birth\n\ntable(nhanes$country,useNA='always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17\n\n\nbase_match() orders the groups in the order specified in the second argument"
   },
   {
     "objectID": "session_7/session_7.html#country-of-birth-5",
     "href": "session_7/session_7.html#country-of-birth-5",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\nto check the work, use table():\n\n\ntable(nhanes$dmdborn4,useNA='always')\n#|  \n#|     1    2 &lt;NA&gt; \n#|  6519 1617   17\ntable(nhanes$country,useNA='always')\n#|  \n#|    USA Other  &lt;NA&gt; \n#|   6519  1617    17"
+    "text": "Country of birth\n\nto check the work, use table():\n\n\ntable(nhanes$dmdborn4,useNA='always')\n#| \n#|    1    2 &lt;NA&gt; \n#| 6519 1617   17\ntable(nhanes$country,useNA='always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17"
   },
   {
     "objectID": "session_7/session_7.html#education",
     "href": "session_7/session_7.html#education",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Education",
-    "text": "Education\n\ntable(nhanes$dmdeduc2,useNA='always')\n#|  \n#|     1    2    3    4    5    9 &lt;NA&gt; \n#|   373  666 1749 2370 2625   11  359"
+    "text": "Education\n\ntable(nhanes$dmdeduc2,useNA='always')\n#| \n#|    1    2    3    4    5    9 &lt;NA&gt; \n#|  373  666 1749 2370 2625   11  359"
   },
   {
     "objectID": "session_7/session_7.html#education-1",
@@ -172,7 +172,7 @@
     "href": "session_7/session_7.html#education-3",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Education",
-    "text": "Education\n\nto check the work, use table():\n\n\ntable(nhanes$dmdeduc2,useNA='always')\n#|  \n#|     1    2    3    4    5    9 &lt;NA&gt; \n#|   373  666 1749 2370 2625   11  359\ntable(nhanes$education4,useNA='always')\n#|  \n#|  No high-school degree    High-school degree          Some college \n#|                   1039                  1749                  2370 \n#|         College degree                  &lt;NA&gt; \n#|                   2625                   370"
+    "text": "Education\n\nto check the work, use table():\n\n\ntable(nhanes$dmdeduc2,useNA='always')\n#| \n#|    1    2    3    4    5    9 &lt;NA&gt; \n#|  373  666 1749 2370 2625   11  359\ntable(nhanes$education4,useNA='always')\n#| \n#| No high-school degree    High-school degree          Some college \n#|                  1039                  1749                  2370 \n#|        College degree                  &lt;NA&gt; \n#|                  2625                   370"
   },
   {
     "objectID": "session_7/session_7.html#exercise-2-1",
@@ -214,7 +214,7 @@
     "href": "session_7/session_7.html#total-cholesterol",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nrange(nhanes$lbxtc,na.rm=TRUE)\n#|  [1]  62 438\n\n\nlbxtc &lt; 200 mg/dL → desirable\n200 ≤ lbxtc &lt; 240 mg/dL → borderline high\nlbxtc ≥ 240 mg/dL → high"
+    "text": "Total cholesterol\n\nrange(nhanes$lbxtc,na.rm=TRUE)\n#| [1]  62 438\n\n\nlbxtc &lt; 200 mg/dL → desirable\n200 ≤ lbxtc &lt; 240 mg/dL → borderline high\nlbxtc ≥ 240 mg/dL → high"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-1",
@@ -235,7 +235,7 @@
     "href": "session_7/session_7.html#total-cholesterol-3",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nto check the work, use sum() and table():\n\n\nsum(nhanes$lbxtc&lt;200,na.rm=TRUE)\n#|  [1] 3695\nsum((nhanes$lbxtc&gt;=200)&(nhanes$lbxtc&lt;240),na.rm=TRUE)\n#|  [1] 1397\nsum(nhanes$lbxtc&gt;=240,na.rm=TRUE)\n#|  [1] 625\ntable(nhanes$cholesterol,useNA='always')\n#|  \n#|        Desirable Borderline high            High            &lt;NA&gt; \n#|             3695            1397             625            2436"
+    "text": "Total cholesterol\n\nto check the work, use sum() and table():\n\n\nsum(nhanes$lbxtc&lt;200,na.rm=TRUE)\n#| [1] 3695\nsum((nhanes$lbxtc&gt;=200)&(nhanes$lbxtc&lt;240),na.rm=TRUE)\n#| [1] 1397\nsum(nhanes$lbxtc&gt;=240,na.rm=TRUE)\n#| [1] 625\ntable(nhanes$cholesterol,useNA='always')\n#| \n#|       Desirable Borderline high            High            &lt;NA&gt; \n#|            3695            1397             625            2436"
   },
   {
     "objectID": "session_7/session_7.html#exercise-3-1",
@@ -333,21 +333,21 @@
     "href": "session_6/session_6.html#mini-data-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Mini data",
-    "text": "Mini data\n\nminidata\n#|       seqn ridageyr bpxosy1 bpxodi1 hypertension\n#|  1  130378       43     135      98      Stage 2\n#|  2  130379       66     121      84      Stage 1\n#|  3  130380       44     111      79           No\n#|  4  130384       43      NA      NA         &lt;NA&gt;\n#|  5  130385       65      NA      NA         &lt;NA&gt;\n#|  6  130386       34     110      72           No\n#|  7  130387       68     143      76      Stage 2\n#|  8  130388       27     130      95      Stage 2\n#|  9  130389       59     145      76      Stage 2\n#|  10 130390       31     113      78           No"
+    "text": "Mini data\n\nminidata\n#|      seqn ridageyr bpxosy1 bpxodi1 hypertension\n#| 1  130378       43     135      98      Stage 2\n#| 2  130379       66     121      84      Stage 1\n#| 3  130380       44     111      79           No\n#| 4  130384       43      NA      NA         &lt;NA&gt;\n#| 5  130385       65      NA      NA         &lt;NA&gt;\n#| 6  130386       34     110      72           No\n#| 7  130387       68     143      76      Stage 2\n#| 8  130388       27     130      95      Stage 2\n#| 9  130389       59     145      76      Stage 2\n#| 10 130390       31     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#data-for-individuals-not-missing-hypertension",
     "href": "session_6/session_6.html#data-for-individuals-not-missing-hypertension",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Data for individuals not missing hypertension?",
-    "text": "Data for individuals not missing hypertension?\n\nto subset the data to individuals not missing hypertension, use subset() and is.na():\n\n\nsubset(minidata,!is.na(hypertension))\n#|       seqn ridageyr bpxosy1 bpxodi1 hypertension\n#|  1  130378       43     135      98      Stage 2\n#|  2  130379       66     121      84      Stage 1\n#|  3  130380       44     111      79           No\n#|  6  130386       34     110      72           No\n#|  7  130387       68     143      76      Stage 2\n#|  8  130388       27     130      95      Stage 2\n#|  9  130389       59     145      76      Stage 2\n#|  10 130390       31     113      78           No"
+    "text": "Data for individuals not missing hypertension?\n\nto subset the data to individuals not missing hypertension, use subset() and is.na():\n\n\nsubset(minidata,!is.na(hypertension))\n#|      seqn ridageyr bpxosy1 bpxodi1 hypertension\n#| 1  130378       43     135      98      Stage 2\n#| 2  130379       66     121      84      Stage 1\n#| 3  130380       44     111      79           No\n#| 6  130386       34     110      72           No\n#| 7  130387       68     143      76      Stage 2\n#| 8  130388       27     130      95      Stage 2\n#| 9  130389       59     145      76      Stage 2\n#| 10 130390       31     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#is.na",
     "href": "session_6/session_6.html#is.na",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "is.na()",
-    "text": "is.na()\n\nthe values of hypertension are:\n\n\nminidata$hypertension\n#|   [1] \"Stage 2\" \"Stage 1\" \"No\"      NA        NA        \"No\"      \"Stage 2\"\n#|   [8] \"Stage 2\" \"Stage 2\" \"No\"\n\n\nis.na() shows whether the values are missing:\n\n\nis.na(minidata$hypertension)\n#|   [1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE\n\n\nplacing an exclamation point in front reverses the values:\n\n\n!is.na(minidata$hypertension)\n#|   [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE"
+    "text": "is.na()\n\nthe values of hypertension are:\n\n\nminidata$hypertension\n#|  [1] \"Stage 2\" \"Stage 1\" \"No\"      NA        NA        \"No\"      \"Stage 2\"\n#|  [8] \"Stage 2\" \"Stage 2\" \"No\"\n\n\nis.na() shows whether the values are missing:\n\n\nis.na(minidata$hypertension)\n#|  [1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE\n\n\nplacing an exclamation point in front reverses the values:\n\n\n!is.na(minidata$hypertension)\n#|  [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE"
   },
   {
     "objectID": "session_6/session_6.html#subset",
@@ -396,7 +396,7 @@
     "href": "session_6/session_6.html#data-for-individuals-60-years-of-age-or-older-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Data for individuals 60 years of age or older?",
-    "text": "Data for individuals 60 years of age or older?\n\nto subset to individuals 60 years of age or older, use subset() and a numerical comparison:\n\n\nsubset(minidata,ridageyr&gt;=60)\n#|      seqn ridageyr bpxosy1 bpxodi1 hypertension\n#|  2 130379       66     121      84      Stage 1\n#|  5 130385       65      NA      NA         &lt;NA&gt;\n#|  7 130387       68     143      76      Stage 2"
+    "text": "Data for individuals 60 years of age or older?\n\nto subset to individuals 60 years of age or older, use subset() and a numerical comparison:\n\n\nsubset(minidata,ridageyr&gt;=60)\n#|     seqn ridageyr bpxosy1 bpxodi1 hypertension\n#| 2 130379       66     121      84      Stage 1\n#| 5 130385       65      NA      NA         &lt;NA&gt;\n#| 7 130387       68     143      76      Stage 2"
   },
   {
     "objectID": "session_6/session_6.html#data-for-individuals-60-years-of-age-or-older-2",
@@ -410,7 +410,7 @@
     "href": "session_6/session_6.html#numerical-comparisons-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Numerical comparisons",
-    "text": "Numerical comparisons\n\nminidata$ridageyr\n#|   [1] 43 66 44 43 65 34 68 27 59 31\nminidata$ridageyr&gt;=60\n#|   [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE"
+    "text": "Numerical comparisons\n\nminidata$ridageyr\n#|  [1] 43 66 44 43 65 34 68 27 59 31\nminidata$ridageyr&gt;=60\n#|  [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE"
   },
   {
     "objectID": "session_6/session_6.html#numerical-comparisons-2",
@@ -424,21 +424,21 @@
     "href": "session_6/session_6.html#numerical-comparisons-3",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Numerical comparisons",
-    "text": "Numerical comparisons\n\nminidata$ridageyr\n#|   [1] 43 66 44 43 65 34 68 27 59 31\nminidata$ridageyr==43\n#|   [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE\nminidata$ridageyr&lt;59\n#|   [1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE"
+    "text": "Numerical comparisons\n\nminidata$ridageyr\n#|  [1] 43 66 44 43 65 34 68 27 59 31\nminidata$ridageyr==43\n#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE\nminidata$ridageyr&lt;59\n#|  [1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE"
   },
   {
     "objectID": "session_6/session_6.html#subset-and-numerical-comparisons",
     "href": "session_6/session_6.html#subset-and-numerical-comparisons",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "subset() and numerical comparisons",
-    "text": "subset() and numerical comparisons\n\nsubset(minidata,ridageyr&lt;59)\n#|       seqn ridageyr bpxosy1 bpxodi1 hypertension\n#|  1  130378       43     135      98      Stage 2\n#|  3  130380       44     111      79           No\n#|  4  130384       43      NA      NA         &lt;NA&gt;\n#|  6  130386       34     110      72           No\n#|  8  130388       27     130      95      Stage 2\n#|  10 130390       31     113      78           No"
+    "text": "subset() and numerical comparisons\n\nsubset(minidata,ridageyr&lt;59)\n#|      seqn ridageyr bpxosy1 bpxodi1 hypertension\n#| 1  130378       43     135      98      Stage 2\n#| 3  130380       44     111      79           No\n#| 4  130384       43      NA      NA         &lt;NA&gt;\n#| 6  130386       34     110      72           No\n#| 8  130388       27     130      95      Stage 2\n#| 10 130390       31     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#logical-objects-1",
     "href": "session_6/session_6.html#logical-objects-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Logical objects",
-    "text": "Logical objects\n\nclass(minidata$ridageyr==43)\n#|  [1] \"logical\"\nclass(is.na(minidata$hypertension))\n#|  [1] \"logical\"\nis.vector(minidata$ridageyr==43)\n#|  [1] TRUE\nis.vector(is.na(minidata$hypertension))\n#|  [1] TRUE"
+    "text": "Logical objects\n\nclass(minidata$ridageyr==43)\n#| [1] \"logical\"\nclass(is.na(minidata$hypertension))\n#| [1] \"logical\"\nis.vector(minidata$ridageyr==43)\n#| [1] TRUE\nis.vector(is.na(minidata$hypertension))\n#| [1] TRUE"
   },
   {
     "objectID": "session_6/session_6.html#logical-objects-2",
@@ -452,7 +452,7 @@
     "href": "session_6/session_6.html#negation",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Negation",
-    "text": "Negation\n\nminidata$ridageyr==43\n#|   [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE\nminidata$ridageyr!=43\n#|   [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n!minidata$ridageyr==43\n#|   [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n\n\nto negate (reverse) a logical object, place ! at the beginning"
+    "text": "Negation\n\nminidata$ridageyr==43\n#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE\nminidata$ridageyr!=43\n#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n!minidata$ridageyr==43\n#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n\n\nto negate (reverse) a logical object, place ! at the beginning"
   },
   {
     "objectID": "session_6/session_6.html#and-and-or",
@@ -480,7 +480,7 @@
     "href": "session_6/session_6.html#and-and-or-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "And and or",
-    "text": "And and or\n\nindividuals without hypertension are partially defined by:\n\n\nminidata$bpxosy1&lt;120 & minidata$bpxodi1&lt;80\n#|   [1] FALSE FALSE  TRUE    NA    NA  TRUE FALSE FALSE FALSE  TRUE\n\n\nindividuals with Stage 2 hypertension are defined by:\n\n\nminidata$bpxosy1&gt;=140 | minidata$bpxodi1&gt;=90\n#|   [1]  TRUE FALSE FALSE    NA    NA FALSE  TRUE  TRUE  TRUE FALSE"
+    "text": "And and or\n\nindividuals without hypertension are partially defined by:\n\n\nminidata$bpxosy1&lt;120 & minidata$bpxodi1&lt;80\n#|  [1] FALSE FALSE  TRUE    NA    NA  TRUE FALSE FALSE FALSE  TRUE\n\n\nindividuals with Stage 2 hypertension are defined by:\n\n\nminidata$bpxosy1&gt;=140 | minidata$bpxodi1&gt;=90\n#|  [1]  TRUE FALSE FALSE    NA    NA FALSE  TRUE  TRUE  TRUE FALSE"
   },
   {
     "objectID": "session_6/session_6.html#logical-objects-and-math",
@@ -494,7 +494,7 @@
     "href": "session_6/session_6.html#logical-objects-and-math-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Logical objects and math",
-    "text": "Logical objects and math\n\nto count missing values:\n\n\nsum(is.na(minidata$hypertension))\n#|  [1] 2\n\n\nor, to count the number of people within an age range:\n\n\nsum(minidata$ridageyr&gt;=30)\n#|  [1] 9"
+    "text": "Logical objects and math\n\nto count missing values:\n\n\nsum(is.na(minidata$hypertension))\n#| [1] 2\n\n\nor, to count the number of people within an age range:\n\n\nsum(minidata$ridageyr&gt;=30)\n#| [1] 9"
   },
   {
     "objectID": "session_6/session_6.html#exercise-2-1",
@@ -543,7 +543,7 @@
     "href": "session_6/session_6.html#defining-new-variables-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Defining new variables",
-    "text": "Defining new variables\n\nminidata\n#|       seqn ridageyr bpxosy1 bpxodi1 hypertension new\n#|  1  130378       43     135      98      Stage 2   1\n#|  2  130379       66     121      84      Stage 1   1\n#|  3  130380       44     111      79           No   1\n#|  4  130384       43      NA      NA         &lt;NA&gt;   1\n#|  5  130385       65      NA      NA         &lt;NA&gt;   1\n#|  6  130386       34     110      72           No   1\n#|  7  130387       68     143      76      Stage 2   1\n#|  8  130388       27     130      95      Stage 2   1\n#|  9  130389       59     145      76      Stage 2   1\n#|  10 130390       31     113      78           No   1"
+    "text": "Defining new variables\n\nminidata\n#|      seqn ridageyr bpxosy1 bpxodi1 hypertension new\n#| 1  130378       43     135      98      Stage 2   1\n#| 2  130379       66     121      84      Stage 1   1\n#| 3  130380       44     111      79           No   1\n#| 4  130384       43      NA      NA         &lt;NA&gt;   1\n#| 5  130385       65      NA      NA         &lt;NA&gt;   1\n#| 6  130386       34     110      72           No   1\n#| 7  130387       68     143      76      Stage 2   1\n#| 8  130388       27     130      95      Stage 2   1\n#| 9  130389       59     145      76      Stage 2   1\n#| 10 130390       31     113      78           No   1"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity",
@@ -557,7 +557,7 @@
     "href": "session_6/session_6.html#vigorous-physical-activity-1",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\ntable(nhanes$pad820,useNA='always')\n#|  \n#|     1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|    12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|    40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|    70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|   360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; \n#|    10    1    8    1    1    1    2    1   13 4466"
+    "text": "Vigorous physical activity\n\ntable(nhanes$pad820,useNA='always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; \n#|   10    1    8    1    1    1    2    1   13 4466"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-2",
@@ -599,7 +599,7 @@
     "href": "session_6/session_6.html#vigorous-physical-activity-7",
     "title": "Session 6: How can I subset data and define missing values?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\nto check the work, use table():\n\n\ntable(nhanes$ltpa_vigorous,useNA='always')\n#|  \n#|     1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|    12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|    40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|    70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|   360  420  480  540  600  660  900 &lt;NA&gt; \n#|    10    1    8    1    1    1    2 4480\n\n\n\n\n\n\n\nTip\n\n\nAlways check your work after doing any data cleaning."
+    "text": "Vigorous physical activity\n\nto check the work, use table():\n\n\ntable(nhanes$ltpa_vigorous,useNA='always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 &lt;NA&gt; \n#|   10    1    8    1    1    1    2 4480\n\n\n\n\n\n\n\nTip\n\n\nAlways check your work after doing any data cleaning."
   },
   {
     "objectID": "session_6/session_6.html#exercise-3-1",
@@ -1061,7 +1061,7 @@
     "href": "session_5/session_5.html#how-can-i-figure-out-what-the-current-working-directory-is-2",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "How can I figure out what the current working directory is?",
-    "text": "How can I figure out what the current working directory is?\n\nequivalently, use getwd():\n\n\ngetwd()\n#|  [1] \"/home/yea-hung/Academia/dsos/workshops and discussions/a slower introduction to r/session_5\""
+    "text": "How can I figure out what the current working directory is?\n\nequivalently, use getwd():\n\n\ngetwd()\n#| [1] \"/home/yea-hung/Academia/dsos/workshops and discussions/a slower introduction to r/session_5\""
   },
   {
     "objectID": "session_5/session_5.html#how-can-i-set-the-working-directory-method-1",
@@ -1124,7 +1124,7 @@
     "href": "session_4/session_4.html#systolic-blood-pressure-versus-diastolic-blood-pressure",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Systolic blood pressure versus diastolic blood pressure",
-    "text": "Systolic blood pressure versus diastolic blood pressure\n\nin this section, we’ll examine the association between systolic blood pressure and diastolic blood pressure\n\n\nclass(nhanes$bpxosy1)\n#|  [1] \"integer\"\nhead(nhanes$bpxosy1)\n#|  [1] 135 121 111  NA  NA 110\nclass(nhanes$bpxodi1)\n#|  [1] \"integer\"\nhead(nhanes$bpxodi1)\n#|  [1] 98 84 79 NA NA 72"
+    "text": "Systolic blood pressure versus diastolic blood pressure\n\nin this section, we’ll examine the association between systolic blood pressure and diastolic blood pressure\n\n\nclass(nhanes$bpxosy1)\n#| [1] \"integer\"\nhead(nhanes$bpxosy1)\n#| [1] 135 121 111  NA  NA 110\nclass(nhanes$bpxodi1)\n#| [1] \"integer\"\nhead(nhanes$bpxodi1)\n#| [1] 98 84 79 NA NA 72"
   },
   {
     "objectID": "session_4/session_4.html#scatter-plots",
@@ -1152,35 +1152,35 @@
     "href": "session_4/session_4.html#pearsons-correlation-coefficient",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Pearson’s correlation coefficient",
-    "text": "Pearson’s correlation coefficient\n\ncor(nhanes$bpxodi1,nhanes$bpxosy1)\n#|  [1] NA\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs')\n#|  [1] 0.6057034\n\n\nthe use=complete.obs argument is similar to na.rm=TRUE in mean(), sd(), and other functions you saw last week\n\nif either value in a pair is NA, then the pair is not used\n\nthe order of the variables does not matter"
+    "text": "Pearson’s correlation coefficient\n\ncor(nhanes$bpxodi1,nhanes$bpxosy1)\n#| [1] NA\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs')\n#| [1] 0.6057034\n\n\nthe use=complete.obs argument is similar to na.rm=TRUE in mean(), sd(), and other functions you saw last week\n\nif either value in a pair is NA, then the pair is not used\n\nthe order of the variables does not matter"
   },
   {
     "objectID": "session_4/session_4.html#other-measures-of-correlation",
     "href": "session_4/session_4.html#other-measures-of-correlation",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Other measures of correlation",
-    "text": "Other measures of correlation\n\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs',method='kendall')\n#|  [1] 0.4277319\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs',method='spearman')\n#|  [1] 0.5832935"
+    "text": "Other measures of correlation\n\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs',method='kendall')\n#| [1] 0.4277319\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs',method='spearman')\n#| [1] 0.5832935"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression",
     "href": "session_4/session_4.html#simple-linear-regression",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression",
-    "text": "Simple linear regression\n\nlm(nhanes$bpxosy1~nhanes$bpxodi1)\n#|  \n#|  Call:\n#|  lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)\n#|  \n#|  Coefficients:\n#|     (Intercept)  nhanes$bpxodi1  \n#|          49.165           0.979"
+    "text": "Simple linear regression\n\nlm(nhanes$bpxosy1~nhanes$bpxodi1)\n#| \n#| Call:\n#| lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)\n#| \n#| Coefficients:\n#|    (Intercept)  nhanes$bpxodi1  \n#|         49.165           0.979"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression-confint",
     "href": "session_4/session_4.html#simple-linear-regression-confint",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression: confint()",
-    "text": "Simple linear regression: confint()\n\nmy_model&lt;-lm(nhanes$bpxosy1~nhanes$bpxodi1)\nconfint(my_model)\n#|                      2.5 %    97.5 %\n#|  (Intercept)    46.7210856 51.608631\n#|  nhanes$bpxodi1  0.9467311  1.011178"
+    "text": "Simple linear regression: confint()\n\nmy_model&lt;-lm(nhanes$bpxosy1~nhanes$bpxodi1)\nconfint(my_model)\n#|                     2.5 %    97.5 %\n#| (Intercept)    46.7210856 51.608631\n#| nhanes$bpxodi1  0.9467311  1.011178"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression-summary",
     "href": "session_4/session_4.html#simple-linear-regression-summary",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression: summary()",
-    "text": "Simple linear regression: summary()\n\nsummary(my_model)\n#|  \n#|  Call:\n#|  lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)\n#|  \n#|  Residuals:\n#|      Min      1Q  Median      3Q     Max \n#|  -32.629 -10.323  -2.271   7.361  89.203 \n#|  \n#|  Coefficients:\n#|                 Estimate Std. Error t value Pr(&gt;|t|)    \n#|  (Intercept)    49.16486    1.24660   39.44   &lt;2e-16 ***\n#|  nhanes$bpxodi1  0.97895    0.01644   59.56   &lt;2e-16 ***\n#|  ---\n#|  Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#|  \n#|  Residual standard error: 14.68 on 6121 degrees of freedom\n#|    (2030 observations deleted due to missingness)\n#|  Multiple R-squared:  0.3669,    Adjusted R-squared:  0.3668 \n#|  F-statistic:  3547 on 1 and 6121 DF,  p-value: &lt; 2.2e-16"
+    "text": "Simple linear regression: summary()\n\nsummary(my_model)\n#| \n#| Call:\n#| lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)\n#| \n#| Residuals:\n#|     Min      1Q  Median      3Q     Max \n#| -32.629 -10.323  -2.271   7.361  89.203 \n#| \n#| Coefficients:\n#|                Estimate Std. Error t value Pr(&gt;|t|)    \n#| (Intercept)    49.16486    1.24660   39.44   &lt;2e-16 ***\n#| nhanes$bpxodi1  0.97895    0.01644   59.56   &lt;2e-16 ***\n#| ---\n#| Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#| \n#| Residual standard error: 14.68 on 6121 degrees of freedom\n#|   (2030 observations deleted due to missingness)\n#| Multiple R-squared:  0.3669, Adjusted R-squared:  0.3668 \n#| F-statistic:  3547 on 1 and 6121 DF,  p-value: &lt; 2.2e-16"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression-summary-1",
@@ -1194,14 +1194,14 @@
     "href": "session_4/session_4.html#simple-linear-regression-summary-2",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression: summary()",
-    "text": "Simple linear regression: summary()\n\nnames(summary(my_model))\n#|   [1] \"call\"          \"terms\"         \"residuals\"     \"coefficients\" \n#|   [5] \"aliased\"       \"sigma\"         \"df\"            \"r.squared\"    \n#|   [9] \"adj.r.squared\" \"fstatistic\"    \"cov.unscaled\"  \"na.action\"\nsummary(my_model)$coefficients\n#|                   Estimate Std. Error  t value      Pr(&gt;|t|)\n#|  (Intercept)    49.1648582 1.24659908 39.43919 2.462317e-303\n#|  nhanes$bpxodi1  0.9789544 0.01643749 59.55620  0.000000e+00\nsummary(my_model)$r.squared\n#|  [1] 0.3668766"
+    "text": "Simple linear regression: summary()\n\nnames(summary(my_model))\n#|  [1] \"call\"          \"terms\"         \"residuals\"     \"coefficients\" \n#|  [5] \"aliased\"       \"sigma\"         \"df\"            \"r.squared\"    \n#|  [9] \"adj.r.squared\" \"fstatistic\"    \"cov.unscaled\"  \"na.action\"\nsummary(my_model)$coefficients\n#|                  Estimate Std. Error  t value      Pr(&gt;|t|)\n#| (Intercept)    49.1648582 1.24659908 39.43919 2.462317e-303\n#| nhanes$bpxodi1  0.9789544 0.01643749 59.55620  0.000000e+00\nsummary(my_model)$r.squared\n#| [1] 0.3668766"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression-the-data-argument",
     "href": "session_4/session_4.html#simple-linear-regression-the-data-argument",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression: the data argument",
-    "text": "Simple linear regression: the data argument\n\nlm(bpxosy1~bpxodi1,data=nhanes)\n#|  \n#|  Call:\n#|  lm(formula = bpxosy1 ~ bpxodi1, data = nhanes)\n#|  \n#|  Coefficients:\n#|  (Intercept)      bpxodi1  \n#|       49.165        0.979\n\n\nseveral R functions support the data argument\nit is one way to omit dollar-sign notation"
+    "text": "Simple linear regression: the data argument\n\nlm(bpxosy1~bpxodi1,data=nhanes)\n#| \n#| Call:\n#| lm(formula = bpxosy1 ~ bpxodi1, data = nhanes)\n#| \n#| Coefficients:\n#| (Intercept)      bpxodi1  \n#|      49.165        0.979\n\n\nseveral R functions support the data argument\nit is one way to omit dollar-sign notation"
   },
   {
     "objectID": "session_4/session_4.html#exercise-1-1",
@@ -1222,7 +1222,7 @@
     "href": "session_4/session_4.html#systolic-blood-pressure-versus-smoking",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Systolic blood pressure versus smoking",
-    "text": "Systolic blood pressure versus smoking\n\nin this section, we’ll examine the association between systolic blood pressure and smoking\n\n\nclass(nhanes$bpxosy1)\n#|  [1] \"integer\"\nhead(nhanes$bpxosy1)\n#|  [1] 135 121 111  NA  NA 110\nclass(nhanes$smoking)\n#|  [1] \"character\"\nhead(nhanes$smoking)\n#|  [1] \"History of smoking\" \"History of smoking\" \"No\"                \n#|  [4] \"No\"                 \"No\"                 \"History of smoking\""
+    "text": "Systolic blood pressure versus smoking\n\nin this section, we’ll examine the association between systolic blood pressure and smoking\n\n\nclass(nhanes$bpxosy1)\n#| [1] \"integer\"\nhead(nhanes$bpxosy1)\n#| [1] 135 121 111  NA  NA 110\nclass(nhanes$smoking)\n#| [1] \"character\"\nhead(nhanes$smoking)\n#| [1] \"History of smoking\" \"History of smoking\" \"No\"                \n#| [4] \"No\"                 \"No\"                 \"History of smoking\""
   },
   {
     "objectID": "session_4/session_4.html#box-plots",
@@ -1236,14 +1236,14 @@
     "href": "session_4/session_4.html#t-tests",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "t-tests",
-    "text": "t-tests\n\nt.test(nhanes$bpxosy1~nhanes$smoking)\n#|  \n#|      Welch Two Sample t-test\n#|  \n#|  data:  nhanes$bpxosy1 by nhanes$smoking\n#|  t = 7.4317, df = 4887.9, p-value = 1.258e-13\n#|  alternative hypothesis: true difference in means between group History of smoking and group No is not equal to 0\n#|  95 percent confidence interval:\n#|   2.672803 4.588225\n#|  sample estimates:\n#|  mean in group History of smoking                 mean in group No \n#|                          124.7512                         121.1207"
+    "text": "t-tests\n\nt.test(nhanes$bpxosy1~nhanes$smoking)\n#| \n#|  Welch Two Sample t-test\n#| \n#| data:  nhanes$bpxosy1 by nhanes$smoking\n#| t = 7.4317, df = 4887.9, p-value = 1.258e-13\n#| alternative hypothesis: true difference in means between group History of smoking and group No is not equal to 0\n#| 95 percent confidence interval:\n#|  2.672803 4.588225\n#| sample estimates:\n#| mean in group History of smoking                 mean in group No \n#|                         124.7512                         121.1207"
   },
   {
     "objectID": "session_4/session_4.html#t-tests-1",
     "href": "session_4/session_4.html#t-tests-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "t-tests",
-    "text": "t-tests\n\nmy_test&lt;-t.test(nhanes$bpxosy1~nhanes$smoking)\nnames(my_test)\n#|   [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|   [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\"\nmy_test$estimate\n#|  mean in group History of smoking                 mean in group No \n#|                          124.7512                         121.1207\nmy_test$conf.int\n#|  [1] 2.672803 4.588225\n#|  attr(,\"conf.level\")\n#|  [1] 0.95"
+    "text": "t-tests\n\nmy_test&lt;-t.test(nhanes$bpxosy1~nhanes$smoking)\nnames(my_test)\n#|  [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|  [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\"\nmy_test$estimate\n#| mean in group History of smoking                 mean in group No \n#|                         124.7512                         121.1207\nmy_test$conf.int\n#| [1] 2.672803 4.588225\n#| attr(,\"conf.level\")\n#| [1] 0.95"
   },
   {
     "objectID": "session_4/session_4.html#exercise-2-1",
@@ -1271,21 +1271,21 @@
     "href": "session_4/session_4.html#smoking-versus-asthma",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Smoking versus asthma",
-    "text": "Smoking versus asthma\n\nin this section, we’ll examine the association between smoking and asthma\n\n\nclass(nhanes$smoking)\n#|  [1] \"character\"\nhead(nhanes$smoking)\n#|  [1] \"History of smoking\" \"History of smoking\" \"No\"                \n#|  [4] \"No\"                 \"No\"                 \"History of smoking\"\nclass(nhanes$asthma)\n#|  [1] \"character\"\nhead(nhanes$asthma)\n#|  [1] \"No\"                \"No\"                \"No\"               \n#|  [4] \"No\"                \"History of asthma\" \"No\""
+    "text": "Smoking versus asthma\n\nin this section, we’ll examine the association between smoking and asthma\n\n\nclass(nhanes$smoking)\n#| [1] \"character\"\nhead(nhanes$smoking)\n#| [1] \"History of smoking\" \"History of smoking\" \"No\"                \n#| [4] \"No\"                 \"No\"                 \"History of smoking\"\nclass(nhanes$asthma)\n#| [1] \"character\"\nhead(nhanes$asthma)\n#| [1] \"No\"                \"No\"                \"No\"               \n#| [4] \"No\"                \"History of asthma\" \"No\""
   },
   {
     "objectID": "session_4/session_4.html#contingency-tables",
     "href": "session_4/session_4.html#contingency-tables",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Contingency tables",
-    "text": "Contingency tables\n\ntable(nhanes$smoking,nhanes$asthma)\n#|                      \n#|                       History of asthma   No\n#|    History of smoking               636 2603\n#|    No                               844 4029\n\n\nthe first variable will be placed along the rows"
+    "text": "Contingency tables\n\ntable(nhanes$smoking,nhanes$asthma)\n#|                     \n#|                      History of asthma   No\n#|   History of smoking               636 2603\n#|   No                               844 4029\n\n\nthe first variable will be placed along the rows"
   },
   {
     "objectID": "session_4/session_4.html#contingency-tables-1",
     "href": "session_4/session_4.html#contingency-tables-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Contingency tables",
-    "text": "Contingency tables\n\ntable(nhanes$smoking,nhanes$asthma,useNA='always')\n#|                      \n#|                       History of asthma   No &lt;NA&gt;\n#|    History of smoking               636 2603    4\n#|    No                               844 4029    5\n#|    &lt;NA&gt;                               6   25    1\n\n\nwe can add the useNA argument to show missing values"
+    "text": "Contingency tables\n\ntable(nhanes$smoking,nhanes$asthma,useNA='always')\n#|                     \n#|                      History of asthma   No &lt;NA&gt;\n#|   History of smoking               636 2603    4\n#|   No                               844 4029    5\n#|   &lt;NA&gt;                               6   25    1\n\n\nwe can add the useNA argument to show missing values"
   },
   {
     "objectID": "session_4/session_4.html#row-wise-percents",
@@ -1299,28 +1299,28 @@
     "href": "session_4/session_4.html#row-wise-percents-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Row-wise percents",
-    "text": "Row-wise percents\n\nequivalently, written all in one line:\n\n\nprop.table(table(nhanes$smoking,nhanes$asthma),margin=1)*100\n#|                      \n#|                       History of asthma       No\n#|    History of smoking          19.63569 80.36431\n#|    No                          17.31993 82.68007"
+    "text": "Row-wise percents\n\nequivalently, written all in one line:\n\n\nprop.table(table(nhanes$smoking,nhanes$asthma),margin=1)*100\n#|                     \n#|                      History of asthma       No\n#|   History of smoking          19.63569 80.36431\n#|   No                          17.31993 82.68007"
   },
   {
     "objectID": "session_4/session_4.html#column-wise-percents",
     "href": "session_4/session_4.html#column-wise-percents",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Column-wise percents",
-    "text": "Column-wise percents\n\nprop.table(table(nhanes$smoking,nhanes$asthma),margin=2)*100\n#|                      \n#|                       History of asthma       No\n#|    History of smoking          42.97297 39.24910\n#|    No                          57.02703 60.75090\n\n\nthe margin=2 argument indicates that we want column-wise percents"
+    "text": "Column-wise percents\n\nprop.table(table(nhanes$smoking,nhanes$asthma),margin=2)*100\n#|                     \n#|                      History of asthma       No\n#|   History of smoking          42.97297 39.24910\n#|   No                          57.02703 60.75090\n\n\nthe margin=2 argument indicates that we want column-wise percents"
   },
   {
     "objectID": "session_4/session_4.html#fishers-exact-tests",
     "href": "session_4/session_4.html#fishers-exact-tests",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Fisher’s exact tests",
-    "text": "Fisher’s exact tests\n\nfisher.test(table(nhanes$smoking,nhanes$asthma))\n#|  \n#|      Fisher's Exact Test for Count Data\n#|  \n#|  data:  table(nhanes$smoking, nhanes$asthma)\n#|  p-value = 0.008981\n#|  alternative hypothesis: true odds ratio is not equal to 1\n#|  95 percent confidence interval:\n#|   1.038673 1.309340\n#|  sample estimates:\n#|  odds ratio \n#|    1.166346\n\n\nnotice that this also returns the odds ratio"
+    "text": "Fisher’s exact tests\n\nfisher.test(table(nhanes$smoking,nhanes$asthma))\n#| \n#|  Fisher's Exact Test for Count Data\n#| \n#| data:  table(nhanes$smoking, nhanes$asthma)\n#| p-value = 0.008981\n#| alternative hypothesis: true odds ratio is not equal to 1\n#| 95 percent confidence interval:\n#|  1.038673 1.309340\n#| sample estimates:\n#| odds ratio \n#|   1.166346\n\n\nnotice that this also returns the odds ratio"
   },
   {
     "objectID": "session_4/session_4.html#chi-squared-tests",
     "href": "session_4/session_4.html#chi-squared-tests",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Chi-squared tests",
-    "text": "Chi-squared tests\n\nchisq.test(table(nhanes$smoking,nhanes$asthma))\n#|  \n#|      Pearson's Chi-squared test with Yates' continuity correction\n#|  \n#|  data:  table(nhanes$smoking, nhanes$asthma)\n#|  X-squared = 6.8411, df = 1, p-value = 0.008908\n\n\nX-squared is the \\(\\chi^2\\) statistic\ndf is the degrees of freedom"
+    "text": "Chi-squared tests\n\nchisq.test(table(nhanes$smoking,nhanes$asthma))\n#| \n#|  Pearson's Chi-squared test with Yates' continuity correction\n#| \n#| data:  table(nhanes$smoking, nhanes$asthma)\n#| X-squared = 6.8411, df = 1, p-value = 0.008908\n\n\nX-squared is the \\(\\chi^2\\) statistic\ndf is the degrees of freedom"
   },
   {
     "objectID": "session_4/session_4.html#exercise-3-1",
@@ -1355,7 +1355,7 @@
     "href": "session_3/session_3.html#the-na-mean",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "The NA mean",
-    "text": "The NA mean\n\nfrom last week:\n\n\nmean(nhanes$bpxodi1)\n#|  [1] NA\nclass(nhanes$bpxodi1)\n#|  [1] \"integer\"\nhead(nhanes$bpxodi1)\n#|  [1] 98 84 79 NA NA 72"
+    "text": "The NA mean\n\nfrom last week:\n\n\nmean(nhanes$bpxodi1)\n#| [1] NA\nclass(nhanes$bpxodi1)\n#| [1] \"integer\"\nhead(nhanes$bpxodi1)\n#| [1] 98 84 79 NA NA 72"
   },
   {
     "objectID": "session_3/session_3.html#the-help-pages",
@@ -1369,14 +1369,14 @@
     "href": "session_3/session_3.html#live-demonstration",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Live demonstration",
-    "text": "Live demonstration"
+    "text": "Live demonstration\n🤸"
   },
   {
     "objectID": "session_3/session_3.html#function-arguments-in-sqrt",
     "href": "session_3/session_3.html#function-arguments-in-sqrt",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Function arguments in sqrt()",
-    "text": "Function arguments in sqrt()\n\nyou can optionally type x= when you use sqrt():\n\n\nsqrt(x=81)\n#|  [1] 9\n\n\nor, you can continue to omit it:\n\n\nsqrt(81)\n#|  [1] 9\n\n\nx is known as an argument"
+    "text": "Function arguments in sqrt()\n\nyou can optionally type x= when you use sqrt():\n\n\nsqrt(x=81)\n#| [1] 9\n\n\nor, you can continue to omit it:\n\n\nsqrt(81)\n#| [1] 9\n\n\nx is known as an argument"
   },
   {
     "objectID": "session_3/session_3.html#what-are-function-arguments",
@@ -1390,7 +1390,7 @@
     "href": "session_3/session_3.html#what-are-function-arguments-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "What are function arguments?",
-    "text": "What are function arguments?\n\nsqrt(x=81)\n#|  [1] 9\n\n\n81 is the argument value\nx is the argument name"
+    "text": "What are function arguments?\n\nsqrt(x=81)\n#| [1] 9\n\n\n81 is the argument value\nx is the argument name"
   },
   {
     "objectID": "session_3/session_3.html#function-arguments-in-mean",
@@ -1411,14 +1411,14 @@
     "href": "session_3/session_3.html#the-missing-mean",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "The missing mean",
-    "text": "The missing mean\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 74.97469\n\n🎉🎉🎉"
+    "text": "The missing mean\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 74.97469\n\n🎉🎉🎉"
   },
   {
     "objectID": "session_3/session_3.html#the-missing-mean-1",
     "href": "session_3/session_3.html#the-missing-mean-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "The missing mean",
-    "text": "The missing mean\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 74.97469\n\n\nnotice that I’ve used a comma to separate the two arguments\nTRUE must be in all caps\nna.rm=TRUE does not delete missing values from your data\nall it does is make mean() ignore missing values"
+    "text": "The missing mean\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 74.97469\n\n\nnotice that I’ve used a comma to separate the two arguments\nTRUE must be in all caps\nna.rm=TRUE does not delete missing values from your data\nall it does is make mean() ignore missing values"
   },
   {
     "objectID": "session_3/session_3.html#na.rm",
@@ -1432,28 +1432,28 @@
     "href": "session_3/session_3.html#when-should-i-include-argument-names",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "When should I include argument names?",
-    "text": "When should I include argument names?\n\nsqrt(x=81)\n#|  [1] 9\nsqrt(81)\n#|  [1] 9\n\n\nif there is just one argument, the argument name is optional"
+    "text": "When should I include argument names?\n\nsqrt(x=81)\n#| [1] 9\nsqrt(81)\n#| [1] 9\n\n\nif there is just one argument, the argument name is optional"
   },
   {
     "objectID": "session_3/session_3.html#when-should-i-include-argument-names-1",
     "href": "session_3/session_3.html#when-should-i-include-argument-names-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "When should I include argument names?",
-    "text": "When should I include argument names?\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 74.97469\n\n\nif there is more than one argument, you should include argument names if:\n\nyou skip an argument\nor, write the arguments out of order"
+    "text": "When should I include argument names?\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 74.97469\n\n\nif there is more than one argument, you should include argument names if:\n\nyou skip an argument\nor, write the arguments out of order"
   },
   {
     "objectID": "session_3/session_3.html#when-should-i-include-argument-names-2",
     "href": "session_3/session_3.html#when-should-i-include-argument-names-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "When should I include argument names?",
-    "text": "When should I include argument names?\n\nsd(nhanes$bpxodi1,TRUE)\n#|  [1] 11.41659\nsd(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 11.41659\n\n\nregardless of the considerations on the prior slides, including argument names can improve the readability of your code"
+    "text": "When should I include argument names?\n\nsd(nhanes$bpxodi1,TRUE)\n#| [1] 11.41659\nsd(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 11.41659\n\n\nincluding argument names can improve the readability of your code\nso, it can be good to include them even when they are not necessary"
   },
   {
-    "objectID": "session_3/session_3.html#writing-across-multiple-lines",
-    "href": "session_3/session_3.html#writing-across-multiple-lines",
+    "objectID": "session_3/session_3.html#can-i-write-a-function-over-multiple-lines",
+    "href": "session_3/session_3.html#can-i-write-a-function-over-multiple-lines",
     "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Writing across multiple lines",
-    "text": "Writing across multiple lines\n\nwhen writing across multiple lines, type the comma before the line break:\n\n\nmean(nhanes$bpxodi1,\n     na.rm=TRUE)"
+    "section": "Can I write a function over multiple lines?",
+    "text": "Can I write a function over multiple lines?\n\nyes!\nbut, when writing a function across multiple lines, type the comma before the line break:\n\n\nmean(nhanes$bpxodi1,\n     na.rm=TRUE)"
   },
   {
     "objectID": "session_3/session_3.html#exercise-1-1",
@@ -1461,6 +1461,48 @@
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Exercise 1",
     "text": "Exercise 1\n\nOpen the help page for the quantile() function, which you’ll use in Exercise 2 to find percentiles of continuous variables.\nWhat is the name of the second argument?\nDoes the function support the na.rm argument?"
+  },
+  {
+    "objectID": "session_3/session_3.html#example-cancer-prevalence",
+    "href": "session_3/session_3.html#example-cancer-prevalence",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Example: cancer prevalence",
+    "text": "Example: cancer prevalence\n\nfrom Session 1:\n\n\npopsize&lt;-54227015\n12312/popsize*100\n#| [1] 0.02270455\n9120/popsize*100\n#| [1] 0.01681819\n\n\nthe math occurs in two lines of code\nwe could, alternatively, use a vector of the numerators and do the math in one line of code…"
+  },
+  {
+    "objectID": "session_3/session_3.html#c-1",
+    "href": "session_3/session_3.html#c-1",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "c()",
+    "text": "c()\n\nc(12312,9120)\n#| [1] 12312  9120\n\n\nthe c() function combines values in a vector\nin other words:\n\nthe arguments are values of the desired vector\nthe output is the desired vector\n\nin the function, use commas to separate values"
+  },
+  {
+    "objectID": "session_3/session_3.html#c-2",
+    "href": "session_3/session_3.html#c-2",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "c()",
+    "text": "c()\n\nanother example:\n\n\nc(33,52,48)\n#| [1] 33 52 48\n\n\nyou can also use c() to create a character vector:\n\n\nc('California','New York','Texas')\n#| [1] \"California\" \"New York\"   \"Texas\""
+  },
+  {
+    "objectID": "session_3/session_3.html#example-cancer-prevalence-1",
+    "href": "session_3/session_3.html#example-cancer-prevalence-1",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Example: cancer prevalence",
+    "text": "Example: cancer prevalence\n\nusing the numerators one by one:\n\n\n12312/popsize*100\n#| [1] 0.02270455\n9120/popsize*100\n#| [1] 0.01681819\n\n\nusing a vector of the numerators:\n\n\nc(12312,9120)/popsize*100\n#| [1] 0.02270455 0.01681819"
+  },
+  {
+    "objectID": "session_3/session_3.html#example-cancer-prevalence-2",
+    "href": "session_3/session_3.html#example-cancer-prevalence-2",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Example: cancer prevalence",
+    "text": "Example: cancer prevalence\n\nalternatively, first using object assignment:\n\n\nnumerators&lt;-c(12312,9120)\nnumerators/popsize*100\n#| [1] 0.02270455 0.01681819"
+  },
+  {
+    "objectID": "session_3/session_3.html#c-3",
+    "href": "session_3/session_3.html#c-3",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "c()",
+    "text": "c()\n\nc() is very useful\nit is one of those hard-to-avoid fundamentals I referred to in the orientation!\nyou will see an example in the next section in which c() is an argument to a function"
   },
   {
     "objectID": "session_3/session_3.html#what-is-a-continuous-variable",
@@ -1474,42 +1516,49 @@
     "href": "session_3/session_3.html#means-standard-deviations-and-variances",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Means, standard deviations, and variances",
-    "text": "Means, standard deviations, and variances\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 74.97469\nsd(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 11.41659\nvar(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 130.3386"
+    "text": "Means, standard deviations, and variances\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 74.97469\nsd(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 11.41659\nvar(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 130.3386"
   },
   {
     "objectID": "session_3/session_3.html#percentiles",
     "href": "session_3/session_3.html#percentiles",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percentiles",
-    "text": "Percentiles\n\nmedian(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 74\nquantile(nhanes$bpxodi1,probs=0.5,na.rm=TRUE)\n#|  50% \n#|   74\nquantile(nhanes$bpxodi1,0.5,na.rm=TRUE)\n#|  50% \n#|   74"
+    "text": "Percentiles\n\nmedian(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 74\nquantile(nhanes$bpxodi1,probs=0.5,na.rm=TRUE)\n#| 50% \n#|  74\nquantile(nhanes$bpxodi1,0.5,na.rm=TRUE)\n#| 50% \n#|  74"
   },
   {
     "objectID": "session_3/session_3.html#percentiles-1",
     "href": "session_3/session_3.html#percentiles-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percentiles",
-    "text": "Percentiles\n\nquantile(nhanes$bpxodi1,0.25,na.rm=TRUE)\n#|  25% \n#|   67\nquantile(nhanes$bpxodi1,0.75,na.rm=TRUE)\n#|  75% \n#|   82"
+    "text": "Percentiles\n\nquantile(nhanes$bpxodi1,probs=0.25,na.rm=TRUE)\n#| 25% \n#|  67\nquantile(nhanes$bpxodi1,probs=0.75,na.rm=TRUE)\n#| 75% \n#|  82"
   },
   {
     "objectID": "session_3/session_3.html#percentiles-2",
     "href": "session_3/session_3.html#percentiles-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percentiles",
-    "text": "Percentiles\n\n&gt; quantile(nhanes$bpxodi1,c(0.25,0.5,0.75),na.rm=TRUE)\n25% 50% 75% \n 67  74  82 \n\n\nin the second argument, we’ve used the c() function to create a vector containing 3 values"
+    "text": "Percentiles\n\n&gt; quantile(nhanes$bpxodi1,probs=c(0.25,0.5,0.75),na.rm=TRUE)\n25% 50% 75% \n 67  74  82 \n\n\nfor the probs argument, I’ve used the c() function to create a vector containing 3 values"
+  },
+  {
+    "objectID": "session_3/session_3.html#percentiles-3",
+    "href": "session_3/session_3.html#percentiles-3",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Percentiles",
+    "text": "Percentiles\n\n&gt; quantile(nhanes$bpxodi1,probs=c(0.25,0.5,0.75),na.rm=TRUE)\n25% 50% 75% \n 67  74  82 \n\n\nwhy do we need to use c() for probs, when we want to use more than one probs value?"
   },
   {
     "objectID": "session_3/session_3.html#minimum-and-maximum-values",
     "href": "session_3/session_3.html#minimum-and-maximum-values",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Minimum and maximum values",
-    "text": "Minimum and maximum values\n\nmin(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 36\nmax(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1] 142\nrange(nhanes$bpxodi1,na.rm=TRUE)\n#|  [1]  36 142"
+    "text": "Minimum and maximum values\n\nmin(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 36\nmax(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 142\nrange(nhanes$bpxodi1,na.rm=TRUE)\n#| [1]  36 142"
   },
   {
     "objectID": "session_3/session_3.html#summary",
     "href": "session_3/session_3.html#summary",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "summary()",
-    "text": "summary()\n\nsummary(nhanes$bpxodi1)\n#|     Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n#|    36.00   67.00   74.00   74.97   82.00  142.00    2030"
+    "text": "summary()\n\nsummary(nhanes$bpxodi1)\n#|    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs \n#|   36.00   67.00   74.00   74.97   82.00  142.00    2030"
   },
   {
     "objectID": "session_3/session_3.html#histograms",
@@ -1579,7 +1628,7 @@
     "href": "session_3/session_3.html#confidence-interval-for-mean-diastolic-blood-pressure",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Confidence interval for mean diastolic blood pressure",
-    "text": "Confidence interval for mean diastolic blood pressure\n\nwhat is a 95% confidence interval for the mean diastolic blood pressure in the US adult population?\n\n\nt.test(nhanes$bpxodi1)\n#|  \n#|      One Sample t-test\n#|  \n#|  data:  nhanes$bpxodi1\n#|  t = 513.88, df = 6122, p-value &lt; 2.2e-16\n#|  alternative hypothesis: true mean is not equal to 0\n#|  95 percent confidence interval:\n#|   74.68867 75.26070\n#|  sample estimates:\n#|  mean of x \n#|   74.97469"
+    "text": "Confidence interval for mean diastolic blood pressure\n\nwhat is a 95% confidence interval for the mean diastolic blood pressure in the US adult population?\n\n\nt.test(nhanes$bpxodi1)\n#| \n#|  One Sample t-test\n#| \n#| data:  nhanes$bpxodi1\n#| t = 513.88, df = 6122, p-value &lt; 2.2e-16\n#| alternative hypothesis: true mean is not equal to 0\n#| 95 percent confidence interval:\n#|  74.68867 75.26070\n#| sample estimates:\n#| mean of x \n#|  74.97469"
   },
   {
     "objectID": "session_3/session_3.html#function-values",
@@ -1600,14 +1649,14 @@
     "href": "session_3/session_3.html#function-values-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Function values",
-    "text": "Function values\n\ndiastolic_ci&lt;-t.test(nhanes$bpxodi1)\nnames(diastolic_ci)\n#|   [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|   [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\""
+    "text": "Function values\n\ndiastolic_ci&lt;-t.test(nhanes$bpxodi1)\nnames(diastolic_ci)\n#|  [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|  [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\""
   },
   {
     "objectID": "session_3/session_3.html#extracting-function-values",
     "href": "session_3/session_3.html#extracting-function-values",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Extracting function values",
-    "text": "Extracting function values\n\ndiastolic_ci$estimate\n#|  mean of x \n#|   74.97469\ndiastolic_ci$conf.int\n#|  [1] 74.68867 75.26070\n#|  attr(,\"conf.level\")\n#|  [1] 0.95"
+    "text": "Extracting function values\n\ndiastolic_ci$estimate\n#| mean of x \n#|  74.97469\ndiastolic_ci$conf.int\n#| [1] 74.68867 75.26070\n#| attr(,\"conf.level\")\n#| [1] 0.95"
   },
   {
     "objectID": "session_3/session_3.html#what-is-a-categorical-variable",
@@ -1621,14 +1670,14 @@
     "href": "session_3/session_3.html#hypertension",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Hypertension",
-    "text": "Hypertension\n\nclass(nhanes$hypertension)\n#|  [1] \"character\"\nhead(nhanes$hypertension)\n#|  [1] \"Stage 2\" \"Stage 1\" \"No\"      NA        NA        \"No\""
+    "text": "Hypertension\n\nclass(nhanes$hypertension)\n#| [1] \"character\"\nhead(nhanes$hypertension)\n#| [1] \"Stage 2\" \"Stage 1\" \"No\"      NA        NA        \"No\""
   },
   {
     "objectID": "session_3/session_3.html#counts",
     "href": "session_3/session_3.html#counts",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Counts",
-    "text": "Counts\n\ntable(nhanes$hypertension)\n#|  \n#|  Elevated       No  Stage 1  Stage 2 \n#|       841     2657     1409     1216"
+    "text": "Counts\n\ntable(nhanes$hypertension)\n#| \n#| Elevated       No  Stage 1  Stage 2 \n#|      841     2657     1409     1216"
   },
   {
     "objectID": "session_3/session_3.html#missing-values",
@@ -1656,35 +1705,35 @@
     "href": "session_3/session_3.html#counts-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Counts",
-    "text": "Counts\n\ntable(nhanes$hypertension,useNA='always')\n#|  \n#|  Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|       841     2657     1409     1216     2030\ntable(nhanes$hypertension,useNA='ifany')\n#|  \n#|  Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|       841     2657     1409     1216     2030"
+    "text": "Counts\n\ntable(nhanes$hypertension,useNA='always')\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|      841     2657     1409     1216     2030\ntable(nhanes$hypertension,useNA='ifany')\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|      841     2657     1409     1216     2030"
   },
   {
     "objectID": "session_3/session_3.html#percents",
     "href": "session_3/session_3.html#percents",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percents",
-    "text": "Percents\n\nprop.table(table(nhanes$hypertension,useNA='always'))\n#|  \n#|   Elevated        No   Stage 1   Stage 2      &lt;NA&gt; \n#|  0.1031522 0.3258923 0.1728198 0.1491476 0.2489881\n\n\nnotice that you must put table() inside of prop.table()"
+    "text": "Percents\n\nprop.table(table(nhanes$hypertension,useNA='always'))\n#| \n#|  Elevated        No   Stage 1   Stage 2      &lt;NA&gt; \n#| 0.1031522 0.3258923 0.1728198 0.1491476 0.2489881\n\n\nnotice that you must put table() inside of prop.table()"
   },
   {
     "objectID": "session_3/session_3.html#percents-1",
     "href": "session_3/session_3.html#percents-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percents",
-    "text": "Percents\n\nwithout the NA included:\n\n\nprop.table(table(nhanes$hypertension))\n#|  \n#|   Elevated        No   Stage 1   Stage 2 \n#|  0.1373510 0.4339376 0.2301160 0.1985955"
+    "text": "Percents\n\nwithout the NA included:\n\n\nprop.table(table(nhanes$hypertension))\n#| \n#|  Elevated        No   Stage 1   Stage 2 \n#| 0.1373510 0.4339376 0.2301160 0.1985955"
   },
   {
     "objectID": "session_3/session_3.html#percents-2",
     "href": "session_3/session_3.html#percents-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percents",
-    "text": "Percents\n\non a percent scale:\n\n\nprop.table(table(nhanes$hypertension,useNA='always'))*100\n#|  \n#|  Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|  10.31522 32.58923 17.28198 14.91476 24.89881"
+    "text": "Percents\n\non a percent scale:\n\n\nprop.table(table(nhanes$hypertension,useNA='always'))*100\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#| 10.31522 32.58923 17.28198 14.91476 24.89881"
   },
   {
     "objectID": "session_3/session_3.html#percents-3",
     "href": "session_3/session_3.html#percents-3",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percents",
-    "text": "Percents\n\nprop.table(table(nhanes$hypertension))*100\n#|  \n#|  Elevated       No  Stage 1  Stage 2 \n#|  13.73510 43.39376 23.01160 19.85955"
+    "text": "Percents\n\nprop.table(table(nhanes$hypertension))*100\n#| \n#| Elevated       No  Stage 1  Stage 2 \n#| 13.73510 43.39376 23.01160 19.85955"
   },
   {
     "objectID": "session_3/session_3.html#exercise-3-1",
@@ -1838,7 +1887,7 @@
     "href": "session_2/session_2.html#slide-formatting",
     "title": "Session 2: How can I import data?",
     "section": "Slide formatting",
-    "text": "Slide formatting\n\nto facilitate copying-and-pasting, throughout the remainder of the workshop series, I will omit the prompt\nfor example:\n\n\n(0.25*0.4)/(0.25*0.4+(1-0.9)*(1-0.4))\n#|  [1] 0.625\n\n\nthis does not necessarily mean that you should use a script over a console\nwhat do I suggest?"
+    "text": "Slide formatting\n\nto facilitate copying-and-pasting, throughout the remainder of the workshop series, I will omit the prompt\nfor example:\n\n\n(0.25*0.4)/(0.25*0.4+(1-0.9)*(1-0.4))\n#| [1] 0.625\n\n\nthis does not necessarily mean that you should use a script over a console\nwhat do I suggest?"
   },
   {
     "objectID": "session_2/session_2.html#should-i-use-the-script-or-the-console",
@@ -1999,7 +2048,7 @@
     "href": "session_2/session_2.html#other-ways-to-explore-the-data-2",
     "title": "Session 2: How can I import data?",
     "section": "Other ways to explore the data",
-    "text": "Other ways to explore the data\n\ndim(nhanes)\n#|  [1] 8153  195\nnrow(nhanes)\n#|  [1] 8153\nncol(nhanes)\n#|  [1] 195"
+    "text": "Other ways to explore the data\n\ndim(nhanes)\n#| [1] 8153  195\nnrow(nhanes)\n#| [1] 8153\nncol(nhanes)\n#| [1] 195"
   },
   {
     "objectID": "session_2/session_2.html#exercise-2-1",
@@ -2027,7 +2076,7 @@
     "href": "session_2/session_2.html#an-error-message",
     "title": "Session 2: How can I import data?",
     "section": "An error message",
-    "text": "An error message\n\nthe mean() function will find the mean of a set of numbers\nthere is a variable in the data called ridageyr, which stores ages in years\nwe might be inclined to try this:\n\n\nmean(ridageyr)\n#|  Error:\n#|  ! object 'ridageyr' not found\n\n\nwhy do we get an error message?"
+    "text": "An error message\n\nthe mean() function will find the mean of a set of numbers\nthere is a variable in the data called ridageyr, which stores ages in years\nwe might be inclined to try this:\n\n\nmean(ridageyr)\n#| Error:\n#| ! object 'ridageyr' not found\n\n\nwhy do we get an error message?"
   },
   {
     "objectID": "session_2/session_2.html#an-error-message-1",
@@ -2041,7 +2090,7 @@
     "href": "session_2/session_2.html#dollar-sign-notation-1",
     "title": "Session 2: How can I import data?",
     "section": "Dollar-sign notation",
-    "text": "Dollar-sign notation\n\nmean(nhanes$ridageyr)\n#|  [1] 52.14436\n\n\nmean(): a function for finding the arithmetic mean\nnhanes: the label we gave for our data when we imported it\n$: indicates that ridageyr is a column in nhanes\nridageyr: the variable name"
+    "text": "Dollar-sign notation\n\nmean(nhanes$ridageyr)\n#| [1] 52.14436\n\n\nmean(): a function for finding the arithmetic mean\nnhanes: the label we gave for our data when we imported it\n$: indicates that ridageyr is a column in nhanes\nridageyr: the variable name"
   },
   {
     "objectID": "session_2/session_2.html#exercise-3-1",
@@ -2055,21 +2104,21 @@
     "href": "session_2/session_2.html#another-error-message",
     "title": "Session 2: How can I import data?",
     "section": "Another error message",
-    "text": "Another error message\n\nmean(nhanes$gender)\n#|  Warning in mean.default(nhanes$gender): argument is not numeric or logical:\n#|  returning NA\n#|  [1] NA\n\n\nthere is a variable in the NHANES data called gender\nwe are using dollar-sign notation\nso, why does this result in an error?"
+    "text": "Another error message\n\nmean(nhanes$gender)\n#| Warning in mean.default(nhanes$gender): argument is not numeric or logical:\n#| returning NA\n#| [1] NA\n\n\nthere is a variable in the NHANES data called gender\nwe are using dollar-sign notation\nso, why does this result in an error?"
   },
   {
     "objectID": "session_2/session_2.html#another-error-message-1",
     "href": "session_2/session_2.html#another-error-message-1",
     "title": "Session 2: How can I import data?",
     "section": "Another error message",
-    "text": "Another error message\n\nwe got an error message because gender does not include numbers:\n\n\nhead(nhanes$gender)\n#|  [1] \"Male\"   \"Male\"   \"Female\" \"Male\"   \"Female\" \"Male\""
+    "text": "Another error message\n\nwe got an error message because gender does not include numbers:\n\n\nhead(nhanes$gender)\n#| [1] \"Male\"   \"Male\"   \"Female\" \"Male\"   \"Female\" \"Male\""
   },
   {
     "objectID": "session_2/session_2.html#object-classes-1",
     "href": "session_2/session_2.html#object-classes-1",
     "title": "Session 2: How can I import data?",
     "section": "Object classes",
-    "text": "Object classes\n\na more general way to check is to use the class() function:\n\n\nclass(nhanes$gender)\n#|  [1] \"character\""
+    "text": "Object classes\n\na more general way to check is to use the class() function:\n\n\nclass(nhanes$gender)\n#| [1] \"character\""
   },
   {
     "objectID": "session_2/session_2.html#object-classes-2",
@@ -2090,14 +2139,14 @@
     "href": "session_2/session_2.html#vectors",
     "title": "Session 2: How can I import data?",
     "section": "Vectors",
-    "text": "Vectors\n\nclass(nhanes$ridageyr)\n#|  [1] \"integer\"\nis.vector(nhanes$ridageyr)\n#|  [1] TRUE\nclass(nhanes$gender)\n#|  [1] \"character\"\nis.vector(nhanes$gender)\n#|  [1] TRUE\n\n\ninteger and character objects are examples of vectors"
+    "text": "Vectors\n\nclass(nhanes$ridageyr)\n#| [1] \"integer\"\nis.vector(nhanes$ridageyr)\n#| [1] TRUE\nclass(nhanes$gender)\n#| [1] \"character\"\nis.vector(nhanes$gender)\n#| [1] TRUE\n\n\ninteger and character objects are examples of vectors"
   },
   {
     "objectID": "session_2/session_2.html#numeric-objects",
     "href": "session_2/session_2.html#numeric-objects",
     "title": "Session 2: How can I import data?",
     "section": "Numeric objects",
-    "text": "Numeric objects\n\nis.numeric(nhanes$ridageyr)\n#|  [1] TRUE\nis.integer(nhanes$ridageyr)\n#|  [1] TRUE\nis.numeric(22.52)\n#|  [1] TRUE\nis.integer(22.52)\n#|  [1] FALSE\n\n\ninteger objects are themselves examples of numeric objects, but not all numeric objects are integers"
+    "text": "Numeric objects\n\nis.numeric(nhanes$ridageyr)\n#| [1] TRUE\nis.integer(nhanes$ridageyr)\n#| [1] TRUE\nis.numeric(22.52)\n#| [1] TRUE\nis.integer(22.52)\n#| [1] FALSE\n\n\ninteger objects are themselves examples of numeric objects, but not all numeric objects are integers"
   },
   {
     "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes-1",
@@ -2111,7 +2160,7 @@
     "href": "session_2/session_2.html#data-frames-and-functions",
     "title": "Session 2: How can I import data?",
     "section": "Data frames and functions",
-    "text": "Data frames and functions\n\nclass(nhanes)\n#|  [1] \"data.frame\"\nclass(mean)\n#|  [1] \"function\""
+    "text": "Data frames and functions\n\nclass(nhanes)\n#| [1] \"data.frame\"\nclass(mean)\n#| [1] \"function\""
   },
   {
     "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes-2",
@@ -2160,7 +2209,7 @@
     "href": "orientation/orientation.html#format",
     "title": "Orientation",
     "section": "Format",
-    "text": "Format\n\nmini lectures, with hands-on exercises interspersed\nroughly speaking:\n\nlectures = watch and listen\nhands-on exercises = practice\n\noptional take-home practice (homework)"
+    "text": "Format\n\nmini lectures, with hands-on exercises interspersed\nroughly speaking:\n\nlectures = watch and listen 👀👂️\nhands-on exercises = practice 💪\n\noptional take-home practice (homework)"
   },
   {
     "objectID": "orientation/orientation.html#participation",
@@ -2251,7 +2300,7 @@
     "href": "orientation/orientation.html#why-use-r",
     "title": "Orientation",
     "section": "Why use R?",
-    "text": "Why use R?\n\nit is extremely powerful\nit is extremely popular\nit is free of cost"
+    "text": "Why use R?\n\nit is extremely powerful 💪\nit is extremely popular 🔥\nit is free of cost ❌💰️"
   },
   {
     "objectID": "orientation/orientation.html#what-is-rstudio",
@@ -2266,6 +2315,48 @@
     "title": "Orientation",
     "section": "What is RStudio?",
     "text": "What is RStudio?\n\nRStudio adds numerous helpful features to R, including:\n\nsuggestions\nsyntax highlighting (color coding)\na script window (we’ll talk about this later)\n\nbut to be clear, RStudio does not allow for graphical operation of R (such as through drop-down menus)"
+  },
+  {
+    "objectID": "orientation/orientation.html#other-resources-for-learning-r",
+    "href": "orientation/orientation.html#other-resources-for-learning-r",
+    "title": "Orientation",
+    "section": "Other resources for learning R",
+    "text": "Other resources for learning R\n\nUCSF Library’s short guide to R lists some books that are available for free through UCSF Library\nStack Exchange and Stack Overflow can be very helpful"
+  },
+  {
+    "objectID": "orientation/orientation.html#what-about-ai",
+    "href": "orientation/orientation.html#what-about-ai",
+    "title": "Orientation",
+    "section": "What about AI?",
+    "text": "What about AI?\n\nAI can be very helpful 🤝\nit can also be wrong 🤦"
+  },
+  {
+    "objectID": "orientation/orientation.html#posit-assistant",
+    "href": "orientation/orientation.html#posit-assistant",
+    "title": "Orientation",
+    "section": "Posit Assistant",
+    "text": "Posit Assistant\n\nrecent versions of RStudio include a built-in chatbot, called Posit Assistant\nthis is a subscription-based feature"
+  },
+  {
+    "objectID": "orientation/orientation.html#how-can-i-effectively-use-ai",
+    "href": "orientation/orientation.html#how-can-i-effectively-use-ai",
+    "title": "Orientation",
+    "section": "How can I effectively use AI?",
+    "text": "How can I effectively use AI?\n\ntry to understand any code that AI suggests\nexplore whether there are other solutions\nnote whether the solution is a base-R or Tidyverse approach\nalways check your work"
+  },
+  {
+    "objectID": "orientation/orientation.html#how-much-should-i-lean-on-ai",
+    "href": "orientation/orientation.html#how-much-should-i-lean-on-ai",
+    "title": "Orientation",
+    "section": "How much should I lean on AI?",
+    "text": "How much should I lean on AI?\n\nespecially in this early stage of learning, use AI to understand things, not to do things for you"
+  },
+  {
+    "objectID": "orientation/orientation.html#what-is-the-future-of-r-coding",
+    "href": "orientation/orientation.html#what-is-the-future-of-r-coding",
+    "title": "Orientation",
+    "section": "What is the future of R coding?",
+    "text": "What is the future of R coding?\n\nit’s hard for me to say, and things are definitely rapidly changing…\nI would still argue that if you are going to be around R code, it is useful and important to actually understand the code\nfrom a career-development perspective, I do not think “I know how to tell AI to write R” is a marketable skill"
   },
   {
     "objectID": "orientation/orientation.html#deep-breaths-1",
@@ -2286,7 +2377,7 @@
     "href": "orientation/orientation.html#youve-done-similar-things",
     "title": "Orientation",
     "section": "You’ve done similar things",
-    "text": "You’ve done similar things\n\nlearning R is in many ways similar to developing other skills, and you can draw from that experience:\n\nlearning R is similar to learning a human language\nlearning R is similar to learning how to cook 🍳\nand so forth…"
+    "text": "You’ve done similar things\n\nlearning R is in many ways similar to developing other skills, and you can draw from that experience:\n\nlearning R is similar to learning a human language 🗣️\nlearning R is similar to learning how to cook 🍳\nand so forth…"
   },
   {
     "objectID": "orientation/orientation.html#youve-done-similar-things-1",
@@ -2436,6 +2527,13 @@
     "text": "Order of operations\n\nyour computer will use the standard operator of operations, known as PEMDAS in the United States (or BODMAS in the United Kingdom)"
   },
   {
+    "objectID": "session_1/session_1.html#commas",
+    "href": "session_1/session_1.html#commas",
+    "title": "Session 1: How can I do math?",
+    "section": "Commas",
+    "text": "Commas\n\nyou may not include commas in numbers:\n\n\n&gt; 39,355,309/341,784,857\nError in parse(text = input): &lt;text&gt;:1:3: unexpected ','\n1: 39,\n      ^\n\n\n\nThere are ways to include commas when creating tables or reports."
+  },
+  {
     "objectID": "session_1/session_1.html#example-an-average",
     "href": "session_1/session_1.html#example-an-average",
     "title": "Session 1: How can I do math?",
@@ -2527,32 +2625,25 @@
     "text": "Exercise 3\n\n&gt; 49*3\n[1] 147\n&gt; sqrt(49)\n[1] 7\n\n\nThinking about pattern recognition, what do you notice as differences between mathematical operators and mathematical functions?"
   },
   {
-    "objectID": "session_1/session_1.html#example-systolic-blood-pressure",
-    "href": "session_1/session_1.html#example-systolic-blood-pressure",
+    "objectID": "session_1/session_1.html#example-cancer-prevalence",
+    "href": "session_1/session_1.html#example-cancer-prevalence",
     "title": "Session 1: How can I do math?",
-    "section": "Example: systolic blood pressure",
-    "text": "Example: systolic blood pressure\n\na common upper threshold for “normal” systolic blood pressure is 120 mmHg\nsuppose that in one specific morning, a clinic sees 3 hypertensive patients\ntheir measurements of systolic blood pressure are 152, 148, and 135 mmHg\nhow much higher than the threshold is each measurement?"
+    "section": "Example: cancer prevalence",
+    "text": "Example: cancer prevalence\n\nsuppose that you work at the Ministry of Health for a specific country\nfor the country’s annual report, you will be calculating prevalence values of various types of cancer\nyour country’s estimated population size is 54,227,015\n12,312 people in the country are living with breast cancer\n9,120 people in the country are living with cervical cancer"
   },
   {
-    "objectID": "session_1/session_1.html#example-systolic-blood-pressure-1",
-    "href": "session_1/session_1.html#example-systolic-blood-pressure-1",
+    "objectID": "session_1/session_1.html#example-cancer-prevalence-1",
+    "href": "session_1/session_1.html#example-cancer-prevalence-1",
     "title": "Session 1: How can I do math?",
-    "section": "Example: systolic blood pressure",
-    "text": "Example: systolic blood pressure\n\n&gt; 152-120\n[1] 32\n&gt; 148-120\n[1] 28\n&gt; 135-120\n[1] 15"
-  },
-  {
-    "objectID": "session_1/session_1.html#example-systolic-blood-pressure-2",
-    "href": "session_1/session_1.html#example-systolic-blood-pressure-2",
-    "title": "Session 1: How can I do math?",
-    "section": "Example: systolic blood pressure",
-    "text": "Example: systolic blood pressure\n\nI’ve written 120 over and over again\nthis is a little bit tedious and introduces the possibility of human error\na solution is to store the number"
+    "section": "Example: cancer prevalence",
+    "text": "Example: cancer prevalence\n\n&gt; 12312/54227015*100\n[1] 0.02270455\n&gt; 9120/54227015*100\n[1] 0.01681819\n\n\nit is tedious to type 54227015 over and over again 😢\nit introduces the possibility of human error 😢\nyour estimate of the population size might later change 😢\na solution is to store the number 💡"
   },
   {
     "objectID": "session_1/session_1.html#object-assignment-1",
     "href": "session_1/session_1.html#object-assignment-1",
     "title": "Session 1: How can I do math?",
     "section": "Object assignment",
-    "text": "Object assignment\n\n&gt; normal_systolic_upper&lt;-120\n\n\n120: a number I want to store\n&lt;-: a left arrow, indicating that I want to store the number\nnormal_systolic_upper: a name that I picked that I can use to refer to the number"
+    "text": "Object assignment\n\n&gt; popsize&lt;-54227015\n\n\n54227015: a number I want to store\n&lt;-: a left arrow, indicating that I want to store the number\npopsize: a name that I picked that I can use to refer to the number"
   },
   {
     "objectID": "session_1/session_1.html#the-jar-analogy",
@@ -2566,18 +2657,25 @@
     "href": "session_1/session_1.html#the-jar-analogy-1",
     "title": "Session 1: How can I do math?",
     "section": "The jar analogy",
-    "text": "The jar analogy\n\n&gt; normal_systolic_upper&lt;-120\n\n\n120: what I want to put in a jar\n&lt;-: the action of putting something in a jar\nnormal_systolic_upper: a label that I place on the jar"
+    "text": "The jar analogy\n\n&gt; popsize&lt;-54227015\n\n\n54227015: what I want to put in a jar\n&lt;-: the action of putting something in a jar\npopsize: a label that I place on the jar"
   },
   {
     "objectID": "session_1/session_1.html#terminology",
     "href": "session_1/session_1.html#terminology",
     "title": "Session 1: How can I do math?",
     "section": "Terminology",
-    "text": "Terminology\n\n&gt; normal_systolic_upper&lt;-120\n\n\nthe “jar” (normal_systolic_upper in this example) is known as an object\nthe process of putting something in a jar is known as object assignment\n\n\n\nMore terminology: in our example, 120 is the object’s value and normal_systolic_upper is the object’s name."
+    "text": "Terminology\n\n&gt; popsize&lt;-54227015\n\n\nthe “jar” (popsize in this example) is known as an object\nthe process of putting something in a jar is known as object assignment\n\n\n\nMore terminology: in our example, 54227015 is the object’s value and popsize is the object’s name."
   },
   {
     "objectID": "session_1/session_1.html#object-names",
     "href": "session_1/session_1.html#object-names",
+    "title": "Session 1: How can I do math?",
+    "section": "Object names",
+    "text": "Object names\n\ntry to use descriptive object names"
+  },
+  {
+    "objectID": "session_1/session_1.html#object-names-1",
+    "href": "session_1/session_1.html#object-names-1",
     "title": "Session 1: How can I do math?",
     "section": "Object names",
     "text": "Object names\n\nobject names are case sensitive\nobject names should begin with a letter (there are ways around this)\nobject names can include _ or ."
@@ -2587,28 +2685,14 @@
     "href": "session_1/session_1.html#object-retrieval",
     "title": "Session 1: How can I do math?",
     "section": "Object retrieval",
-    "text": "Object retrieval\n\n&gt; normal_systolic_upper\n[1] 120"
+    "text": "Object retrieval\n\n&gt; popsize\n[1] 54227015"
   },
   {
     "objectID": "session_1/session_1.html#math-with-objects",
     "href": "session_1/session_1.html#math-with-objects",
     "title": "Session 1: How can I do math?",
     "section": "Math with objects",
-    "text": "Math with objects\n\n&gt; 152-normal_systolic_upper\n[1] 32\n&gt; 148-normal_systolic_upper\n[1] 28\n&gt; 135-normal_systolic_upper\n[1] 15"
-  },
-  {
-    "objectID": "session_1/session_1.html#the-c-function",
-    "href": "session_1/session_1.html#the-c-function",
-    "title": "Session 1: How can I do math?",
-    "section": "The c() function",
-    "text": "The c() function\n\nwe can make this more efficient by writing the 3 measurements in one vector using the c() function:\n\n\n&gt; c(152,148,135)\n[1] 152 148 135\n\n\na vector is a set of values\nwe’ll talk more about this next week!"
-  },
-  {
-    "objectID": "session_1/session_1.html#the-c-function-1",
-    "href": "session_1/session_1.html#the-c-function-1",
-    "title": "Session 1: How can I do math?",
-    "section": "The c() function",
-    "text": "The c() function\n\nwe can subtract normal_systolic_upper from the vector of measurements:\n\n\n&gt; c(152,148,135)-normal_systolic_upper\n[1] 32 28 15\n\n\nnormal_systolic_upper gets subtracted from each value of the vector\n\n\n\nTo be clear, the code from the prior slide is not separately necessary to do the above. I included it there just to help you understand what c() does."
+    "text": "Math with objects\n\n&gt; 12312/popsize*100\n[1] 0.02270455\n&gt; 9120/popsize*100\n[1] 0.01681819\n\n\nthis is, admittedly, still a little tedious, but…\n\nit removes the necessity of memorizing the population size of 54,227,015\n\nit reduces the likelihood of human error"
   },
   {
     "objectID": "session_1/session_1.html#can-i-use-the-equal-sign-instead",
@@ -2629,7 +2713,7 @@
     "href": "session_1/session_1.html#whats-so-great-about-object-assignment",
     "title": "Session 1: How can I do math?",
     "section": "What’s so great about object assignment?",
-    "text": "What’s so great about object assignment?\n\nobject assignment is very powerful\nyou can use it to clean data, for example\nnext week, we will load a data file into R using object assignment"
+    "text": "What’s so great about object assignment?\n\nobject assignment is very powerful 💪\n\nfor example, you can use it to clean data\nfor example, you can use it to store regression models\n\nnext week, we will use object assignment to load a data file into R"
   },
   {
     "objectID": "session_1/session_1.html#exercise-4-1",
@@ -2671,7 +2755,7 @@
     "href": "index.html#session-3-how-can-i-perform-univariate-analysis",
     "title": "A Slower Introduction to R",
     "section": "Session 3: How can I perform univariate analysis?",
-    "text": "Session 3: How can I perform univariate analysis?\n\nslides:\n\nweb version (opens in a new tab)\nPDF version\n\nexercise guide (right-click link to save)\n\nrecording (opens in a new tab)\nhomework"
+    "text": "Session 3: How can I perform univariate analysis?\n\nlive session:\n\nFriday, October 9, 2026, at 9:30 am\nregister in advance here\n\nslides:\n\nweb version (opens in a new tab)\nPDF version\n\nexercise guide (right-click link to save)\n\nrecording (opens in a new tab)\nhomework"
   },
   {
     "objectID": "index.html#session-4-how-can-i-perform-bivariate-analysis",
@@ -2783,21 +2867,21 @@
     "href": "session_2/homework_2.html",
     "title": "Homework 2",
     "section": "",
-    "text": "Create a new script for this homework. Type your solutions to the problems below in the script.\nDownload the west_nile_virus_cases.csv data file from the CLE, and import it into R using RStudio’s drop-down menu. Make sure to select the From Text (base) option. Feel free to type any name that makes sense to you in the import tool’s Name field. In the import tool’s preview window (at the bottom right), make sure that the data look OK, and then select Import.\nThe data are from the California Department of Public Health (and available, and documented, here). They contain the number of reported cases of West Nile Virus, by week and county, from 2006 through 2024.\nScroll through the data view (it should automatically pop up after the data import) to understand the data structure. You may close the tab when you are done. Also, use head() and tail() to examine the data structure. Notice from the data view and the data glances that the data appear to be sorted by year, and then week, and then county.\nThe data set omits the row if no cases were reported. For example, if no cases were reported in San Francisco during the 3rd week of 2021, there will be no corresponding row in the data.\nUse min(), a function that finds the smallest value, to confirm that Reported.Positive.Cases is never 0 (otherwise, the minimum value would be 0).\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nww&lt;-read.csv('west_nile_virus_cases.csv')\nmin(ww$Reported.Positive.Cases)\n#|  [1] 1\n\n\n\n\nUse range() to find the smallest and largest values of Week. You may notice that no cases were reported during the first few weeks of the years. This is presumably because West Nile Virus is a seasonal disease.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nrange(ww$Week)\n#|  [1]  9 53\n\n\n\n\nThe unique() function will return unique values. Use the function to find the unique counties in the data set. Recall that the numbering on the left can help you figure out the position of values in the output, or count how many values there are. Looking at the numbering, confirm that it appears that there are 50 unique counties in the data.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nunique(ww$County)\n#|   [1] \"Alameda\"         \"Butte\"           \"Colusa\"          \"Contra Costa\"   \n#|   [5] \"El Dorado\"       \"Fresno\"          \"Glenn\"           \"Imperial\"       \n#|   [9] \"Kern\"            \"Kings\"           \"Lake\"            \"Los Angeles\"    \n#|  [13] \"Marin\"           \"Merced\"          \"Modoc\"           \"Mono\"           \n#|  [17] \"Napa\"            \"Nevada\"          \"Orange\"          \"Placer\"         \n#|  [21] \"Riverside\"       \"Sacramento\"      \"San Bernardino\"  \"San Diego\"      \n#|  [25] \"San Joaquin\"     \"San Luis Obispo\" \"Santa Clara\"     \"Shasta\"         \n#|  [29] \"Solano\"          \"Stanislaus\"      \"Sutter\"          \"Tehama\"         \n#|  [33] \"Tulare\"          \"Ventura\"         \"Yolo\"            \"Yuba\"           \n#|  [37] \"Madera\"          \"Mendocino\"       \"Sonoma\"          \"Calaveras\"      \n#|  [41] \"Santa Barbara\"   \"Monterey\"        \"San Francisco\"   \"Amador\"         \n#|  [45] \"Santa Cruz\"      \"Siskiyou\"        \"Inyo\"            \"Humboldt\"       \n#|  [49] \"Tuolumne\"        \"San Mateo\"\n\n\n\n\nThe length() function will report the number of values. So, we can combine length() and unique() to properly count the number of unique values in the data, removing the possibility of human error. Specifically, if the data object is named ww (from the object assignment), we can use: length(unique(ww$County)). Confirm that this is in fact 50.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nlength(unique(ww$County))\n#|  [1] 50\n\n\n\n\nWe can sort values using sort(). Combine sort() and unique() to list the unique counties in alphabetical order. You can follow the pattern from above, replacing length with sort.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsort(unique(ww$County))\n#|   [1] \"Alameda\"         \"Amador\"          \"Butte\"           \"Calaveras\"      \n#|   [5] \"Colusa\"          \"Contra Costa\"    \"El Dorado\"       \"Fresno\"         \n#|   [9] \"Glenn\"           \"Humboldt\"        \"Imperial\"        \"Inyo\"           \n#|  [13] \"Kern\"            \"Kings\"           \"Lake\"            \"Los Angeles\"    \n#|  [17] \"Madera\"          \"Marin\"           \"Mendocino\"       \"Merced\"         \n#|  [21] \"Modoc\"           \"Mono\"            \"Monterey\"        \"Napa\"           \n#|  [25] \"Nevada\"          \"Orange\"          \"Placer\"          \"Riverside\"      \n#|  [29] \"Sacramento\"      \"San Bernardino\"  \"San Diego\"       \"San Francisco\"  \n#|  [33] \"San Joaquin\"     \"San Luis Obispo\" \"San Mateo\"       \"Santa Barbara\"  \n#|  [37] \"Santa Clara\"     \"Santa Cruz\"      \"Shasta\"          \"Siskiyou\"       \n#|  [41] \"Solano\"          \"Sonoma\"          \"Stanislaus\"      \"Sutter\"         \n#|  [45] \"Tehama\"          \"Tulare\"          \"Tuolumne\"        \"Ventura\"        \n#|  [49] \"Yolo\"            \"Yuba\""
+    "text": "Create a new script for this homework. Type your solutions to the problems below in the script.\nDownload the west_nile_virus_cases.csv data file from the CLE, and import it into R using RStudio’s drop-down menu. Make sure to select the From Text (base) option. Feel free to type any name that makes sense to you in the import tool’s Name field. In the import tool’s preview window (at the bottom right), make sure that the data look OK, and then select Import.\nThe data are from the California Department of Public Health (and available, and documented, here). They contain the number of reported cases of West Nile Virus, by week and county, from 2006 through 2024.\nScroll through the data view (it should automatically pop up after the data import) to understand the data structure. You may close the tab when you are done. Also, use head() and tail() to examine the data structure. Notice from the data view and the data glances that the data appear to be sorted by year, and then week, and then county.\nThe data set omits the row if no cases were reported. For example, if no cases were reported in San Francisco during the 3rd week of 2021, there will be no corresponding row in the data.\nUse min(), a function that finds the smallest value, to confirm that Reported.Positive.Cases is never 0 (otherwise, the minimum value would be 0).\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nww&lt;-read.csv('west_nile_virus_cases.csv')\nmin(ww$Reported.Positive.Cases)\n#| [1] 1\n\n\n\n\nUse range() to find the smallest and largest values of Week. You may notice that no cases were reported during the first few weeks of the years. This is presumably because West Nile Virus is a seasonal disease.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nrange(ww$Week)\n#| [1]  9 53\n\n\n\n\nThe unique() function will return unique values. Use the function to find the unique counties in the data set. Recall that the numbering on the left can help you figure out the position of values in the output, or count how many values there are. Looking at the numbering, confirm that it appears that there are 50 unique counties in the data.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nunique(ww$County)\n#|  [1] \"Alameda\"         \"Butte\"           \"Colusa\"          \"Contra Costa\"   \n#|  [5] \"El Dorado\"       \"Fresno\"          \"Glenn\"           \"Imperial\"       \n#|  [9] \"Kern\"            \"Kings\"           \"Lake\"            \"Los Angeles\"    \n#| [13] \"Marin\"           \"Merced\"          \"Modoc\"           \"Mono\"           \n#| [17] \"Napa\"            \"Nevada\"          \"Orange\"          \"Placer\"         \n#| [21] \"Riverside\"       \"Sacramento\"      \"San Bernardino\"  \"San Diego\"      \n#| [25] \"San Joaquin\"     \"San Luis Obispo\" \"Santa Clara\"     \"Shasta\"         \n#| [29] \"Solano\"          \"Stanislaus\"      \"Sutter\"          \"Tehama\"         \n#| [33] \"Tulare\"          \"Ventura\"         \"Yolo\"            \"Yuba\"           \n#| [37] \"Madera\"          \"Mendocino\"       \"Sonoma\"          \"Calaveras\"      \n#| [41] \"Santa Barbara\"   \"Monterey\"        \"San Francisco\"   \"Amador\"         \n#| [45] \"Santa Cruz\"      \"Siskiyou\"        \"Inyo\"            \"Humboldt\"       \n#| [49] \"Tuolumne\"        \"San Mateo\"\n\n\n\n\nThe length() function will report the number of values. So, we can combine length() and unique() to properly count the number of unique values in the data, removing the possibility of human error. Specifically, if the data object is named ww (from the object assignment), we can use: length(unique(ww$County)). Confirm that this is in fact 50.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nlength(unique(ww$County))\n#| [1] 50\n\n\n\n\nWe can sort values using sort(). Combine sort() and unique() to list the unique counties in alphabetical order. You can follow the pattern from above, replacing length with sort.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsort(unique(ww$County))\n#|  [1] \"Alameda\"         \"Amador\"          \"Butte\"           \"Calaveras\"      \n#|  [5] \"Colusa\"          \"Contra Costa\"    \"El Dorado\"       \"Fresno\"         \n#|  [9] \"Glenn\"           \"Humboldt\"        \"Imperial\"        \"Inyo\"           \n#| [13] \"Kern\"            \"Kings\"           \"Lake\"            \"Los Angeles\"    \n#| [17] \"Madera\"          \"Marin\"           \"Mendocino\"       \"Merced\"         \n#| [21] \"Modoc\"           \"Mono\"            \"Monterey\"        \"Napa\"           \n#| [25] \"Nevada\"          \"Orange\"          \"Placer\"          \"Riverside\"      \n#| [29] \"Sacramento\"      \"San Bernardino\"  \"San Diego\"       \"San Francisco\"  \n#| [33] \"San Joaquin\"     \"San Luis Obispo\" \"San Mateo\"       \"Santa Barbara\"  \n#| [37] \"Santa Clara\"     \"Santa Cruz\"      \"Shasta\"          \"Siskiyou\"       \n#| [41] \"Solano\"          \"Sonoma\"          \"Stanislaus\"      \"Sutter\"         \n#| [45] \"Tehama\"          \"Tulare\"          \"Tuolumne\"        \"Ventura\"        \n#| [49] \"Yolo\"            \"Yuba\""
   },
   {
     "objectID": "session_3/homework_3.html",
     "href": "session_3/homework_3.html",
     "title": "Homework 3",
     "section": "",
-    "text": "round() is a function that rounds numeric values. Examine the Usage and Arguments sections of round()’s help page. In the console, use round() to round pi to 2 digits.\nAt the top of a new script, such as homework_3.r, include code for importing the nhanes_l.csv data file. Add a comment. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# import the data\nnhanes&lt;-read.csv('nhanes_l.csv')\n\n\n\n\nYou may have noticed that quantile() automatically includes labels above the quantiles. For example:\n\nquantile(nhanes$bpxosy1,c(0.25,0.5,0.75),na.rm=TRUE)\n#|  25% 50% 75% \n#|  110 120 133\n\nExamine the Usage and Arguments sections of quantile()’s help page. Try to figure out how to obtain quartiles of systolic blood pressure (bpxosy1) without labels (25% 50% 75%) included in the output. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain quantiles for systolic blood pressure, without labels\nquantile(nhanes$bpxosy1,c(0.25,0.5,0.75),na.rm=TRUE,names=FALSE)\n#|  [1] 110 120 133\n\n\n\n\nWe can use binom.test() to obtain confidence intervals for percents.\nIn the console, first table() the asthma (asthma) variable. You should see that History of asthma is listed first. This is because, by default, table() lists groups alphabetically.\nbinom.test() will test the null hypothesis that the population percents are equal to 50%. However, as with our use of t.test() from Session 3, we are just going to use the function to get a confidence interval for the prevalence of asthma in the population (we will ignore the results from the test).\nTo use binom.test(), place your code for table() above within binom.test(). By default, binom.test() will provide a confidence interval for the “first group.” As mentioned above, the “first group” for asthma is History of asthma. So, your binom.test() code is providing a confidence interval for the prevalence of asthma in the population.\nAdd the binom.test() code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain a confidence interval for the prevalence of asthma\nbinom.test(table(nhanes$asthma))\n#|  \n#|   Exact binomial test\n#|  \n#|  data:  table(nhanes$asthma)\n#|  number of successes = 1486, number of trials = 8143, p-value &lt; 2.2e-16\n#|  alternative hypothesis: true probability of success is not equal to 0.5\n#|  95 percent confidence interval:\n#|   0.1741522 0.1910517\n#|  sample estimates:\n#|  probability of success \n#|                0.182488\n\n\n\n\nWrite code for obtaining percents for asthma. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate percents for asthma\nprop.table(table(nhanes$asthma))\n#|  \n#|  History of asthma                No \n#|           0.182488          0.817512\n\n\n\n\nThe sum() function returns the sum of a set of values. Use this function, along with length() (mentioned in Homework 2) to manually calculate the mean of the age variable (ridageyr): divide the sum by the length. Add this code to your script, with a comment. Also add code for the mean() function and verify that the answers match.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate the mean manually\nsum(nhanes$ridageyr)/length(nhanes$ridageyr)\n#|  [1] 52.14436\n\n# calculate the mean using mean()\nmean(nhanes$ridageyr)\n#|  [1] 52.14436"
+    "text": "round() is a function that rounds numeric values. Examine the Usage and Arguments sections of round()’s help page. In the console, use round() to round pi to 2 digits.\nAt the top of a new script, such as homework_3.r, include code for importing the nhanes_l.csv data file. Add a comment. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# import the data\nnhanes&lt;-read.csv('nhanes_l.csv')\n\n\n\n\nYou may have noticed that quantile() automatically includes labels above the quantiles. For example:\n\nquantile(nhanes$bpxosy1,c(0.25,0.5,0.75),na.rm=TRUE)\n#| 25% 50% 75% \n#| 110 120 133\n\nExamine the Usage and Arguments sections of quantile()’s help page. Try to figure out how to obtain quartiles of systolic blood pressure (bpxosy1) without labels (25% 50% 75%) included in the output. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain quantiles for systolic blood pressure, without labels\nquantile(nhanes$bpxosy1,c(0.25,0.5,0.75),na.rm=TRUE,names=FALSE)\n#| [1] 110 120 133\n\n\n\n\nWe can use binom.test() to obtain confidence intervals for percents.\nIn the console, first table() the asthma (asthma) variable. You should see that History of asthma is listed first. This is because, by default, table() lists groups alphabetically.\nbinom.test() will test the null hypothesis that the population percents are equal to 50%. However, as with our use of t.test() from Session 3, we are just going to use the function to get a confidence interval for the prevalence of asthma in the population (we will ignore the results from the test).\nTo use binom.test(), place your code for table() above within binom.test(). By default, binom.test() will provide a confidence interval for the “first group.” As mentioned above, the “first group” for asthma is History of asthma. So, your binom.test() code is providing a confidence interval for the prevalence of asthma in the population.\nAdd the binom.test() code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain a confidence interval for the prevalence of asthma\nbinom.test(table(nhanes$asthma))\n#| \n#|   Exact binomial test\n#| \n#| data:  table(nhanes$asthma)\n#| number of successes = 1486, number of trials = 8143, p-value &lt; 2.2e-16\n#| alternative hypothesis: true probability of success is not equal to 0.5\n#| 95 percent confidence interval:\n#|  0.1741522 0.1910517\n#| sample estimates:\n#| probability of success \n#|               0.182488\n\n\n\n\nWrite code for obtaining percents for asthma. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate percents for asthma\nprop.table(table(nhanes$asthma))\n#| \n#| History of asthma                No \n#|          0.182488          0.817512\n\n\n\n\nThe sum() function returns the sum of a set of values. Use this function, along with length() (mentioned in Homework 2) to manually calculate the mean of the age variable (ridageyr): divide the sum by the length. Add this code to your script, with a comment. Also add code for the mean() function and verify that the answers match.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate the mean manually\nsum(nhanes$ridageyr)/length(nhanes$ridageyr)\n#| [1] 52.14436\n\n# calculate the mean using mean()\nmean(nhanes$ridageyr)\n#| [1] 52.14436"
   },
   {
     "objectID": "session_4/homework_4.html",
     "href": "session_4/homework_4.html",
     "title": "Homework 4",
     "section": "",
-    "text": "At the top of a new script, include code for importing the nhanes_l.csv data file. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes&lt;-read.csv('~/Downloads/data/nhanes/l/nhanes_l.csv')\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus occupation status (ocd150). Label the y axis and optionally remove the label for the x axis. The occupation variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\nYou may notice that 9 codes people who indicated that they don’t know how much sleep they typically get. We’ll talk in Session 6 about how to properly encode missing values.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012~nhanes$ocd150,ylab='Hours of sleep',xlab='')\n\n\n\n\n\n\n\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus gender (gender). Label the y axis and optionally remove the label for the x axis.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012~nhanes$gender,ylab='Hours of sleep',xlab='')\n\n\n\n\n\n\n\n\n\n\n\nConduct a t-test for the association between the typical number of sleep hours (sld012) and gender (gender).\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nt.test(nhanes$sld012~nhanes$gender)\n#|  \n#|   Welch Two Sample t-test\n#|  \n#|  data:  nhanes$sld012 by nhanes$gender\n#|  t = 4.8356, df = 7638.6, p-value = 1.353e-06\n#|  alternative hypothesis: true difference in means between group Female and group Male is not equal to 0\n#|  95 percent confidence interval:\n#|   0.1044477 0.2468641\n#|  sample estimates:\n#|  mean in group Female   mean in group Male \n#|              7.820103             7.644448\n\n\n\n\nCreate a contingency table for country of birth (dmdborn4) and asthma (asthma), with country of birth placed along the rows.\nThe country variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\ntable(nhanes$dmdborn4,nhanes$asthma)\n#|     \n#|      History of asthma   No\n#|    1              1286 5226\n#|    2               198 1417\n\n\n\n\nFind the row-wise percents.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nprop.table(table(nhanes$dmdborn4,nhanes$asthma),1)*100\n#|     \n#|      History of asthma       No\n#|    1          19.74816 80.25184\n#|    2          12.26006 87.73994\n\n\n\n\nConduct a chi-squared test for the association between the two variables.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nchisq.test(table(nhanes$dmdborn4,nhanes$asthma))\n#|  \n#|   Pearson's Chi-squared test with Yates' continuity correction\n#|  \n#|  data:  table(nhanes$dmdborn4, nhanes$asthma)\n#|  X-squared = 48.114, df = 1, p-value = 4.022e-12"
+    "text": "At the top of a new script, include code for importing the nhanes_l.csv data file. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes&lt;-read.csv('~/Downloads/data/nhanes/l/nhanes_l.csv')\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus occupation status (ocd150). Label the y axis and optionally remove the label for the x axis. The occupation variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\nYou may notice that 9 codes people who indicated that they don’t know how much sleep they typically get. We’ll talk in Session 6 about how to properly encode missing values.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012~nhanes$ocd150,ylab='Hours of sleep',xlab='')\n\n\n\n\n\n\n\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus gender (gender). Label the y axis and optionally remove the label for the x axis.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012~nhanes$gender,ylab='Hours of sleep',xlab='')\n\n\n\n\n\n\n\n\n\n\n\nConduct a t-test for the association between the typical number of sleep hours (sld012) and gender (gender).\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nt.test(nhanes$sld012~nhanes$gender)\n#| \n#|   Welch Two Sample t-test\n#| \n#| data:  nhanes$sld012 by nhanes$gender\n#| t = 4.8356, df = 7638.6, p-value = 1.353e-06\n#| alternative hypothesis: true difference in means between group Female and group Male is not equal to 0\n#| 95 percent confidence interval:\n#|  0.1044477 0.2468641\n#| sample estimates:\n#| mean in group Female   mean in group Male \n#|             7.820103             7.644448\n\n\n\n\nCreate a contingency table for country of birth (dmdborn4) and asthma (asthma), with country of birth placed along the rows.\nThe country variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\ntable(nhanes$dmdborn4,nhanes$asthma)\n#|    \n#|     History of asthma   No\n#|   1              1286 5226\n#|   2               198 1417\n\n\n\n\nFind the row-wise percents.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nprop.table(table(nhanes$dmdborn4,nhanes$asthma),1)*100\n#|    \n#|     History of asthma       No\n#|   1          19.74816 80.25184\n#|   2          12.26006 87.73994\n\n\n\n\nConduct a chi-squared test for the association between the two variables.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nchisq.test(table(nhanes$dmdborn4,nhanes$asthma))\n#| \n#|   Pearson's Chi-squared test with Yates' continuity correction\n#| \n#| data:  table(nhanes$dmdborn4, nhanes$asthma)\n#| X-squared = 48.114, df = 1, p-value = 4.022e-12"
   },
   {
     "objectID": "session_5/homework_5.html",
@@ -2811,13 +2895,13 @@
     "href": "session_6/homework_6.html",
     "title": "Homework 6",
     "section": "",
-    "text": "At the top of a new script, include code for loading ggplot2 and for importing the nhanes_l.csv data file. Run that code.\nIn Exercise 3, we used replace() to define missing values for the alcohol-use variable. An alternate way to define missing values is to combine is.na() and object assignment, as shown in the code below.\n\nnhanes$alcohol_use&lt;-nhanes$alq130\nis.na(nhanes$alcohol_use)&lt;-(nhanes$alcohol_use==777)|(nhanes$alcohol_use==999)\n\nIn the first line, we use object assignment to copy the original alcohol-use variable, alq130, to a new variable, alcohol_use.\nOn the right-hand side of the second line, we use a logical object to define the desired missingness. We then use object assignment to redefine missingness. Notice that is.na() is on the left-hand side of the object assignment, and recall that it is a TRUE/FALSE vector indicating whether values are missing. (If you are wondering: the object assignment in this line will preserve any existing missingness in alcohol_use, and add the additional missing values defined by the right-hand side.)\nCopy and paste the above code into your script. Run the code. Verify that the code works as intended.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\ntable(nhanes$education,useNA='always')\n#|  \n#|               9th-11th grade     College degree or later \n#|                          666                        2625 \n#|       Earlier than 9th grade High-school graduate or GED \n#|                          373                        1749 \n#|    Some college or AA degree                        &lt;NA&gt; \n#|                         2370                         370\ntable(nhanes$dmdeduc2,useNA='always')\n#|  \n#|     1    2    3    4    5    9 &lt;NA&gt; \n#|   373  666 1749 2370 2625   11  359\n\n\n\n\nUse sum() and is.na() to find the number of people who are missing a value for hypertension. Verify that this matches the number of people who are missing bpxosy1 or missing bpxodi1.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsum(is.na(nhanes$hypertension))\n#|  [1] 2030\nsum(is.na(nhanes$bpxosy1)|is.na(nhanes$bpxodi1))\n#|  [1] 2030\n\n\n\n\nUse sum(), is.na(), and negation to find the number of people who are not missing a value of hypertension.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsum(!is.na(nhanes$hypertension))\n#|  [1] 6123\n\n\n\n\nUse sum() and !is.na() to find the number of people who are not missing bpxodi1 and not missing bpxodi2.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsum(!is.na(nhanes$bpxosy1)&!is.na(nhanes$bpxodi1))\n#|  [1] 6123\n\n\n\n\nMake a violin plot of systolic blood pressure (bpxosy1) versus hypertension status (hypertension), but subset the data to individuals who are 60 years of age (ridageyr) or older and omit people who have a missing value of hypertension.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nggplot(subset(nhanes,ridageyr&gt;=60&!is.na(hypertension)),\n       aes(x=bpxodi1,y=bpxosy1,color=hypertension))+\n   geom_point()+\n   labs(x='Diastolic blood pressure (mmHg)',\n        y='Systolic blood pressure (mmHg)',\n        color='Hypertension')"
+    "text": "At the top of a new script, include code for loading ggplot2 and for importing the nhanes_l.csv data file. Run that code.\nIn Exercise 3, we used replace() to define missing values for the alcohol-use variable. An alternate way to define missing values is to combine is.na() and object assignment, as shown in the code below.\n\nnhanes$alcohol_use&lt;-nhanes$alq130\nis.na(nhanes$alcohol_use)&lt;-(nhanes$alcohol_use==777)|(nhanes$alcohol_use==999)\n\nIn the first line, we use object assignment to copy the original alcohol-use variable, alq130, to a new variable, alcohol_use.\nOn the right-hand side of the second line, we use a logical object to define the desired missingness. We then use object assignment to redefine missingness. Notice that is.na() is on the left-hand side of the object assignment, and recall that it is a TRUE/FALSE vector indicating whether values are missing. (If you are wondering: the object assignment in this line will preserve any existing missingness in alcohol_use, and add the additional missing values defined by the right-hand side.)\nCopy and paste the above code into your script. Run the code. Verify that the code works as intended.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\ntable(nhanes$education,useNA='always')\n#| \n#|              9th-11th grade     College degree or later \n#|                         666                        2625 \n#|      Earlier than 9th grade High-school graduate or GED \n#|                         373                        1749 \n#|   Some college or AA degree                        &lt;NA&gt; \n#|                        2370                         370\ntable(nhanes$dmdeduc2,useNA='always')\n#| \n#|    1    2    3    4    5    9 &lt;NA&gt; \n#|  373  666 1749 2370 2625   11  359\n\n\n\n\nUse sum() and is.na() to find the number of people who are missing a value for hypertension. Verify that this matches the number of people who are missing bpxosy1 or missing bpxodi1.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsum(is.na(nhanes$hypertension))\n#| [1] 2030\nsum(is.na(nhanes$bpxosy1)|is.na(nhanes$bpxodi1))\n#| [1] 2030\n\n\n\n\nUse sum(), is.na(), and negation to find the number of people who are not missing a value of hypertension.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsum(!is.na(nhanes$hypertension))\n#| [1] 6123\n\n\n\n\nUse sum() and !is.na() to find the number of people who are not missing bpxodi1 and not missing bpxodi2.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsum(!is.na(nhanes$bpxosy1)&!is.na(nhanes$bpxodi1))\n#| [1] 6123\n\n\n\n\nMake a violin plot of systolic blood pressure (bpxosy1) versus hypertension status (hypertension), but subset the data to individuals who are 60 years of age (ridageyr) or older and omit people who have a missing value of hypertension.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nggplot(subset(nhanes,ridageyr&gt;=60&!is.na(hypertension)),\n       aes(x=bpxodi1,y=bpxosy1,color=hypertension))+\n   geom_point()+\n   labs(x='Diastolic blood pressure (mmHg)',\n        y='Systolic blood pressure (mmHg)',\n        color='Hypertension')"
   },
   {
     "objectID": "session_7/homework_7.html",
     "href": "session_7/homework_7.html",
     "title": "Homework 7",
     "section": "",
-    "text": "At the top of a new script, include code for loading basecase, dplyr, and ggplot2. Also include code for importing the nhanes_l.csv data file. Run your code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nlibrary(baseverse)\nlibrary(dplyr)\nlibrary(ggplot2)\nnhanes&lt;-read.csv('nhanes_l.csv')\n\n\n\n\nUse base_match() to create a labeled version of the original arthritis variable (mcq160a). Values of 1 represent people with a history of arthritis and values of 0 represent people without a history of arthritis. The NHANES documentation for mcq106a is available here. List the no group first. Check your work and verify that the groups are listed in the desired order.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes$arthritis&lt;-base_match(nhanes$mcq160a,'No'=2,'Arthritis'=1)\ntable(nhanes$mcq160a,useNA='always')\n#|  \n#|     1    2    9 &lt;NA&gt; \n#|  2532 5258   17  346\ntable(nhanes$arthritis,useNA='always')\n#|  \n#|         No Arthritis      &lt;NA&gt; \n#|       5258      2532       363\n\n\n\n\nUse base_when() and the original glucose variable (lbxglu) to define a categorical variable for glucose, using the following definitions:\n\nlbxglu &lt; 100 → Normal\n100 ≤ lbxglu &lt; 126 → Prediabetes\nlbxglu ≥ 126 → Diabetes\n\nList the groups in the above order. Check your work and verify that the groups are listed in table() in the desired order.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes$diabetes&lt;-base_when(\n   'Normal' = nhanes$lbxglu&lt;100,\n   'Prediabetes' = nhanes$lbxglu&gt;=100 & nhanes$lbxglu&lt;126,\n   'Diabetes' = nhanes$lbxglu&gt;=126\n)\nsum(nhanes$lbxglu&lt;100,na.rm=TRUE)\n#|  [1] 1499\nsum(nhanes$lbxglu&gt;=100 & nhanes$lbxglu&lt;126,na.rm=TRUE)\n#|  [1] 1401\nsum(nhanes$lbxglu&gt;=126,na.rm=TRUE)\n#|  [1] 429\ntable(nhanes$diabetes,useNA='always')\n#|  \n#|       Normal Prediabetes    Diabetes        &lt;NA&gt; \n#|         1499        1401         429        4824\n\n\n\n\nUse ggplot2 to create a violin plot for the new categorical variable (above) versus the continuous glucose variable (lbxglu). Exclude people missing lbxglu. You can interpret your plot as a proof or check of how the categorical variable was defined.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nggplot(subset(nhanes,!is.na(lbxglu)),aes(x=diabetes,y=lbxglu))+\n   geom_violin()+\n  labs(x='Diabetes status',y='Fasting glucose (mg/dL)')"
+    "text": "At the top of a new script, include code for loading basecase, dplyr, and ggplot2. Also include code for importing the nhanes_l.csv data file. Run your code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nlibrary(baseverse)\nlibrary(dplyr)\nlibrary(ggplot2)\nnhanes&lt;-read.csv('nhanes_l.csv')\n\n\n\n\nUse base_match() to create a labeled version of the original arthritis variable (mcq160a). Values of 1 represent people with a history of arthritis and values of 0 represent people without a history of arthritis. The NHANES documentation for mcq106a is available here. List the no group first. Check your work and verify that the groups are listed in the desired order.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes$arthritis&lt;-base_match(nhanes$mcq160a,'No'=2,'Arthritis'=1)\ntable(nhanes$mcq160a,useNA='always')\n#| \n#|    1    2    9 &lt;NA&gt; \n#| 2532 5258   17  346\ntable(nhanes$arthritis,useNA='always')\n#| \n#|        No Arthritis      &lt;NA&gt; \n#|      5258      2532       363\n\n\n\n\nUse base_when() and the original glucose variable (lbxglu) to define a categorical variable for glucose, using the following definitions:\n\nlbxglu &lt; 100 → Normal\n100 ≤ lbxglu &lt; 126 → Prediabetes\nlbxglu ≥ 126 → Diabetes\n\nList the groups in the above order. Check your work and verify that the groups are listed in table() in the desired order.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes$diabetes&lt;-base_when(\n   'Normal' = nhanes$lbxglu&lt;100,\n   'Prediabetes' = nhanes$lbxglu&gt;=100 & nhanes$lbxglu&lt;126,\n   'Diabetes' = nhanes$lbxglu&gt;=126\n)\nsum(nhanes$lbxglu&lt;100,na.rm=TRUE)\n#| [1] 1499\nsum(nhanes$lbxglu&gt;=100 & nhanes$lbxglu&lt;126,na.rm=TRUE)\n#| [1] 1401\nsum(nhanes$lbxglu&gt;=126,na.rm=TRUE)\n#| [1] 429\ntable(nhanes$diabetes,useNA='always')\n#| \n#|      Normal Prediabetes    Diabetes        &lt;NA&gt; \n#|        1499        1401         429        4824\n\n\n\n\nUse ggplot2 to create a violin plot for the new categorical variable (above) versus the continuous glucose variable (lbxglu). Exclude people missing lbxglu. You can interpret your plot as a proof or check of how the categorical variable was defined.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nggplot(subset(nhanes,!is.na(lbxglu)),aes(x=diabetes,y=lbxglu))+\n   geom_violin()+\n  labs(x='Diabetes status',y='Fasting glucose (mg/dL)')"
   }
 ]

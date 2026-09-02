@@ -271,17 +271,17 @@ Yea-Hung Chen, PhD, MS
 <h2>Mini data</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  1  130378       43     135      98      Stage 2</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  2  130379       66     121      84      Stage 1</span></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  3  130380       44     111      79           No</span></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  4  130384       43      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  5  130385       65      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6  130386       34     110      72           No</span></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  7  130387       68     143      76      Stage 2</span></span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  8  130388       27     130      95      Stage 2</span></span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  9  130389       59     145      76      Stage 2</span></span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     121      84      Stage 1</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No</span></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No</span></span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     143      76      Stage 2</span></span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2</span></span>
+<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     145      76      Stage 2</span></span>
+<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-for-individuals-not-missing-hypertension" class="slide level2">
@@ -291,15 +291,15 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,<span class="sc">!</span><span class="fu">is.na</span>(hypertension))</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  1  130378       43     135      98      Stage 2</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  2  130379       66     121      84      Stage 1</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  3  130380       44     111      79           No</span></span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6  130386       34     110      72           No</span></span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  7  130387       68     143      76      Stage 2</span></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  8  130388       27     130      95      Stage 2</span></span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  9  130389       59     145      76      Stage 2</span></span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     121      84      Stage 1</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No</span></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No</span></span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     143      76      Stage 2</span></span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2</span></span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     145      76      Stage 2</span></span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="is.na" class="slide level2">
@@ -309,22 +309,22 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>hypertension</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] "Stage 2" "Stage 1" "No"      NA        NA        "No"      "Stage 2"</span></span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [8] "Stage 2" "Stage 2" "No"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "Stage 2" "Stage 1" "No"      NA        NA        "No"      "Stage 2"</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [8] "Stage 2" "Stage 2" "No"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>is.na()</code> shows whether the values are missing:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension)</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>placing an exclamation point in front reverses the values:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension)</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="subset" class="slide level2">
@@ -404,10 +404,10 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,ridageyr<span class="sc">&gt;=</span><span class="dv">60</span>)</span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  2 130379       66     121      84      Stage 1</span></span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  5 130385       65      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  7 130387       68     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66     121      84      Stage 1</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-for-individuals-60-years-of-age-or-older-2" class="slide level2">
@@ -427,9 +427,9 @@ Yea-Hung Chen, PhD, MS
 <h2>Numerical comparisons</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr</span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] 43 66 44 43 65 34 68 27 59 31</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 43 66 44 43 65 34 68 27 59 31</span></span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">&gt;=</span><span class="dv">60</span></span>
-<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="numerical-comparisons-2" class="slide level2">
@@ -447,24 +447,24 @@ Yea-Hung Chen, PhD, MS
 <h2>Numerical comparisons</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] 43 66 44 43 65 34 68 27 59 31</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 43 66 44 43 65 34 68 27 59 31</span></span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span></span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
 <span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">&lt;</span><span class="dv">59</span></span>
-<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="subset-and-numerical-comparisons" class="slide level2">
 <h2><code>subset()</code> and numerical comparisons</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,ridageyr<span class="sc">&lt;</span><span class="dv">59</span>)</span>
-<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  1  130378       43     135      98      Stage 2</span></span>
-<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  3  130380       44     111      79           No</span></span>
-<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  4  130384       43      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6  130386       34     110      72           No</span></span>
-<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  8  130388       27     130      95      Stage 2</span></span>
-<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No</span></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2</span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -476,13 +476,13 @@ Yea-Hung Chen, PhD, MS
 <h2>Logical objects</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span>)</span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "logical"</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "logical"</span></span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension))</span>
-<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "logical"</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "logical"</span></span>
 <span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span>)</span>
-<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] TRUE</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
 <span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(<span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension))</span>
-<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="logical-objects-2" class="slide level2">
@@ -497,11 +497,11 @@ Yea-Hung Chen, PhD, MS
 <h2>Negation</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span></span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">!=</span><span class="dv">43</span></span>
-<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span>
 <span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span></span>
-<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>to negate (reverse) a logical object, <strong>place <code>!</code> at the beginning</strong></li>
@@ -537,14 +537,14 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>bpxosy1<span class="sc">&lt;</span><span class="dv">120</span> <span class="sc">&amp;</span> minidata<span class="sc">$</span>bpxodi1<span class="sc">&lt;</span><span class="dv">80</span></span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1] FALSE FALSE  TRUE    NA    NA  TRUE FALSE FALSE FALSE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE FALSE  TRUE    NA    NA  TRUE FALSE FALSE FALSE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>individuals with Stage 2 hypertension are defined by:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>bpxosy1<span class="sc">&gt;=</span><span class="dv">140</span> <span class="sc">|</span> minidata<span class="sc">$</span>bpxodi1<span class="sc">&gt;=</span><span class="dv">90</span></span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   [1]  TRUE FALSE FALSE    NA    NA FALSE  TRUE  TRUE  TRUE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE    NA    NA FALSE  TRUE  TRUE  TRUE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="logical-objects-and-math" class="slide level2">
@@ -561,14 +561,14 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension))</span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>or, to count the number of people within an age range:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(minidata<span class="sc">$</span>ridageyr<span class="sc">&gt;=</span><span class="dv">30</span>)</span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 9</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 9</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -638,17 +638,17 @@ Yea-Hung Chen, PhD, MS
 <h2>Defining new variables</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       seqn ridageyr bpxosy1 bpxodi1 hypertension new</span></span>
-<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  1  130378       43     135      98      Stage 2   1</span></span>
-<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  2  130379       66     121      84      Stage 1   1</span></span>
-<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  3  130380       44     111      79           No   1</span></span>
-<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  4  130384       43      NA      NA         &lt;NA&gt;   1</span></span>
-<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  5  130385       65      NA      NA         &lt;NA&gt;   1</span></span>
-<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6  130386       34     110      72           No   1</span></span>
-<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  7  130387       68     143      76      Stage 2   1</span></span>
-<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  8  130388       27     130      95      Stage 2   1</span></span>
-<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  9  130389       59     145      76      Stage 2   1</span></span>
-<span id="cb25-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  10 130390       31     113      78           No   1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension new</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2   1</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     121      84      Stage 1   1</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No   1</span></span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43      NA      NA         &lt;NA&gt;   1</span></span>
+<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65      NA      NA         &lt;NA&gt;   1</span></span>
+<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No   1</span></span>
+<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     143      76      Stage 2   1</span></span>
+<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2   1</span></span>
+<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     145      76      Stage 2   1</span></span>
+<span id="cb25-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No   1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vigorous-physical-activity" class="slide level2">
@@ -664,13 +664,13 @@ Yea-Hung Chen, PhD, MS
 <h2>Vigorous physical activity</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
-<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
-<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
-<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
+<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vigorous-physical-activity-2" class="slide level2">
@@ -753,13 +753,13 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ltpa_vigorous,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  </span></span>
-<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
-<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
-<span id="cb30-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
-<span id="cb30-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb30-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   360  420  480  540  600  660  900 &lt;NA&gt; </span></span>
-<span id="cb30-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    10    1    8    1    1    1    2 4480</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb30-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb30-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb30-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 &lt;NA&gt; </span></span>
+<span id="cb30-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2 4480</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1132,7 +1132,7 @@ Yea-Hung Chen, PhD, MS
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/UCSF-DSOS\.github\.io\/a-slower-introduction-to-r\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

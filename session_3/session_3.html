@@ -396,17 +396,64 @@ Yea-Hung Chen, PhD, MS
 <li>including argument names can <strong>improve the readability of your code</strong></li>
 <li>so, it can be good to include them even when they are not necessary</li>
 </ul>
+</section></section>
+<section>
+<section id="coding-style" class="title-slide slide level1 center" data-stack-name="Coding style">
+<h1>Coding style</h1>
+
 </section>
-<section id="can-i-write-a-function-over-multiple-lines" class="slide level2">
-<h2>Can I write a function over multiple lines?</h2>
+<section id="common-suggestions" class="slide level2">
+<h2>Common suggestions</h2>
 <ul>
-<li>yes!</li>
-<li>but, when writing a function across multiple lines, <strong>type the comma before the line break</strong>:</li>
+<li>put <strong>a space before and after mathematical operators</strong></li>
+<li>put <strong>a space before and after <code>&lt;-</code></strong></li>
+<li>put <strong>a space before and after <code>=</code></strong></li>
+<li>put <strong>a space after commas</strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(nhanes<span class="sc">$</span>bpxodi1,</span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span> <span class="sc">/</span> <span class="dv">54227015</span> <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.02270455</span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="dv">2</span> <span class="sc">-</span> <span class="dv">12</span>)</span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 10</span></span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>popsize <span class="ot">&lt;-</span> <span class="dv">54227015</span></span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 74.97469</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="do-i-have-to-follow-those-suggestions" class="slide level2">
+<h2>Do I have to follow those suggestions?</h2>
+<ul>
+<li><strong>no!</strong></li>
+<li>despite popular perception, the suggestions from the prior slide are not rules</li>
+<li><strong>R code works perfectly fine without extra spaces</strong>, as you have already seen</li>
+</ul>
+</section>
+<section id="focus-on-consequential-decisions" class="slide level2">
+<h2>Focus on consequential decisions</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Focus on the decisions that matter.</p>
+</div>
+</div>
+</div>
+<ul>
+<li>it doesn’t matter whether you type <code>2+2</code> or <code>2 + 2</code></li>
+<li>but, as I have mentioned, it does matter whether you place a line break before or after mathematical operators</li>
+<li>I suggest that you <strong>focus on making sure that your code does what you intend it to do</strong> rather than whether or not you are putting spaces where other people think you should put them</li>
+</ul>
+</section>
+<section id="coding-style-in-this-workshop-series" class="slide level2">
+<h2>Coding style in this workshop series</h2>
+<ul>
+<li>you may notice that <strong>I rarely add extra spaces</strong>, for a number of reasons</li>
+</ul>
 </section></section>
 <section>
 <section id="exercise-1" class="title-slide slide level1 center" data-stack-name="E1">

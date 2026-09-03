@@ -1449,11 +1449,32 @@
     "text": "When should I include argument names?\n\nsd(nhanes$bpxodi1,TRUE)\n#| [1] 11.41659\nsd(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 11.41659\n\n\nincluding argument names can improve the readability of your code\nso, it can be good to include them even when they are not necessary"
   },
   {
-    "objectID": "session_3/session_3.html#can-i-write-a-function-over-multiple-lines",
-    "href": "session_3/session_3.html#can-i-write-a-function-over-multiple-lines",
+    "objectID": "session_3/session_3.html#common-suggestions",
+    "href": "session_3/session_3.html#common-suggestions",
     "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Can I write a function over multiple lines?",
-    "text": "Can I write a function over multiple lines?\n\nyes!\nbut, when writing a function across multiple lines, type the comma before the line break:\n\n\nmean(nhanes$bpxodi1,\n     na.rm=TRUE)"
+    "section": "Common suggestions",
+    "text": "Common suggestions\n\nput a space before and after mathematical operators\nput a space before and after &lt;-\nput a space before and after =\nput a space after commas\n\n\n12312 / 54227015 * 100\n#| [1] 0.02270455\nabs(2 - 12)\n#| [1] 10\npopsize &lt;- 54227015\nmean(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74.97469"
+  },
+  {
+    "objectID": "session_3/session_3.html#do-i-have-to-follow-those-suggestions",
+    "href": "session_3/session_3.html#do-i-have-to-follow-those-suggestions",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Do I have to follow those suggestions?",
+    "text": "Do I have to follow those suggestions?\n\nno!\ndespite popular perception, the suggestions from the prior slide are not rules\nR code works perfectly fine without extra spaces, as you have already seen"
+  },
+  {
+    "objectID": "session_3/session_3.html#focus-on-consequential-decisions",
+    "href": "session_3/session_3.html#focus-on-consequential-decisions",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Focus on consequential decisions",
+    "text": "Focus on consequential decisions\n\n\n\n\n\n\nTip\n\n\nFocus on the decisions that matter.\n\n\n\n\nit doesn’t matter whether you type 2+2 or 2 + 2\nbut, as I have mentioned, it does matter whether you place a line break before or after mathematical operators\nI suggest that you focus on making sure that your code does what you intend it to do rather than whether or not you are putting spaces where other people think you should put them"
+  },
+  {
+    "objectID": "session_3/session_3.html#coding-style-in-this-workshop-series",
+    "href": "session_3/session_3.html#coding-style-in-this-workshop-series",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Coding style in this workshop series",
+    "text": "Coding style in this workshop series\n\nyou may notice that I rarely add extra spaces, for a number of reasons"
   },
   {
     "objectID": "session_3/session_3.html#exercise-1-1",

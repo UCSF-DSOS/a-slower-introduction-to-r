@@ -1453,7 +1453,7 @@
     "href": "session_3/session_3.html#common-suggestions",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Common suggestions",
-    "text": "Common suggestions\n\nput a space before and after mathematical operators\nput a space before and after &lt;-\nput a space before and after =\nput a space after commas\n\n\n12312 / 54227015 * 100\n#| [1] 0.02270455\nabs(2 - 12)\n#| [1] 10\npopsize &lt;- 54227015\nmean(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74.97469"
+    "text": "Common suggestions\n\nput a space before and after mathematical operators\nput a space before and after &lt;-\nput a space after commas\nput a space before and after =\n\n\n12312 / 54227015 * 100\n#| [1] 0.02270455\nabs(2 - 12)\n#| [1] 10\npopsize &lt;- 54227015\nmean(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74.97469"
   },
   {
     "objectID": "session_3/session_3.html#do-i-have-to-follow-those-suggestions",
@@ -1467,7 +1467,7 @@
     "href": "session_3/session_3.html#focus-on-consequential-decisions",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Focus on consequential decisions",
-    "text": "Focus on consequential decisions\n\n\n\n\n\n\nTip\n\n\nFocus on the decisions that matter.\n\n\n\n\nit doesn’t matter whether you type 2+2 or 2 + 2\nbut, as I have mentioned, it does matter whether you place a line break before or after mathematical operators\nI suggest that you focus on making sure that your code does what you intend it to do rather than whether or not you are putting spaces where other people think you should put them"
+    "text": "Focus on consequential decisions\n\n\n\n\n\n\nTip\n\n\nFocus on the decisions that matter.\n\n\n\n\nit doesn’t matter whether you type 2+2 or 2 + 2\nbut, as I have mentioned, it does matter whether you place a line break before or after mathematical operators"
   },
   {
     "objectID": "session_3/session_3.html#coding-style-in-this-workshop-series",

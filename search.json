@@ -1460,21 +1460,14 @@
     "href": "session_3/session_3.html#do-i-have-to-follow-those-suggestions",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Do I have to follow those suggestions?",
-    "text": "Do I have to follow those suggestions?\n\nno!\ndespite popular perception, the suggestions from the prior slide are not rules\nR code works perfectly fine without extra spaces, as you have already seen"
-  },
-  {
-    "objectID": "session_3/session_3.html#focus-on-consequential-decisions",
-    "href": "session_3/session_3.html#focus-on-consequential-decisions",
-    "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Focus on consequential decisions",
-    "text": "Focus on consequential decisions\n\n\n\n\n\n\nTip\n\n\nFocus on the decisions that matter.\n\n\n\n\nit doesn’t matter whether you type 2+2 or 2 + 2\nbut, as I have mentioned, it does matter whether you place a line break before or after mathematical operators"
+    "text": "Do I have to follow those suggestions?\n\nno\nthe suggestions from the prior slide are not rules\nR code works fine without extra spaces (as you have already seen)"
   },
   {
     "objectID": "session_3/session_3.html#coding-style-in-this-workshop-series",
     "href": "session_3/session_3.html#coding-style-in-this-workshop-series",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Coding style in this workshop series",
-    "text": "Coding style in this workshop series\n\nyou may notice that I rarely add extra spaces, for a number of reasons"
+    "text": "Coding style in this workshop series\n\nyou may notice that I rarely add extra spaces"
   },
   {
     "objectID": "session_3/session_3.html#exercise-1-1",

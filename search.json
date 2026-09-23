@@ -2741,7 +2741,14 @@
     "href": "index.html",
     "title": "A Slower Introduction to R",
     "section": "",
-    "text": "This is a 7-session introduction to R, designed by UCSF Library’s Data Science and Open Scholarship team. It does not assume any prior experience with R or programming.\nLive online sessions of this workshop series occur every Fall quarter. Registration links for the first two sessions are provided below.\nOther workshops offered by the Data Science and Open Scholarship team are listed here.\nOther resources for learning R are listed on this UCSF Library guide."
+    "text": "This is a 7-session introduction to R, designed to accommodate learners without any prior experience with R or programming.\n\n\n\nAfter attending this workshop series, participants should be able to:\n\nestablish a workflow for using R and saving R work\nexplain basic R object types\nimplement R functions for basic data analysis, and generalize recurring syntax patterns to use similar but unfamiliar functions\nconstruct new ggplot2 data visualizations by defining aesthetics and geometries\ncombine R features or functions to subset data or define new variables\n\n\n\n\nThe instructor has more than 10 years of experience teaching R at UCSF in various settings, including:\n\nas an instructor for Biostat 213\nas a co-instructor for GHS 207\n\nSince 2024, he has been a member of UCSF Library’s Data Science and Open Scholarship team (DSOS). Other workshops offered by DSOS are listed here.\n\n\n\nLive online sessions of this workshop series occur every Fall quarter. Registration links for Fall 2026 are provided below, within each section."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "A Slower Introduction to R",
+    "section": "",
+    "text": "This is a 7-session introduction to R, designed to accommodate learners without any prior experience with R or programming.\n\n\n\nAfter attending this workshop series, participants should be able to:\n\nestablish a workflow for using R and saving R work\nexplain basic R object types\nimplement R functions for basic data analysis, and generalize recurring syntax patterns to use similar but unfamiliar functions\nconstruct new ggplot2 data visualizations by defining aesthetics and geometries\ncombine R features or functions to subset data or define new variables\n\n\n\n\nThe instructor has more than 10 years of experience teaching R at UCSF in various settings, including:\n\nas an instructor for Biostat 213\nas a co-instructor for GHS 207\n\nSince 2024, he has been a member of UCSF Library’s Data Science and Open Scholarship team (DSOS). Other workshops offered by DSOS are listed here.\n\n\n\nLive online sessions of this workshop series occur every Fall quarter. Registration links for Fall 2026 are provided below, within each section."
   },
   {
     "objectID": "index.html#orientation",
@@ -2798,6 +2805,13 @@
     "title": "A Slower Introduction to R",
     "section": "Session 7: How can I create new categorical variables?",
     "text": "Session 7: How can I create new categorical variables?\n\nlive session:\n\nFriday, November 13, 2026, at 9:30 am\nregister in advance here\n\nslides:\n\nweb version (opens in a new tab)\nPDF version\n\nexercise guide (right-click link to save)\nrecording (opens in a new tab)\nhomework"
+  },
+  {
+    "objectID": "index.html#rights",
+    "href": "index.html#rights",
+    "title": "A Slower Introduction to R",
+    "section": "Rights",
+    "text": "Rights\nUnless otherwise indicated, all content is licensed under CCBY 4.0."
   },
   {
     "objectID": "session_1/homework_1.html",

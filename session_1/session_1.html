@@ -6,7 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Yea-Hung Chen, PhD, MS">
@@ -346,21 +348,6 @@ Yea-Hung Chen, PhD, MS
 <li>your computer will use the <strong><a href="https://en.wikipedia.org/wiki/Order_of_operations">standard operator of operations</a></strong>, known as PEMDAS in the United States (or BODMAS in the United Kingdom)</li>
 </ul>
 </section>
-<section id="commas" class="slide level2">
-<h2>Commas</h2>
-<ul>
-<li>you <strong>may not include commas</strong> in numbers:</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">39</span>,<span class="dv">355</span>,<span class="dv">309</span><span class="sc">/</span><span class="dv">341</span>,<span class="dv">784</span>,<span class="dv">857</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">parse</span>(<span class="at">text =</span> input)<span class="sc">:</span> <span class="er">&lt;</span>text<span class="sc">&gt;</span><span class="er">:</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span><span class="sc">:</span> unexpected <span class="st">','</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span> <span class="dv">39</span>,</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>      <span class="sc">^</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<aside><div>
-<p>There are ways to include commas when creating tables or reports.</p>
-</div></aside></section>
 <section id="example-an-average" class="slide level2">
 <h2>Example: an average</h2>
 <ul>
@@ -372,8 +359,8 @@ Yea-Hung Chen, PhD, MS
 <li>what was his <strong>average measurement</strong> of systolic blood pressure?</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">125</span><span class="sc">+</span><span class="dv">132</span>)<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">128.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">125</span><span class="sc">+</span><span class="dv">132</span>)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">128.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <aside><div>
@@ -386,8 +373,8 @@ Yea-Hung Chen, PhD, MS
 <li>what is the area of the circle?</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> pi<span class="sc">*</span><span class="fl">2.15</span><span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">14.52201</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> pi<span class="sc">*</span><span class="fl">2.15</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">14.52201</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><strong><code>pi</code> is a special value that is built in to R</strong></li>
@@ -396,25 +383,47 @@ Yea-Hung Chen, PhD, MS
 <section id="spaces" class="slide level2">
 <h2>Spaces</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">125</span><span class="sc">+</span><span class="dv">132</span>)<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">128.5</span></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">125</span> <span class="sc">+</span> <span class="dv">132</span>) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">128.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">125</span><span class="sc">+</span><span class="dv">132</span>)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">128.5</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">125</span> <span class="sc">+</span> <span class="dv">132</span>) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">128.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>it is fine to <strong>include spaces</strong> (and it’s common practice)</li>
+<li>it is <strong>fine to include spaces</strong></li>
+<li>doing so may help improve readability</li>
+<li>in fact, many people suggest including spaces before and after mathematical operators, as I’ll mention in Session 3</li>
 </ul>
 </section>
 <section id="extra-parentheses" class="slide level2">
 <h2>Extra parentheses</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">15</span><span class="sc">*</span><span class="dv">3</span><span class="sc">+</span><span class="dv">5</span><span class="sc">*</span><span class="dv">18</span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">135</span></span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">15</span><span class="sc">*</span><span class="dv">3</span>)<span class="sc">+</span>(<span class="dv">5</span><span class="sc">*</span><span class="dv">18</span>)</span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">135</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">15</span><span class="sc">*</span><span class="dv">3</span><span class="sc">+</span><span class="dv">5</span><span class="sc">*</span><span class="dv">18</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">135</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">15</span><span class="sc">*</span><span class="dv">3</span>)<span class="sc">+</span>(<span class="dv">5</span><span class="sc">*</span><span class="dv">18</span>)</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">135</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>it’s fine to include <strong>extra parentheses</strong></li>
+<li>it is <strong>fine to include extra parentheses</strong></li>
+<li>doing so may help improve readability</li>
+</ul>
+</section>
+<section id="leading-zeros" class="slide level2">
+<h2>Leading zeros</h2>
+<ul>
+<li>for numbers between -1 and 1, you <strong>do not need to include a zero before the decimal point</strong>:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fl">0.2</span> <span class="sc">+</span> <span class="fl">0.5</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.7</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> .<span class="dv">2</span> <span class="sc">+</span> .<span class="dv">5</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.7</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="sc">-</span><span class="fl">0.8</span> <span class="sc">+</span> <span class="sc">-</span><span class="fl">0.3</span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">1.1</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="sc">-</span>.<span class="dv">8</span> <span class="sc">+</span> <span class="sc">-</span>.<span class="dv">3</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">1.1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>but, including it may help improve readability</li>
 </ul>
 </section></section>
 <section>
@@ -425,13 +434,13 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-1" class="slide level2">
 <h2>Exercise 2</h2>
 <ol type="1">
-<li>Type, <code>3-</code> in the console and press the return/enter key on your keyboard. Press return/enter key again and again and again. Notice that the console is displaying a <code>+</code> sign rather than the usual <code>&gt;</code> symbol. The <code>+</code> sign indicates that your computer thinks you’re not done with your instruction. It’s occurring here because <code>3-</code> suggests an incomplete instruction to do subtraction. To complete the instruction, type in any number (for example, <code>19</code>). You should see the prompt again.</li>
+<li>Type, <code>3-</code> in the console and press the <kbd title="return" aria-hidden="true">return</kbd><span class="visually-hidden">return</span> or <kbd title="enter" aria-hidden="true">enter</kbd><span class="visually-hidden">enter</span> key on your keyboard. Press <kbd title="return" aria-hidden="true">return</kbd><span class="visually-hidden">return</span> or <kbd title="enter" aria-hidden="true">enter</kbd><span class="visually-hidden">enter</span> again and again and again. Notice that the console is displaying a <code>+</code> sign rather than the usual <code>&gt;</code> symbol. The <code>+</code> sign indicates that your computer thinks you’re not done with your instruction. It’s occurring here because <code>3-</code> suggests an incomplete instruction to do subtraction. To complete the instruction, type in any number (for example, <code>19</code>). You should see the prompt again.</li>
 </ol>
 </section>
 <section id="exercise-2-2" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="2" type="1">
-<li>Type <code>3-</code> in the console again and press return/enter key on your keyboard. Press return/enter key again and again and again. Notice the <code>+</code> signs. This time, press the escape (esc) key on your keyboard to cancel the instruction. You should see the prompt again.</li>
+<li>Type <code>3-</code> in the console again and press the <kbd title="return" aria-hidden="true">return</kbd><span class="visually-hidden">return</span> or <kbd title="enter" aria-hidden="true">enter</kbd><span class="visually-hidden">enter</span> key on your keyboard. Press <kbd title="return" aria-hidden="true">return</kbd><span class="visually-hidden">return</span> or <kbd title="enter" aria-hidden="true">enter</kbd><span class="visually-hidden">enter</span> again and again and again. Notice the <code>+</code> signs. This time, press <kbd title="esc" aria-hidden="true">esc</kbd><span class="visually-hidden">esc</span> on your keyboard to cancel the instruction. You should see the prompt again.</li>
 </ol>
 </section>
 <section id="exercise-2-3" class="slide level2">
@@ -439,7 +448,10 @@ Yea-Hung Chen, PhD, MS
 <ol start="3" type="1">
 <li>Suppose that there are three siblings, with heights of 5’ 3”, 5’ 8”, and 5’ 6”. Find the average height of the siblings, in inches, by adding the three heights and dividing by 3. Try to do this all in one line, without using any mental math.</li>
 </ol>
-</section></section>
+
+<aside><div>
+<p>There are 12 inches in a foot.</p>
+</div></aside></section></section>
 <section>
 <section id="mathematical-functions" class="title-slide slide level1 center" data-stack-name="Mathematical functions">
 <h1>Mathematical functions</h1>
@@ -467,19 +479,27 @@ Yea-Hung Chen, PhD, MS
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>you can think of functions as <strong>requests</strong> (“hi computer, please do this”)</li>
-<li>for example, you can think of this <strong>imaginary function</strong>:</li>
+<li>you can think of functions as <strong>specific requests</strong></li>
+<li>with the <code>sqrt()</code> function, the request is, conceptually: “hi computer, find the square root of this number, or this set of numbers”</li>
 </ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">bake_me_a_delicious_cake</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
+<section id="what-are-functions-1" class="slide level2">
+<h2>What are functions?</h2>
+<ul>
+<li>R <strong>comes with many built-in functions</strong></li>
+<li>packages, which we’ll discuss in Session 5, also include functions</li>
+</ul>
+
+<aside><div>
+<p>It is also possible to write your own functions.</p>
+</div></aside></section>
 <section id="how-do-i-use-functions" class="slide level2">
 <h2>How do I use functions?</h2>
 <ul>
 <li>when using functions in R, you must include <strong>both parentheses</strong><br>
 </li>
-<li>like passwords, functions are <strong>case sensitive</strong> (for example, <code>elephant</code> ≠ <code>ELEphaNT</code>)</li>
+<li>like passwords, functions are <strong>case sensitive</strong></li>
+<li>for example, <code>elephant</code> ≠ <code>ELEphaNT</code></li>
 </ul>
 </section>
 <section id="some-mathematical-functions" class="slide level2">
@@ -487,18 +507,21 @@ Yea-Hung Chen, PhD, MS
 <ul>
 <li><strong><code>sqrt()</code></strong> for square roots</li>
 <li><strong><code>abs()</code></strong> for absolute values</li>
-<li><strong><code>exp()</code></strong> for powers of <span class="math inline">\(e\)</span> (I don’t expect you to know what this is)</li>
+<li><strong><code>exp()</code></strong> for powers of <span class="math inline">\(e\)</span></li>
 </ul>
-</section>
+
+<aside><div>
+<p>I don’t expect you to know what <span class="math inline">\(e\)</span> is.</p>
+</div></aside></section>
 <section id="examples" class="slide level2">
 <h2>Examples</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sqrt</span>(<span class="dv">144</span>)</span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">12</span></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">abs</span>(<span class="dv">2-12</span>)</span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">exp</span>(<span class="fl">0.87</span>)</span>
-<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">2.386911</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sqrt</span>(<span class="dv">144</span>)</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">12</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">abs</span>(<span class="dv">2-12</span>)</span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">exp</span>(<span class="fl">0.87</span>)</span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">2.386911</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -509,10 +532,10 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-3-1" class="slide level2">
 <h2>Exercise 3</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">49</span><span class="sc">*</span><span class="dv">3</span></span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">147</span></span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sqrt</span>(<span class="dv">49</span>)</span>
-<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">49</span><span class="sc">*</span><span class="dv">3</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">147</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sqrt</span>(<span class="dv">49</span>)</span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol type="1">
 <li>Thinking about pattern recognition, what do you notice as differences between mathematical operators and mathematical functions?</li>
@@ -527,39 +550,62 @@ Yea-Hung Chen, PhD, MS
 <h2>Example: cancer prevalence</h2>
 <ul>
 <li>suppose that you work at the Ministry of Health for a specific country</li>
-<li>for the country’s annual report, <strong>you will be calculating prevalence values</strong> of various types of cancer</li>
-<li>your country’s <strong>estimated population size is 54,227,015</strong></li>
-<li>12,312 people in the country are living with breast cancer</li>
-<li>9,120 people in the country are living with cervical cancer</li>
+<li>for the country’s annual report, you will <strong>calculate the prevalence</strong> of several types of cancer among adult women</li>
 </ul>
 </section>
 <section id="example-cancer-prevalence-1" class="slide level2">
 <h2>Example: cancer prevalence</h2>
+<ul>
+<li>you will <strong>use the following data</strong>:
+<ul>
+<li>your country has 27,113,508 adult women</li>
+<li>12,312 people in the country are living with breast cancer</li>
+<li>9,120 people in the country are living with cervical cancer</li>
+</ul></li>
+<li>you will report the prevalence per 100,000 adult women (<code>10^5</code>)</li>
+</ul>
+</section>
+<section id="example-cancer-prevalence-2" class="slide level2">
+<h2>Example: cancer prevalence</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">12312</span><span class="sc">/</span><span class="dv">54227015</span><span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.02270455</span></span>
-<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">9120</span><span class="sc">/</span><span class="dv">54227015</span><span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.01681819</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">12312</span> <span class="sc">/</span> <span class="dv">27113508</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">45.4091</span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">9120</span> <span class="sc">/</span> <span class="dv">27113508</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">33.63637</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>it is <strong>tedious</strong> to type <code>54227015</code> over and over again 😢</li>
-<li>it introduces the possibility of <strong>human error</strong> 😢</li>
-<li>your estimate of the population size <strong>might later change</strong> 😢</li>
+<li>this code is correct, but:
+<ul>
+<li>it is <strong>tedious</strong> to type <code>27113508</code> twice</li>
+<li>typing <code>27113508</code> twice introduces the possibility of <strong>human error</strong></li>
+<li>the estimated population size <strong>might later change</strong></li>
+</ul></li>
 <li>a solution is to <strong>store the number</strong> 💡</li>
 </ul>
 </section>
-<section id="object-assignment-1" class="slide level2">
-<h2>Object assignment</h2>
+<section id="storing-the-number" class="slide level2">
+<h2>Storing the number</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize<span class="ot">&lt;-</span><span class="dv">54227015</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize<span class="ot">&lt;-</span><span class="dv">27113508</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li><strong><code>54227015</code></strong>: a number I want to store</li>
+<li><strong><code>27113508</code></strong>: a number I want to store</li>
 <li><strong><code>&lt;-</code></strong>: a left arrow, indicating that I want to store the number</li>
 <li><strong><code>popsize</code></strong>: a name that I picked that I can use to refer to the number</li>
 </ul>
 </section>
 <section id="the-jar-analogy" class="slide level2">
+<h2>The jar analogy</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize<span class="ot">&lt;-</span><span class="dv">27113508</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><strong><code>27113508</code></strong>: what I want to put in a jar 🫘</li>
+<li><strong><code>&lt;-</code></strong>: the action of putting something in a jar ⤵️ 🫙</li>
+<li><strong><code>popsize</code></strong>: a label that I place on the jar 🏷️</li>
+</ul>
+</section>
+<section id="the-jar-analogy-1" class="slide level2">
 <h2>The jar analogy</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -569,23 +615,12 @@ Yea-Hung Chen, PhD, MS
 </div>
 
 <aside><div>
-<p>The image is from <a href="https://www.flickr.com/photos/thesuttonfamily/8505386136">Claire Sutton</a>, and is used here under a CC BY-NC-SA 2.0 license.</p>
+<p>The image is from <a href="https://www.flickr.com/photos/thesuttonfamily/8505386136">here</a>, and is used here under a CC BY-NC-SA 2.0 license.</p>
 </div></aside></section>
-<section id="the-jar-analogy-1" class="slide level2">
-<h2>The jar analogy</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize<span class="ot">&lt;-</span><span class="dv">54227015</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li><strong><code>54227015</code></strong>: what I want to put in a jar 🫘</li>
-<li><strong><code>&lt;-</code></strong>: the action of putting something in a jar ⤵️ 🫙</li>
-<li><strong><code>popsize</code></strong>: a label that I place on the jar 🏷️</li>
-</ul>
-</section>
 <section id="terminology" class="slide level2">
 <h2>Terminology</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize<span class="ot">&lt;-</span><span class="dv">54227015</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize<span class="ot">&lt;-</span><span class="dv">27113508</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>the “jar” (<code>popsize</code> in this example) is known as an <strong>object</strong></li>
@@ -593,7 +628,7 @@ Yea-Hung Chen, PhD, MS
 </ul>
 
 <aside><div>
-<p>More terminology: in our example, <code>54227015</code> is the object’s value and <code>popsize</code> is the object’s name.</p>
+<p>More terminology: in our example, <code>27113508</code> is the object’s value and <code>popsize</code> is the object’s name.</p>
 </div></aside></section>
 <section id="object-names" class="slide level2">
 <h2>Object names</h2>
@@ -605,29 +640,32 @@ Yea-Hung Chen, PhD, MS
 <h2>Object names</h2>
 <ul>
 <li>object names are <strong>case sensitive</strong></li>
-<li>object names should <strong>begin with a letter</strong> (there are ways around this)</li>
+<li>object names should <strong>begin with a letter</strong></li>
 <li>object names <strong>can include <code>_</code> or <code>.</code></strong></li>
 </ul>
-</section>
+
+<aside><div>
+<p>It is actually possible to define an object name that doesn’t begin with a letter, but it is “best” to avoid doing that.</p>
+</div></aside></section>
 <section id="object-retrieval" class="slide level2">
 <h2>Object retrieval</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize</span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">54227015</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> popsize</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">27113508</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="math-with-objects" class="slide level2">
 <h2>Math with objects</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">12312</span><span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.02270455</span></span>
-<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">9120</span><span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.01681819</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">12312</span> <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">45.4091</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">9120</span> <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">33.63637</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>this is, admittedly, still a little tedious, but…
+<li>this is, admittedly, still a little tedious, but:
 <ul>
-<li>it <strong>removes the necessity of memorizing</strong> the population size of 54,227,015<br>
+<li>it <strong>removes the necessity of memorizing</strong> the population size<br>
 </li>
 <li>it <strong>reduces the likelihood of human error</strong></li>
 </ul></li>
@@ -636,39 +674,39 @@ Yea-Hung Chen, PhD, MS
 <section id="can-i-use-the-equal-sign-instead" class="slide level2">
 <h2>Can I use the equal sign instead?</h2>
 <ul>
-<li><strong>yes</strong>:</li>
+<li>yes:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x<span class="ot">&lt;-</span><span class="dv">3</span></span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span>
-<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
-<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y<span class="ot">=</span><span class="dv">5</span></span>
-<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y</span>
-<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x<span class="ot">&lt;-</span><span class="dv">3</span></span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y<span class="ot">=</span><span class="dv">5</span></span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y</span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>I never use it, for a couple of reasons…</li>
-<li>but you are welcome to use the equal sign for object assignment if you want to</li>
+<li>I never use the equal sign for object assignment, for a couple reasons</li>
+<li>but <strong>you can if you want to</strong>!</li>
 </ul>
 </section>
 <section id="can-i-replace-objects" class="slide level2">
 <h2>Can I replace objects?</h2>
 <ul>
-<li><strong>yes</strong>, and notice that <strong>your computer will not warn you about it</strong>:</li>
+<li>yes, and notice that <strong>your computer will not warn you about it</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x<span class="ot">&lt;-</span><span class="dv">100</span></span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span>
-<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">100</span></span>
-<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x<span class="ot">&lt;-</span><span class="dv">5</span></span>
-<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span>
-<span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x<span class="ot">&lt;-</span><span class="dv">100</span></span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">100</span></span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x<span class="ot">&lt;-</span><span class="dv">5</span></span>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="whats-so-great-about-object-assignment" class="slide level2">
 <h2>What’s so great about object assignment?</h2>
 <ul>
-<li>object assignment is <strong>very powerful</strong> 💪
+<li>object assignment is very powerful:
 <ul>
 <li>for example, you can use it to <strong>clean data</strong></li>
 <li>for example, you can use it to <strong>store regression models</strong></li>

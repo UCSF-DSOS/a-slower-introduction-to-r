@@ -6,7 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Yea-Hung Chen, PhD, MS">
@@ -408,33 +410,38 @@ Yea-Hung Chen, PhD, MS
 <section id="common-suggestions" class="slide level2">
 <h2>Common suggestions</h2>
 <ul>
-<li>put <strong>a space before and after mathematical operators</strong></li>
+<li>put <strong>a space before and after mathematical operators</strong>, except exponentiation (<code>^</code>)</li>
 <li>put <strong>a space before and after <code>&lt;-</code></strong></li>
 <li>put <strong>a space after commas</strong></li>
 <li>put <strong>a space before and after <code>=</code></strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span> <span class="sc">/</span> <span class="dv">54227015</span> <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.02270455</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span> <span class="sc">/</span> <span class="dv">27113508</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 45.4091</span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="dv">2</span> <span class="sc">-</span> <span class="dv">12</span>)</span>
 <span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 10</span></span>
-<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>popsize <span class="ot">&lt;-</span> <span class="dv">54227015</span></span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>popsize <span class="ot">&lt;-</span> <span class="dv">27113508</span></span>
 <span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 74.97469</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="do-i-have-to-follow-those-suggestions" class="slide level2">
-<h2>Do I have to follow those suggestions?</h2>
+<section id="coding-style-in-rstudio" class="slide level2">
+<h2>Coding style in RStudio</h2>
 <ul>
-<li><strong>no</strong></li>
-<li>the suggestions from the prior slide are not rules</li>
-<li><strong>R code works fine without extra spaces</strong> (as you have already seen)</li>
+<li>to automatically style your code in RStudio, select it, and then select <strong>Code &gt; Reformat Selection</strong></li>
+<li>equivalently, you can use the keyboard shortcut:
+<ul>
+<li><kbd title="⌘" aria-hidden="true">⌘</kbd><span class="visually-hidden">⌘</span> <kbd title="shift" aria-hidden="true">shift</kbd><span class="visually-hidden">shift</span> <kbd title="A" aria-hidden="true">A</kbd><span class="visually-hidden">A</span> on MacOS</li>
+<li><kbd title="ctrl" aria-hidden="true">ctrl</kbd><span class="visually-hidden">ctrl</span> <kbd title="shift" aria-hidden="true">shift</kbd><span class="visually-hidden">shift</span> <kbd title="A" aria-hidden="true">A</kbd><span class="visually-hidden">A</span> on Windows or Linux</li>
+</ul></li>
 </ul>
 </section>
-<section id="coding-style-in-this-workshop-series" class="slide level2">
-<h2>Coding style in this workshop series</h2>
+<section id="do-i-have-to-follow-the-common-suggestions-suggestions" class="slide level2">
+<h2>Do I have to follow the common suggestions suggestions?</h2>
 <ul>
-<li>you may notice that <strong>I rarely add extra spaces</strong></li>
+<li>no, the suggestions are not rules</li>
+<li>for example, R code works fine without extra spaces, as you have already seen</li>
+<li>but, <strong>the suggestions can improve readability</strong></li>
 </ul>
 </section></section>
 <section>
@@ -461,11 +468,11 @@ Yea-Hung Chen, PhD, MS
 <li>from <strong>Session 1</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>popsize<span class="ot">&lt;-</span><span class="dv">54227015</span></span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span><span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.02270455</span></span>
-<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="dv">9120</span><span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.01681819</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>popsize <span class="ot">&lt;-</span> <span class="dv">27113508</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span> <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 45.4091</span></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="dv">9120</span> <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 33.63637</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>the math occurs in two lines of code</li>
@@ -475,7 +482,7 @@ Yea-Hung Chen, PhD, MS
 <section id="c-1" class="slide level2">
 <h2><code>c()</code></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">12312</span>,<span class="dv">9120</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">12312</span>, <span class="dv">9120</span>)</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 12312  9120</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -494,14 +501,14 @@ Yea-Hung Chen, PhD, MS
 <li>another example:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">33</span>,<span class="dv">52</span>,<span class="dv">48</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">33</span>, <span class="dv">52</span>, <span class="dv">48</span>)</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 33 52 48</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>you can also use <code>c()</code> to <strong>create a character vector</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">'California'</span>,<span class="st">'New York'</span>,<span class="st">'Texas'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">'California'</span>, <span class="st">'New York'</span>, <span class="st">'Texas'</span>)</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "California" "New York"   "Texas"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -511,17 +518,17 @@ Yea-Hung Chen, PhD, MS
 <li>using the numerators one by one:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span><span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.02270455</span></span>
-<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="dv">9120</span><span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.01681819</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span> <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 45.4091</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="dv">9120</span> <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 33.63637</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><strong>using a vector of the numerators</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">12312</span>,<span class="dv">9120</span>)<span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.02270455 0.01681819</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">12312</span>, <span class="dv">9120</span>) <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 45.40910 33.63637</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="example-cancer-prevalence-2" class="slide level2">
@@ -530,9 +537,9 @@ Yea-Hung Chen, PhD, MS
 <li>alternatively, <strong>first using object assignment</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>numerators<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">12312</span>,<span class="dv">9120</span>)</span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>numerators<span class="sc">/</span>popsize<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0.02270455 0.01681819</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>numerators <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12312</span>, <span class="dv">9120</span>)</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>numerators <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 45.40910 33.63637</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="c-3" class="slide level2">
@@ -563,23 +570,23 @@ Yea-Hung Chen, PhD, MS
 <section id="means-standard-deviations-and-variances" class="slide level2">
 <h2>Means, standard deviations, and variances</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 74.97469</span></span>
-<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 11.41659</span></span>
-<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 130.3386</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="percentiles" class="slide level2">
 <h2>Percentiles</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 74</span></span>
-<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">probs=</span><span class="fl">0.5</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">probs =</span> <span class="fl">0.5</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 50% </span></span>
 <span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  74</span></span>
-<span id="cb21-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="fl">0.5</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb21-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="fl">0.5</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb21-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 50% </span></span>
 <span id="cb21-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  74</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -587,10 +594,10 @@ Yea-Hung Chen, PhD, MS
 <section id="percentiles-1" class="slide level2">
 <h2>Percentiles</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">probs=</span><span class="fl">0.25</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">probs =</span> <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 25% </span></span>
 <span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  67</span></span>
-<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">probs=</span><span class="fl">0.75</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">probs =</span> <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 75% </span></span>
 <span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  82</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -598,9 +605,11 @@ Yea-Hung Chen, PhD, MS
 <section id="percentiles-2" class="slide level2">
 <h2>Percentiles</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>),<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">% 50%</span> <span class="dv">75</span>% </span>
-<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a> <span class="dv">67</span>  <span class="dv">74</span>  <span class="dv">82</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>),</span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 25% 50% 75% </span></span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  67  74  82</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>for the <strong><code>probs</code> argument</strong>, I’ve used the <code>c()</code> function to create a <strong>vector</strong> containing 3 values</li>
@@ -609,9 +618,11 @@ Yea-Hung Chen, PhD, MS
 <section id="percentiles-3" class="slide level2">
 <h2>Percentiles</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>),<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">% 50%</span> <span class="dv">75</span>% </span>
-<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a> <span class="dv">67</span>  <span class="dv">74</span>  <span class="dv">82</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(nhanes<span class="sc">$</span>bpxodi1,</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>),</span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 25% 50% 75% </span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  67  74  82</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>why do we need to use <code>c()</code> for <code>probs</code>, when we want to use more than one <code>probs</code> value?</li>
@@ -620,11 +631,11 @@ Yea-Hung Chen, PhD, MS
 <section id="minimum-and-maximum-values" class="slide level2">
 <h2>Minimum and maximum values</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 36</span></span>
-<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 142</span></span>
-<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1]  36 142</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -653,7 +664,7 @@ Yea-Hung Chen, PhD, MS
 <section id="histograms-titles-and-labels" class="slide level2">
 <h2>Histograms titles and labels</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">main=</span><span class="st">''</span>,<span class="at">xlab=</span><span class="st">'Diastolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1, <span class="at">main =</span> <span class="st">''</span>, <span class="at">xlab =</span> <span class="st">'Diastolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="session_3_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
@@ -663,7 +674,10 @@ Yea-Hung Chen, PhD, MS
 <li>to set the number of bars in the histogram, use the <strong><code>breaks</code></strong> argument</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">main=</span><span class="st">''</span>,<span class="at">xlab=</span><span class="st">'Diastolic blood pressure (mmHg)'</span>,<span class="at">breaks=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1,</span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">''</span>,</span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Diastolic blood pressure (mmHg)'</span>,</span>
+<span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <aside><div>
@@ -672,7 +686,10 @@ Yea-Hung Chen, PhD, MS
 <section id="histograms-bars" class="slide level2">
 <h2>Histograms bars</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">main=</span><span class="st">''</span>,<span class="at">xlab=</span><span class="st">'Diastolic blood pressure (mmHg)'</span>,<span class="at">breaks=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1,</span>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">''</span>,</span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Diastolic blood pressure (mmHg)'</span>,</span>
+<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="session_3_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
@@ -692,11 +709,13 @@ Yea-Hung Chen, PhD, MS
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1,<span class="at">main=</span><span class="st">''</span>,<span class="at">xlab=</span><span class="st">"Diastolic blood pressure (mmHg)"</span>,<span class="at">breaks=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nhanes<span class="sc">$</span>bpxodi1,</span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">''</span>,</span>
+<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Diastolic blood pressure (mmHg)"</span>,</span>
+<span id="cb31-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>if you start with a single quote, you must end with a single quote</li>
-<li>and, if you start with a double quote, you must end with a double quote</li>
+<li>you must end the quote with the type you started with</li>
 </ul>
 </section></section>
 <section>
@@ -726,7 +745,7 @@ Yea-Hung Chen, PhD, MS
 </ol>
 </section></section>
 <section>
-<section id="confidence-intervals-for-population-means" class="title-slide slide level1 center" data-stack-name="Confidence intervals for means">
+<section id="confidence-intervals-for-population-means" class="title-slide slide level1 center" data-stack-name="Confidence intervals">
 <h1>Confidence intervals for population means</h1>
 
 </section>
@@ -768,7 +787,7 @@ Yea-Hung Chen, PhD, MS
 <section id="function-values-2" class="slide level2">
 <h2>Function values</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>diastolic_ci<span class="ot">&lt;-</span><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxodi1)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>diastolic_ci <span class="ot">&lt;-</span> <span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxodi1)</span>
 <span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(diastolic_ci)</span>
 <span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"   </span></span>
 <span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [6] "null.value"  "stderr"      "alternative" "method"      "data.name"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -849,11 +868,11 @@ Yea-Hung Chen, PhD, MS
 <section id="counts-1" class="slide level2">
 <h2>Counts</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb37-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; </span></span>
 <span id="cb37-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      841     2657     1409     1216     2030</span></span>
-<span id="cb37-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension,<span class="at">useNA=</span><span class="st">'ifany'</span>)</span>
+<span id="cb37-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension, <span class="at">useNA =</span> <span class="st">'ifany'</span>)</span>
 <span id="cb37-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb37-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; </span></span>
 <span id="cb37-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      841     2657     1409     1216     2030</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -862,7 +881,7 @@ Yea-Hung Chen, PhD, MS
 <section id="percents" class="slide level2">
 <h2>Percents</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension,<span class="at">useNA=</span><span class="st">'always'</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension, <span class="at">useNA =</span> <span class="st">'always'</span>))</span>
 <span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  Elevated        No   Stage 1   Stage 2      &lt;NA&gt; </span></span>
 <span id="cb38-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 0.1031522 0.3258923 0.1728198 0.1491476 0.2489881</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -889,7 +908,7 @@ Yea-Hung Chen, PhD, MS
 <li>on a <strong>percent scale</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension,<span class="at">useNA=</span><span class="st">'always'</span>))<span class="sc">*</span><span class="dv">100</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension, <span class="at">useNA =</span> <span class="st">'always'</span>)) <span class="sc">*</span> <span class="dv">100</span></span>
 <span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb40-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; </span></span>
 <span id="cb40-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10.31522 32.58923 17.28198 14.91476 24.89881</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -898,7 +917,7 @@ Yea-Hung Chen, PhD, MS
 <section id="percents-3" class="slide level2">
 <h2>Percents</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension))<span class="sc">*</span><span class="dv">100</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension)) <span class="sc">*</span> <span class="dv">100</span></span>
 <span id="cb41-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb41-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| Elevated       No  Stage 1  Stage 2 </span></span>
 <span id="cb41-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 13.73510 43.39376 23.01160 19.85955</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -919,7 +938,12 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-3-2" class="slide level2">
 <h2>Exercise 3</h2>
 <ol start="3" type="1">
-<li>Select all of the text and code in your script. You can optionally use a keyboard shortcut: <strong>ctrl + A</strong> on Windows machines or <strong>cmd + A</strong> on Mac machines. Run the code, and verify that your computer reproduced all of the work.</li>
+<li><p>Select all of the text and code in your script. You can optionally use the keyboard shortcut:</p>
+<ul>
+<li><kbd title="⌘" aria-hidden="true">⌘</kbd><span class="visually-hidden">⌘</span> <kbd title="A" aria-hidden="true">A</kbd><span class="visually-hidden">A</span> on MacOS</li>
+<li><kbd title="ctrl" aria-hidden="true">ctrl</kbd><span class="visually-hidden">ctrl</span> <kbd title="A" aria-hidden="true">A</kbd><span class="visually-hidden">A</span> on Windows or Linux</li>
+</ul>
+<p>Run the code, and verify that your computer reproduced all of the work.</p></li>
 </ol>
 
 

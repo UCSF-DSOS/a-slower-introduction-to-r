@@ -2615,14 +2615,14 @@
     "href": "session_1/session_1.html#what-are-functions-1",
     "title": "Session 1: How can I do math?",
     "section": "What are functions?",
-    "text": "What are functions?\n\nR comes with many built-in functions\npackages, which we’ll discuss in Session 5, also include functions\n\n\n\nIt is also possible to write your own functions."
+    "text": "What are functions?\n\nR comes with many built-in functions\npackages also include functions\nit is possible to write your own functions"
   },
   {
     "objectID": "session_1/session_1.html#how-do-i-use-functions",
     "href": "session_1/session_1.html#how-do-i-use-functions",
     "title": "Session 1: How can I do math?",
     "section": "How do I use functions?",
-    "text": "How do I use functions?\n\nwhen using functions in R, you must include both parentheses\n\nlike passwords, functions are case sensitive\nfor example, elephant ≠ ELEphaNT"
+    "text": "How do I use functions?\n\nwhen using functions in R, you must include both parentheses\n\nlike passwords, functions are case sensitive\n\nfor example, elephant ≠ ELEphaNT"
   },
   {
     "objectID": "session_1/session_1.html#some-mathematical-functions",

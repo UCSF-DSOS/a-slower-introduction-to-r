@@ -6,7 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Yea-Hung Chen, PhD, MS">
@@ -101,7 +103,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8d8bbfcb02da2208d1512b39fdef3a6e.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a4beaedf18157e3e3eca3482c37c1810.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -232,21 +234,21 @@ Yea-Hung Chen, PhD, MS
 <section id="yet-another-cooking-analogy-1" class="slide level2">
 <h2>Yet another cooking analogy</h2>
 <ul>
-<li>using the console is like <strong>winging it</strong> in the kitchen</li>
+<li>using the console <strong>is like winging it</strong> in the kitchen</li>
 </ul>
 </section>
 <section id="what-are-scripts" class="slide level2">
 <h2>What are scripts?</h2>
 <ul>
 <li>scripts = <strong>documents</strong> that you can use to store code</li>
-<li>continuing the analogy, scripts are like <strong>recipes</strong></li>
+<li>continuing the analogy, <strong>scripts are like recipes</strong></li>
 </ul>
 </section>
 <section id="why-should-i-use-scripts" class="slide level2">
 <h2>Why should I use scripts?</h2>
 <ul>
-<li>scripts are <strong>a way for you to save and revisit your work</strong>, much the same way a recipe would allow you to cook the same dish again</li>
-<li>scripts help promote <strong>transparency and reproducibility</strong></li>
+<li>scripts <strong>are a way for you to save and revisit your work</strong>, much the same way a recipe would allow you to cook the same dish again</li>
+<li>scripts help <strong>promote transparency and reproducibility</strong></li>
 </ul>
 </section>
 <section id="scripts-in-rstudio" class="slide level2">
@@ -272,7 +274,7 @@ Yea-Hung Chen, PhD, MS
 <h2>Running code</h2>
 <ol type="1">
 <li><strong>Select</strong> the code.</li>
-<li><strong>Run</strong> the code, using either the Run icon at the top of the pane or the keyboard shortcut (<strong>ctrl + enter</strong> on Windows or <strong>cmd + return</strong> on Mac).</li>
+<li><strong>Run</strong> the code, using either the Run icon at the top of the pane or the keyboard shortcut (<kbd title="⌘" aria-hidden="true">⌘</kbd><span class="visually-hidden">⌘</span> <kbd title="return" aria-hidden="true">return</kbd><span class="visually-hidden">return</span> on Mac or <kbd title="ctrl" aria-hidden="true">ctrl</kbd><span class="visually-hidden">ctrl</span> <kbd title="enter" aria-hidden="true">enter</kbd><span class="visually-hidden">enter</span> on Windows).</li>
 </ol>
 </section>
 <section id="one-line-for-each-statement" class="slide level2">
@@ -286,7 +288,7 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Caution</strong></p>
 </div>
 <div class="callout-content">
-<p>Each statement (“sentence”) of code should be <strong>on its own line</strong>.</p>
+<p>Each statement (“sentence”) of code <strong>should be on its own line</strong>.</p>
 </div>
 </div>
 </div>
@@ -307,7 +309,7 @@ Yea-Hung Chen, PhD, MS
 <section id="long-statements" class="slide level2">
 <h2>Long statements</h2>
 <ul>
-<li>if you wish, you can write a statement of code that spans <strong>more than one line</strong>:</li>
+<li>if you wish, you <strong>can write a statement of code that spans more than one line</strong>:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>(<span class="fl">0.25</span><span class="sc">*</span><span class="fl">0.4</span>)<span class="sc">/</span></span>
@@ -353,8 +355,8 @@ Yea-Hung Chen, PhD, MS
 <section id="comments" class="slide level2">
 <h2>Comments</h2>
 <ul>
-<li>you can include <strong>human-language comments</strong> in scripts</li>
-<li>comments serve as <strong>notes for yourself and for your collaborators</strong></li>
+<li>you can <strong>include human-language comments</strong> in scripts</li>
+<li>comments serve as notes for yourself and for your collaborators</li>
 </ul>
 </section>
 <section id="adding-comments" class="slide level2">
@@ -440,7 +442,7 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Go <strong>back and forth</strong> between the script and the console.</p>
+<p><strong>Go back and forth</strong> between the script and the console.</p>
 </div>
 </div>
 </div>
@@ -469,7 +471,7 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Use <strong>scripts</strong> as a way to save work!</p>
+<p><strong>Use scripts</strong> as a way to save work!</p>
 </div>
 </div>
 </div>
@@ -489,12 +491,12 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Your scripts should have a <strong>sequence</strong>.</p>
+<p>Your scripts should <strong>have a sequence</strong>.</p>
 </div>
 </div>
 </div>
 <ul>
-<li>as with the recipes analogy, the idea is that the script should serve as a <strong>record of your work</strong>, and have a general <strong>top-to-bottom flow</strong></li>
+<li>as with the recipes analogy, the idea is that the script should <strong>serve as a record of your work</strong>, and have a general top-to-bottom flow</li>
 </ul>
 </section>
 <section id="how-should-i-keep-my-scripts-clean" class="slide level2">
@@ -508,7 +510,7 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Only include <strong>code and comments</strong>.</p>
+<p>Only <strong>include code and comments</strong>.</p>
 </div>
 </div>
 </div>
@@ -528,7 +530,7 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Write <strong>comments</strong>.</p>
+<p><strong>Write comments</strong>.</p>
 </div>
 </div>
 </div>
@@ -536,7 +538,7 @@ Yea-Hung Chen, PhD, MS
 <section id="how-can-i-facilitate-readability-1" class="slide level2">
 <h2>How can I facilitate readability?</h2>
 <ul>
-<li>I like to write <strong>short but frequent comments</strong></li>
+<li>I like to <strong>write short but frequent comments</strong></li>
 <li>I like to <strong>begin every comment with a verb</strong></li>
 </ul>
 <div class="cell">
@@ -573,12 +575,12 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Consider using <strong>more than one script</strong>.</p>
+<p>You can <strong>use more than one script</strong>.</p>
 </div>
 </div>
 </div>
 <ul>
-<li>the scripts should have a <strong>natural sequence</strong> from one to another, such as:
+<li>the scripts should <strong>have a natural sequence</strong> from one to another, such as:
 <ol type="1">
 <li><code>import and prepare data.r</code></li>
 <li><code>analyze data.r</code></li>
@@ -596,12 +598,12 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Continually <strong>revisit</strong> your scripts!</p>
+<p>Continually <strong>revisit your scripts</strong>!</p>
 </div>
 </div>
 </div>
 <ul>
-<li>think of a script as being <strong>like a work-in-progress manuscript</strong></li>
+<li>think of a script as being like a work-in-progress manuscript</li>
 <li>be willing to <strong>continually edit it</strong></li>
 </ul>
 </section></section>
@@ -624,17 +626,17 @@ Yea-Hung Chen, PhD, MS
 <ul>
 <li><strong><code>nhanes_l.csv</code></strong>, available on the CLE, contains data from the 2021–2023 implementation of NHANES</li>
 <li>I created the file by combining (<strong>merging</strong>) several CDC data files, from across several dimensions</li>
-<li>I restricted the data to <strong>individuals 18 years of age or older</strong></li>
+<li>I restricted the data to individuals 18 years of age or older</li>
 <li>I added a handful of variables, using existing variables</li>
-<li>the original data, and <strong>data descriptions</strong>, are available <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?Cycle=2021-2023">here</a></li>
+<li>the original data, and data descriptions, are available <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?Cycle=2021-2023">here</a></li>
 </ul>
 </section>
 <section id="importing-the-data" class="slide level2">
 <h2>Importing the data</h2>
 <ul>
 <li>as mentioned in the orientation, there are often many ways to do something in R</li>
-<li>I’m going to show you how to use <strong>RStudio’s drop-down menu</strong> to import the data</li>
-<li>as a preview, this process will result in <strong>object assignment</strong></li>
+<li>I’m going to show you how to <strong>use RStudio’s drop-down menu</strong> to import the data</li>
+<li>as a preview, this process <strong>will result in object assignment</strong></li>
 </ul>
 </section>
 <section id="live-demonstration-2" class="slide level2">
@@ -654,8 +656,8 @@ Yea-Hung Chen, PhD, MS
 <section id="the-corresponding-code" class="slide level2">
 <h2>The corresponding code</h2>
 <ul>
-<li>the import tool will print the <strong>corresponding R code</strong> in the console</li>
-<li>that code involves <strong>object assignment</strong></li>
+<li>the import tool will <strong>print the corresponding R code</strong> in the console</li>
+<li>that code involves object assignment</li>
 </ul>
 </section>
 <section id="the-corresponding-code-1" class="slide level2">
@@ -717,15 +719,15 @@ Yea-Hung Chen, PhD, MS
 </div>
 </div>
 <ul>
-<li>check that <strong>variable names</strong> are there (if they should be there)</li>
-<li>scroll through to check to see that columns are lined up properly</li>
+<li><strong>check that variable names</strong> are there (if they should be there)</li>
+<li><strong>scroll through</strong> to check to see that columns are lined up properly</li>
 </ul>
 </section>
 <section id="other-ways-to-explore-the-data" class="slide level2">
 <h2>Other ways to explore the data</h2>
 <ul>
-<li><strong><code>names()</code></strong>: for all the variable names</li>
-<li><strong><code>head()</code></strong>: for the first few rows</li>
+<li><code>names()</code>: for all the variable names</li>
+<li><code>head()</code>: for the first few rows</li>
 <li><code>tail()</code>: for the last few rows</li>
 <li><code>str()</code>: for a glimpse of the data that shows variable names, object classes (more about this later), and the first few values</li>
 </ul>
@@ -733,7 +735,7 @@ Yea-Hung Chen, PhD, MS
 <section id="other-ways-to-explore-the-data-1" class="slide level2">
 <h2>Other ways to explore the data</h2>
 <ul>
-<li><strong><code>dim()</code></strong>: for the number of rows and the number of columns, in that order</li>
+<li><code>dim()</code>: for the number of rows and the number of columns, in that order</li>
 <li><code>nrow()</code>: for the number of rows</li>
 <li><code>ncol()</code>: for the number of columns</li>
 </ul>
@@ -784,7 +786,7 @@ Yea-Hung Chen, PhD, MS
 <section id="an-error-message" class="slide level2">
 <h2>An error message</h2>
 <ul>
-<li>the <strong><code>mean()</code></strong> function will find the mean of a set of numbers</li>
+<li>the <code>mean()</code> function will find the mean of a set of numbers</li>
 <li>there is a variable in the data called <code>ridageyr</code>, which stores ages in years</li>
 <li>we might be inclined to try this:</li>
 </ul>
@@ -800,8 +802,8 @@ Yea-Hung Chen, PhD, MS
 <section id="an-error-message-1" class="slide level2">
 <h2>An error message</h2>
 <ul>
-<li>we get an error message because R allows <strong>multiple data sets</strong> to be available at a time</li>
-<li>so, any time we refer to a variable <strong>we also have to refer to the data set</strong></li>
+<li>we get an error message because <strong>R allows multiple data sets</strong> to be available at a time</li>
+<li>so, any time we refer to a variable we also <strong>have to refer to the data set</strong></li>
 </ul>
 </section>
 <section id="dollar-sign-notation-1" class="slide level2">
@@ -851,7 +853,7 @@ Yea-Hung Chen, PhD, MS
 <section id="another-error-message-1" class="slide level2">
 <h2>Another error message</h2>
 <ul>
-<li>we got an error message because <strong><code>gender</code> does not include numbers</strong>:</li>
+<li>we got an error message because <code>gender</code> <strong>does not include numbers</strong>:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nhanes<span class="sc">$</span>gender)</span>
@@ -861,7 +863,7 @@ Yea-Hung Chen, PhD, MS
 <section id="object-classes-1" class="slide level2">
 <h2>Object classes</h2>
 <ul>
-<li><strong>a more general way to check</strong> is to use the <code>class()</code> function:</li>
+<li>a more general way to check is to <strong>use the <code>class()</code> function</strong>:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nhanes<span class="sc">$</span>gender)</span>
@@ -871,7 +873,7 @@ Yea-Hung Chen, PhD, MS
 <section id="object-classes-2" class="slide level2">
 <h2>Object classes</h2>
 <ul>
-<li>the <code>class()</code> function reports <strong>the object type</strong></li>
+<li>the <code>class()</code> function <strong>reports the object type</strong></li>
 <li>R has many different object types</li>
 <li>the formal term for object types is <strong>object classes</strong></li>
 <li>using the jar analogy, you can think of object classes as being like the different types of ingredients you might have inside of jars</li>

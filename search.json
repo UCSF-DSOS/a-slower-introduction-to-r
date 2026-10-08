@@ -1817,7 +1817,7 @@
     "href": "session_2/session_2.html#running-code",
     "title": "Session 2: How can I import data?",
     "section": "Running code",
-    "text": "Running code\n\nSelect the code.\nRun the code, using either the Run icon at the top of the pane or the keyboard shortcut (ctrl + enter on Windows or cmd + return on Mac)."
+    "text": "Running code\n\nSelect the code.\nRun the code, using either the Run icon at the top of the pane or the keyboard shortcut (⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows)."
   },
   {
     "objectID": "session_2/session_2.html#one-line-for-each-statement",
@@ -1964,7 +1964,7 @@
     "href": "session_2/session_2.html#what-if-my-script-is-really-long",
     "title": "Session 2: How can I import data?",
     "section": "What if my script is really long?",
-    "text": "What if my script is really long?\n\n\n\n\n\n\nTip\n\n\nConsider using more than one script.\n\n\n\n\nthe scripts should have a natural sequence from one to another, such as:\n\nimport and prepare data.r\nanalyze data.r"
+    "text": "What if my script is really long?\n\n\n\n\n\n\nTip\n\n\nYou can use more than one script.\n\n\n\n\nthe scripts should have a natural sequence from one to another, such as:\n\nimport and prepare data.r\nanalyze data.r"
   },
   {
     "objectID": "session_2/session_2.html#how-can-i-write-good-code-and-avoid-mistakes",

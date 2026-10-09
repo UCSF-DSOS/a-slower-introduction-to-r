@@ -1817,7 +1817,7 @@
     "href": "session_2/session_2.html#running-code",
     "title": "Session 2: How can I import data?",
     "section": "Running code",
-    "text": "Running code\n\nSelect the code.\nRun the code, using either the Run icon at the top of the pane or the keyboard shortcut (⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows)."
+    "text": "Running code\n\nSelect the code.\nRun the code:\n\n\nSelect the Run icon at the top of the pane.\nOr, equivalently, use the keyboard shortcut: (⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows."
   },
   {
     "objectID": "session_2/session_2.html#one-line-for-each-message",

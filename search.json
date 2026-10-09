@@ -1873,7 +1873,7 @@
     "href": "session_2/session_2.html#saving-scripts",
     "title": "Session 2: How can I import data?",
     "section": "Saving scripts",
-    "text": "Saving scripts\n\nSelect the save icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ SS on Mac or ctrlctrl SS on Windows.\nOr, equivalently, select File &gt; Save.\n\nSelect a folder if you don’t want to save the file to the folder being suggested to you.\nPick a filename, making sure to add .r or .R to the end."
+    "text": "Saving scripts\n\nSelect the save icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ SS on Mac or ctrlctrl SS on Windows.\nOr, equivalently, select File &gt; Save.\n\nSelect a folder on your computer that you are using for this workshop series or this session, such as session_2. If you don’t already have such a folder, you might first create one, using your computer’s file manager.\nPick a filename, making sure to add .r or .R to the end."
   },
   {
     "objectID": "session_2/session_2.html#exercise-1-1",

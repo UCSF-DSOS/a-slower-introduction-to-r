@@ -1820,11 +1820,11 @@
     "text": "Running code\n\nSelect the code.\nRun the code, using either the Run icon at the top of the pane or the keyboard shortcut (⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows)."
   },
   {
-    "objectID": "session_2/session_2.html#one-line-for-each-statement",
-    "href": "session_2/session_2.html#one-line-for-each-statement",
+    "objectID": "session_2/session_2.html#one-line-for-each-message",
+    "href": "session_2/session_2.html#one-line-for-each-message",
     "title": "Session 2: How can I import data?",
-    "section": "One line for each statement",
-    "text": "One line for each statement\n\n\n\n\n\n\nCaution\n\n\nEach statement (“sentence”) of code should be on its own line.\n\n\n\n\nfor example, you cannot do this:\n\n\nsqrt(81) pi^2 \n\n\nyou should, instead, do this:\n\n\nsqrt(81) \npi^2"
+    "section": "One line for each message",
+    "text": "One line for each message\n\n\n\n\n\n\nCaution\n\n\nEach message (“statement”) of code should be on its own line.\n\n\n\n\nfor example, you cannot do this:\n\n\nsqrt(81) pi^2 \n\n\nyou should, instead, do this:\n\n\nsqrt(81) \npi^2"
   },
   {
     "objectID": "session_2/session_2.html#long-statements",
@@ -1887,14 +1887,14 @@
     "href": "session_2/session_2.html#exercise-1-2",
     "title": "Session 2: How can I import data?",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nA common cutoff for a high LDL cholesterol level is 160 mg/dL.In the second line, type code that stores the value of 160 as ldl_high, using object assignment.\nAdd a comment above each object assignment that describes the object assignment. For readability, include a blank line between the first object assignment and the second comment."
+    "text": "Exercise 1\n\nA common cutoff for a high LDL cholesterol level is 160 mg/dL. In the second line, type code that stores the value of 160 as ldl_high, using object assignment.\nAdd a comment above each object assignment that describes the object assignment. For readability, include a blank line between the first object assignment and the second comment."
   },
   {
     "objectID": "session_2/session_2.html#exercise-1-3",
     "href": "session_2/session_2.html#exercise-1-3",
     "title": "Session 2: How can I import data?",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nSelect and run your code.\nIn the console, check to see that ldl_borderline and ldl_high were properly defined (type each object name and press the enter or return key on your keyboard).\nSave the script, picking some filename that makes sense to you (such as session_2.r). Make sure to add .r or .R at the end. You might first create a folder on your computer for this workshop series."
+    "text": "Exercise 1\n\nSelect and run your code.\nIn the console, check to see that ldl_borderline and ldl_high were properly defined (type each object name and press the returnreturn or enterenter key on your keyboard).\nSave the script, picking some filename that makes sense to you (such as session_2.r). Make sure to add .r or .R at the end. You might first create a folder on your computer for this workshop series."
   },
   {
     "objectID": "session_2/session_2.html#slide-formatting",

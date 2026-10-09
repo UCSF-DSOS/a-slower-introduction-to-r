@@ -1880,7 +1880,7 @@
     "href": "session_2/session_2.html#exercise-1-1",
     "title": "Session 2: How can I import data?",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nCheck whether or not a blank script is already open (the tab might be labeled Untitled1). If not, open a new script by selecting File &gt; New File &gt; R Script.\nA common cutoff for a borderline high LDL cholesterol level is 130 mg/dL. In the first line of your script, type code that stores the value of 130 as ldl_borderline, using object assignment."
+    "text": "Exercise 1\n\nCheck whether or not a blank script is already open. The tab might be labeled Untitled1). If not, open a new script by selecting File &gt; New File &gt; R Script.\nA common cutoff for a borderline high LDL cholesterol level is 130 mg/dL. In the first line of your script, type code that stores the value of 130 as ldl_borderline, using object assignment."
   },
   {
     "objectID": "session_2/session_2.html#exercise-1-2",
@@ -1894,7 +1894,7 @@
     "href": "session_2/session_2.html#exercise-1-3",
     "title": "Session 2: How can I import data?",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nSelect and run your code.\nIn the console, check to see that ldl_borderline and ldl_high were properly defined (type each object name and press the returnreturn or enterenter key on your keyboard).\nSave the script, picking some filename that makes sense to you (such as session_2.r). Make sure to add .r or .R at the end. You might first create a folder on your computer for this workshop series."
+    "text": "Exercise 1\n\nSelect and run your code.\nIn the console, check to see that ldl_borderline and ldl_high were properly defined: type each object name and press the returnreturn or enterenter key on your keyboard.\nSave the script, picking some filename that makes sense to you, such as session_2.r. Make sure to add .r or .R at the end. You might first create a folder on your computer for this workshop series."
   },
   {
     "objectID": "session_2/session_2.html#slide-formatting",
@@ -2076,14 +2076,14 @@
     "href": "session_2/session_2.html#exercise-2-2",
     "title": "Session 2: How can I import data?",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nIn the pop-up window, select Yes under the Heading option.\nConfirm that the data look OK in the preview section at the bottom right. If so, select the Import button."
+    "text": "Exercise 2\n\nIn the pop-up window, select Yes under the Heading option.\nOptionally, change the name of the object in the Name field to just nhanes.\nConfirm that the data look OK in the preview section at the bottom right. If so, select the Import button."
   },
   {
     "objectID": "session_2/session_2.html#exercise-2-3",
     "href": "session_2/session_2.html#exercise-2-3",
     "title": "Session 2: How can I import data?",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nConfirm that the data look OK in the viewer that pops up (in the Source pane). You can optionally close the tab when you’re done.\nCopy and paste the code for importing the data into your script.\nUse head() to view the first few rows of the data."
+    "text": "Exercise 2\n\nConfirm that the data look OK in the viewer that pops up in the Source pane. You can optionally close the tab when you’re done.\nCopy and paste the code for importing the data from the console into your script.\nUse head() to view the first few rows of the data."
   },
   {
     "objectID": "session_2/session_2.html#an-error-message",

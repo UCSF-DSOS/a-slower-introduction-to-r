@@ -1456,11 +1456,11 @@
     "text": "Common suggestions\n\nput a space before and after mathematical operators, except exponentiation (^)\nput a space before and after &lt;-\nput a space after commas\nput a space before and after =\n\n\n12312 / 27113508 * 10^5\n#| [1] 45.4091\nabs(2 - 12)\n#| [1] 10\npopsize &lt;- 27113508\nmean(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74.97469"
   },
   {
-    "objectID": "session_3/session_3.html#coding-style-in-rstudio",
-    "href": "session_3/session_3.html#coding-style-in-rstudio",
+    "objectID": "session_3/session_3.html#styling-code-in-rstudio",
+    "href": "session_3/session_3.html#styling-code-in-rstudio",
     "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Coding style in RStudio",
-    "text": "Coding style in RStudio\n\nto automatically style your code in RStudio, select it, and then select Code &gt; Reformat Selection\nequivalently, you can use the keyboard shortcut:\n\n⌘⌘ shiftshift AA on MacOS\nctrlctrl shiftshift AA on Windows or Linux"
+    "section": "Styling code in RStudio",
+    "text": "Styling code in RStudio\n\nHighlight the code.\nUse the keyboard shortcut: ⌘⌘ shiftshift AA on Mac or ctrlctrl shiftshift AA on Windows.\n\nEquivalently, select Code &gt; Reformat Selection."
   },
   {
     "objectID": "session_3/session_3.html#do-i-have-to-follow-the-common-suggestions-suggestions",
@@ -1799,11 +1799,11 @@
     "text": "Scripts in RStudio"
   },
   {
-    "objectID": "session_2/session_2.html#running-scripts",
-    "href": "session_2/session_2.html#running-scripts",
+    "objectID": "session_2/session_2.html#running-code",
+    "href": "session_2/session_2.html#running-code",
     "title": "Session 2: How can I import data?",
-    "section": "Running scripts",
-    "text": "Running scripts\n\nyou can send code from scripts to your computer\nthis process is known as running the code, and will result in the code and output showing up in the console"
+    "section": "Running code",
+    "text": "Running code\n\nyou can send code from scripts to your computer\nthis process is known as running the code, and will result in the code and output showing up in the console"
   },
   {
     "objectID": "session_2/session_2.html#live-demonstration",
@@ -1813,11 +1813,11 @@
     "text": "Live demonstration\n🤸"
   },
   {
-    "objectID": "session_2/session_2.html#running-code",
-    "href": "session_2/session_2.html#running-code",
+    "objectID": "session_2/session_2.html#running-code-1",
+    "href": "session_2/session_2.html#running-code-1",
     "title": "Session 2: How can I import data?",
     "section": "Running code",
-    "text": "Running code\n\nSelect the code.\nSelect the Run icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows.\nOr, equivalently, select Code &gt; Run Selected Line(s)."
+    "text": "Running code\n\nHighlight the code you want to run.\nSelect the Run icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows.\nOr, equivalently, select Code &gt; Run Selected Line(s)."
   },
   {
     "objectID": "session_2/session_2.html#one-line-for-each-statement",
@@ -1873,7 +1873,7 @@
     "href": "session_2/session_2.html#saving-scripts",
     "title": "Session 2: How can I import data?",
     "section": "Saving scripts",
-    "text": "Saving scripts\n\nSelect the save icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ SS on Mac or ctrlctrl SS on Windows.\nOr, equivalently, select File &gt; Save.\n\nSelect a folder on your computer that you are using for this workshop series or this session, such as session_2. If you don’t already have such a folder, you might first create one, using your computer’s file manager.\nPick a filename, making sure to add .r or .R to the end."
+    "text": "Saving scripts\n\nSelect the save icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ SS on Mac or ctrlctrl SS on Windows.\nOr, equivalently, select File &gt; Save.\n\nSelect a folder on your computer that you are using for this workshop series or this session, such as session_2.\nPick a filename, making sure to add .r or .R to the end."
   },
   {
     "objectID": "session_2/session_2.html#exercise-1-1",

@@ -1694,11 +1694,11 @@
     "text": "Counts\n\ntable(nhanes$hypertension)\n#| \n#| Elevated       No  Stage 1  Stage 2 \n#|      841     2657     1409     1216"
   },
   {
-    "objectID": "session_3/session_3.html#missing-values",
-    "href": "session_3/session_3.html#missing-values",
+    "objectID": "session_3/session_3.html#what-about-missing-values",
+    "href": "session_3/session_3.html#what-about-missing-values",
     "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Missing values?",
-    "text": "Missing values?\n\nwhat about the missing values?"
+    "section": "What about missing values?",
+    "text": "What about missing values?\n\nwhat about the missing values?"
   },
   {
     "objectID": "session_3/session_3.html#the-help-page-for-table",
@@ -1918,60 +1918,60 @@
     "text": "Should I use the script or the console?\n\nas you get more experienced with R, you will probably do most of your typing in scripts"
   },
   {
-    "objectID": "session_2/session_2.html#how-can-i-save-my-work",
-    "href": "session_2/session_2.html#how-can-i-save-my-work",
+    "objectID": "session_2/session_2.html#whats-so-great-about-scripts",
+    "href": "session_2/session_2.html#whats-so-great-about-scripts",
     "title": "Session 2: How can I import data?",
-    "section": "How can I save my work?",
-    "text": "How can I save my work?\n\n\n\n\n\n\nTip\n\n\nUse scripts as a way to save work!\n\n\n\n\nI discourage you from trying to save work by relying on objects\ninstead, lean on scripts"
+    "section": "What’s so great about scripts?",
+    "text": "What’s so great about scripts?\n\n\n\n\n\n\nTip\n\n\nUse scripts as a way to save work!\n\n\n\n\nI discourage you from trying to save work by relying on objects\ninstead, lean on scripts"
   },
   {
-    "objectID": "session_2/session_2.html#how-should-i-structure-my-scripts",
-    "href": "session_2/session_2.html#how-should-i-structure-my-scripts",
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts",
     "title": "Session 2: How can I import data?",
-    "section": "How should I structure my scripts?",
-    "text": "How should I structure my scripts?\n\n\n\n\n\n\nTip\n\n\nYour scripts should have a sequence.\n\n\n\n\nas with the recipes analogy, the idea is that the script should serve as a record of your work, and have a general top-to-bottom flow"
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nYour scripts should have a sequence.\n\n\n\n\nas with the recipes analogy, the idea is that the script should serve as a record of your work, and have a general top-to-bottom flow"
   },
   {
-    "objectID": "session_2/session_2.html#how-should-i-keep-my-scripts-clean",
-    "href": "session_2/session_2.html#how-should-i-keep-my-scripts-clean",
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-1",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-1",
     "title": "Session 2: How can I import data?",
-    "section": "How should I keep my scripts clean?",
-    "text": "How should I keep my scripts clean?\n\n\n\n\n\n\nTip\n\n\nOnly include code and comments.\n\n\n\n\ndo not include un-commented human-language text!\ndo not include output!"
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nOnly include code and comments.\n\n\n\n\ndo not include un-commented human-language text!\ndo not include output!"
   },
   {
-    "objectID": "session_2/session_2.html#how-can-i-facilitate-readability",
-    "href": "session_2/session_2.html#how-can-i-facilitate-readability",
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-2",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-2",
     "title": "Session 2: How can I import data?",
-    "section": "How can I facilitate readability?",
-    "text": "How can I facilitate readability?\n\n\n\n\n\n\nTip\n\n\nWrite comments!"
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nWrite comments!"
   },
   {
-    "objectID": "session_2/session_2.html#how-can-i-facilitate-readability-1",
-    "href": "session_2/session_2.html#how-can-i-facilitate-readability-1",
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-3",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-3",
     "title": "Session 2: How can I import data?",
-    "section": "How can I facilitate readability?",
-    "text": "How can I facilitate readability?\n\nI like to write short but frequent comments\nI like to begin every comment with a verb\n\n\n# import data\nnhanes&lt;-read.csv('~/Downloads/data/acs/2019/psam_p06.csv.gz')\n\n# rename variables\nnames(nhanes)&lt;-tolower(names(nhanes))\n\n# subset to individuals 18-65 years of age\nnhanes&lt;-subset(nhanes,agep&gt;=18&agep&lt;=65)"
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\nI like to write short but frequent comments\nI like to begin every comment with a verb\n\n\n# import data\nnhanes&lt;-read.csv('~/Downloads/data/acs/2019/psam_p06.csv.gz')\n\n# rename variables\nnames(nhanes)&lt;-tolower(names(nhanes))\n\n# subset to individuals 18-65 years of age\nnhanes&lt;-subset(nhanes,agep&gt;=18&agep&lt;=65)"
   },
   {
-    "objectID": "session_2/session_2.html#how-can-i-facilitate-readability-2",
-    "href": "session_2/session_2.html#how-can-i-facilitate-readability-2",
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-4",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-4",
     "title": "Session 2: How can I import data?",
-    "section": "How can I facilitate readability?",
-    "text": "How can I facilitate readability?\n\n\n\n“I kinda thought the subtitles would be more helpful.”\n\n\n\n\nBy Asher Perlman, from The New Yorker, November 4, 2024."
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n“I kinda thought the subtitles would be more helpful.”\n\n\n\n\nBy Asher Perlman, from The New Yorker, November 4, 2024."
   },
   {
-    "objectID": "session_2/session_2.html#what-if-my-script-is-really-long",
-    "href": "session_2/session_2.html#what-if-my-script-is-really-long",
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-5",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-5",
     "title": "Session 2: How can I import data?",
-    "section": "What if my script is really long?",
-    "text": "What if my script is really long?\n\n\n\n\n\n\nTip\n\n\nYou can use more than one script.\n\n\n\n\nthe scripts should have a natural sequence from one to another, such as:\n\nimport and prepare data.r\nanalyze data.r"
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nYou can use more than one script.\n\n\n\n\nthe scripts should have a natural sequence from one to another, such as:\n\nimport and prepare data.r\nanalyze data.r"
   },
   {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-code-and-avoid-mistakes",
-    "href": "session_2/session_2.html#how-can-i-write-good-code-and-avoid-mistakes",
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-6",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-6",
     "title": "Session 2: How can I import data?",
-    "section": "How can I write good code and avoid mistakes?",
-    "text": "How can I write good code and avoid mistakes?\n\n\n\n\n\n\nTip\n\n\nContinually revisit your scripts!\n\n\n\n\nthink of a script as being like a work-in-progress manuscript\nbe willing to continually edit it"
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nContinually revisit your scripts!\n\n\n\n\nthink of a script as being like a work-in-progress manuscript\nbe willing to continually edit it"
   },
   {
     "objectID": "session_2/session_2.html#nhanes",

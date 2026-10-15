@@ -227,7 +227,7 @@ Yea-Hung Chen, PhD, MS
 <section id="the-na-mean" class="slide level2">
 <h2>The <code>NA</code> mean</h2>
 <ul>
-<li>from <strong>last week</strong>:</li>
+<li>from last week:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(nhanes<span class="sc">$</span>bpxodi1)</span>
@@ -241,7 +241,7 @@ Yea-Hung Chen, PhD, MS
 <section id="the-help-pages" class="slide level2">
 <h2>The help pages</h2>
 <ul>
-<li>to access <strong>the help page for a function</strong>, use the <code>help()</code> function:</li>
+<li>to access the help page for a function, use the <code>help()</code> function:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">help</span>(sqrt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -260,7 +260,7 @@ Yea-Hung Chen, PhD, MS
 <section id="function-arguments-in-sqrt" class="slide level2">
 <h2>Function arguments in <code>sqrt()</code></h2>
 <ul>
-<li>you can <strong>optionally type <code>x=</code></strong> when you use <code>sqrt()</code>:</li>
+<li>you can optionally type <code>x=</code> when you use <code>sqrt()</code>:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="at">x=</span><span class="dv">81</span>)</span>
@@ -280,8 +280,8 @@ Yea-Hung Chen, PhD, MS
 <section id="what-are-function-arguments" class="slide level2">
 <h2>What are function arguments?</h2>
 <ul>
-<li>you may think of arguments as being like <strong>options</strong> or settings</li>
-<li>using another cooking analogy, suppose that <strong>baking</strong> is a function
+<li>you may think of arguments as being like options or settings</li>
+<li>using another cooking analogy, suppose that baking is a function
 <ul>
 <li>we can think of the temperature setting on the oven as an argument to the function</li>
 <li><strong>what’s another possible argument to baking?</strong></li>
@@ -307,16 +307,16 @@ Yea-Hung Chen, PhD, MS
 </figure>
 </div>
 <ul>
-<li>notice the <strong>commas</strong> and the <strong>default values</strong></li>
+<li>notice the commas** and the default values</li>
 </ul>
 </section>
 <section id="function-arguments-in-mean-1" class="slide level2">
 <h2>Function arguments in <code>mean()</code></h2>
 <ul>
-<li>the <code>na.rm</code> argument is:</li>
+<li>the <strong><code>na.rm</code> argument</strong> is:</li>
 </ul>
 <blockquote>
-<p>a logical evaluating to TRUE or FALSE <strong>indicating whether NA values should be stripped before the computation proceeds</strong>.</p>
+<p>a logical evaluating to TRUE or FALSE indicating whether NA values should be stripped before the computation proceeds.</p>
 </blockquote>
 <ul>
 <li>the Usage section (previous slide) shows that the default value for <code>na.rm</code> is <code>FALSE</code>, suggesting that NA values will not be “stripped”</li>
@@ -337,9 +337,9 @@ Yea-Hung Chen, PhD, MS
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 74.97469</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>notice that I’ve used <strong>a comma to separate the two arguments</strong></li>
+<li>notice that I’ve used a comma to separate the two arguments</li>
 <li><code>TRUE</code> must be in all caps</li>
-<li><code>na.rm=TRUE</code> <strong>does not delete missing values from your data</strong></li>
+<li><code>na.rm=TRUE</code> does not delete missing values from your data</li>
 <li>all it does is make <code>mean()</code> ignore missing values</li>
 </ul>
 </section>
@@ -354,13 +354,13 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Caution</strong></p>
 </div>
 <div class="callout-content">
-<p>The <code>na.rm</code> argument <strong>does not</strong> exist in every R function!</p>
+<p>The <code>na.rm</code> argument does not exist in every R function!</p>
 </div>
 </div>
 </div>
 <ul>
 <li>most of the functions in the next section have an <code>na.rm</code> argument</li>
-<li>but, for example, the function for linear regression, <code>lm()</code>, <strong>does not</strong> have an <code>na.rm</code> argument</li>
+<li>but, for example, the function for linear regression, <code>lm()</code>, does not have an <code>na.rm</code> argument</li>
 </ul>
 </section>
 <section id="when-should-i-include-argument-names" class="slide level2">
@@ -372,7 +372,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 9</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>if there is just one argument, the argument name is <strong>optional</strong></li>
+<li>if there is just one argument, the argument name is optional</li>
 </ul>
 </section>
 <section id="when-should-i-include-argument-names-1" class="slide level2">
@@ -384,7 +384,7 @@ Yea-Hung Chen, PhD, MS
 <ul>
 <li>if there is more than one argument, you should include argument names if:
 <ul>
-<li>you <strong>skip an argument</strong></li>
+<li>you skip an argument</li>
 <li>or, write the arguments out of order</li>
 </ul></li>
 </ul>
@@ -398,7 +398,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 11.41659</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>including argument names can <strong>improve the readability of your code</strong></li>
+<li>including argument names can improve the readability of your code</li>
 <li>so, it can be good to include them even when they are not necessary</li>
 </ul>
 </section></section>
@@ -410,10 +410,10 @@ Yea-Hung Chen, PhD, MS
 <section id="common-suggestions" class="slide level2">
 <h2>Common suggestions</h2>
 <ul>
-<li>put <strong>a space before and after mathematical operators</strong>, except exponentiation (<code>^</code>)</li>
-<li>put <strong>a space before and after <code>&lt;-</code></strong></li>
-<li>put <strong>a space after commas</strong></li>
-<li>put <strong>a space before and after <code>=</code></strong></li>
+<li>put a space before and after mathematical operators, except exponentiation (<code>^</code>)</li>
+<li>put a space before and after <code>&lt;-</code></li>
+<li>put a space after commas</li>
+<li>put a space before and after <code>=</code></li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">12312</span> <span class="sc">/</span> <span class="dv">27113508</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
@@ -440,7 +440,7 @@ Yea-Hung Chen, PhD, MS
 <ul>
 <li>no, the suggestions are not rules</li>
 <li>for example, R code works fine without extra spaces, as you have already seen</li>
-<li>but, <strong>the suggestions can improve readability</strong></li>
+<li>but, the suggestions can improve readability</li>
 </ul>
 </section></section>
 <section>
@@ -464,7 +464,7 @@ Yea-Hung Chen, PhD, MS
 <section id="example-cancer-prevalence" class="slide level2">
 <h2>Example: cancer prevalence</h2>
 <ul>
-<li>from <strong>Session 1</strong>:</li>
+<li>from Session 1:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>popsize <span class="ot">&lt;-</span> <span class="dv">27113508</span></span>
@@ -475,7 +475,7 @@ Yea-Hung Chen, PhD, MS
 </div>
 <ul>
 <li>the math occurs in two lines of code</li>
-<li>we could, alternatively, <strong>use a vector of the numerators</strong> and do the math in one line of code…</li>
+<li>we could, alternatively, use a vector of the numerators and do the math in one line of code…</li>
 </ul>
 </section>
 <section id="c-1" class="slide level2">
@@ -485,13 +485,13 @@ Yea-Hung Chen, PhD, MS
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 12312  9120</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>the <code>c()</code> function <strong>combines values</strong> in a vector</li>
+<li>the <code>c()</code> function combines values in a vector</li>
 <li>in other words:
 <ul>
-<li>the <strong>arguments</strong> are values of the desired vector</li>
-<li>the <strong>output</strong> is the desired vector</li>
+<li>the arguments are values of the desired vector</li>
+<li>the output** is the desired vector</li>
 </ul></li>
-<li>in the function, <strong>use commas to separate values</strong></li>
+<li>in the function, use commas to separate values</li>
 </ul>
 </section>
 <section id="c-2" class="slide level2">
@@ -504,7 +504,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 33 52 48</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>you can also use <code>c()</code> to <strong>create a character vector</strong>:</li>
+<li>you can also use <code>c()</code> to create a character vector:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">'California'</span>, <span class="st">'New York'</span>, <span class="st">'Texas'</span>)</span>
@@ -523,7 +523,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 33.63637</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li><strong>using a vector of the numerators</strong>:</li>
+<li>using a vector of the numerators:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">12312</span>, <span class="dv">9120</span>) <span class="sc">/</span> popsize <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">5</span></span>
@@ -533,7 +533,7 @@ Yea-Hung Chen, PhD, MS
 <section id="example-cancer-prevalence-2" class="slide level2">
 <h2>Example: cancer prevalence</h2>
 <ul>
-<li>alternatively, <strong>first using object assignment</strong>:</li>
+<li>alternatively, first using object assignment:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>numerators <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12312</span>, <span class="dv">9120</span>)</span>
@@ -544,9 +544,9 @@ Yea-Hung Chen, PhD, MS
 <section id="c-3" class="slide level2">
 <h2><code>c()</code></h2>
 <ul>
-<li><code>c()</code> <strong>is very useful</strong></li>
+<li><code>c()</code> is very useful</li>
 <li>it is one of those hard-to-avoid fundamentals I referred to in the orientation!</li>
-<li>you will see an example in the next section in which <code>c()</code> is <strong>an argument to a function</strong></li>
+<li>you will see an example in the next section in which <code>c()</code> is an argument to a function</li>
 </ul>
 </section></section>
 <section>
@@ -557,7 +557,7 @@ Yea-Hung Chen, PhD, MS
 <section id="what-is-a-continuous-variable" class="slide level2">
 <h2>What is a continuous variable?</h2>
 <ul>
-<li>continuous variable = <strong>a variable that has numeric values</strong></li>
+<li><strong>continuous variable</strong> = a variable that has numeric values</li>
 <li>examples:
 <ul>
 <li>age</li>
@@ -611,7 +611,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  67  74  82</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>for the <strong><code>probs</code> argument</strong>, I’ve used the <code>c()</code> function to create a <strong>vector</strong> containing 3 values</li>
+<li>for the <strong><code>probs</code> argument</strong>, I’ve used the <code>c()</code> function to create a vector containing 3 values</li>
 </ul>
 </section>
 <section id="percentiles-3" class="slide level2">
@@ -703,7 +703,7 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>If a function argument needs to be in quotes, <strong>you can use single quotes or double quotes</strong>.</p>
+<p>If a function argument needs to be in quotes, you can use single quotes or double quotes.</p>
 </div>
 </div>
 </div>
@@ -726,21 +726,21 @@ Yea-Hung Chen, PhD, MS
 <h2>Exercise 2</h2>
 <p>Across the exercises today, you’ll build an R script that will import the NHANES data and perform some univariate analysis. You’ll also practice going back and forth between the console and your script.</p>
 <ol type="1">
-<li><strong>At the top of a new script</strong>, include code for importing the data. Hopefully, you already copied and pasted code for doing this from last week. If you didn’t, re-obtain the code by using RStudio’s import tool. Add a comment above that code. Run that code.</li>
+<li>At the top of a new script, include code for importing the data. Hopefully, you already copied and pasted code for doing this from last week. If you didn’t, re-obtain the code by using RStudio’s import tool. Add a comment above that code. Run that code.</li>
 </ol>
 </section>
 <section id="exercise-2-2" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="2" type="1">
-<li><p><strong>In the console or the script</strong>, write code for displaying a histogram of fasting glucose (<code>lbxglu</code>). Now do this again, specifying that you want to use 60 bins. Feel free to try other numbers of bins.</p></li>
-<li><p>A common threshold for a health level of fasting glucose is 100 mg/dL. <strong>In the console or the script</strong>, add a red vertical line to your histogram at that threshold: <code>abline(v=100,col='red')</code>.</p></li>
+<li><p>In the console or the script, write code for displaying a histogram of fasting glucose (<code>lbxglu</code>). Now do this again, specifying that you want to use 60 bins. Feel free to try other numbers of bins.</p></li>
+<li><p>A common threshold for a health level of fasting glucose is 100 mg/dL. In the console or the script, add a red vertical line to your histogram at that threshold: <code>abline(v=100,col='red')</code>.</p></li>
 </ol>
 </section>
 <section id="exercise-2-3" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="4" type="1">
-<li><p><strong>In the script</strong>, type code for finding the mean level of fasting glucose. Add a comment above that code. Run that code.</p></li>
-<li><p><strong>In the script</strong>, type code for finding the 25th, 50th, and 75th percentiles of fasting glucose. Add a comment above that code. Run that code.</p></li>
+<li><p>In the script, type code for finding the mean level of fasting glucose. Add a comment above that code. Run that code.</p></li>
+<li><p>In the script, type code for finding the 25th, 50th, and 75th percentiles of fasting glucose. Add a comment above that code. Run that code.</p></li>
 </ol>
 </section></section>
 <section>
@@ -751,7 +751,7 @@ Yea-Hung Chen, PhD, MS
 <section id="confidence-interval-for-mean-diastolic-blood-pressure" class="slide level2">
 <h2>Confidence interval for mean diastolic blood pressure</h2>
 <ul>
-<li>what is a <strong>95% confidence interval</strong> for the mean diastolic blood pressure in the US adult population?</li>
+<li>what is a 95% confidence interval for the mean diastolic blood pressure in the US adult population?</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxodi1)</span>
@@ -772,7 +772,7 @@ Yea-Hung Chen, PhD, MS
 <h2>Function values</h2>
 <ul>
 <li><code>t.test()</code> prints a summary report</li>
-<li>it is possible to <strong>extract specific values</strong></li>
+<li>it is possible to extract specific values</li>
 </ul>
 </section>
 <section id="function-values-1" class="slide level2">
@@ -812,7 +812,7 @@ Yea-Hung Chen, PhD, MS
 <section id="what-is-a-categorical-variable" class="slide level2">
 <h2>What is a categorical variable?</h2>
 <ul>
-<li>categorical variable = <strong>a variable that has groups</strong></li>
+<li><strong>categorical variable</strong> = a variable that has groups</li>
 <li>examples:
 <ul>
 <li>age group</li>
@@ -844,7 +844,7 @@ Yea-Hung Chen, PhD, MS
 <section id="what-about-missing-values" class="slide level2">
 <h2>What about missing values?</h2>
 <ul>
-<li>what about the <strong>missing values</strong>?</li>
+<li>what about the missing values?</li>
 </ul>
 </section>
 <section id="the-help-page-for-table" class="slide level2">
@@ -892,7 +892,7 @@ Yea-Hung Chen, PhD, MS
 <section id="percents-1" class="slide level2">
 <h2>Percents</h2>
 <ul>
-<li><strong>without the <code>NA</code></strong> included:</li>
+<li>without the <code>NA</code> included:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension))</span>
@@ -904,7 +904,7 @@ Yea-Hung Chen, PhD, MS
 <section id="percents-2" class="slide level2">
 <h2>Percents</h2>
 <ul>
-<li>on a <strong>percent scale</strong>:</li>
+<li>on a percent scale:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>hypertension, <span class="at">useNA =</span> <span class="st">'always'</span>)) <span class="sc">*</span> <span class="dv">100</span></span>

@@ -1397,7 +1397,7 @@
     "href": "session_3/session_3.html#function-arguments-in-mean",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Function arguments in mean()",
-    "text": "Function arguments in mean()\n\n\n\n\n\n\nnotice the commas and the default values"
+    "text": "Function arguments in mean()\n\n\n\n\n\n\nnotice the commas** and the default values"
   },
   {
     "objectID": "session_3/session_3.html#function-arguments-in-mean-1",
@@ -1488,7 +1488,7 @@
     "href": "session_3/session_3.html#c-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "c()",
-    "text": "c()\n\nc(12312, 9120)\n#| [1] 12312  9120\n\n\nthe c() function combines values in a vector\nin other words:\n\nthe arguments are values of the desired vector\nthe output is the desired vector\n\nin the function, use commas to separate values"
+    "text": "c()\n\nc(12312, 9120)\n#| [1] 12312  9120\n\n\nthe c() function combines values in a vector\nin other words:\n\nthe arguments are values of the desired vector\nthe output** is the desired vector\n\nin the function, use commas to separate values"
   },
   {
     "objectID": "session_3/session_3.html#c-2",

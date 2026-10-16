@@ -6,7 +6,7 @@ ldl_borderline<-130
 # 1.3 A common cutoff for a high LDL cholesterol level is 160 mg/dL.In the
 # second line, type code that stores the value of 160 as ldl_high, using object
 # assignment.
-ldl_high <- 160
+ldl_high<-160
 
 # 2 import the data (i meant to mention in the slides that you should copy and
 # paste the code into your script)

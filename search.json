@@ -1449,27 +1449,6 @@
     "text": "When should I include argument names?\n\nsd(nhanes$bpxodi1,TRUE)\n#| [1] 11.41659\nsd(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 11.41659\n\n\nincluding argument names can improve the readability of your code\nso, it can be good to include them even when they are not necessary"
   },
   {
-    "objectID": "session_3/session_3.html#common-suggestions",
-    "href": "session_3/session_3.html#common-suggestions",
-    "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Common suggestions",
-    "text": "Common suggestions\n\nput a space before and after mathematical operators, except exponentiation (^)\nput a space before and after &lt;-\nput a space after commas\nput a space before and after =\n\n\n12312 / 27113508 * 10^5\n#| [1] 45.4091\nabs(2 - 12)\n#| [1] 10\npopsize &lt;- 27113508\nmean(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74.97469"
-  },
-  {
-    "objectID": "session_3/session_3.html#styling-code-in-rstudio",
-    "href": "session_3/session_3.html#styling-code-in-rstudio",
-    "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Styling code in RStudio",
-    "text": "Styling code in RStudio\n\nHighlight the code.\nUse the keyboard shortcut: ⌘⌘ shiftshift AA on Mac or ctrlctrl shiftshift AA on Windows.\n\nEquivalently, select Code &gt; Reformat Selection."
-  },
-  {
-    "objectID": "session_3/session_3.html#do-i-have-to-follow-the-common-suggestions-suggestions",
-    "href": "session_3/session_3.html#do-i-have-to-follow-the-common-suggestions-suggestions",
-    "title": "Session 3: How can I perform univariate analysis?",
-    "section": "Do I have to follow the common suggestions suggestions?",
-    "text": "Do I have to follow the common suggestions suggestions?\n\nno, the suggestions are not rules\nfor example, R code works fine without extra spaces, as you have already seen\nbut, the suggestions can improve readability"
-  },
-  {
     "objectID": "session_3/session_3.html#exercise-1-1",
     "href": "session_3/session_3.html#exercise-1-1",
     "title": "Session 3: How can I perform univariate analysis?",
@@ -1481,35 +1460,35 @@
     "href": "session_3/session_3.html#example-cancer-prevalence",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Example: cancer prevalence",
-    "text": "Example: cancer prevalence\n\nfrom Session 1:\n\n\npopsize &lt;- 27113508\n12312 / popsize * 10^5\n#| [1] 45.4091\n9120 / popsize * 10^5\n#| [1] 33.63637\n\n\nthe math occurs in two lines of code\nwe could, alternatively, use a vector of the numerators and do the math in one line of code…"
+    "text": "Example: cancer prevalence\n\nfrom Session 1:\n\n\npopsize&lt;-27113508\n12312/popsize*10^5\n#| [1] 45.4091\n9120/popsize*10^5\n#| [1] 33.63637\n\n\nthe math occurs in two lines of code\nwe could, alternatively, use a vector of the numerators and do the math in one line of code…"
   },
   {
     "objectID": "session_3/session_3.html#c-1",
     "href": "session_3/session_3.html#c-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "c()",
-    "text": "c()\n\nc(12312, 9120)\n#| [1] 12312  9120\n\n\nthe c() function combines values in a vector\nin other words:\n\nthe arguments are values of the desired vector\nthe output is the desired vector\n\nin the function, use commas to separate values"
+    "text": "c()\n\nc(12312,9120)\n#| [1] 12312  9120\n\n\nthe c() function combines values in a vector\nin other words:\n\nthe arguments are values of the desired vector\nthe output is the desired vector\n\nin the function, use commas to separate values"
   },
   {
     "objectID": "session_3/session_3.html#c-2",
     "href": "session_3/session_3.html#c-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "c()",
-    "text": "c()\n\nanother example:\n\n\nc(33, 52, 48)\n#| [1] 33 52 48\n\n\nyou can also use c() to create a character vector:\n\n\nc('California', 'New York', 'Texas')\n#| [1] \"California\" \"New York\"   \"Texas\""
+    "text": "c()\n\nanother example:\n\n\nc(33,52,48)\n#| [1] 33 52 48\n\n\nyou can also use c() to create a character vector:\n\n\nc('California','New York','Texas')\n#| [1] \"California\" \"New York\"   \"Texas\""
   },
   {
     "objectID": "session_3/session_3.html#example-cancer-prevalence-1",
     "href": "session_3/session_3.html#example-cancer-prevalence-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Example: cancer prevalence",
-    "text": "Example: cancer prevalence\n\nusing the numerators one by one:\n\n\n12312 / popsize * 10^5\n#| [1] 45.4091\n9120 / popsize * 10^5\n#| [1] 33.63637\n\n\nusing a vector of the numerators:\n\n\nc(12312, 9120) / popsize * 10^5\n#| [1] 45.40910 33.63637"
+    "text": "Example: cancer prevalence\n\nusing the numerators one by one:\n\n\n12312/popsize*10^5\n#| [1] 45.4091\n9120/popsize*10^5\n#| [1] 33.63637\n\n\nusing a vector of the numerators:\n\n\nc(12312,9120)/popsize*10^5\n#| [1] 45.40910 33.63637"
   },
   {
     "objectID": "session_3/session_3.html#example-cancer-prevalence-2",
     "href": "session_3/session_3.html#example-cancer-prevalence-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Example: cancer prevalence",
-    "text": "Example: cancer prevalence\n\nalternatively, first using object assignment:\n\n\nnumerators &lt;- c(12312, 9120)\nnumerators / popsize * 10^5\n#| [1] 45.40910 33.63637"
+    "text": "Example: cancer prevalence\n\nalternatively, first using object assignment:\n\n\nnumerators&lt;-c(12312,9120)\nnumerators/popsize*10^5\n#| [1] 45.40910 33.63637"
   },
   {
     "objectID": "session_3/session_3.html#c-3",
@@ -1530,42 +1509,42 @@
     "href": "session_3/session_3.html#means-standard-deviations-and-variances",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Means, standard deviations, and variances",
-    "text": "Means, standard deviations, and variances\n\nmean(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74.97469\nsd(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 11.41659\nvar(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 130.3386"
+    "text": "Means, standard deviations, and variances\n\nmean(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 74.97469\nsd(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 11.41659\nvar(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 130.3386"
   },
   {
     "objectID": "session_3/session_3.html#percentiles",
     "href": "session_3/session_3.html#percentiles",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percentiles",
-    "text": "Percentiles\n\nmedian(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74\nquantile(nhanes$bpxodi1, probs = 0.5, na.rm = TRUE)\n#| 50% \n#|  74\nquantile(nhanes$bpxodi1, 0.5, na.rm = TRUE)\n#| 50% \n#|  74"
+    "text": "Percentiles\n\nmedian(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 74\nquantile(nhanes$bpxodi1,probs=0.5,na.rm=TRUE)\n#| 50% \n#|  74\nquantile(nhanes$bpxodi1,0.5,na.rm=TRUE)\n#| 50% \n#|  74"
   },
   {
     "objectID": "session_3/session_3.html#percentiles-1",
     "href": "session_3/session_3.html#percentiles-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percentiles",
-    "text": "Percentiles\n\nquantile(nhanes$bpxodi1, probs = 0.25, na.rm = TRUE)\n#| 25% \n#|  67\nquantile(nhanes$bpxodi1, probs = 0.75, na.rm = TRUE)\n#| 75% \n#|  82"
+    "text": "Percentiles\n\nquantile(nhanes$bpxodi1,probs=0.25,na.rm=TRUE)\n#| 25% \n#|  67\nquantile(nhanes$bpxodi1,probs=0.75,na.rm=TRUE)\n#| 75% \n#|  82"
   },
   {
     "objectID": "session_3/session_3.html#percentiles-2",
     "href": "session_3/session_3.html#percentiles-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percentiles",
-    "text": "Percentiles\n\nquantile(nhanes$bpxodi1,\n         probs = c(0.25, 0.5, 0.75),\n         na.rm = TRUE)\n#| 25% 50% 75% \n#|  67  74  82\n\n\nfor the probs argument, I’ve used the c() function to create a vector containing 3 values"
+    "text": "Percentiles\n\nquantile(nhanes$bpxodi1,probs=c(0.25,0.5,0.75),na.rm=TRUE)\n#| 25% 50% 75% \n#|  67  74  82\n\n\nfor the probs argument, I’ve used the c() function to create a vector containing 3 values"
   },
   {
     "objectID": "session_3/session_3.html#percentiles-3",
     "href": "session_3/session_3.html#percentiles-3",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percentiles",
-    "text": "Percentiles\n\nquantile(nhanes$bpxodi1,\n         probs = c(0.25, 0.5, 0.75),\n         na.rm = TRUE)\n#| 25% 50% 75% \n#|  67  74  82\n\n\nwhy do we need to use c() for probs, when we want to use more than one probs value?"
+    "text": "Percentiles\n\nquantile(nhanes$bpxodi1,probs=c(0.25,0.5,0.75),na.rm=TRUE)\n#| 25% 50% 75% \n#|  67  74  82\n\n\nwhy do we need to use c() for probs, when we want to use more than one probs value?"
   },
   {
     "objectID": "session_3/session_3.html#minimum-and-maximum-values",
     "href": "session_3/session_3.html#minimum-and-maximum-values",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Minimum and maximum values",
-    "text": "Minimum and maximum values\n\nmin(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 36\nmax(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 142\nrange(nhanes$bpxodi1, na.rm = TRUE)\n#| [1]  36 142"
+    "text": "Minimum and maximum values\n\nmin(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 36\nmax(nhanes$bpxodi1,na.rm=TRUE)\n#| [1] 142\nrange(nhanes$bpxodi1,na.rm=TRUE)\n#| [1]  36 142"
   },
   {
     "objectID": "session_3/session_3.html#summary",
@@ -1593,28 +1572,28 @@
     "href": "session_3/session_3.html#histograms-titles-and-labels",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Histograms titles and labels",
-    "text": "Histograms titles and labels\n\nhist(nhanes$bpxodi1, main = '', xlab = 'Diastolic blood pressure (mmHg)')"
+    "text": "Histograms titles and labels\n\nhist(nhanes$bpxodi1,main='',xlab='Diastolic blood pressure (mmHg)')"
   },
   {
     "objectID": "session_3/session_3.html#histogram-bars",
     "href": "session_3/session_3.html#histogram-bars",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Histogram bars",
-    "text": "Histogram bars\n\nto set the number of bars in the histogram, use the breaks argument\n\n\nhist(nhanes$bpxodi1,\n     main = '',\n     xlab = 'Diastolic blood pressure (mmHg)',\n     breaks = 50)\n\n\n\nWhen you use breaks in this way, you won’t always get exactly the number of bars you requested."
+    "text": "Histogram bars\n\nto set the number of bars in the histogram, use the breaks argument\n\n\nhist(nhanes$bpxodi1,main='',xlab='Diastolic blood pressure (mmHg)',\n     breaks=50)\n\n\n\nWhen you use breaks in this way, you won’t always get exactly the number of bars you requested."
   },
   {
     "objectID": "session_3/session_3.html#histograms-bars",
     "href": "session_3/session_3.html#histograms-bars",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Histograms bars",
-    "text": "Histograms bars\n\nhist(nhanes$bpxodi1,\n     main = '',\n     xlab = 'Diastolic blood pressure (mmHg)',\n     breaks = 50)"
+    "text": "Histograms bars\n\nhist(nhanes$bpxodi1,main='',xlab='Diastolic blood pressure (mmHg)',\n     breaks=50)"
   },
   {
     "objectID": "session_3/session_3.html#quotes-in-function-arguments",
     "href": "session_3/session_3.html#quotes-in-function-arguments",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Quotes in function arguments",
-    "text": "Quotes in function arguments\n\n\n\n\n\n\nTip\n\n\nIf a function argument needs to be in quotes, you can use single quotes or double quotes.\n\n\n\n\nhist(nhanes$bpxodi1,\n     main = '',\n     xlab = \"Diastolic blood pressure (mmHg)\",\n     breaks = 50)\n\n\nyou must end the quote with the type you started with"
+    "text": "Quotes in function arguments\n\n\n\n\n\n\nTip\n\n\nIf a function argument needs to be in quotes, you can use single quotes or double quotes.\n\n\n\n\nhist(nhanes$bpxodi1,main='',xlab=\"Diastolic blood pressure (mmHg)\",\n     breaks=50)\n\n\nyou must end the quote with the type you started with"
   },
   {
     "objectID": "session_3/session_3.html#exercise-2-1",
@@ -1663,7 +1642,7 @@
     "href": "session_3/session_3.html#function-values-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Function values",
-    "text": "Function values\n\ndiastolic_ci &lt;- t.test(nhanes$bpxodi1)\nnames(diastolic_ci)\n#|  [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|  [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\""
+    "text": "Function values\n\ndiastolic_ci&lt;-t.test(nhanes$bpxodi1)\nnames(diastolic_ci)\n#|  [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|  [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\""
   },
   {
     "objectID": "session_3/session_3.html#extracting-function-values",
@@ -1719,14 +1698,14 @@
     "href": "session_3/session_3.html#counts-1",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Counts",
-    "text": "Counts\n\ntable(nhanes$hypertension, useNA = 'always')\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|      841     2657     1409     1216     2030\ntable(nhanes$hypertension, useNA = 'ifany')\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|      841     2657     1409     1216     2030"
+    "text": "Counts\n\ntable(nhanes$hypertension,useNA='always')\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|      841     2657     1409     1216     2030\ntable(nhanes$hypertension,useNA='ifany')\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#|      841     2657     1409     1216     2030"
   },
   {
     "objectID": "session_3/session_3.html#percents",
     "href": "session_3/session_3.html#percents",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percents",
-    "text": "Percents\n\nprop.table(table(nhanes$hypertension, useNA = 'always'))\n#| \n#|  Elevated        No   Stage 1   Stage 2      &lt;NA&gt; \n#| 0.1031522 0.3258923 0.1728198 0.1491476 0.2489881\n\n\nnotice that you must put table() inside of prop.table()"
+    "text": "Percents\n\nprop.table(table(nhanes$hypertension,useNA='always'))\n#| \n#|  Elevated        No   Stage 1   Stage 2      &lt;NA&gt; \n#| 0.1031522 0.3258923 0.1728198 0.1491476 0.2489881\n\n\nnotice that you must put table() inside of prop.table()"
   },
   {
     "objectID": "session_3/session_3.html#percents-1",
@@ -1740,7 +1719,7 @@
     "href": "session_3/session_3.html#percents-2",
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Percents",
-    "text": "Percents\n\non a percent scale:\n\n\nprop.table(table(nhanes$hypertension, useNA = 'always')) * 100\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#| 10.31522 32.58923 17.28198 14.91476 24.89881"
+    "text": "Percents\n\non a percent scale:\n\n\nprop.table(table(nhanes$hypertension,useNA='always')) * 100\n#| \n#| Elevated       No  Stage 1  Stage 2     &lt;NA&gt; \n#| 10.31522 32.58923 17.28198 14.91476 24.89881"
   },
   {
     "objectID": "session_3/session_3.html#percents-3",
@@ -1762,6 +1741,27 @@
     "title": "Session 3: How can I perform univariate analysis?",
     "section": "Exercise 3",
     "text": "Exercise 3\n\nSelect all of the text and code in your script. You can optionally use the keyboard shortcut: ⌘⌘ AA on Mac or ctrlctrl AA on Windows. Run the code, and verify that your computer reproduced all of the work."
+  },
+  {
+    "objectID": "session_3/session_3.html#common-suggestions",
+    "href": "session_3/session_3.html#common-suggestions",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Common suggestions",
+    "text": "Common suggestions\n\nput a space before and after mathematical operators, except exponentiation (^)\nput a space before and after &lt;-\nput a space after commas\nput a space before and after =\n\n\n12312 / 27113508 * 10^5\n#| [1] 45.4091\nabs(2 - 12)\n#| [1] 10\npopsize &lt;- 27113508\nmean(nhanes$bpxodi1, na.rm = TRUE)\n#| [1] 74.97469"
+  },
+  {
+    "objectID": "session_3/session_3.html#styling-code-in-rstudio",
+    "href": "session_3/session_3.html#styling-code-in-rstudio",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Styling code in RStudio",
+    "text": "Styling code in RStudio\n\nHighlight the code.\nUse the keyboard shortcut: ⌘⌘ shiftshift AA on Mac or ctrlctrl shiftshift AA on Windows.\n\nEquivalently, select Code &gt; Reformat Selection."
+  },
+  {
+    "objectID": "session_3/session_3.html#do-i-have-to-follow-the-common-suggestions-suggestions",
+    "href": "session_3/session_3.html#do-i-have-to-follow-the-common-suggestions-suggestions",
+    "title": "Session 3: How can I perform univariate analysis?",
+    "section": "Do I have to follow the common suggestions suggestions?",
+    "text": "Do I have to follow the common suggestions suggestions?\n\nno, the suggestions are not rules\nfor example, R code works fine without extra spaces, as you have already seen\nbut, the suggestions can improve readability"
   },
   {
     "objectID": "session_2/session_2.html#yet-another-cooking-analogy",
@@ -2916,7 +2916,7 @@
     "href": "session_3/homework_3.html",
     "title": "Homework 3",
     "section": "",
-    "text": "round() is a function that rounds numeric values. Examine the Usage and Arguments sections of round()’s help page. In the console, use round() to round pi to 2 digits.\nAt the top of a new script, such as homework_3.r, include code for importing the nhanes_l.csv data file. Add a comment. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# import the data\nnhanes&lt;-read.csv('nhanes_l.csv')\n\n\n\n\nYou may have noticed that quantile() automatically includes labels above the quantiles. For example:\n\nquantile(nhanes$bpxosy1,c(0.25,0.5,0.75),na.rm=TRUE)\n#| 25% 50% 75% \n#| 110 120 133\n\nExamine the Usage and Arguments sections of quantile()’s help page. Try to figure out how to obtain quartiles of systolic blood pressure (bpxosy1) without labels (25% 50% 75%) included in the output. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain quantiles for systolic blood pressure, without labels\nquantile(nhanes$bpxosy1,c(0.25,0.5,0.75),na.rm=TRUE,names=FALSE)\n#| [1] 110 120 133\n\n\n\n\nWe can use binom.test() to obtain confidence intervals for percents.\nIn the console, first table() the asthma (asthma) variable. You should see that History of asthma is listed first. This is because, by default, table() lists groups alphabetically.\nbinom.test() will test the null hypothesis that the population percents are equal to 50%. However, as with our use of t.test() from Session 3, we are just going to use the function to get a confidence interval for the prevalence of asthma in the population (we will ignore the results from the test).\nTo use binom.test(), place your code for table() above within binom.test(). By default, binom.test() will provide a confidence interval for the “first group.” As mentioned above, the “first group” for asthma is History of asthma. So, your binom.test() code is providing a confidence interval for the prevalence of asthma in the population.\nAdd the binom.test() code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain a confidence interval for the prevalence of asthma\nbinom.test(table(nhanes$asthma))\n#| \n#|   Exact binomial test\n#| \n#| data:  table(nhanes$asthma)\n#| number of successes = 1486, number of trials = 8143, p-value &lt; 2.2e-16\n#| alternative hypothesis: true probability of success is not equal to 0.5\n#| 95 percent confidence interval:\n#|  0.1741522 0.1910517\n#| sample estimates:\n#| probability of success \n#|               0.182488\n\n\n\n\nWrite code for obtaining percents for asthma. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate percents for asthma\nprop.table(table(nhanes$asthma))\n#| \n#| History of asthma                No \n#|          0.182488          0.817512\n\n\n\n\nThe sum() function returns the sum of a set of values. Use this function, along with length() (mentioned in Homework 2) to manually calculate the mean of the age variable (ridageyr): divide the sum by the length. Add this code to your script, with a comment. Also add code for the mean() function and verify that the answers match.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate the mean manually\nsum(nhanes$ridageyr)/length(nhanes$ridageyr)\n#| [1] 52.14436\n\n# calculate the mean using mean()\nmean(nhanes$ridageyr)\n#| [1] 52.14436"
+    "text": "round() is a function that rounds numeric values. Examine the Usage and Arguments sections of round()’s help page. In the console, use round() to round pi to 2 digits.\nAt the top of a new script, such as homework_3.r, include code for importing the nhanes_l.csv data file. Add a comment. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# import the data\nnhanes &lt;- read.csv('nhanes_l.csv')\n\n\n\n\nYou may have noticed that quantile() automatically includes labels above the quantiles. For example:\n\nquantile(nhanes$bpxosy1, c(0.25, 0.5, 0.75), na.rm = TRUE)\n#| 25% 50% 75% \n#| 110 120 133\n\nExamine the Usage and Arguments sections of quantile()’s help page. Try to figure out how to obtain quartiles of systolic blood pressure (bpxosy1) without labels (25% 50% 75%) included in the output. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain quantiles for systolic blood pressure, without labels\nquantile(nhanes$bpxosy1, c(0.25, 0.5, 0.75), na.rm = TRUE, names = FALSE)\n#| [1] 110 120 133\n\n\n\n\nWe can use binom.test() to obtain confidence intervals for percents.\nIn the console, first table() the asthma (asthma) variable. You should see that History of asthma is listed first. This is because, by default, table() lists groups alphabetically.\nbinom.test() will test the null hypothesis that the population percents are equal to 50%. However, as with our use of t.test() from Session 3, we are just going to use the function to get a confidence interval for the prevalence of asthma in the population (we will ignore the results from the test).\nTo use binom.test(), place your code for table() above within binom.test(). By default, binom.test() will provide a confidence interval for the “first group.” As mentioned above, the “first group” for asthma is History of asthma. So, your binom.test() code is providing a confidence interval for the prevalence of asthma in the population.\nAdd the binom.test() code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain a confidence interval for the prevalence of asthma\nbinom.test(table(nhanes$asthma))\n#| \n#|   Exact binomial test\n#| \n#| data:  table(nhanes$asthma)\n#| number of successes = 1486, number of trials = 8143, p-value &lt; 2.2e-16\n#| alternative hypothesis: true probability of success is not equal to 0.5\n#| 95 percent confidence interval:\n#|  0.1741522 0.1910517\n#| sample estimates:\n#| probability of success \n#|               0.182488\n\n\n\n\nWrite code for obtaining percents for asthma. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate percents for asthma\nprop.table(table(nhanes$asthma))\n#| \n#| History of asthma                No \n#|          0.182488          0.817512\n\n\n\n\nThe sum() function returns the sum of a set of values. Use this function, along with length() (mentioned in Homework 2) to manually calculate the mean of the age variable (ridageyr): divide the sum by the length. Add this code to your script, with a comment. Also add code for the mean() function and verify that the answers match.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate the mean manually\nsum(nhanes$ridageyr) / length(nhanes$ridageyr)\n#| [1] 52.14436\n\n# calculate the mean using mean()\nmean(nhanes$ridageyr)\n#| [1] 52.14436"
   },
   {
     "objectID": "session_4/homework_4.html",

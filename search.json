@@ -2020,7 +2020,7 @@
     "href": "session_2/session_2.html#importing-the-data-2",
     "title": "Session 2: How can I import data?",
     "section": "Importing the data",
-    "text": "Importing the data\n\nin our quick demonstration we changed two parts of the pop-up window:\n\nName: the name from the resulting object assignment (using the jar analogy, this is the label you put on the jar)\nHeading: an option that indicates whether or not variables are included as the first line of the data file"
+    "text": "Importing the data\n\nchange two parts in the pop-up window:\n\nName: I suggest simply nhanes rather than nhanes_l (using the jar analogy, this is the label you put on the jar)\nHeading: change this to Yes so that the variable names are properly recognized"
   },
   {
     "objectID": "session_2/session_2.html#the-corresponding-code",
@@ -2804,7 +2804,7 @@
     "href": "index.html#session-3-how-can-i-perform-univariate-analysis",
     "title": "A Slower Introduction to R",
     "section": "Session 3: How can I perform univariate analysis?",
-    "text": "Session 3: How can I perform univariate analysis?\n\nlive session:\n\nFriday, October 16, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\n\nrecording (opens in a new tab)\nhomework"
+    "text": "Session 3: How can I perform univariate analysis?\n\nlive session:\n\nFriday, October 16, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\n\nhomework"
   },
   {
     "objectID": "index.html#session-4-how-can-i-perform-bivariate-analysis",
@@ -2818,7 +2818,7 @@
     "href": "index.html#session-5-how-can-i-make-data-visualizations-with-ggplot2",
     "title": "A Slower Introduction to R",
     "section": "Session 5: How can I make data visualizations with ggplot2?",
-    "text": "Session 5: How can I make data visualizations with ggplot2?\n\nlive session:\n\nFriday, October 30, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nrecording (opens in a new tab)\nhomework"
+    "text": "Session 5: How can I make data visualizations with ggplot2?\n\nlive session:\n\nFriday, October 30, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nhomework"
   },
   {
     "objectID": "index.html#session-6-how-can-i-subset-data-and-define-missing-values",

@@ -270,7 +270,14 @@
     "href": "session_7/session_7.html#other-workshops-i-teach",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Other workshops I teach",
-    "text": "Other workshops I teach\n\nData Wrangling in R: in Winter\n\nintroduces piping\nintroduces dplyr\ncovers techniques for merging data and reshaping data\n\nSharing R: in Winter\n\ncovers Quarto\n\nAdvanced R: in Spring"
+    "text": "Other workshops I teach\n\nData Wrangling in R: in Winter quarter\n\nintroduces piping\nintroduces dplyr\ncovers techniques for merging data and reshaping data\n\nSharing R: in Winter quarter\n\ncovers Quarto, a tool for generating reports with embedded R code and output\ncovers gtsummary, a package for making tables"
+  },
+  {
+    "objectID": "session_7/session_7.html#other-workshops-i-teach-1",
+    "href": "session_7/session_7.html#other-workshops-i-teach-1",
+    "title": "Session 7: How can I create new categorical variable?",
+    "section": "Other workshops I teach",
+    "text": "Other workshops I teach\n\nAdvanced R: in Spring quarter"
   },
   {
     "objectID": "session_7/session_7.html#other-topics-you-might-pursue",

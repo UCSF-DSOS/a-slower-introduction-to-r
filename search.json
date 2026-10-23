@@ -1131,49 +1131,56 @@
     "href": "session_4/session_4.html#scatter-plots",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Scatter plots",
-    "text": "Scatter plots\n\nplot(x=nhanes$bpxodi1,y=nhanes$bpxosy1,xlab='Diastolic (mmHg)',ylab='Systolic (mmHg)')"
+    "text": "Scatter plots\n\nplot(x = nhanes$bpxodi1, y = nhanes$bpxosy1, xlab = 'Diastolic (mmHg)', \n     ylab = 'Systolic (mmHg)')"
   },
   {
     "objectID": "session_4/session_4.html#formula-notation",
     "href": "session_4/session_4.html#formula-notation",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Formula notation",
-    "text": "Formula notation\n\nwe can equivalently use a y~x formula notation, like this:\n\n\nplot(nhanes$bpxosy1~nhanes$bpxodi1,xlab='Diastolic (mmHg)',ylab='Systolic (mmHg)')\n\n\nformula notation is used in several R functions, including:\n\nlm() for linear regression\nt.test() for t-tests"
+    "text": "Formula notation\n\nequivalently, use a y~x formula notation:\n\n\nplot(nhanes$bpxosy1 ~ nhanes$bpxodi1, xlab = 'Diastolic (mmHg)', \n     ylab = 'Systolic (mmHg)')\n\n\nformula notation is used in several R functions, including:\n\nlm() for linear regression\nt.test() for t-tests"
   },
   {
     "objectID": "session_4/session_4.html#formula-notation-1",
     "href": "session_4/session_4.html#formula-notation-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Formula notation",
-    "text": "Formula notation\n\nplot(nhanes$bpxosy1~nhanes$bpxodi1,xlab='Diastolic (mmHg)',ylab='Systolic (mmHg)')"
+    "text": "Formula notation\n\nplot(nhanes$bpxosy1 ~ nhanes$bpxodi1, \n     xlab = 'Diastolic (mmHg)', ylab = 'Systolic (mmHg)')"
   },
   {
     "objectID": "session_4/session_4.html#pearsons-correlation-coefficient",
     "href": "session_4/session_4.html#pearsons-correlation-coefficient",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Pearson’s correlation coefficient",
-    "text": "Pearson’s correlation coefficient\n\ncor(nhanes$bpxodi1,nhanes$bpxosy1)\n#| [1] NA\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs')\n#| [1] 0.6057034\n\n\nthe use=complete.obs argument is similar to na.rm=TRUE in mean(), sd(), and other functions you saw last week\n\nif either value in a pair is NA, then the pair is not used\n\nthe order of the variables does not matter"
+    "text": "Pearson’s correlation coefficient\n\ncor(nhanes$bpxodi1, nhanes$bpxosy1)\n#| [1] NA\ncor(nhanes$bpxodi1, nhanes$bpxosy1, use = 'complete.obs')\n#| [1] 0.6057034\n\n\nthe use = complete.obs argument is similar to na.rm = TRUE in mean(), sd(), and other functions you saw last week\nif either value in a pair is NA, then the pair is not used"
+  },
+  {
+    "objectID": "session_4/session_4.html#pearsons-correlation-coefficient-1",
+    "href": "session_4/session_4.html#pearsons-correlation-coefficient-1",
+    "title": "Session 4: How can I perform bivariate analysis?",
+    "section": "Pearson’s correlation coefficient",
+    "text": "Pearson’s correlation coefficient\n\nthe order of the variables in cor() does not matter:\n\n\ncor(nhanes$bpxodi1, nhanes$bpxosy1, use = 'complete.obs')\n#| [1] 0.6057034\ncor(nhanes$bpxosy1, nhanes$bpxodi1, use = 'complete.obs')\n#| [1] 0.6057034"
   },
   {
     "objectID": "session_4/session_4.html#other-measures-of-correlation",
     "href": "session_4/session_4.html#other-measures-of-correlation",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Other measures of correlation",
-    "text": "Other measures of correlation\n\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs',method='kendall')\n#| [1] 0.4277319\ncor(nhanes$bpxodi1,nhanes$bpxosy1,use='complete.obs',method='spearman')\n#| [1] 0.5832935"
+    "text": "Other measures of correlation\n\ncor(nhanes$bpxodi1, nhanes$bpxosy1, use = 'complete.obs', method='kendall')\n#| [1] 0.4277319\ncor(nhanes$bpxodi1, nhanes$bpxosy1, use = 'complete.obs', method = 'spearman')\n#| [1] 0.5832935"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression",
     "href": "session_4/session_4.html#simple-linear-regression",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression",
-    "text": "Simple linear regression\n\nlm(nhanes$bpxosy1~nhanes$bpxodi1)\n#| \n#| Call:\n#| lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)\n#| \n#| Coefficients:\n#|    (Intercept)  nhanes$bpxodi1  \n#|         49.165           0.979"
+    "text": "Simple linear regression\n\nlm(nhanes$bpxosy1 ~ nhanes$bpxodi1)\n#| \n#| Call:\n#| lm(formula = nhanes$bpxosy1 ~ nhanes$bpxodi1)\n#| \n#| Coefficients:\n#|    (Intercept)  nhanes$bpxodi1  \n#|         49.165           0.979"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression-confint",
     "href": "session_4/session_4.html#simple-linear-regression-confint",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression: confint()",
-    "text": "Simple linear regression: confint()\n\nmy_model&lt;-lm(nhanes$bpxosy1~nhanes$bpxodi1)\nconfint(my_model)\n#|                     2.5 %    97.5 %\n#| (Intercept)    46.7210856 51.608631\n#| nhanes$bpxodi1  0.9467311  1.011178"
+    "text": "Simple linear regression: confint()\n\nmy_model &lt;- lm(nhanes$bpxosy1 ~ nhanes$bpxodi1)\nconfint(my_model)\n#|                     2.5 %    97.5 %\n#| (Intercept)    46.7210856 51.608631\n#| nhanes$bpxodi1  0.9467311  1.011178"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression-summary",
@@ -1187,7 +1194,7 @@
     "href": "session_4/session_4.html#simple-linear-regression-summary-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression: summary()",
-    "text": "Simple linear regression: summary()\n\nas with the t.test() function, it is possible to extract specific values, using dollar-sign notation"
+    "text": "Simple linear regression: summary()\n\nas with the t.test() function, it is possible to extract specific values using dollar-sign notation"
   },
   {
     "objectID": "session_4/session_4.html#simple-linear-regression-summary-2",
@@ -1201,7 +1208,7 @@
     "href": "session_4/session_4.html#simple-linear-regression-the-data-argument",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Simple linear regression: the data argument",
-    "text": "Simple linear regression: the data argument\n\nlm(bpxosy1~bpxodi1,data=nhanes)\n#| \n#| Call:\n#| lm(formula = bpxosy1 ~ bpxodi1, data = nhanes)\n#| \n#| Coefficients:\n#| (Intercept)      bpxodi1  \n#|      49.165        0.979\n\n\nseveral R functions support the data argument\nit is one way to omit dollar-sign notation"
+    "text": "Simple linear regression: the data argument\n\nlm(bpxosy1 ~ bpxodi1, data = nhanes)\n#| \n#| Call:\n#| lm(formula = bpxosy1 ~ bpxodi1, data = nhanes)\n#| \n#| Coefficients:\n#| (Intercept)      bpxodi1  \n#|      49.165        0.979\n\n\nseveral R functions support the data argument\nit is one way to omit dollar-sign notation"
   },
   {
     "objectID": "session_4/session_4.html#exercise-1-1",
@@ -1229,21 +1236,21 @@
     "href": "session_4/session_4.html#box-plots",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Box plots",
-    "text": "Box plots\n\nboxplot(nhanes$bpxosy1~nhanes$smoking,xlab='',ylab='Systolic (mmHg)')"
+    "text": "Box plots\n\nboxplot(nhanes$bpxosy1 ~ nhanes$smoking, xlab = '', ylab = 'Systolic (mmHg)')"
   },
   {
     "objectID": "session_4/session_4.html#t-tests",
     "href": "session_4/session_4.html#t-tests",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "t-tests",
-    "text": "t-tests\n\nt.test(nhanes$bpxosy1~nhanes$smoking)\n#| \n#|  Welch Two Sample t-test\n#| \n#| data:  nhanes$bpxosy1 by nhanes$smoking\n#| t = 7.4317, df = 4887.9, p-value = 1.258e-13\n#| alternative hypothesis: true difference in means between group History of smoking and group No is not equal to 0\n#| 95 percent confidence interval:\n#|  2.672803 4.588225\n#| sample estimates:\n#| mean in group History of smoking                 mean in group No \n#|                         124.7512                         121.1207"
+    "text": "t-tests\n\nt.test(nhanes$bpxosy1 ~ nhanes$smoking)\n#| \n#|  Welch Two Sample t-test\n#| \n#| data:  nhanes$bpxosy1 by nhanes$smoking\n#| t = 7.4317, df = 4887.9, p-value = 1.258e-13\n#| alternative hypothesis: true difference in means between group History of smoking and group No is not equal to 0\n#| 95 percent confidence interval:\n#|  2.672803 4.588225\n#| sample estimates:\n#| mean in group History of smoking                 mean in group No \n#|                         124.7512                         121.1207"
   },
   {
     "objectID": "session_4/session_4.html#t-tests-1",
     "href": "session_4/session_4.html#t-tests-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "t-tests",
-    "text": "t-tests\n\nmy_test&lt;-t.test(nhanes$bpxosy1~nhanes$smoking)\nnames(my_test)\n#|  [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|  [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\"\nmy_test$estimate\n#| mean in group History of smoking                 mean in group No \n#|                         124.7512                         121.1207\nmy_test$conf.int\n#| [1] 2.672803 4.588225\n#| attr(,\"conf.level\")\n#| [1] 0.95"
+    "text": "t-tests\n\nmy_test &lt;- t.test(nhanes$bpxosy1 ~ nhanes$smoking)\nnames(my_test)\n#|  [1] \"statistic\"   \"parameter\"   \"p.value\"     \"conf.int\"    \"estimate\"   \n#|  [6] \"null.value\"  \"stderr\"      \"alternative\" \"method\"      \"data.name\"\nmy_test$estimate\n#| mean in group History of smoking                 mean in group No \n#|                         124.7512                         121.1207\nmy_test$conf.int\n#| [1] 2.672803 4.588225\n#| attr(,\"conf.level\")\n#| [1] 0.95"
   },
   {
     "objectID": "session_4/session_4.html#exercise-2-1",
@@ -1278,49 +1285,49 @@
     "href": "session_4/session_4.html#contingency-tables",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Contingency tables",
-    "text": "Contingency tables\n\ntable(nhanes$smoking,nhanes$asthma)\n#|                     \n#|                      History of asthma   No\n#|   History of smoking               636 2603\n#|   No                               844 4029\n\n\nthe first variable will be placed along the rows"
+    "text": "Contingency tables\n\ntable(nhanes$smoking, nhanes$asthma)\n#|                     \n#|                      History of asthma   No\n#|   History of smoking               636 2603\n#|   No                               844 4029\n\n\nthe first variable will be placed along the rows"
   },
   {
     "objectID": "session_4/session_4.html#contingency-tables-1",
     "href": "session_4/session_4.html#contingency-tables-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Contingency tables",
-    "text": "Contingency tables\n\ntable(nhanes$smoking,nhanes$asthma,useNA='always')\n#|                     \n#|                      History of asthma   No &lt;NA&gt;\n#|   History of smoking               636 2603    4\n#|   No                               844 4029    5\n#|   &lt;NA&gt;                               6   25    1\n\n\nwe can add the useNA argument to show missing values"
+    "text": "Contingency tables\n\nadd the useNA argument to show missing values:\n\n\ntable(nhanes$smoking, nhanes$asthma, useNA = 'always')\n#|                     \n#|                      History of asthma   No &lt;NA&gt;\n#|   History of smoking               636 2603    4\n#|   No                               844 4029    5\n#|   &lt;NA&gt;                               6   25    1"
   },
   {
     "objectID": "session_4/session_4.html#row-wise-percents",
     "href": "session_4/session_4.html#row-wise-percents",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Row-wise percents",
-    "text": "Row-wise percents\n\nprop.table(\n  table(nhanes$smoking,nhanes$asthma),\n  margin=1\n)*100\n\n\nnotice the two arguments inside prop.table():\n\nthe table()\nmargin=1, which indicates we want row-wise percents"
+    "text": "Row-wise percents\n\nprop.table(\n  table(nhanes$smoking, nhanes$asthma), \n  margin = 1\n) * 100\n\n\nnotice the two arguments inside prop.table():\n\nthe table()\nmargin=1, which requests row-wise percents"
   },
   {
     "objectID": "session_4/session_4.html#row-wise-percents-1",
     "href": "session_4/session_4.html#row-wise-percents-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Row-wise percents",
-    "text": "Row-wise percents\n\nequivalently, written all in one line:\n\n\nprop.table(table(nhanes$smoking,nhanes$asthma),margin=1)*100\n#|                     \n#|                      History of asthma       No\n#|   History of smoking          19.63569 80.36431\n#|   No                          17.31993 82.68007"
+    "text": "Row-wise percents\n\nequivalently, written all in one line:\n\n\nprop.table(table(nhanes$smoking, nhanes$asthma), margin = 1) * 100\n#|                     \n#|                      History of asthma       No\n#|   History of smoking          19.63569 80.36431\n#|   No                          17.31993 82.68007"
   },
   {
     "objectID": "session_4/session_4.html#column-wise-percents",
     "href": "session_4/session_4.html#column-wise-percents",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Column-wise percents",
-    "text": "Column-wise percents\n\nprop.table(table(nhanes$smoking,nhanes$asthma),margin=2)*100\n#|                     \n#|                      History of asthma       No\n#|   History of smoking          42.97297 39.24910\n#|   No                          57.02703 60.75090\n\n\nthe margin=2 argument indicates that we want column-wise percents"
+    "text": "Column-wise percents\n\nuse margin=2 for column-wise percents:\n\n\nprop.table(table(nhanes$smoking, nhanes$asthma), margin = 2) * 100\n#|                     \n#|                      History of asthma       No\n#|   History of smoking          42.97297 39.24910\n#|   No                          57.02703 60.75090"
   },
   {
     "objectID": "session_4/session_4.html#fishers-exact-tests",
     "href": "session_4/session_4.html#fishers-exact-tests",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Fisher’s exact tests",
-    "text": "Fisher’s exact tests\n\nfisher.test(table(nhanes$smoking,nhanes$asthma))\n#| \n#|  Fisher's Exact Test for Count Data\n#| \n#| data:  table(nhanes$smoking, nhanes$asthma)\n#| p-value = 0.008981\n#| alternative hypothesis: true odds ratio is not equal to 1\n#| 95 percent confidence interval:\n#|  1.038673 1.309340\n#| sample estimates:\n#| odds ratio \n#|   1.166346\n\n\nnotice that this also returns the odds ratio"
+    "text": "Fisher’s exact tests\n\nfisher.test(table(nhanes$smoking, nhanes$asthma))\n#| \n#|  Fisher's Exact Test for Count Data\n#| \n#| data:  table(nhanes$smoking, nhanes$asthma)\n#| p-value = 0.008981\n#| alternative hypothesis: true odds ratio is not equal to 1\n#| 95 percent confidence interval:\n#|  1.038673 1.309340\n#| sample estimates:\n#| odds ratio \n#|   1.166346\n\n\nnotice that this also returns the odds ratio"
   },
   {
     "objectID": "session_4/session_4.html#chi-squared-tests",
     "href": "session_4/session_4.html#chi-squared-tests",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Chi-squared tests",
-    "text": "Chi-squared tests\n\nchisq.test(table(nhanes$smoking,nhanes$asthma))\n#| \n#|  Pearson's Chi-squared test with Yates' continuity correction\n#| \n#| data:  table(nhanes$smoking, nhanes$asthma)\n#| X-squared = 6.8411, df = 1, p-value = 0.008908\n\n\nX-squared is the \\(\\chi^2\\) statistic\ndf is the degrees of freedom"
+    "text": "Chi-squared tests\n\nchisq.test(table(nhanes$smoking, nhanes$asthma))\n#| \n#|  Pearson's Chi-squared test with Yates' continuity correction\n#| \n#| data:  table(nhanes$smoking, nhanes$asthma)\n#| X-squared = 6.8411, df = 1, p-value = 0.008908\n\n\nX-squared is the \\(\\chi^2\\) statistic\ndf is the degrees of freedom"
   },
   {
     "objectID": "session_4/session_4.html#exercise-3-1",
@@ -1341,7 +1348,7 @@
     "href": "session_4/session_4.html#exercise-3-3",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nNext week, we’ll discuss the ggplot2 package, which is a powerful and popular data-visualization package. Install the package, as follows:\n\nSelect Install in the Packages tab.\nType ggplot2.\nSelect the Install button at the bottom.\n\nEquivalently, type the following in the console and press the enter or return key on your keyboard:\n\ninstall.packages('ggplot2')"
+    "text": "Exercise 3\n\nNext week, we’ll discuss the ggplot2 package, which is a powerful and popular data-visualization package. Install the package, as follows:\n\nSelect Install in the Packages tab.\nType ggplot2.\nSelect the Install button at the bottom.\n\nEquivalently, type the following in the console and press returnreturn or enterenter:\n\ninstall.packages('ggplot2')"
   },
   {
     "objectID": "session_4/session_4.html#exercise-3-4",
@@ -2797,7 +2804,7 @@
     "href": "index.html#session-4-how-can-i-perform-bivariate-analysis",
     "title": "A Slower Introduction to R",
     "section": "Session 4: How can I perform bivariate analysis?",
-    "text": "Session 4: How can I perform bivariate analysis?\n\nlive session:\n\nFriday, October 23, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nrecording (opens in a new tab)\nhomework"
+    "text": "Session 4: How can I perform bivariate analysis?\n\nlive session:\n\nFriday, October 23, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nhomework"
   },
   {
     "objectID": "index.html#session-5-how-can-i-make-data-visualizations-with-ggplot2",
@@ -2811,14 +2818,14 @@
     "href": "index.html#session-6-how-can-i-subset-data-and-define-missing-values",
     "title": "A Slower Introduction to R",
     "section": "Session 6: How can I subset data and define missing values?",
-    "text": "Session 6: How can I subset data and define missing values?\n\nlive session:\n\nFriday, November 6, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nrecording (opens in a new tab)\nhomework"
+    "text": "Session 6: How can I subset data and define missing values?\n\nlive session:\n\nFriday, November 6, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nhomework"
   },
   {
     "objectID": "index.html#session-7-how-can-i-create-new-categorical-variables",
     "href": "index.html#session-7-how-can-i-create-new-categorical-variables",
     "title": "A Slower Introduction to R",
     "section": "Session 7: How can I create new categorical variables?",
-    "text": "Session 7: How can I create new categorical variables?\n\nlive session:\n\nFriday, November 13, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nrecording (opens in a new tab)\nhomework"
+    "text": "Session 7: How can I create new categorical variables?\n\nlive session:\n\nFriday, November 13, 2026, at 9:30 am\nregister in advance here\n\nslides (opens in a new tab)\nexercise guide (right-click link to save)\nhomework"
   },
   {
     "objectID": "index.html#rights",
@@ -2923,7 +2930,7 @@
     "href": "session_4/homework_4.html",
     "title": "Homework 4",
     "section": "",
-    "text": "At the top of a new script, include code for importing the nhanes_l.csv data file. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes&lt;-read.csv('~/Downloads/data/nhanes/l/nhanes_l.csv')\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus occupation status (ocd150). Label the y axis and optionally remove the label for the x axis. The occupation variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\nYou may notice that 9 codes people who indicated that they don’t know how much sleep they typically get. We’ll talk in Session 6 about how to properly encode missing values.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012~nhanes$ocd150,ylab='Hours of sleep',xlab='')\n\n\n\n\n\n\n\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus gender (gender). Label the y axis and optionally remove the label for the x axis.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012~nhanes$gender,ylab='Hours of sleep',xlab='')\n\n\n\n\n\n\n\n\n\n\n\nConduct a t-test for the association between the typical number of sleep hours (sld012) and gender (gender).\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nt.test(nhanes$sld012~nhanes$gender)\n#| \n#|   Welch Two Sample t-test\n#| \n#| data:  nhanes$sld012 by nhanes$gender\n#| t = 4.8356, df = 7638.6, p-value = 1.353e-06\n#| alternative hypothesis: true difference in means between group Female and group Male is not equal to 0\n#| 95 percent confidence interval:\n#|  0.1044477 0.2468641\n#| sample estimates:\n#| mean in group Female   mean in group Male \n#|             7.820103             7.644448\n\n\n\n\nCreate a contingency table for country of birth (dmdborn4) and asthma (asthma), with country of birth placed along the rows.\nThe country variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\ntable(nhanes$dmdborn4,nhanes$asthma)\n#|    \n#|     History of asthma   No\n#|   1              1286 5226\n#|   2               198 1417\n\n\n\n\nFind the row-wise percents.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nprop.table(table(nhanes$dmdborn4,nhanes$asthma),1)*100\n#|    \n#|     History of asthma       No\n#|   1          19.74816 80.25184\n#|   2          12.26006 87.73994\n\n\n\n\nConduct a chi-squared test for the association between the two variables.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nchisq.test(table(nhanes$dmdborn4,nhanes$asthma))\n#| \n#|   Pearson's Chi-squared test with Yates' continuity correction\n#| \n#| data:  table(nhanes$dmdborn4, nhanes$asthma)\n#| X-squared = 48.114, df = 1, p-value = 4.022e-12"
+    "text": "At the top of a new script, include code for importing the nhanes_l.csv data file. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nnhanes &lt;- read.csv('nhanes_l.csv')\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus occupation status (ocd150). Label the y axis and optionally remove the label for the x axis. The occupation variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\nYou may notice that 9 codes people who indicated that they don’t know how much sleep they typically get. We’ll talk in Session 6 about how to properly encode missing values.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012 ~ nhanes$ocd150, ylab = 'Hours of sleep', xlab = '')\n\n\n\n\n\n\n\n\n\n\n\nCreate a box plot of the typical number of sleep hours (sld012) versus gender (gender). Label the y axis and optionally remove the label for the x axis.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nboxplot(nhanes$sld012 ~ nhanes$gender, ylab = 'Hours of sleep', xlab = '')\n\n\n\n\n\n\n\n\n\n\n\nConduct a t-test for the association between the typical number of sleep hours (sld012) and gender (gender).\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nt.test(nhanes$sld012 ~ nhanes$gender)\n#| \n#|   Welch Two Sample t-test\n#| \n#| data:  nhanes$sld012 by nhanes$gender\n#| t = 4.8356, df = 7638.6, p-value = 1.353e-06\n#| alternative hypothesis: true difference in means between group Female and group Male is not equal to 0\n#| 95 percent confidence interval:\n#|  0.1044477 0.2468641\n#| sample estimates:\n#| mean in group Female   mean in group Male \n#|             7.820103             7.644448\n\n\n\n\nCreate a contingency table for country of birth (dmdborn4) and asthma (asthma), with country of birth placed along the rows.\nThe country variable codes groups using numbers; a description is available here. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\ntable(nhanes$dmdborn4, nhanes$asthma)\n#|    \n#|     History of asthma   No\n#|   1              1286 5226\n#|   2               198 1417\n\n\n\n\nFind the row-wise percents.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nprop.table(table(nhanes$dmdborn4, nhanes$asthma), 1) * 100\n#|    \n#|     History of asthma       No\n#|   1          19.74816 80.25184\n#|   2          12.26006 87.73994\n\n\n\n\nConduct a chi-squared test for the association between the two variables.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nchisq.test(table(nhanes$dmdborn4, nhanes$asthma))\n#| \n#|   Pearson's Chi-squared test with Yates' continuity correction\n#| \n#| data:  table(nhanes$dmdborn4, nhanes$asthma)\n#| X-squared = 48.114, df = 1, p-value = 4.022e-12"
   },
   {
     "objectID": "session_5/homework_5.html",

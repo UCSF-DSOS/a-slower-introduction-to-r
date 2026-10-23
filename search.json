@@ -1145,7 +1145,7 @@
     "href": "session_4/session_4.html#formula-notation-1",
     "title": "Session 4: How can I perform bivariate analysis?",
     "section": "Formula notation",
-    "text": "Formula notation\n\nplot(nhanes$bpxosy1 ~ nhanes$bpxodi1, \n     xlab = 'Diastolic (mmHg)', ylab = 'Systolic (mmHg)')"
+    "text": "Formula notation\n\nplot(nhanes$bpxosy1 ~ nhanes$bpxodi1, xlab = 'Diastolic (mmHg)', \n     ylab = 'Systolic (mmHg)')"
   },
   {
     "objectID": "session_4/session_4.html#pearsons-correlation-coefficient",

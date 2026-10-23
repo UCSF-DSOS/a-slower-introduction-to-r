@@ -186,7 +186,7 @@
     "href": "session_7/session_7.html#exercise-2-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nUse base_match() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_base. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in table().\n\n\n\nI don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that base_match() will provide a non-alphabetical order, if you request it."
+    "text": "Exercise 2\n\nUse factor() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_factor. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in table().\nUse base_match() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_baseverse. Check your work. Verify that the groups are listed in the desired order in table().\n\n\n\nI don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that base_match() will provide a non-alphabetical order, if you request it."
   },
   {
     "objectID": "session_7/session_7.html#exercise-2-3",
@@ -194,20 +194,6 @@
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Exercise 2",
     "text": "Exercise 2\n\nUse base_match() to create a labeled version of race/ethnicity (ridreth3). You can call this variable race or race_ethnicity or whatever else makes sense to you. You may list the groups in whatever order you like. The NHANES documentation for ridreth3 is available here. Check your work. Verify that the groups are listed in the desired order in table()."
-  },
-  {
-    "objectID": "session_7/session_7.html#exercise-2-4",
-    "href": "session_7/session_7.html#exercise-2-4",
-    "title": "Session 7: How can I create new categorical variable?",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nAdd code for loading dplyr to the top of your script. Run your code.\nUse case_match(), from dplyr, to create another labeled version of the original gender variable (riagendr). Name the new variable gender_dplyr. Again, list the male group first. case_match() works similarly to base_match(), except the value–label mappings should be listed in a value ~ 'label' format.\n\n\n\nIt is more common to implement case_match() in a different way, using something called piping, but that is outside the intended scope of this series."
-  },
-  {
-    "objectID": "session_7/session_7.html#exercise-2-5",
-    "href": "session_7/session_7.html#exercise-2-5",
-    "title": "Session 7: How can I create new categorical variable?",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\ntable() the gender_base variable. Check the class of the variable. What do you notice about the order of the groups and the object class?\ntable() the gender_dplyr variable. Check the class of the variable. What do you notice about the order of the groups and the object class?"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol",
@@ -221,18 +207,39 @@
     "href": "session_7/session_7.html#total-cholesterol-1",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nto categorize total cholesterol, use base_when():\n\n\nnhanes$cholesterol&lt;-base_when(\n   'Desirable' = (nhanes$lbxtc&lt;200),\n   'Borderline high' = (nhanes$lbxtc&gt;=200)&(nhanes$lbxtc&lt;240),\n   'High' = (nhanes$lbxtc&gt;=240)\n)\n\n\neach argument of base_when() is a rule–label mapping in a label=rule format\nbase_when() will honor the order of the groups\n\n\n\nThe nhanes_l.csv data file already includes a cholesterol variable. I’m overwriting it here."
+    "text": "Total cholesterol\n\nwe can categorize lbxtc using cut():\n\n\nnhanes$cholesterol &lt;- cut(\n  nhanes$lbxtc,\n  breaks = c(0, 200, 240, Inf),\n  labels = c('Desirable', 'Borderline high', 'High'),\n  right = FALSE\n)\n\n\nnhanes$lbxtc: the original variable\nbreaks: the cuts\n\nnotice that we have to include one more cut than the number of groups\nInf refers to ∞\n\nlabels: labels for the groups\nright = FALSE: makes it so that the groups are left-inclusive"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-2",
     "href": "session_7/session_7.html#total-cholesterol-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nto omit dollar-sign notation, use with():\n\n\nnhanes$cholesterol&lt;-with(nhanes,base_when(\n   'Desirable' = (lbxtc&lt;200),\n   'Borderline high' = (lbxtc&gt;=200)&(lbxtc&lt;240),\n   'High' = (lbxtc&gt;=240)\n))"
+    "text": "Total cholesterol\n\ncholesterol looks like this:\n\n\ntable(nhanes$cholesterol,useNA='always')\n#| \n#|       Desirable Borderline high            High            &lt;NA&gt; \n#|            3695            1397             625            2436"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-3",
     "href": "session_7/session_7.html#total-cholesterol-3",
+    "title": "Session 7: How can I create new categorical variable?",
+    "section": "Total cholesterol",
+    "text": "Total cholesterol\n\nalternatively, we can use base_when() from my baseverse package:\n\n\nnhanes$cholesterol&lt;-base_when(\n   'Desirable' = (nhanes$lbxtc&lt;200),\n   'Borderline high' = (nhanes$lbxtc&gt;=200)&(nhanes$lbxtc&lt;240),\n   'High' = (nhanes$lbxtc&gt;=240)\n)\n\n\neach argument of base_when() is a rule–label mapping in a label=rule format\nbase_when() will honor the order of the groups\n\n\n\nThe nhanes_l.csv data file already includes a cholesterol variable. I’m overwriting it here."
+  },
+  {
+    "objectID": "session_7/session_7.html#total-cholesterol-4",
+    "href": "session_7/session_7.html#total-cholesterol-4",
+    "title": "Session 7: How can I create new categorical variable?",
+    "section": "Total cholesterol",
+    "text": "Total cholesterol\n\ncholesterol looks like this:\n\n\ntable(nhanes$cholesterol,useNA='always')\n#| \n#|       Desirable Borderline high            High            &lt;NA&gt; \n#|            3695            1397             625            2436"
+  },
+  {
+    "objectID": "session_7/session_7.html#total-cholesterol-5",
+    "href": "session_7/session_7.html#total-cholesterol-5",
+    "title": "Session 7: How can I create new categorical variable?",
+    "section": "Total cholesterol",
+    "text": "Total cholesterol\n\nto omit dollar-sign notation, use with():\n\n\nnhanes$cholesterol&lt;-with(nhanes,base_when(\n   'Desirable' = (lbxtc&lt;200),\n   'Borderline high' = (lbxtc&gt;=200)&(lbxtc&lt;240),\n   'High' = (lbxtc&gt;=240)\n))"
+  },
+  {
+    "objectID": "session_7/session_7.html#total-cholesterol-6",
+    "href": "session_7/session_7.html#total-cholesterol-6",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
     "text": "Total cholesterol\n\nto check the work, use sum() and table():\n\n\nsum(nhanes$lbxtc&lt;200,na.rm=TRUE)\n#| [1] 3695\nsum((nhanes$lbxtc&gt;=200)&(nhanes$lbxtc&lt;240),na.rm=TRUE)\n#| [1] 1397\nsum(nhanes$lbxtc&gt;=240,na.rm=TRUE)\n#| [1] 625\ntable(nhanes$cholesterol,useNA='always')\n#| \n#|       Desirable Borderline high            High            &lt;NA&gt; \n#|            3695            1397             625            2436"
@@ -242,7 +249,7 @@
     "href": "session_7/session_7.html#exercise-3-1",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nUse base_when() to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. The original age variable is ridageyr. Name the variable age3_base. Use the following labels: Youngest, Middle, and Oldest, and list the groups in that order. Check your work. Verify that the groups are listed in the desired order in table().\n\n\n\nI wouldn’t actually use these group names in practice. I’m suggesting them here just so you can verify a non-alphabetical order of the groups later."
+    "text": "Exercise 3\n\nUse cut() to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. The original age variable is ridageyr. Name the variable age3_base. Use the following labels: Youngest, Middle, and Oldest, and list the groups in that order. Check your work. Verify that the groups are listed in the desired order in table().\nUse base_when() to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. Check your work. Verify that the groups are listed in the desired order in table().\n\n\n\nI wouldn’t actually use these group names in practice. I’m suggesting them here just so you can verify a non-alphabetical order of the groups later."
   },
   {
     "objectID": "session_7/session_7.html#exercise-3-2",
@@ -252,25 +259,11 @@
     "text": "Exercise 3\n\nCopy and paste code from Session 6 for defining minutes of vigorous physical activity, with the NA values properly encoded. Now, use base_when() to define a categorical physical-activity variable with the following groups: less than 60 minutes, 60 minutes to less than 120 minutes, and 120 minutes or more. List the groups in order from fewer minutes to more minutes. Check your work. Verify that the groups are listed in the desired order in table()."
   },
   {
-    "objectID": "session_7/session_7.html#exercise-3-3",
-    "href": "session_7/session_7.html#exercise-3-3",
-    "title": "Session 7: How can I create new categorical variable?",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nUse case_when(), from the dplyr, to create another variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. The original age variable is ridageyr. Name the variable age3_dplyr. Use the following labels: Youngest, Middle, and Oldest, and list the groups in that order. case_when() works similarly to base_when(), except the rule–label mappings should be listed in a rule ~ 'label' format.\n\n\n\nIt is more common to implement case_when() in a different way, using something called piping, but that is outside the intended scope of this series."
-  },
-  {
-    "objectID": "session_7/session_7.html#exercise-3-4",
-    "href": "session_7/session_7.html#exercise-3-4",
-    "title": "Session 7: How can I create new categorical variable?",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\ntable() the age3_base variable. Check the class of the variable. What do you notice about the order of the groups and the object class?\ntable() the age3_dplyr variable. Check the class of the variable. What do you notice about the order of the groups and the object class?"
-  },
-  {
     "objectID": "session_7/session_7.html#other-workshops-i-teach",
     "href": "session_7/session_7.html#other-workshops-i-teach",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Other workshops I teach",
-    "text": "Other workshops I teach\n\nsomething on Quarto: possibly in Winter quarter\n\nQuarto is a very popular tool for generating reports, slide decks (such as this one), and websites\n\nData Manipulation in R: in Winter or Spring quarter\n\nincludes an introduction to dplyr and the tidyverse way of doing things\nincludes base-R and dplyr solutions\ncovers techniques for merging data and reshaping data"
+    "text": "Other workshops I teach\n\nData Wrangling in R: in Winter\n\nintroduces piping\nincludes an introduction to dplyr\ncovers techniques for merging data and reshaping data\n\nSharing R: in Winter\n\ncovers Quarto\n\nAdvanced R: in Spring"
   },
   {
     "objectID": "session_7/session_7.html#other-topics-you-might-pursue",

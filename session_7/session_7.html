@@ -532,7 +532,8 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-2" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="2" type="1">
-<li>Use <code>base_match()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_base</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
+<li><p>Use <code>factor()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_factor</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</p></li>
+<li><p>Use <code>base_match()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_baseverse</code>. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</p></li>
 </ol>
 
 <aside><div>
@@ -540,25 +541,8 @@ Yea-Hung Chen, PhD, MS
 </div></aside></section>
 <section id="exercise-2-3" class="slide level2">
 <h2>Exercise 2</h2>
-<ol start="3" type="1">
-<li>Use <code>base_match()</code> to create a labeled version of race/ethnicity (<code>ridreth3</code>). You can call this variable <code>race</code> or <code>race_ethnicity</code> or whatever else makes sense to you. You may list the groups in whatever order you like. The NHANES documentation for <code>ridreth3</code> is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm#RIDRETH3">here</a>. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
-</ol>
-</section>
-<section id="exercise-2-4" class="slide level2">
-<h2>Exercise 2</h2>
 <ol start="4" type="1">
-<li><p>Add code for loading <code>dplyr</code> to the top of your script. Run your code.</p></li>
-<li><p>Use <code>case_match()</code>, from <code>dplyr</code>, to create another labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_dplyr</code>. Again, list the male group first. <code>case_match()</code> works similarly to <code>base_match()</code>, except the value–label mappings should be listed in a <code>value ~ 'label'</code> format.</p></li>
-</ol>
-
-<aside><div>
-<p>It is more common to implement <code>case_match()</code> in a different way, using something called piping, but that is outside the intended scope of this series.</p>
-</div></aside></section>
-<section id="exercise-2-5" class="slide level2">
-<h2>Exercise 2</h2>
-<ol start="6" type="1">
-<li><p><code>table()</code> the <code>gender_base</code> variable. Check the class of the variable. What do you notice about the order of the groups and the object class?</p></li>
-<li><p><code>table()</code> the <code>gender_dplyr</code> variable. Check the class of the variable. What do you notice about the order of the groups and the object class?</p></li>
+<li>Use <code>base_match()</code> to create a labeled version of race/ethnicity (<code>ridreth3</code>). You can call this variable <code>race</code> or <code>race_ethnicity</code> or whatever else makes sense to you. You may list the groups in whatever order you like. The NHANES documentation for <code>ridreth3</code> is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm#RIDRETH3">here</a>. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
 </ol>
 </section></section>
 <section>
@@ -581,14 +565,50 @@ Yea-Hung Chen, PhD, MS
 <section id="total-cholesterol-1" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
-<li>to categorize total cholesterol, <strong>use <code>base_when()</code></strong>:</li>
+<li>we can categorize <code>lbxtc</code> using <code>cut()</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol<span class="ot">&lt;-</span><span class="fu">base_when</span>(</span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Desirable'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">200</span>),</span>
-<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Borderline high'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),</span>
-<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'High'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>)</span>
-<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol <span class="ot">&lt;-</span> <span class="fu">cut</span>(</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>  nhanes<span class="sc">$</span>lbxtc,</span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="dv">240</span>, <span class="cn">Inf</span>),</span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Desirable'</span>, <span class="st">'Borderline high'</span>, <span class="st">'High'</span>),</span>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">right =</span> <span class="cn">FALSE</span></span>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><code>nhanes$lbxtc</code>: the original variable</li>
+<li><code>breaks</code>: the cuts
+<ul>
+<li>notice that we have to include one more cut than the number of groups</li>
+<li><code>Inf</code> refers to ∞</li>
+</ul></li>
+<li><code>labels</code>: labels for the groups</li>
+<li><code>right = FALSE</code>: makes it so that the groups are left-inclusive</li>
+</ul>
+</section>
+<section id="total-cholesterol-2" class="slide level2">
+<h2>Total cholesterol</h2>
+<ul>
+<li><code>cholesterol</code> looks like this:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="total-cholesterol-3" class="slide level2">
+<h2>Total cholesterol</h2>
+<ul>
+<li>alternatively, we can use <code>base_when()</code> from my <code>baseverse</code> package:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol<span class="ot">&lt;-</span><span class="fu">base_when</span>(</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Desirable'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">200</span>),</span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Borderline high'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),</span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'High'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>)</span>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>each argument of <code>base_when()</code> is a rule–label mapping in a <code>label=</code><em>rule</em> format</li>
@@ -598,35 +618,47 @@ Yea-Hung Chen, PhD, MS
 <aside><div>
 <p>The <code>nhanes_l.csv</code> data file already includes a <code>cholesterol</code> variable. I’m overwriting it here.</p>
 </div></aside></section>
-<section id="total-cholesterol-2" class="slide level2">
+<section id="total-cholesterol-4" class="slide level2">
+<h2>Total cholesterol</h2>
+<ul>
+<li><code>cholesterol</code> looks like this:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="total-cholesterol-5" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
 <li>to omit dollar-sign notation, <strong>use <code>with()</code></strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol<span class="ot">&lt;-</span><span class="fu">with</span>(nhanes,<span class="fu">base_when</span>(</span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Desirable'</span> <span class="ot">=</span> (lbxtc<span class="sc">&lt;</span><span class="dv">200</span>),</span>
-<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Borderline high'</span> <span class="ot">=</span> (lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),</span>
-<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'High'</span> <span class="ot">=</span> (lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>)</span>
-<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol<span class="ot">&lt;-</span><span class="fu">with</span>(nhanes,<span class="fu">base_when</span>(</span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Desirable'</span> <span class="ot">=</span> (lbxtc<span class="sc">&lt;</span><span class="dv">200</span>),</span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'Borderline high'</span> <span class="ot">=</span> (lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),</span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'High'</span> <span class="ot">=</span> (lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>)</span>
+<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="total-cholesterol-3" class="slide level2">
+<section id="total-cholesterol-6" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
 <li>to check the work, <strong>use <code>sum()</code> and <code>table()</code></strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">200</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 3695</span></span>
-<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1397</span></span>
-<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 625</span></span>
-<span id="cb19-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb19-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb19-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
-<span id="cb19-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">200</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 3695</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1397</span></span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 625</span></span>
+<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb22-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -637,7 +669,8 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-3-1" class="slide level2">
 <h2>Exercise 3</h2>
 <ol type="1">
-<li>Use <code>base_when()</code> to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. The original age variable is <code>ridageyr</code>. Name the variable <code>age3_base</code>. Use the following labels: <code>Youngest</code>, <code>Middle</code>, and <code>Oldest</code>, and list the groups in that order. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
+<li><p>Use <code>cut()</code> to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. The original age variable is <code>ridageyr</code>. Name the variable <code>age3_base</code>. Use the following labels: <code>Youngest</code>, <code>Middle</code>, and <code>Oldest</code>, and list the groups in that order. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</p></li>
+<li><p>Use <code>base_when()</code> to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</p></li>
 </ol>
 
 <aside><div>
@@ -645,24 +678,8 @@ Yea-Hung Chen, PhD, MS
 </div></aside></section>
 <section id="exercise-3-2" class="slide level2">
 <h2>Exercise 3</h2>
-<ol start="2" type="1">
-<li>Copy and paste code from Session 6 for defining minutes of vigorous physical activity, with the <code>NA</code> values properly encoded. Now, use <code>base_when()</code> to define a categorical physical-activity variable with the following groups: less than 60 minutes, 60 minutes to less than 120 minutes, and 120 minutes or more. List the groups in order from fewer minutes to more minutes. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
-</ol>
-</section>
-<section id="exercise-3-3" class="slide level2">
-<h2>Exercise 3</h2>
 <ol start="3" type="1">
-<li>Use <code>case_when()</code>, from the <code>dplyr</code>, to create another variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. The original age variable is <code>ridageyr</code>. Name the variable <code>age3_dplyr</code>. Use the following labels: <code>Youngest</code>, <code>Middle</code>, and <code>Oldest</code>, and list the groups in that order. <code>case_when()</code> works similarly to <code>base_when()</code>, except the rule–label mappings should be listed in a <em>rule</em> ~ <code>'label'</code> format.</li>
-</ol>
-
-<aside><div>
-<p>It is more common to implement <code>case_when()</code> in a different way, using something called piping, but that is outside the intended scope of this series.</p>
-</div></aside></section>
-<section id="exercise-3-4" class="slide level2">
-<h2>Exercise 3</h2>
-<ol start="4" type="1">
-<li><p><code>table()</code> the <code>age3_base</code> variable. Check the class of the variable. What do you notice about the order of the groups and the object class?</p></li>
-<li><p><code>table()</code> the <code>age3_dplyr</code> variable. Check the class of the variable. What do you notice about the order of the groups and the object class?</p></li>
+<li>Copy and paste code from Session 6 for defining minutes of vigorous physical activity, with the <code>NA</code> values properly encoded. Now, use <code>base_when()</code> to define a categorical physical-activity variable with the following groups: less than 60 minutes, 60 minutes to less than 120 minutes, and 120 minutes or more. List the groups in order from fewer minutes to more minutes. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
 </ol>
 </section></section>
 <section>
@@ -673,16 +690,17 @@ Yea-Hung Chen, PhD, MS
 <section id="other-workshops-i-teach" class="slide level2">
 <h2>Other workshops I teach</h2>
 <ul>
-<li>something on <strong>Quarto</strong>: possibly in Winter quarter
+<li><strong><em>Data Wrangling in R</em></strong>: in Winter
 <ul>
-<li>Quarto is a very popular tool for generating reports, slide decks (such as this one), and websites</li>
-</ul></li>
-<li><strong><em>Data Manipulation in R</em></strong>: in Winter or Spring quarter
-<ul>
-<li>includes an introduction to <code>dplyr</code> and the tidyverse way of doing things</li>
-<li>includes base-R and <code>dplyr</code> solutions</li>
+<li>introduces piping</li>
+<li>includes an introduction to <code>dplyr</code></li>
 <li>covers techniques for <strong>merging data</strong> and <strong>reshaping data</strong></li>
 </ul></li>
+<li><strong><em>Sharing R</em></strong>: in Winter
+<ul>
+<li>covers Quarto</li>
+</ul></li>
+<li><strong>Advanced R</strong>: in Spring</li>
 </ul>
 </section>
 <section id="other-topics-you-might-pursue" class="slide level2">

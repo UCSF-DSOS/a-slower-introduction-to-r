@@ -186,11 +186,18 @@
     "href": "session_7/session_7.html#exercise-2-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nUse factor() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_factor. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in table().\nUse base_match() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_baseverse. Check your work. Verify that the groups are listed in the desired order in table().\n\n\n\nI don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that base_match() will provide a non-alphabetical order, if you request it."
+    "text": "Exercise 2\n\nUse factor() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_factor. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in table().\n\n\n\nI don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that base_match() will provide a non-alphabetical order, if you request it."
   },
   {
     "objectID": "session_7/session_7.html#exercise-2-3",
     "href": "session_7/session_7.html#exercise-2-3",
+    "title": "Session 7: How can I create new categorical variable?",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nUse base_match() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_factor. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in table().\n\n\n\nI don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that base_match() will provide a non-alphabetical order, if you request it."
+  },
+  {
+    "objectID": "session_7/session_7.html#exercise-2-4",
+    "href": "session_7/session_7.html#exercise-2-4",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Exercise 2",
     "text": "Exercise 2\n\nUse base_match() to create a labeled version of race/ethnicity (ridreth3). You can call this variable race or race_ethnicity or whatever else makes sense to you. You may list the groups in whatever order you like. The NHANES documentation for ridreth3 is available here. Check your work. Verify that the groups are listed in the desired order in table()."
@@ -207,7 +214,7 @@
     "href": "session_7/session_7.html#total-cholesterol-1",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nwe can categorize lbxtc using cut():\n\n\nnhanes$cholesterol &lt;- cut(\n  nhanes$lbxtc,\n  breaks = c(0, 200, 240, Inf),\n  labels = c('Desirable', 'Borderline high', 'High'),\n  right = FALSE\n)\n\n\nnhanes$lbxtc: the original variable\nbreaks: the cuts\n\nnotice that we have to include one more cut than the number of groups\nInf refers to ∞\n\nlabels: labels for the groups\nright = FALSE: makes it so that the groups are left-inclusive"
+    "text": "Total cholesterol\n\nwe can categorize lbxtc using cut():\n\n\nnhanes$cholesterol &lt;- cut(\n  nhanes$lbxtc,\n  breaks = c(0, 200, 240, Inf),\n  labels = c('Desirable', 'Borderline high', 'High'),\n  right = FALSE\n)\n\n\nnhanes$lbxtc: the original variable\nbreaks: notice that there are 4 breaks but 3 groups\n\nInf means ∞\n\nright = FALSE: makes it so that the groups are left-inclusive"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-2",
@@ -221,7 +228,7 @@
     "href": "session_7/session_7.html#total-cholesterol-3",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nalternatively, we can use base_when() from my baseverse package:\n\n\nnhanes$cholesterol&lt;-base_when(\n   'Desirable' = (nhanes$lbxtc&lt;200),\n   'Borderline high' = (nhanes$lbxtc&gt;=200)&(nhanes$lbxtc&lt;240),\n   'High' = (nhanes$lbxtc&gt;=240)\n)\n\n\neach argument of base_when() is a rule–label mapping in a label=rule format\nbase_when() will honor the order of the groups\n\n\n\nThe nhanes_l.csv data file already includes a cholesterol variable. I’m overwriting it here."
+    "text": "Total cholesterol\n\nalternatively, we can use base_when() from baseverse:\n\n\nnhanes$cholesterol&lt;-base_when(\n   'Desirable' = (nhanes$lbxtc&lt;200),\n   'Borderline high' = (nhanes$lbxtc&gt;=200)&(nhanes$lbxtc&lt;240),\n   'High' = (nhanes$lbxtc&gt;=240)\n)\n\n\neach argument of base_when() is a rule–label mapping in a label=rule format\nbase_when() will honor the order of the groups\n\n\n\nThe nhanes_l.csv data file already includes a cholesterol variable. I’m overwriting it here."
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-4",
@@ -235,7 +242,7 @@
     "href": "session_7/session_7.html#total-cholesterol-5",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nto omit dollar-sign notation, use with():\n\n\nnhanes$cholesterol&lt;-with(nhanes,base_when(\n   'Desirable' = (lbxtc&lt;200),\n   'Borderline high' = (lbxtc&gt;=200)&(lbxtc&lt;240),\n   'High' = (lbxtc&gt;=240)\n))"
+    "text": "Total cholesterol\n\nto omit dollar-sign notation, use with():\n\n\nnhanes$cholesterol&lt;-with(nhanes,base_when(\n   'Desirable' = (lbxtc&lt;200),\n   'Borderline high' = (lbxtc&gt;=200)&(lbxtc&lt;240),\n   'High' = (lbxtc&gt;=240)\n))\n\n\n\nA more popular way for omitting dollar-sign notation is to use piping, which I discuss in Data Wrangling in R."
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-6",
@@ -263,7 +270,7 @@
     "href": "session_7/session_7.html#other-workshops-i-teach",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Other workshops I teach",
-    "text": "Other workshops I teach\n\nData Wrangling in R: in Winter\n\nintroduces piping\nincludes an introduction to dplyr\ncovers techniques for merging data and reshaping data\n\nSharing R: in Winter\n\ncovers Quarto\n\nAdvanced R: in Spring"
+    "text": "Other workshops I teach\n\nData Wrangling in R: in Winter\n\nintroduces piping\nintroduces dplyr\ncovers techniques for merging data and reshaping data\n\nSharing R: in Winter\n\ncovers Quarto\n\nAdvanced R: in Spring"
   },
   {
     "objectID": "session_7/session_7.html#other-topics-you-might-pursue",

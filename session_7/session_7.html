@@ -532,14 +532,22 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-2" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="2" type="1">
-<li><p>Use <code>factor()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_factor</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</p></li>
-<li><p>Use <code>base_match()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_baseverse</code>. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</p></li>
+<li>Use <code>factor()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_factor</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
 </ol>
 
 <aside><div>
 <p>I don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that <code>base_match()</code> will provide a non-alphabetical order, if you request it.</p>
 </div></aside></section>
 <section id="exercise-2-3" class="slide level2">
+<h2>Exercise 2</h2>
+<ol start="3" type="1">
+<li>Use <code>base_match()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_factor</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
+</ol>
+
+<aside><div>
+<p>I don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that <code>base_match()</code> will provide a non-alphabetical order, if you request it.</p>
+</div></aside></section>
+<section id="exercise-2-4" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="4" type="1">
 <li>Use <code>base_match()</code> to create a labeled version of race/ethnicity (<code>ridreth3</code>). You can call this variable <code>race</code> or <code>race_ethnicity</code> or whatever else makes sense to you. You may list the groups in whatever order you like. The NHANES documentation for <code>ridreth3</code> is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm#RIDRETH3">here</a>. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
@@ -577,12 +585,10 @@ Yea-Hung Chen, PhD, MS
 </div>
 <ul>
 <li><code>nhanes$lbxtc</code>: the original variable</li>
-<li><code>breaks</code>: the cuts
+<li><code>breaks</code>: notice that there are 4 breaks but 3 groups
 <ul>
-<li>notice that we have to include one more cut than the number of groups</li>
-<li><code>Inf</code> refers to ∞</li>
+<li><code>Inf</code> means ∞</li>
 </ul></li>
-<li><code>labels</code>: labels for the groups</li>
 <li><code>right = FALSE</code>: makes it so that the groups are left-inclusive</li>
 </ul>
 </section>
@@ -601,7 +607,7 @@ Yea-Hung Chen, PhD, MS
 <section id="total-cholesterol-3" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
-<li>alternatively, we can use <code>base_when()</code> from my <code>baseverse</code> package:</li>
+<li>alternatively, we can use <code>base_when()</code> from <code>baseverse</code>:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol<span class="ot">&lt;-</span><span class="fu">base_when</span>(</span>
@@ -642,7 +648,10 @@ Yea-Hung Chen, PhD, MS
 <span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a>   <span class="st">'High'</span> <span class="ot">=</span> (lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>)</span>
 <span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
+
+<aside><div>
+<p>A more popular way for omitting dollar-sign notation is to use piping, which I discuss in <a href="https://ucsf-dsos.github.io/data-wrangling-in-r"><em>Data Wrangling in R</em></a>.</p>
+</div></aside></section>
 <section id="total-cholesterol-6" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
@@ -690,10 +699,10 @@ Yea-Hung Chen, PhD, MS
 <section id="other-workshops-i-teach" class="slide level2">
 <h2>Other workshops I teach</h2>
 <ul>
-<li><strong><em>Data Wrangling in R</em></strong>: in Winter
+<li><a href="https://ucsf-dsos.github.io/data-wrangling-in-r"><strong><em>Data Wrangling in R</em></strong></a>: in Winter
 <ul>
 <li>introduces piping</li>
-<li>includes an introduction to <code>dplyr</code></li>
+<li>introduces <code>dplyr</code></li>
 <li>covers techniques for <strong>merging data</strong> and <strong>reshaping data</strong></li>
 </ul></li>
 <li><strong><em>Sharing R</em></strong>: in Winter

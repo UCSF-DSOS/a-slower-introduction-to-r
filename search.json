@@ -676,7 +676,7 @@
     "href": "session_5/session_5.html#aesthetics",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Aesthetics",
-    "text": "Aesthetics\n\naesthetics = visual dimensions\n3 common aesthetics are:\n\nx\ny\ncolor\n\nto make a ggplot2 data visualization, you must assign variables to dimensions\nyou might hear me refer to this as a mapping"
+    "text": "Aesthetics\n\naesthetics define the visual dimensions\n3 common aesthetics are:\n\nx\ny\ncolor\n\nto make a ggplot2 data visualization, you must assign variables to dimensions\nyou might hear me refer to this as a mapping"
   },
   {
     "objectID": "session_5/session_5.html#aesthetics-x-and-y",
@@ -788,14 +788,14 @@
     "href": "session_5/session_5.html#loading-versus-installing",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Loading versus installing",
-    "text": "Loading versus installing\n\n\n\n\n\naction\nanalogy\nfrequency\n\n\n\n\ninstalling\nbuying a cookbook\nonce ever\n\n\nloading\ntaking the cookbook off the shelf\nonce per session"
+    "text": "Loading versus installing\n\n\n\n\n\n\n\n\n\ninstalling\nloading\n\n\n\n\naction\ninstalling\nloading\n\n\nanalogy\nbuying a cookbook\ntaking the cookbook off the shelf\n\n\nfrequency\nonce ever\nonce per session"
   },
   {
     "objectID": "session_5/session_5.html#put-it-in-your-script",
     "href": "session_5/session_5.html#put-it-in-your-script",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Put it in your script",
-    "text": "Put it in your script\n\nI suggest that you put library() code near the top of your script\nfor example:\n\n\n# load packages\nlibrary(ggplot2) \n\n# import data\nnhanes&lt;-read.csv('nhanes_l.csv')"
+    "text": "Put it in your script\n\nI suggest that you put library() code near the top of your script\nfor example:\n\n\n# load packages\nlibrary(ggplot2) \n\n# import data\nnhanes &lt;- read.csv('nhanes_l.csv')"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height",
@@ -809,7 +809,7 @@
     "href": "session_5/session_5.html#systolic-versus-height-aesthetics",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: aesthetics",
-    "text": "Systolic versus height: aesthetics\n\nto specify the aesthetics component, use the aes() function, inside the ggplot(nhanes,) function:\n\n\nggplot(data=nhanes,aes(x=bmxht,y=bpxosy1))\n\n\naes() function stands for aesthetic\nnotice the data argument inside ggplot()\ndata is the first argument so the argument name is optional"
+    "text": "Systolic versus height: aesthetics\n\nto specify the aesthetics component, use the aes() function, inside the ggplot(nhanes,) function:\n\n\nggplot(data = nhanes, aes(x = bmxht, y = bpxosy1))\n\n\naes() function stands for aesthetic\nnotice the data argument inside ggplot()\ndata is the first argument so the argument name is optional"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-geometry",
@@ -823,7 +823,7 @@
     "href": "session_5/session_5.html#systolic-versus-height-aesthetics-geometry",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: aesthetics + geometry",
-    "text": "Systolic versus height: aesthetics + geometry\n\nto connect the 2 components, use the plus sign:\n\n\nggplot(nhanes,aes(x=bmxht,y=bpxosy1))+\n  geom_point()"
+    "text": "Systolic versus height: aesthetics + geometry\n\nto connect the 2 components, use the plus sign:\n\n\nggplot(nhanes, aes(x = bmxht, y = bpxosy1)) +\n  geom_point()"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-aesthetics-geometry-1",
@@ -837,14 +837,14 @@
     "href": "session_5/session_5.html#systolic-versus-height-labels",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: labels",
-    "text": "Systolic versus height: labels\n\nwhat about the labels on the x and y axes?\nto specify labels, use the labs() function:\n\n\nlabs(x='Height (cm)',y='Systolic blood pressure (mmHg)')"
+    "text": "Systolic versus height: labels\n\nwhat about the labels on the x and y axes?\nto specify labels, use the labs() function:\n\n\nlabs(x = 'Height (cm)', y = 'Systolic blood pressure (mmHg)')"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-aesthetics-geometry-labels",
     "href": "session_5/session_5.html#systolic-versus-height-aesthetics-geometry-labels",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: aesthetics + geometry + labels",
-    "text": "Systolic versus height: aesthetics + geometry + labels\n\nputting it all together:\n\n\nggplot(nhanes,aes(x=bmxht,y=bpxosy1))+\n  geom_point()+\n  labs(x='Height (cm)',y='Systolic blood pressure (mmHg)')\n\n\nnotice that there are 3 components now"
+    "text": "Systolic versus height: aesthetics + geometry + labels\n\nputting it all together:\n\n\nggplot(nhanes, aes(x = bmxht, y = bpxosy1)) +\n  geom_point() +\n  labs(x = 'Height (cm)', y = 'Systolic blood pressure (mmHg)')\n\n\nnotice that there are 3 components now"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-aesthetics-geometry-labels-1",
@@ -858,7 +858,7 @@
     "href": "session_5/session_5.html#systolic-versus-height-color",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: color",
-    "text": "Systolic versus height: color\n\nto use color to represent a variable, add the color argument to aes()\nfor example, to use color to represent gender:\n\n\nggplot(nhanes,aes(x=bmxht,y=bpxosy1,color=gender))+\n  geom_point()+\n  labs(x='Height (cm)',y='Systolic blood pressure (mmHg)')"
+    "text": "Systolic versus height: color\n\nto use color to represent a variable, add the color argument to aes()\nfor example, to use color to represent gender:\n\n\nggplot(nhanes, aes(x = bmxht, y = bpxosy1, color = gender)) +\n  geom_point() +\n  labs(x = 'Height (cm)', y = 'Systolic blood pressure (mmHg)')"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-color-1",
@@ -872,14 +872,14 @@
     "href": "session_5/session_5.html#systolic-versus-height-color-2",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: color",
-    "text": "Systolic versus height: color\n\nto modify the legend label, add the color argument to labs():\n\n\nlabs(x='Height (cm)',\n     y='Systolic blood pressure (mmHg)',\n     color='Gender')"
+    "text": "Systolic versus height: color\n\nto modify the legend label, add the color argument to labs():\n\n\nlabs(x = 'Height (cm)', y = 'Systolic blood pressure (mmHg)', color = 'Gender')"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-color-3",
     "href": "session_5/session_5.html#systolic-versus-height-color-3",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: color",
-    "text": "Systolic versus height: color\n\nputting it all together:\n\n\nggplot(nhanes,aes(x=bmxht,y=bpxosy1,color=gender))+\n  geom_point()+\n  labs(x='Height (cm)',\n       y='Systolic blood pressure (mmHg)',\n       color='Gender')"
+    "text": "Systolic versus height: color\n\nputting it all together:\n\n\nggplot(nhanes, aes(x = bmxht, y = bpxosy1, color = gender)) +\n  geom_point() +\n  labs(x = 'Height (cm)', y = 'Systolic blood pressure (mmHg)', color =\n         'Gender')"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-color-4",
@@ -893,14 +893,14 @@
     "href": "session_5/session_5.html#systolic-versus-height-smoothers",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: smoothers",
-    "text": "Systolic versus height: smoothers\n\nto add a smoother to the original scatter plot, add the geom_smooth() geometry\nfor example, to add a regression line:\n\n\ngeom_smooth(method='lm',se=FALSE)\n\n\n'lm' stands for linear model\nse=FALSE removes the default confidence band"
+    "text": "Systolic versus height: smoothers\n\nto add a smoother to the original scatter plot, add the geom_smooth() geometry\nfor example, to add a regression line:\n\n\ngeom_smooth(method = 'lm', se = FALSE)\n\n\n'lm' stands for linear model\nse=FALSE removes the default confidence band"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-smoothers-1",
     "href": "session_5/session_5.html#systolic-versus-height-smoothers-1",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Systolic versus height: smoothers",
-    "text": "Systolic versus height: smoothers\n\nputting it all together:\n\n\nggplot(nhanes,aes(x=bmxht,y=bpxosy1))+\n  geom_point()+\n  geom_smooth(method='lm',se=FALSE)+\n  labs(x='Height (cm)',\n       y='Systolic blood pressure (mmHg)',\n       color='Gender')\n\n\nthe order of the geometries does matter"
+    "text": "Systolic versus height: smoothers\n\nputting it all together:\n\n\nggplot(nhanes, aes(x = bmxht, y = bpxosy1)) +\n  geom_point() +\n  geom_smooth(method = 'lm', se = FALSE) +\n  labs(x = 'Height (cm)', y = 'Systolic blood pressure (mmHg)', color =\n         'Gender')\n\n\nthe order of the geometries does matter"
   },
   {
     "objectID": "session_5/session_5.html#systolic-versus-height-smoothers-2",
@@ -928,7 +928,7 @@
     "href": "session_5/session_5.html#exercise-2-3",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nCopy and paste the code from the second problem. Add a LOESS smoother (you can find more information about LOESS smoothers here). To do this, add geom_smooth() with the method='loess' argument. Also add a color argument to geom_smooth(), using some color of your choice (see this list). For example, you could use color='springgreen3'. Finally, add the se=FALSE argument to geom_smooth() to remove the default confidence band. Run your code."
+    "text": "Exercise 2\n\nCopy and paste the code from the second problem. Add a LOESS smoother (you can find more information about LOESS smoothers here). To do this, add geom_smooth() with the method = 'loess' argument. Also add a color argument to geom_smooth(), using some color of your choice (see this list). For example, you could use color = 'springgreen3'. Finally, add the se = FALSE argument to geom_smooth() to remove the default confidence band. Run your code."
   },
   {
     "objectID": "session_5/session_5.html#exercise-2-4",
@@ -949,7 +949,7 @@
     "href": "session_5/session_5.html#histograms-1",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Histograms",
-    "text": "Histograms\n\nggplot(nhanes,aes(x=bpxopls1))+\n  geom_histogram()+\n  labs(x='Pulse (per minute)',y='Count')\n\n\nnotice that you do not need to include a y argument in aes()"
+    "text": "Histograms\n\nggplot(nhanes, aes(x = bpxopls1)) +\n  geom_histogram() +\n  labs(x = 'Pulse (per minute)', y = 'Count')\n\n\nnotice that you do not need to include a y argument in aes()"
   },
   {
     "objectID": "session_5/session_5.html#histograms-2",
@@ -963,7 +963,7 @@
     "href": "session_5/session_5.html#density-plots",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Density plots",
-    "text": "Density plots\n\nto make a density plot, use geom_density() instead of geom_histogram():\n\n\nggplot(nhanes,aes(x=bpxopls1))+\n  geom_density()+\n  labs(x='Pulse (per minute)',y='Density')"
+    "text": "Density plots\n\nto make a density plot, use geom_density() instead of geom_histogram():\n\n\nggplot(nhanes, aes(x = bpxopls1)) +\n  geom_density() +\n  labs(x = 'Pulse (per minute)', y = 'Density')"
   },
   {
     "objectID": "session_5/session_5.html#density-plots-1",
@@ -977,7 +977,7 @@
     "href": "session_5/session_5.html#overlying-the-density-on-a-histogram",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Overlying the density on a histogram",
-    "text": "Overlying the density on a histogram\n\nby default, the y axis of geom_histogram() is counts\nto get histograms on the density scale, add a y argument to aes():\n\n\nggplot(nhanes,aes(x=bpxopls1,y=after_stat(density)))+\n  geom_histogram()+\n  geom_density(color='deeppink2')+\n  labs(x='Pulse (per minute)',y='Density')\n\n\nthe order of the geometries does matter!\n\n\n\nSee this page for a brief description of the after_stat() function."
+    "text": "Overlying the density on a histogram\n\nby default, the y axis of geom_histogram() is counts\nto get histograms on the density scale, add a y argument to aes():\n\n\nggplot(nhanes, aes(x = bpxopls1, y = after_stat(density))) +\n  geom_histogram() +\n  geom_density(color = 'deeppink2') +\n  labs(x = 'Pulse (per minute)', y = 'Density')\n\n\nthe order of the geometries does matter!\n\n\n\nSee this page for a brief description of the after_stat() function."
   },
   {
     "objectID": "session_5/session_5.html#overlying-the-density-on-a-histogram-1",
@@ -991,7 +991,7 @@
     "href": "session_5/session_5.html#overlying-the-density-on-a-histogram-2",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Overlying the density on a histogram",
-    "text": "Overlying the density on a histogram\n\nto change the thickness of the density line, add the size argument to geom_density():\n\n\nggplot(nhanes,aes(x=bpxopls1,y=after_stat(density)))+\n  geom_histogram()+\n  geom_density(color='deeppink2',size=3)+\n  labs(x='Pulse (per minute)',y='Density')"
+    "text": "Overlying the density on a histogram\n\nto change the thickness of the density line, add the size argument to geom_density():\n\n\nggplot(nhanes, aes(x = bpxopls1, y = after_stat(density))) +\n  geom_histogram() +\n  geom_density(color = 'deeppink2', size = 3) +\n  labs(x = 'Pulse (per minute)', y = 'Density')"
   },
   {
     "objectID": "session_5/session_5.html#overlying-the-density-on-a-histogram-3",
@@ -1019,7 +1019,7 @@
     "href": "session_5/session_5.html#faceting-3",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Faceting",
-    "text": "Faceting\n\nto facet, add the facet_grid() component:\n\n\nggplot(subset(nhanes,!is.na(smoking)),aes(x=bpxodi1,y=bpxosy1))+\n  geom_point()+\n  geom_smooth(method='loess',color='tomato',se=FALSE)+\n  labs(x='Diastolic blood pressure (mmHg)',\n       y='Systolic blood pressure (mmHg)')+\n  facet_grid(smoking~gender)\n\n\nfacet_grid() uses formula notation\nhere, smoking is listed first, meaning that it will define the rows\n\n\n\nThe above includes a subsetting of the data in the data argument, to remove missing values. We’ll talk more about such code in Session 6!"
+    "text": "Faceting\n\nto facet, add the facet_grid() component:\n\n\nggplot(subset(nhanes, !is.na(smoking)), aes(x = bpxodi1, y = bpxosy1)) +\n  geom_point() +\n  geom_smooth(method = 'loess', color = 'tomato', se = FALSE) +\n  labs(x = 'Diastolic blood pressure (mmHg)', y = 'Systolic blood pressure (mmHg)') +\n  facet_grid(smoking ~ gender)\n\n\nfacet_grid() uses formula notation\nhere, smoking is listed first, meaning that it will define the rows\n\n\n\nThe above includes a subsetting of the data in the data argument, to remove missing values. We’ll talk more about such code in Session 6!"
   },
   {
     "objectID": "session_5/session_5.html#exercise-3-1",
@@ -1047,7 +1047,7 @@
     "href": "session_5/session_5.html#how-should-i-be-using-working-directories",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "How should I be using working directories?",
-    "text": "How should I be using working directories?\n\nyou can pick (set) the working directory\nand, I recommend that you set the working directory to be the folder that corresponds to the project you are working on at the moment"
+    "text": "How should I be using working directories?\n\nand, I recommend that you set the working directory to be the folder that corresponds to the project you are working on at the moment"
   },
   {
     "objectID": "session_5/session_5.html#how-can-i-figure-out-what-the-current-working-directory-is",
@@ -1075,35 +1075,42 @@
     "href": "session_5/session_5.html#how-can-i-set-the-working-directory-method-1",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "How can I set the working directory? Method 1",
-    "text": "How can I set the working directory? Method 1\n\nif you have already a script in your project folder, and you want to set that folder as the working directory:\n\nclose RStudio if it’s open\nfrom your Finder (MacOS) or File Explorer (Windows), open your script"
+    "text": "How can I set the working directory? Method 1\nIf you already have a script in your project folder, and you want to set that folder as the working directory:\n\nClose RStudio if it’s open.\nFrom your Finder (MacOS) or File Explorer (Windows), open your script."
   },
   {
-    "objectID": "session_5/session_5.html#how-can-i-set-the-working-directory-method-2",
-    "href": "session_5/session_5.html#how-can-i-set-the-working-directory-method-2",
+    "objectID": "session_5/session_5.html#how-can-i-set-the-working-directory-method-1-1",
+    "href": "session_5/session_5.html#how-can-i-set-the-working-directory-method-1-1",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
-    "section": "How can I set the working directory? Method 2",
-    "text": "How can I set the working directory? Method 2\n\nuse RStudio’s menu: Session &gt; Set Working Directory &gt; Choose Directory…"
+    "section": "How can I set the working directory? Method 1",
+    "text": "How can I set the working directory? Method 1\nIf you already have a script in your project folder, and you want to set that folder as the working directory:\n\nOpen RStudio.\nOpen the script.\nSelec: Session &gt; Set Working Directory &gt; To Source File Location."
+  },
+  {
+    "objectID": "session_5/session_5.html#how-can-i-set-the-working-directory-method-3",
+    "href": "session_5/session_5.html#how-can-i-set-the-working-directory-method-3",
+    "title": "Session 5: How can I make data visualizations with ggplot2?",
+    "section": "How can I set the working directory? Method 3",
+    "text": "How can I set the working directory? Method 3\nRegardless of whether you already have a script in your project folder:\n\nOpen RStudio.\nSession &gt; Set Working Directory &gt; Choose Directory…."
   },
   {
     "objectID": "session_5/session_5.html#should-i-put-code-for-setting-the-working-directory-in-my-script",
     "href": "session_5/session_5.html#should-i-put-code-for-setting-the-working-directory-in-my-script",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Should I put code for setting the working directory in my script?",
-    "text": "Should I put code for setting the working directory in my script?\n\nsome people do that, and I think that’s fine\nI do not, partly because:\n\nI may later reorganize my files or folders\nI may share my code with other people"
+    "text": "Should I put code for setting the working directory in my script?\n\nit’s up to you\nI do not, partly because:\n\nI may later reorganize my files or folders\nI may share my code with other people"
   },
   {
     "objectID": "session_5/session_5.html#saving-data-visualizations",
     "href": "session_5/session_5.html#saving-data-visualizations",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Saving data visualizations",
-    "text": "Saving data visualizations\n\n# define the data visualization\ngg&lt;-ggplot(nhanes,aes(x=bmxht,y=bpxosy1,color=gender))+\n  geom_point(color='gray')+\n  geom_smooth(method='lm',se=FALSE)+\n  labs(x='Height (cm)',\n       y='Systolic blood pressure (mmHg)',\n       color='Gender')\n\n# output the data visualization\ncairo_pdf('my figure.pdf',width=6,height=4)\nprint(gg)\ndev.off()"
+    "text": "Saving data visualizations\n\n# define the data visualization\ngg &lt;- ggplot(nhanes, aes(x = bmxht, y = bpxosy1, color = gender)) +\n  geom_point(color = 'gray') +\n  geom_smooth(method = 'lm', se = FALSE) +\n  labs(x = 'Height (cm)', y = 'Systolic blood pressure (mmHg)', color =\n         'Gender')\n\n# output the data visualization\ncairo_pdf('my figure.pdf', width = 6, height = 4)\nprint(gg)\ndev.off()"
   },
   {
     "objectID": "session_5/session_5.html#saving-data-visualizations-1",
     "href": "session_5/session_5.html#saving-data-visualizations-1",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Saving data visualizations",
-    "text": "Saving data visualizations\n\nstart recording ⏺ using one of these functions:\n\ncairo_pdf() or pdf()\npng()\njpeg() or tiff()\n\ndisplay your data visualization, possibly by using print()\nstop the recording ⏹ using dev.off()"
+    "text": "Saving data visualizations\n\nStart recording ⏺ using one of these functions:\n\ncairo_pdf() or pdf()\npng()\njpeg() or tiff()\n\nDisplay your data visualization**, possibly by using print().\nStop the recording ⏹ using dev.off()."
   },
   {
     "objectID": "session_5/session_5.html#saving-data-visualizations-2",

@@ -194,8 +194,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
-  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐢</text></svg>">
 </head>
 <body class="quarto-light">
@@ -282,8 +280,8 @@ Yea-Hung Chen, PhD, MS
 <section id="aesthetics" class="slide level2">
 <h2>Aesthetics</h2>
 <ul>
-<li>aesthetics = <strong>visual dimensions</strong></li>
-<li><strong>3 common aesthetics</strong> are:
+<li>aesthetics define the <strong>visual dimensions</strong></li>
+<li>3 common aesthetics are:
 <ul>
 <li><em>x</em></li>
 <li><em>y</em></li>
@@ -308,7 +306,7 @@ Yea-Hung Chen, PhD, MS
 <li>common geometries are:
 <ul>
 <li>density and histogram</li>
-<li><strong>point</strong></li>
+<li>point</li>
 <li>line</li>
 <li>box plot and violin</li>
 </ul></li>
@@ -348,8 +346,8 @@ Yea-Hung Chen, PhD, MS
 <ul>
 <li>for each of the following data visualizations, <strong>identify</strong>:
 <ul>
-<li>the <strong>aesthetics</strong></li>
-<li>the <strong>geometry</strong></li>
+<li>the aesthetics</li>
+<li>the geometry</li>
 </ul></li>
 </ul>
 </section>
@@ -383,43 +381,49 @@ Yea-Hung Chen, PhD, MS
 <section id="loading-packages-2" class="slide level2">
 <h2>Loading packages</h2>
 <ul>
-<li>to load a package, <strong>use <code>library()</code></strong></li>
+<li>to load a package, use <strong><code>library()</code></strong></li>
 <li>for example, to load the <code>ggplot2</code> package:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>you need to do this <strong>once per session</strong></li>
+<li>you need to <strong>do this once per session</strong></li>
 </ul>
 </section>
 <section id="loading-versus-installing" class="slide level2">
 <h2>Loading versus installing</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table caption-top" style="margin-left: auto; margin-right: auto;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">action</th>
-<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">analogy</th>
-<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold;">frequency</th>
+<th></th>
+<th style="text-align: center;">installing</th>
+<th style="text-align: center;">loading</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>action</td>
 <td style="text-align: center;">installing</td>
-<td style="text-align: center;">buying a cookbook</td>
-<td style="text-align: center;">once ever</td>
+<td style="text-align: center;">loading</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">loading</td>
+<td>analogy</td>
+<td style="text-align: center;">buying a cookbook</td>
 <td style="text-align: center;">taking the cookbook off the shelf</td>
+</tr>
+<tr class="odd">
+<td>frequency</td>
+<td style="text-align: center;">once ever</td>
 <td style="text-align: center;">once per session</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
 </section>
 <section id="put-it-in-your-script" class="slide level2">
 <h2>Put it in your script</h2>
@@ -432,7 +436,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) </span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># import data</span></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">'nhanes_l.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>nhanes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'nhanes_l.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -443,14 +447,14 @@ Yea-Hung Chen, PhD, MS
 <section id="systolic-versus-height" class="slide level2">
 <h2>Systolic versus height</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section id="systolic-versus-height-aesthetics" class="slide level2">
 <h2>Systolic versus height: aesthetics</h2>
 <ul>
 <li>to specify the aesthetics component, <strong>use the <code>aes()</code> function</strong>, inside the <code>ggplot(nhanes,)</code> function:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bmxht,<span class="at">y=</span>bpxosy1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bmxht, <span class="at">y =</span> bpxosy1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>aes()</code> function stands for aesthetic</li>
@@ -471,14 +475,14 @@ Yea-Hung Chen, PhD, MS
 <li>to connect the 2 components, <strong>use the plus sign</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bmxht,<span class="at">y=</span>bpxosy1))<span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bmxht, <span class="at">y =</span> bpxosy1)) <span class="sc">+</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="systolic-versus-height-aesthetics-geometry-1" class="slide level2">
 <h2>Systolic versus height: aesthetics + geometry</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
 <section id="systolic-versus-height-labels" class="slide level2">
 <h2>Systolic versus height: labels</h2>
 <ul>
@@ -486,7 +490,7 @@ Yea-Hung Chen, PhD, MS
 <li>to specify labels, <strong>use the <code>labs()</code> function</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Height (cm)'</span>,<span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Height (cm)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="systolic-versus-height-aesthetics-geometry-labels" class="slide level2">
@@ -495,9 +499,9 @@ Yea-Hung Chen, PhD, MS
 <li>putting it all together:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bmxht,<span class="at">y=</span>bpxosy1))<span class="sc">+</span></span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Height (cm)'</span>,<span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bmxht, <span class="at">y =</span> bpxosy1)) <span class="sc">+</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Height (cm)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>notice that there are <strong>3 components</strong> now</li>
@@ -506,7 +510,7 @@ Yea-Hung Chen, PhD, MS
 <section id="systolic-versus-height-aesthetics-geometry-labels-1" class="slide level2">
 <h2>Systolic versus height: aesthetics + geometry + labels</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
 <section id="systolic-versus-height-color" class="slide level2">
 <h2>Systolic versus height: color</h2>
 <ul>
@@ -514,24 +518,22 @@ Yea-Hung Chen, PhD, MS
 <li>for example, to use color to represent gender:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bmxht,<span class="at">y=</span>bpxosy1,<span class="at">color=</span>gender))<span class="sc">+</span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Height (cm)'</span>,<span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bmxht, <span class="at">y =</span> bpxosy1, <span class="at">color =</span> gender)) <span class="sc">+</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Height (cm)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="systolic-versus-height-color-1" class="slide level2">
 <h2>Systolic versus height: color</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
 <section id="systolic-versus-height-color-2" class="slide level2">
 <h2>Systolic versus height: color</h2>
 <ul>
 <li>to modify the legend label, <strong>add the <code>color</code> argument</strong> to <code>labs()</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Height (cm)'</span>,</span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>,</span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="at">color=</span><span class="st">'Gender'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Height (cm)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>, <span class="at">color =</span> <span class="st">'Gender'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="systolic-versus-height-color-3" class="slide level2">
@@ -540,17 +542,16 @@ Yea-Hung Chen, PhD, MS
 <li>putting it all together:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bmxht,<span class="at">y=</span>bpxosy1,<span class="at">color=</span>gender))<span class="sc">+</span></span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Height (cm)'</span>,</span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>,</span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">color=</span><span class="st">'Gender'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bmxht, <span class="at">y =</span> bpxosy1, <span class="at">color =</span> gender)) <span class="sc">+</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Height (cm)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>, <span class="at">color =</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>         <span class="st">'Gender'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="systolic-versus-height-color-4" class="slide level2">
 <h2>Systolic versus height: color</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
 <section id="systolic-versus-height-smoothers" class="slide level2">
 <h2>Systolic versus height: smoothers</h2>
 <ul>
@@ -558,7 +559,7 @@ Yea-Hung Chen, PhD, MS
 <li>for example, to add a regression line:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>,<span class="at">se=</span><span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>'lm'</code> stands for <strong>linear model</strong></li>
@@ -571,21 +572,20 @@ Yea-Hung Chen, PhD, MS
 <li>putting it all together:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bmxht,<span class="at">y=</span>bpxosy1))<span class="sc">+</span></span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>,<span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Height (cm)'</span>,</span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>,</span>
-<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">color=</span><span class="st">'Gender'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bmxht, <span class="at">y =</span> bpxosy1)) <span class="sc">+</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Height (cm)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>, <span class="at">color =</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>         <span class="st">'Gender'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>the order of the geometries <strong>does matter</strong></li>
+<li>the order of the geometries does matter</li>
 </ul>
 </section>
 <section id="systolic-versus-height-smoothers-2" class="slide level2">
 <h2>Systolic versus height: smoothers</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="exercise-2" class="title-slide slide level1 center" data-stack-name="E2">
 <h1>Exercise 2</h1>
@@ -607,7 +607,7 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-3" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="4" type="1">
-<li>Copy and paste the code from the second problem. Add a LOESS smoother (you can find more information about LOESS smoothers <a href="https://en.wikipedia.org/wiki/Local_regression">here</a>). To do this, add <code>geom_smooth()</code> with the <code>method='loess'</code> argument. Also add a <code>color</code> argument to <code>geom_smooth()</code>, using some color of your choice (see <a href="https://r-charts.com/colors/">this list</a>). For example, you could use <code>color='springgreen3'</code>. Finally, add the <code>se=FALSE</code> argument to <code>geom_smooth()</code> to remove the default confidence band. Run your code.</li>
+<li>Copy and paste the code from the second problem. Add a LOESS smoother (you can find more information about LOESS smoothers <a href="https://en.wikipedia.org/wiki/Local_regression">here</a>). To do this, add <code>geom_smooth()</code> with the <code>method = 'loess'</code> argument. Also add a <code>color</code> argument to <code>geom_smooth()</code>, using some color of your choice (see <a href="https://r-charts.com/colors/">this list</a>). For example, you could use <code>color = 'springgreen3'</code>. Finally, add the <code>se = FALSE</code> argument to <code>geom_smooth()</code> to remove the default confidence band. Run your code.</li>
 </ol>
 </section>
 <section id="exercise-2-4" class="slide level2">
@@ -636,33 +636,33 @@ Yea-Hung Chen, PhD, MS
 <section id="histograms-1" class="slide level2">
 <h2>Histograms</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bpxopls1))<span class="sc">+</span></span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Pulse (per minute)'</span>,<span class="at">y=</span><span class="st">'Count'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bpxopls1)) <span class="sc">+</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Pulse (per minute)'</span>, <span class="at">y =</span> <span class="st">'Count'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>notice that <strong>you do not need to include a <code>y</code> argument</strong> in <code>aes()</code></li>
+<li>notice that you <strong>do not need to include a <code>y</code> argument</strong> in <code>aes()</code></li>
 </ul>
 </section>
 <section id="histograms-2" class="slide level2">
 <h2>Histograms</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
 <section id="density-plots" class="slide level2">
 <h2>Density plots</h2>
 <ul>
 <li>to make a density plot, <strong>use <code>geom_density()</code></strong> instead of <code>geom_histogram()</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bpxopls1))<span class="sc">+</span></span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
-<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Pulse (per minute)'</span>,<span class="at">y=</span><span class="st">'Density'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bpxopls1)) <span class="sc">+</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Pulse (per minute)'</span>, <span class="at">y =</span> <span class="st">'Density'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="density-plots-1" class="slide level2">
 <h2>Density plots</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
 <section id="overlying-the-density-on-a-histogram" class="slide level2">
 <h2>Overlying the density on a histogram</h2>
 <ul>
@@ -670,13 +670,13 @@ Yea-Hung Chen, PhD, MS
 <li>to get histograms on the density scale, <strong>add a <code>y</code> argument</strong> to <code>aes()</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bpxopls1,<span class="at">y=</span><span class="fu">after_stat</span>(density)))<span class="sc">+</span></span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color=</span><span class="st">'deeppink2'</span>)<span class="sc">+</span></span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Pulse (per minute)'</span>,<span class="at">y=</span><span class="st">'Density'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bpxopls1, <span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">'deeppink2'</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Pulse (per minute)'</span>, <span class="at">y =</span> <span class="st">'Density'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>the <strong>order of the geometries</strong> does matter!</li>
+<li>the order of the geometries does matter!</li>
 </ul>
 
 <aside><div>
@@ -685,23 +685,23 @@ Yea-Hung Chen, PhD, MS
 <section id="overlying-the-density-on-a-histogram-1" class="slide level2">
 <h2>Overlying the density on a histogram</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"></section>
 <section id="overlying-the-density-on-a-histogram-2" class="slide level2">
 <h2>Overlying the density on a histogram</h2>
 <ul>
 <li>to change the thickness of the density line, <strong>add the <code>size</code> argument</strong> to <code>geom_density()</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bpxopls1,<span class="at">y=</span><span class="fu">after_stat</span>(density)))<span class="sc">+</span></span>
-<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
-<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color=</span><span class="st">'deeppink2'</span>,<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Pulse (per minute)'</span>,<span class="at">y=</span><span class="st">'Density'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bpxopls1, <span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">'deeppink2'</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Pulse (per minute)'</span>, <span class="at">y =</span> <span class="st">'Density'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="overlying-the-density-on-a-histogram-3" class="slide level2">
 <h2>Overlying the density on a histogram</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-39-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="faceting" class="title-slide slide level1 center" data-stack-name="Faceting">
 <h1>Faceting</h1>
@@ -710,7 +710,7 @@ Yea-Hung Chen, PhD, MS
 <section id="faceting-1" class="slide level2">
 <h2>Faceting</h2>
 
-<img data-src="session_5_files/figure-revealjs/unnamed-chunk-40-1.png" width="960" class="r-stretch"></section>
+<img data-src="session_5_files/figure-revealjs/unnamed-chunk-38-1.png" width="960" class="r-stretch"></section>
 <section id="faceting-2" class="slide level2">
 <h2>Faceting</h2>
 <ul>
@@ -724,12 +724,11 @@ Yea-Hung Chen, PhD, MS
 <li>to facet, <strong>add the <code>facet_grid()</code> component</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes,<span class="sc">!</span><span class="fu">is.na</span>(smoking)),<span class="fu">aes</span>(<span class="at">x=</span>bpxodi1,<span class="at">y=</span>bpxosy1))<span class="sc">+</span></span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'loess'</span>,<span class="at">color=</span><span class="st">'tomato'</span>,<span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
-<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Diastolic blood pressure (mmHg)'</span>,</span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>)<span class="sc">+</span></span>
-<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(smoking<span class="sc">~</span>gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes, <span class="sc">!</span><span class="fu">is.na</span>(smoking)), <span class="fu">aes</span>(<span class="at">x =</span> bpxodi1, <span class="at">y =</span> bpxosy1)) <span class="sc">+</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'loess'</span>, <span class="at">color =</span> <span class="st">'tomato'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Diastolic blood pressure (mmHg)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(smoking <span class="sc">~</span> gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>facet_grid()</code> uses formula notation</li>
@@ -774,7 +773,6 @@ Yea-Hung Chen, PhD, MS
 <section id="how-should-i-be-using-working-directories" class="slide level2">
 <h2>How should I be using working directories?</h2>
 <ul>
-<li>you can pick (<strong>set</strong>) the working directory</li>
 <li>and, I recommend that you <strong>set the working directory to be the folder that corresponds to the project you are working on</strong> at the moment</li>
 </ul>
 </section>
@@ -807,24 +805,33 @@ Yea-Hung Chen, PhD, MS
 </section>
 <section id="how-can-i-set-the-working-directory-method-1" class="slide level2">
 <h2>How can I set the working directory? Method 1</h2>
-<ul>
-<li>if you have already a script in your project folder, and you want to set that folder as the working directory:
+<p>If you already have a script in your project folder, and you want to set that folder as the working directory:</p>
 <ol type="1">
-<li><strong>close RStudio</strong> if it’s open</li>
-<li>from your Finder (MacOS) or File Explorer (Windows), <strong>open your script</strong></li>
-</ol></li>
-</ul>
+<li>Close RStudio if it’s open.</li>
+<li>From your Finder (MacOS) or File Explorer (Windows), <strong>open your script</strong>.</li>
+</ol>
 </section>
-<section id="how-can-i-set-the-working-directory-method-2" class="slide level2">
-<h2>How can I set the working directory? Method 2</h2>
-<ul>
-<li><strong>use RStudio’s menu</strong>: Session &gt; Set Working Directory &gt; Choose Directory…</li>
-</ul>
+<section id="how-can-i-set-the-working-directory-method-1-1" class="slide level2">
+<h2>How can I set the working directory? Method 1</h2>
+<p>If you already have a script in your project folder, and you want to set that folder as the working directory:</p>
+<ol type="1">
+<li>Open RStudio.</li>
+<li>Open the script.</li>
+<li>Selec: Session &gt; Set Working Directory &gt; <strong>To Source File Location</strong>.</li>
+</ol>
+</section>
+<section id="how-can-i-set-the-working-directory-method-3" class="slide level2">
+<h2>How can I set the working directory? Method 3</h2>
+<p>Regardless of whether you already have a script in your project folder:</p>
+<ol type="1">
+<li>Open RStudio.</li>
+<li>Session &gt; Set Working Directory &gt; <strong>Choose Directory…</strong>.</li>
+</ol>
 </section>
 <section id="should-i-put-code-for-setting-the-working-directory-in-my-script" class="slide level2">
 <h2>Should I put code for setting the working directory in my script?</h2>
 <ul>
-<li>some people do that, and I think that’s fine</li>
+<li><strong>it’s up to you</strong></li>
 <li>I do not, partly because:
 <ul>
 <li>I may later reorganize my files or folders</li>
@@ -836,30 +843,29 @@ Yea-Hung Chen, PhD, MS
 <h2>Saving data visualizations</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># define the data visualization</span></span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>gg<span class="ot">&lt;-</span><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>bmxht,<span class="at">y=</span>bpxosy1,<span class="at">color=</span>gender))<span class="sc">+</span></span>
-<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">'gray'</span>)<span class="sc">+</span></span>
-<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>,<span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
-<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Height (cm)'</span>,</span>
-<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>,</span>
-<span id="cb18-7"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">color=</span><span class="st">'Gender'</span>)</span>
-<span id="cb18-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a aria-hidden="true" tabindex="-1"></a><span class="co"># output the data visualization</span></span>
-<span id="cb18-10"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cairo_pdf</span>(<span class="st">'my figure.pdf'</span>,<span class="at">width=</span><span class="dv">6</span>,<span class="at">height=</span><span class="dv">4</span>)</span>
-<span id="cb18-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gg)</span>
-<span id="cb18-12"><a aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(nhanes, <span class="fu">aes</span>(<span class="at">x =</span> bmxht, <span class="at">y =</span> bpxosy1, <span class="at">color =</span> gender)) <span class="sc">+</span></span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">'gray'</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Height (cm)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>, <span class="at">color =</span></span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>         <span class="st">'Gender'</span>)</span>
+<span id="cb18-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a aria-hidden="true" tabindex="-1"></a><span class="co"># output the data visualization</span></span>
+<span id="cb18-9"><a aria-hidden="true" tabindex="-1"></a><span class="fu">cairo_pdf</span>(<span class="st">'my figure.pdf'</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb18-10"><a aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gg)</span>
+<span id="cb18-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="saving-data-visualizations-1" class="slide level2">
 <h2>Saving data visualizations</h2>
 <ol type="1">
-<li><strong>start recording</strong> ⏺ using one of these functions:
+<li>Start recording ⏺ using one of these functions:
 <ul>
 <li><code>cairo_pdf()</code> or <code>pdf()</code></li>
 <li><code>png()</code></li>
 <li><code>jpeg()</code> or <code>tiff()</code></li>
 </ul></li>
-<li><strong>display your data visualization</strong>, possibly by using <code>print()</code></li>
-<li>stop the recording ⏹ using <code>dev.off()</code></li>
+<li>Display your data visualization**, possibly by using <code>print()</code>.</li>
+<li>Stop the recording ⏹ using <code>dev.off()</code>.</li>
 </ol>
 </section>
 <section id="saving-data-visualizations-2" class="slide level2">

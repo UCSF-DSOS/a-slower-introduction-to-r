@@ -1138,7 +1138,7 @@
     "href": "session_2/session_2.html#importing-the-data-1",
     "title": "Session 2: How can I import data?",
     "section": "Importing the data",
-    "text": "Importing the data\n\nIn RStudio, select File &gt; Import Dataset &gt; From Text (base)… and look for your file.\nchange two parts in the pop-up window:\n\n\nName: I suggest simply nhanes rather than nhanes_l (using the jar analogy, this is the label you put on the jar).\nHeading change this to Yes so that the variable names are properly recognized\n\n\nCopy the code from the console to a script. You do not need to copy the View() portion of the code."
+    "text": "Importing the data\n\nIn RStudio, select File &gt; Import Dataset &gt; From Text (base)… and look for your file.\nchange two parts in the pop-up window:\n\nName: I suggest simply nhanes rather than nhanes_l (using the jar analogy, this is the label you put on the jar).\nHeading change this to Yes so that the variable names are properly recognized\n\nCopy the code from the console to a script. You do not need to copy the View() portion of the code."
   },
   {
     "objectID": "session_2/session_2.html#the-corresponding-code",

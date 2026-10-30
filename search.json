@@ -2944,7 +2944,7 @@
     "href": "session_5/session_5.html#saving-data-visualizations-1",
     "title": "Session 5: How can I make data visualizations with ggplot2?",
     "section": "Saving data visualizations",
-    "text": "Saving data visualizations\n\nStart recording ⏺ using one of these functions:\n\ncairo_pdf() or pdf()\npng()\njpeg() or tiff()\n\nDisplay your data visualization**, possibly by using print().\nStop the recording ⏹ using dev.off()."
+    "text": "Saving data visualizations\n\nStart recording ⏺ using one of these functions:\n\ncairo_pdf() or pdf()\npng()\njpeg() or tiff()\n\nDisplay your data visualization, possibly by using print().\nStop the recording ⏹ using dev.off()."
   },
   {
     "objectID": "session_5/session_5.html#saving-data-visualizations-2",

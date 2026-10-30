@@ -896,431 +896,11 @@
     "text": "round() is a function that rounds numeric values. Examine the Usage and Arguments sections of round()’s help page. In the console, use round() to round pi to 2 digits.\nAt the top of a new script, such as homework_3.r, include code for importing the nhanes_l.csv data file. Add a comment. Run that code.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# import the data\nnhanes &lt;- read.csv('nhanes_l.csv')\n\n\n\n\nYou may have noticed that quantile() automatically includes labels above the quantiles. For example:\n\nquantile(nhanes$bpxosy1, c(0.25, 0.5, 0.75), na.rm = TRUE)\n#| 25% 50% 75% \n#| 110 120 133\n\nExamine the Usage and Arguments sections of quantile()’s help page. Try to figure out how to obtain quartiles of systolic blood pressure (bpxosy1) without labels (25% 50% 75%) included in the output. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain quantiles for systolic blood pressure, without labels\nquantile(nhanes$bpxosy1, c(0.25, 0.5, 0.75), na.rm = TRUE, names = FALSE)\n#| [1] 110 120 133\n\n\n\n\nWe can use binom.test() to obtain confidence intervals for percents.\nIn the console, first table() the asthma (asthma) variable. You should see that History of asthma is listed first. This is because, by default, table() lists groups alphabetically.\nbinom.test() will test the null hypothesis that the population percents are equal to 50%. However, as with our use of t.test() from Session 3, we are just going to use the function to get a confidence interval for the prevalence of asthma in the population (we will ignore the results from the test).\nTo use binom.test(), place your code for table() above within binom.test(). By default, binom.test() will provide a confidence interval for the “first group.” As mentioned above, the “first group” for asthma is History of asthma. So, your binom.test() code is providing a confidence interval for the prevalence of asthma in the population.\nAdd the binom.test() code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# obtain a confidence interval for the prevalence of asthma\nbinom.test(table(nhanes$asthma))\n#| \n#|   Exact binomial test\n#| \n#| data:  table(nhanes$asthma)\n#| number of successes = 1486, number of trials = 8143, p-value &lt; 2.2e-16\n#| alternative hypothesis: true probability of success is not equal to 0.5\n#| 95 percent confidence interval:\n#|  0.1741522 0.1910517\n#| sample estimates:\n#| probability of success \n#|               0.182488\n\n\n\n\nWrite code for obtaining percents for asthma. Add this code to your script, with a comment.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate percents for asthma\nprop.table(table(nhanes$asthma))\n#| \n#| History of asthma                No \n#|          0.182488          0.817512\n\n\n\n\nThe sum() function returns the sum of a set of values. Use this function, along with length() (mentioned in Homework 2) to manually calculate the mean of the age variable (ridageyr): divide the sum by the length. Add this code to your script, with a comment. Also add code for the mean() function and verify that the answers match.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n# calculate the mean manually\nsum(nhanes$ridageyr) / length(nhanes$ridageyr)\n#| [1] 52.14436\n\n# calculate the mean using mean()\nmean(nhanes$ridageyr)\n#| [1] 52.14436"
   },
   {
-    "objectID": "session_2/session_2.html#yet-another-cooking-analogy",
-    "href": "session_2/session_2.html#yet-another-cooking-analogy",
-    "title": "Session 2: How can I import data?",
-    "section": "Yet another cooking analogy",
-    "text": "Yet another cooking analogy\n\nsometimes I can’t quite remember what I did in the kitchen 👨‍🍳\nwhat is a possible solution?"
-  },
-  {
-    "objectID": "session_2/session_2.html#yet-another-cooking-analogy-1",
-    "href": "session_2/session_2.html#yet-another-cooking-analogy-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Yet another cooking analogy",
-    "text": "Yet another cooking analogy\n\nusing the console is like winging it in the kitchen\nscripts are like recipes"
-  },
-  {
-    "objectID": "session_2/session_2.html#what-are-scripts",
-    "href": "session_2/session_2.html#what-are-scripts",
-    "title": "Session 2: How can I import data?",
-    "section": "What are scripts?",
-    "text": "What are scripts?\n\nscripts = documents that you can use to store code"
-  },
-  {
-    "objectID": "session_2/session_2.html#why-should-i-use-scripts",
-    "href": "session_2/session_2.html#why-should-i-use-scripts",
-    "title": "Session 2: How can I import data?",
-    "section": "Why should I use scripts?",
-    "text": "Why should I use scripts?\n\nscripts are a way for you to save and revisit your work, much the same way a recipe would allow you to cook the same dish again\nscripts help promote transparency and reproducibility"
-  },
-  {
-    "objectID": "session_2/session_2.html#scripts-in-rstudio",
-    "href": "session_2/session_2.html#scripts-in-rstudio",
-    "title": "Session 2: How can I import data?",
-    "section": "Scripts in RStudio",
-    "text": "Scripts in RStudio"
-  },
-  {
-    "objectID": "session_2/session_2.html#running-code",
-    "href": "session_2/session_2.html#running-code",
-    "title": "Session 2: How can I import data?",
-    "section": "Running code",
-    "text": "Running code\n\nyou can send code from scripts to your computer\nthis process is known as running the code, and will result in the code and output showing up in the console"
-  },
-  {
-    "objectID": "session_2/session_2.html#live-demonstration",
-    "href": "session_2/session_2.html#live-demonstration",
-    "title": "Session 2: How can I import data?",
-    "section": "Live demonstration",
-    "text": "Live demonstration\n🤸"
-  },
-  {
-    "objectID": "session_2/session_2.html#running-code-1",
-    "href": "session_2/session_2.html#running-code-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Running code",
-    "text": "Running code\n\nHighlight the code you want to run.\nSelect the Run icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows.\nOr, equivalently, select Code &gt; Run Selected Line(s)."
-  },
-  {
-    "objectID": "session_2/session_2.html#one-line-for-each-statement",
-    "href": "session_2/session_2.html#one-line-for-each-statement",
-    "title": "Session 2: How can I import data?",
-    "section": "One line for each statement",
-    "text": "One line for each statement\n\n\n\n\n\n\nCaution\n\n\nEach statement (“message”) should be on its own line.\n\n\n\n\nfor example, you cannot do this:\n\n\nsqrt(81) pi^2 \n\n\nyou should, instead, do this:\n\n\nsqrt(81) \npi^2"
-  },
-  {
-    "objectID": "session_2/session_2.html#long-statements",
-    "href": "session_2/session_2.html#long-statements",
-    "title": "Session 2: How can I import data?",
-    "section": "Long statements",
-    "text": "Long statements\n\nif you wish, you can write a statement that spans more than one line:\n\n\n(0.25*0.4)/\n  (0.25*0.4+(1-0.9)*(1-0.4))"
-  },
-  {
-    "objectID": "session_2/session_2.html#long-statements-1",
-    "href": "session_2/session_2.html#long-statements-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Long statements",
-    "text": "Long statements\n\n\n\n\n\n\nCaution\n\n\nIf you write a statement that spans more than one line, always place mathematical operators before the line break rather than after the line break."
-  },
-  {
-    "objectID": "session_2/session_2.html#long-statements-2",
-    "href": "session_2/session_2.html#long-statements-2",
-    "title": "Session 2: How can I import data?",
-    "section": "Long statements",
-    "text": "Long statements\n\nthis will work as intended:\n\n\n5*12+\n  2\n\n\nthis will not work as intended and will not result in an error:\n\n\n5*12\n  +2\n\n\nwhy?"
-  },
-  {
-    "objectID": "session_2/session_2.html#comments",
-    "href": "session_2/session_2.html#comments",
-    "title": "Session 2: How can I import data?",
-    "section": "Comments",
-    "text": "Comments\n\nyou can include human-language comments in scripts\ncomments serve as notes for yourself and for your collaborators"
-  },
-  {
-    "objectID": "session_2/session_2.html#adding-comments",
-    "href": "session_2/session_2.html#adding-comments",
-    "title": "Session 2: How can I import data?",
-    "section": "Adding comments",
-    "text": "Adding comments\n\nto include comments in scripts, begin the line with the pound sign\n\n\n# calculate positive predictive value when prevalence is 0.4\n(0.25*0.4)/(0.25*0.4+(1-0.9)*(1-0.4))\n\n# calculate positive predictive value when prevalence is 0.3\n(0.25*0.3)/(0.25*0.3+(1-0.9)*(1-0.3))"
-  },
-  {
-    "objectID": "session_2/session_2.html#live-demonstration-1",
-    "href": "session_2/session_2.html#live-demonstration-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Live demonstration",
-    "text": "Live demonstration\n🤸"
-  },
-  {
-    "objectID": "session_2/session_2.html#saving-scripts",
-    "href": "session_2/session_2.html#saving-scripts",
-    "title": "Session 2: How can I import data?",
-    "section": "Saving scripts",
-    "text": "Saving scripts\n\nSelect the save icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ SS on Mac or ctrlctrl SS on Windows.\nOr, equivalently, select File &gt; Save.\n\nSelect a folder on your computer that you are using for this workshop series or this session, such as session_2.\nPick a filename, making sure to add .r or .R to the end."
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-1-1",
-    "href": "session_2/session_2.html#exercise-1-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nCheck whether or not a blank script is already open. The tab might be labeled Untitled1). If not, open a new script by selecting File &gt; New File &gt; R Script.\nA common cutoff for a borderline high LDL cholesterol level is 130 mg/dL. In the first line of your script, type code that stores the value of 130 as ldl_borderline, using object assignment."
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-1-2",
-    "href": "session_2/session_2.html#exercise-1-2",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nA common cutoff for a high LDL cholesterol level is 160 mg/dL. In the second line, type code that stores the value of 160 as ldl_high, using object assignment.\nAdd a comment above each object assignment that describes the object assignment. For readability, include a blank line between the first object assignment and the second comment."
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-1-3",
-    "href": "session_2/session_2.html#exercise-1-3",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nSelect and run your code.\nIn the console, check to see that ldl_borderline and ldl_high were properly defined: type each object name and press returnreturn or enterenter on your keyboard.\nSave the script, picking some filename that makes sense to you, such as session_2.r. Make sure to add .r or .R at the end. You might first create a folder on your computer for this workshop series."
-  },
-  {
-    "objectID": "session_2/session_2.html#slide-formatting",
-    "href": "session_2/session_2.html#slide-formatting",
-    "title": "Session 2: How can I import data?",
-    "section": "Slide formatting",
-    "text": "Slide formatting\n\nto facilitate copying-and-pasting, throughout the remainder of the workshop series, I will omit the prompt\nfor example:\n\n\n(0.25*0.4)/(0.25*0.4+(1-0.9)*(1-0.4))\n#| [1] 0.625\n\n\nthis does not necessarily mean that you should use a script over a console"
-  },
-  {
-    "objectID": "session_2/session_2.html#should-i-use-the-script-or-the-console",
-    "href": "session_2/session_2.html#should-i-use-the-script-or-the-console",
-    "title": "Session 2: How can I import data?",
-    "section": "Should I use the script or the console?",
-    "text": "Should I use the script or the console?\n\n\n\n\n\n\nTip\n\n\nGo back and forth between the script and the console.\n\n\n\n\nthere are two ways to do this:\n\ntry things out in the console and then copy and paste code into your script\ntype in the script, run your code, and examine the output in the console"
-  },
-  {
-    "objectID": "session_2/session_2.html#should-i-use-the-script-or-the-console-1",
-    "href": "session_2/session_2.html#should-i-use-the-script-or-the-console-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Should I use the script or the console?",
-    "text": "Should I use the script or the console?\n\nas you get more experienced with R, you will probably do most of your typing in scripts"
-  },
-  {
-    "objectID": "session_2/session_2.html#whats-so-great-about-scripts",
-    "href": "session_2/session_2.html#whats-so-great-about-scripts",
-    "title": "Session 2: How can I import data?",
-    "section": "What’s so great about scripts?",
-    "text": "What’s so great about scripts?\n\n\n\n\n\n\nTip\n\n\nUse scripts as a way to save work!\n\n\n\n\nI discourage you from trying to save work by relying on objects\ninstead, lean on scripts"
-  },
-  {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts",
-    "href": "session_2/session_2.html#how-can-i-write-good-scripts",
-    "title": "Session 2: How can I import data?",
-    "section": "How can I write good scripts?",
-    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nYour scripts should have a sequence.\n\n\n\n\nas with the recipes analogy, the idea is that the script should serve as a record of your work, and have a general top-to-bottom flow"
-  },
-  {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-1",
-    "href": "session_2/session_2.html#how-can-i-write-good-scripts-1",
-    "title": "Session 2: How can I import data?",
-    "section": "How can I write good scripts?",
-    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nOnly include code and comments.\n\n\n\n\ndo not include un-commented human-language text!\ndo not include output!"
-  },
-  {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-2",
-    "href": "session_2/session_2.html#how-can-i-write-good-scripts-2",
-    "title": "Session 2: How can I import data?",
-    "section": "How can I write good scripts?",
-    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nWrite comments!"
-  },
-  {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-3",
-    "href": "session_2/session_2.html#how-can-i-write-good-scripts-3",
-    "title": "Session 2: How can I import data?",
-    "section": "How can I write good scripts?",
-    "text": "How can I write good scripts?\n\nI like to write short but frequent comments\nI like to begin every comment with a verb\n\n\n# import data\nnhanes&lt;-read.csv('~/Downloads/data/acs/2019/psam_p06.csv.gz')\n\n# rename variables\nnames(nhanes)&lt;-tolower(names(nhanes))\n\n# subset to individuals 18-65 years of age\nnhanes&lt;-subset(nhanes,agep&gt;=18&agep&lt;=65)"
-  },
-  {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-4",
-    "href": "session_2/session_2.html#how-can-i-write-good-scripts-4",
-    "title": "Session 2: How can I import data?",
-    "section": "How can I write good scripts?",
-    "text": "How can I write good scripts?\n\n\n\n“I kinda thought the subtitles would be more helpful.”\n\n\n\n\nBy Asher Perlman, from The New Yorker, November 4, 2024."
-  },
-  {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-5",
-    "href": "session_2/session_2.html#how-can-i-write-good-scripts-5",
-    "title": "Session 2: How can I import data?",
-    "section": "How can I write good scripts?",
-    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nYou can use more than one script.\n\n\n\n\nthe scripts should have a natural sequence from one to another, such as:\n\nimport and prepare data.r\nanalyze data.r"
-  },
-  {
-    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-6",
-    "href": "session_2/session_2.html#how-can-i-write-good-scripts-6",
-    "title": "Session 2: How can I import data?",
-    "section": "How can I write good scripts?",
-    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nContinually revisit your scripts!\n\n\n\n\nthink of a script as being like a work-in-progress manuscript\nbe willing to continually edit it"
-  },
-  {
-    "objectID": "session_2/session_2.html#nhanes",
-    "href": "session_2/session_2.html#nhanes",
-    "title": "Session 2: How can I import data?",
-    "section": "NHANES",
-    "text": "NHANES\n\nthe National Health and Nutrition Examination Survey (NHANES) is a large, CDC survey of American health:\n\n\nThe National Health and Nutrition Examination Survey (NHANES) collects data about the health of adults and children in the United States. We also collect data about what participants eat, drink, and take as supplements to determine how many nutrients are in their diet."
-  },
-  {
-    "objectID": "session_2/session_2.html#nhanes-1",
-    "href": "session_2/session_2.html#nhanes-1",
-    "title": "Session 2: How can I import data?",
-    "section": "NHANES",
-    "text": "NHANES\n\nnhanes_l.csv, available on the CLE, contains data from the 2021–2023 implementation of NHANES\nI created the file by combining (merging) several CDC data files, from across several dimensions\nI restricted the data to individuals 18 years of age or older\nI added a handful of variables, using existing variables\nthe original data, and data descriptions, are available here"
-  },
-  {
-    "objectID": "session_2/session_2.html#importing-the-data",
-    "href": "session_2/session_2.html#importing-the-data",
-    "title": "Session 2: How can I import data?",
-    "section": "Importing the data",
-    "text": "Importing the data\n\nas mentioned in the orientation, there are often many ways to do something in R\nI’m going to show you how to use RStudio’s drop-down menu to import the data\nas a preview, this process will result in object assignment"
-  },
-  {
-    "objectID": "session_2/session_2.html#live-demonstration-2",
-    "href": "session_2/session_2.html#live-demonstration-2",
-    "title": "Session 2: How can I import data?",
-    "section": "Live demonstration",
-    "text": "Live demonstration\n🤸"
-  },
-  {
-    "objectID": "session_2/session_2.html#importing-the-data-1",
-    "href": "session_2/session_2.html#importing-the-data-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Importing the data",
-    "text": "Importing the data\n\nIn RStudio, select File &gt; Import Dataset &gt; From Text (base)… and look for your file.\nchange two parts in the pop-up window:\n\nName: I suggest simply nhanes rather than nhanes_l (using the jar analogy, this is the label you put on the jar).\nHeading change this to Yes so that the variable names are properly recognized\n\nCopy the code from the console to a script. You do not need to copy the View() portion of the code."
-  },
-  {
-    "objectID": "session_2/session_2.html#the-corresponding-code",
-    "href": "session_2/session_2.html#the-corresponding-code",
-    "title": "Session 2: How can I import data?",
-    "section": "The corresponding code",
-    "text": "The corresponding code\n\n\n\n\n\n\nTip\n\n\nExamine the code to begin to understand it."
-  },
-  {
-    "objectID": "session_2/session_2.html#the-corresponding-code-1",
-    "href": "session_2/session_2.html#the-corresponding-code-1",
-    "title": "Session 2: How can I import data?",
-    "section": "The corresponding code",
-    "text": "The corresponding code\n\n\n\n\n\n\nTip\n\n\nCopy and paste the corresponding code to a script so you can later reproduce the import without having to rely on the import tool.\n\n\n\n\nit is not necessary to copy the View() portion of the code"
-  },
-  {
-    "objectID": "session_2/session_2.html#the-view-tab",
-    "href": "session_2/session_2.html#the-view-tab",
-    "title": "Session 2: How can I import data?",
-    "section": "The view tab",
-    "text": "The view tab\n\nby default, the import tool will automatically show the data in a new tab in the Source pane\nyou can close the tab if you want (the object itself will not be removed)\nyou can always open the view tab again by using View()"
-  },
-  {
-    "objectID": "session_2/session_2.html#the-view-tab-1",
-    "href": "session_2/session_2.html#the-view-tab-1",
-    "title": "Session 2: How can I import data?",
-    "section": "The view tab",
-    "text": "The view tab\n\n\n\n\n\n\nTip\n\n\nExamine the data carefully after importing a data file for the first time.\n\n\n\n\ncheck that variable names are there (if they should be there)\nscroll through to check to see that columns are lined up properly"
-  },
-  {
-    "objectID": "session_2/session_2.html#other-ways-to-explore-the-data",
-    "href": "session_2/session_2.html#other-ways-to-explore-the-data",
-    "title": "Session 2: How can I import data?",
-    "section": "Other ways to explore the data",
-    "text": "Other ways to explore the data\n\nnames(): for all the variable names\nhead(): for the first few rows\ntail(): for the last few rows\nstr(): for a glimpse of the data that shows variable names, object classes (more about this later), and the first few values"
-  },
-  {
-    "objectID": "session_2/session_2.html#other-ways-to-explore-the-data-1",
-    "href": "session_2/session_2.html#other-ways-to-explore-the-data-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Other ways to explore the data",
-    "text": "Other ways to explore the data\n\ndim(): for the number of rows and the number of columns, in that order\nnrow(): for the number of rows\nncol(): for the number of columns"
-  },
-  {
-    "objectID": "session_2/session_2.html#other-ways-to-explore-the-data-2",
-    "href": "session_2/session_2.html#other-ways-to-explore-the-data-2",
-    "title": "Session 2: How can I import data?",
-    "section": "Other ways to explore the data",
-    "text": "Other ways to explore the data\n\ndim(nhanes)\n#| [1] 8153  195\nnrow(nhanes)\n#| [1] 8153\nncol(nhanes)\n#| [1] 195"
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-2-1",
-    "href": "session_2/session_2.html#exercise-2-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nDownload the data from the CLE, by clicking on the link, and then browsing for a folder on your computer where you would like to save the file. If the data opens in your browser instead, go back to the CLE page and instead right-click on the link (or control-click or two-finger click), and select save.\nUse RStudio’s drop-down menu to import the data: File &gt; Import Dataset &gt; From Text (base). Please make sure to select the base option."
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-2-2",
-    "href": "session_2/session_2.html#exercise-2-2",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nIn the pop-up window, select Yes under the Heading option.\nOptionally, change the name of the object in the Name field to just nhanes.\nConfirm that the data look OK in the preview section at the bottom right. If so, select the Import button."
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-2-3",
-    "href": "session_2/session_2.html#exercise-2-3",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nConfirm that the data look OK in the viewer that pops up in the Source pane. You can optionally close the tab when you’re done.\nCopy and paste the code for importing the data from the console into your script.\nUse head() to view the first few rows of the data."
-  },
-  {
-    "objectID": "session_2/session_2.html#an-error-message",
-    "href": "session_2/session_2.html#an-error-message",
-    "title": "Session 2: How can I import data?",
-    "section": "An error message",
-    "text": "An error message\n\nthe mean() function will find the mean of a set of numbers\nthere is a variable in the data called ridageyr, which stores ages in years\nwe might be inclined to try this:\n\n\nmean(ridageyr)\n#| Error:\n#| ! object 'ridageyr' not found\n\n\nwhy do we get an error message?"
-  },
-  {
-    "objectID": "session_2/session_2.html#an-error-message-1",
-    "href": "session_2/session_2.html#an-error-message-1",
-    "title": "Session 2: How can I import data?",
-    "section": "An error message",
-    "text": "An error message\n\nwe get an error message because R allows multiple data sets to be available at a time\nso, any time we refer to a variable we also have to refer to the data set"
-  },
-  {
-    "objectID": "session_2/session_2.html#dollar-sign-notation-1",
-    "href": "session_2/session_2.html#dollar-sign-notation-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Dollar-sign notation",
-    "text": "Dollar-sign notation\n\nmean(nhanes$ridageyr)\n#| [1] 52.14436\n\n\nmean(): a function for finding the arithmetic mean\nnhanes: the label we gave for our data when we imported it\n$: indicates that ridageyr is a column in nhanes\nridageyr: the variable name"
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-3-1",
-    "href": "session_2/session_2.html#exercise-3-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nThe head() and tail() functions, mentioned earlier, can be used not only to preview data but also to preview variables within data. Use these functions to view the first few, and the last few, values of the gender variable.\nThe range() function will show the range of a variable (this is, the minimum and maximum values). Use range() to find the age range of individuals in the NHANES data (the age variable is ridageyr)."
-  },
-  {
-    "objectID": "session_2/session_2.html#another-error-message",
-    "href": "session_2/session_2.html#another-error-message",
-    "title": "Session 2: How can I import data?",
-    "section": "Another error message",
-    "text": "Another error message\n\nmean(nhanes$gender)\n#| Warning in mean.default(nhanes$gender): argument is not numeric or logical:\n#| returning NA\n#| [1] NA\n\n\nthere is a variable in the NHANES data called gender\nwe are using dollar-sign notation\nso, why does this result in an error?"
-  },
-  {
-    "objectID": "session_2/session_2.html#another-error-message-1",
-    "href": "session_2/session_2.html#another-error-message-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Another error message",
-    "text": "Another error message\n\nwe got an error message because gender does not include numbers:\n\n\nhead(nhanes$gender)\n#| [1] \"Male\"   \"Male\"   \"Female\" \"Male\"   \"Female\" \"Male\""
-  },
-  {
-    "objectID": "session_2/session_2.html#object-classes-1",
-    "href": "session_2/session_2.html#object-classes-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Object classes",
-    "text": "Object classes\n\na more general way to check is to use the class() function:\n\n\nclass(nhanes$gender)\n#| [1] \"character\""
-  },
-  {
-    "objectID": "session_2/session_2.html#object-classes-2",
-    "href": "session_2/session_2.html#object-classes-2",
-    "title": "Session 2: How can I import data?",
-    "section": "Object classes",
-    "text": "Object classes\n\nthe class() function reports the object type\nR has many different object types\nthe formal term for object types is object classes\nusing the jar analogy, you can think of object classes as being like the different types of ingredients you might have inside of jars"
-  },
-  {
-    "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes",
-    "href": "session_2/session_2.html#a-taxonomy-of-object-classes",
-    "title": "Session 2: How can I import data?",
-    "section": "A taxonomy of object classes",
-    "text": "A taxonomy of object classes"
-  },
-  {
-    "objectID": "session_2/session_2.html#vectors",
-    "href": "session_2/session_2.html#vectors",
-    "title": "Session 2: How can I import data?",
-    "section": "Vectors",
-    "text": "Vectors\n\nclass(nhanes$ridageyr)\n#| [1] \"integer\"\nis.vector(nhanes$ridageyr)\n#| [1] TRUE\nclass(nhanes$gender)\n#| [1] \"character\"\nis.vector(nhanes$gender)\n#| [1] TRUE\n\n\ninteger and character objects are examples of vectors"
-  },
-  {
-    "objectID": "session_2/session_2.html#numeric-objects",
-    "href": "session_2/session_2.html#numeric-objects",
-    "title": "Session 2: How can I import data?",
-    "section": "Numeric objects",
-    "text": "Numeric objects\n\nis.numeric(nhanes$ridageyr)\n#| [1] TRUE\nis.integer(nhanes$ridageyr)\n#| [1] TRUE\nis.numeric(22.52)\n#| [1] TRUE\nis.integer(22.52)\n#| [1] FALSE\n\n\ninteger objects are themselves examples of numeric objects, but not all numeric objects are integers"
-  },
-  {
-    "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes-1",
-    "href": "session_2/session_2.html#a-taxonomy-of-object-classes-1",
-    "title": "Session 2: How can I import data?",
-    "section": "A taxonomy of object classes",
-    "text": "A taxonomy of object classes\n\n\n\n\n\n\n\nBy Jorge Penné, from The New Yorker, April 1, 2024."
-  },
-  {
-    "objectID": "session_2/session_2.html#data-frames-and-functions",
-    "href": "session_2/session_2.html#data-frames-and-functions",
-    "title": "Session 2: How can I import data?",
-    "section": "Data frames and functions",
-    "text": "Data frames and functions\n\nclass(nhanes)\n#| [1] \"data.frame\"\nclass(mean)\n#| [1] \"function\""
-  },
-  {
-    "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes-2",
-    "href": "session_2/session_2.html#a-taxonomy-of-object-classes-2",
-    "title": "Session 2: How can I import data?",
-    "section": "A taxonomy of object classes",
-    "text": "A taxonomy of object classes"
-  },
-  {
-    "objectID": "session_2/session_2.html#why-do-i-need-to-know-this",
-    "href": "session_2/session_2.html#why-do-i-need-to-know-this",
-    "title": "Session 2: How can I import data?",
-    "section": "Why do I need to know this?",
-    "text": "Why do I need to know this?\n\nmostly I just want you to begin to be aware of all of this\nclasses will determine what you can and cannot do with objects, as illustrated in the first example"
-  },
-  {
-    "objectID": "session_2/session_2.html#exercise-4-1",
-    "href": "session_2/session_2.html#exercise-4-1",
-    "title": "Session 2: How can I import data?",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\nThe bpxodi1 variable stores measurements of diastolic blood pressure. Try to find the mean of this variable. You should see a value of NA.\nNow check the class of this variable. You should see that the variable is in fact a numeric object.\nFinally, use head() to take a look at the first few values of the variable. Why do you think might mean() returned NA in the first problem here? We’ll talk next week about how to approach this!"
+    "objectID": "session_2/exercises_2.html",
+    "href": "session_2/exercises_2.html",
+    "title": "Exercise guide for Session 2",
+    "section": "",
+    "text": "# define the cutoff for borderline ldl\nldl_borderline&lt;-130\n\n# define the cutoff for high ldl\nldl_high&lt;-160\n\n# import the data\nnhanes&lt;-read.csv('nhanes_l.csv')\n\n# view the first few, and last few, values of the gender variables\nhead(nhanes$gender)\ntail(nhanes$gender)\n\n# find the age range\nrange(nhanes$ridageyr)\n\n# find the mean diastolic blood pressure\nmean(nhanes$bpxodi1)\n\n# check the class of diastolic blood pressure\nclass(nhanes$bpxodi1)\n\n# view the first few values of diastolic blood pressure\nhead(nhanes$bpxodi1)"
   },
   {
     "objectID": "orientation/orientation.html#pitch-1",
@@ -2044,11 +1624,431 @@
     "text": "Create a new script for this homework. Type your solutions to the problems below in the script.\nDownload the west_nile_virus_cases.csv data file from the CLE, and import it into R using RStudio’s drop-down menu. Make sure to select the From Text (base) option. Feel free to type any name that makes sense to you in the import tool’s Name field. In the import tool’s preview window (at the bottom right), make sure that the data look OK, and then select Import.\nThe data are from the California Department of Public Health (and available, and documented, here). They contain the number of reported cases of West Nile Virus, by week and county, from 2006 through 2024.\nScroll through the data view (it should automatically pop up after the data import) to understand the data structure. You may close the tab when you are done. Also, use head() and tail() to examine the data structure. Notice from the data view and the data glances that the data appear to be sorted by year, and then week, and then county.\nThe data set omits the row if no cases were reported. For example, if no cases were reported in San Francisco during the 3rd week of 2021, there will be no corresponding row in the data.\nUse min(), a function that finds the smallest value, to confirm that Reported.Positive.Cases is never 0 (otherwise, the minimum value would be 0).\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nww &lt;- read.csv('west_nile_virus_cases.csv')\nmin(ww$Reported.Positive.Cases)\n#| [1] 1\n\n\n\n\nUse range() to find the smallest and largest values of Week. You may notice that no cases were reported during the first few weeks of the years. This is presumably because West Nile Virus is a seasonal disease.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nrange(ww$Week)\n#| [1]  9 53\n\n\n\n\nThe unique() function will return unique values. Use the function to find the unique counties in the data set. Recall that the numbering on the left can help you figure out the position of values in the output, or count how many values there are. Looking at the numbering, confirm that it appears that there are 50 unique counties in the data.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nunique(ww$County)\n#|  [1] \"Alameda\"         \"Butte\"           \"Colusa\"          \"Contra Costa\"   \n#|  [5] \"El Dorado\"       \"Fresno\"          \"Glenn\"           \"Imperial\"       \n#|  [9] \"Kern\"            \"Kings\"           \"Lake\"            \"Los Angeles\"    \n#| [13] \"Marin\"           \"Merced\"          \"Modoc\"           \"Mono\"           \n#| [17] \"Napa\"            \"Nevada\"          \"Orange\"          \"Placer\"         \n#| [21] \"Riverside\"       \"Sacramento\"      \"San Bernardino\"  \"San Diego\"      \n#| [25] \"San Joaquin\"     \"San Luis Obispo\" \"Santa Clara\"     \"Shasta\"         \n#| [29] \"Solano\"          \"Stanislaus\"      \"Sutter\"          \"Tehama\"         \n#| [33] \"Tulare\"          \"Ventura\"         \"Yolo\"            \"Yuba\"           \n#| [37] \"Madera\"          \"Mendocino\"       \"Sonoma\"          \"Calaveras\"      \n#| [41] \"Santa Barbara\"   \"Monterey\"        \"San Francisco\"   \"Amador\"         \n#| [45] \"Santa Cruz\"      \"Siskiyou\"        \"Inyo\"            \"Humboldt\"       \n#| [49] \"Tuolumne\"        \"San Mateo\"\n\n\n\n\nThe length() function will report the number of values. So, we can combine length() and unique() to properly count the number of unique values in the data, removing the possibility of human error. Specifically, if the data object is named ww (from the object assignment), we can use: length(unique(ww$County)). Confirm that this is in fact 50.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nlength(unique(ww$County))\n#| [1] 50\n\n\n\n\nWe can sort values using sort(). Combine sort() and unique() to list the unique counties in alphabetical order. You can follow the pattern from above, replacing length with sort.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nsort(unique(ww$County))\n#|  [1] \"Alameda\"         \"Amador\"          \"Butte\"           \"Calaveras\"      \n#|  [5] \"Colusa\"          \"Contra Costa\"    \"El Dorado\"       \"Fresno\"         \n#|  [9] \"Glenn\"           \"Humboldt\"        \"Imperial\"        \"Inyo\"           \n#| [13] \"Kern\"            \"Kings\"           \"Lake\"            \"Los Angeles\"    \n#| [17] \"Madera\"          \"Marin\"           \"Mendocino\"       \"Merced\"         \n#| [21] \"Modoc\"           \"Mono\"            \"Monterey\"        \"Napa\"           \n#| [25] \"Nevada\"          \"Orange\"          \"Placer\"          \"Riverside\"      \n#| [29] \"Sacramento\"      \"San Bernardino\"  \"San Diego\"       \"San Francisco\"  \n#| [33] \"San Joaquin\"     \"San Luis Obispo\" \"San Mateo\"       \"Santa Barbara\"  \n#| [37] \"Santa Clara\"     \"Santa Cruz\"      \"Shasta\"          \"Siskiyou\"       \n#| [41] \"Solano\"          \"Sonoma\"          \"Stanislaus\"      \"Sutter\"         \n#| [45] \"Tehama\"          \"Tulare\"          \"Tuolumne\"        \"Ventura\"        \n#| [49] \"Yolo\"            \"Yuba\""
   },
   {
-    "objectID": "session_2/exercises_2.html",
-    "href": "session_2/exercises_2.html",
-    "title": "Exercise guide for Session 2",
-    "section": "",
-    "text": "# define the cutoff for borderline ldl\nldl_borderline&lt;-130\n\n# define the cutoff for high ldl\nldl_high&lt;-160\n\n# import the data\nnhanes&lt;-read.csv('nhanes_l.csv')\n\n# view the first few, and last few, values of the gender variables\nhead(nhanes$gender)\ntail(nhanes$gender)\n\n# find the age range\nrange(nhanes$ridageyr)\n\n# find the mean diastolic blood pressure\nmean(nhanes$bpxodi1)\n\n# check the class of diastolic blood pressure\nclass(nhanes$bpxodi1)\n\n# view the first few values of diastolic blood pressure\nhead(nhanes$bpxodi1)"
+    "objectID": "session_2/session_2.html#yet-another-cooking-analogy",
+    "href": "session_2/session_2.html#yet-another-cooking-analogy",
+    "title": "Session 2: How can I import data?",
+    "section": "Yet another cooking analogy",
+    "text": "Yet another cooking analogy\n\nsometimes I can’t quite remember what I did in the kitchen 👨‍🍳\nwhat is a possible solution?"
+  },
+  {
+    "objectID": "session_2/session_2.html#yet-another-cooking-analogy-1",
+    "href": "session_2/session_2.html#yet-another-cooking-analogy-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Yet another cooking analogy",
+    "text": "Yet another cooking analogy\n\nusing the console is like winging it in the kitchen\nscripts are like recipes"
+  },
+  {
+    "objectID": "session_2/session_2.html#what-are-scripts",
+    "href": "session_2/session_2.html#what-are-scripts",
+    "title": "Session 2: How can I import data?",
+    "section": "What are scripts?",
+    "text": "What are scripts?\n\nscripts = documents that you can use to store code"
+  },
+  {
+    "objectID": "session_2/session_2.html#why-should-i-use-scripts",
+    "href": "session_2/session_2.html#why-should-i-use-scripts",
+    "title": "Session 2: How can I import data?",
+    "section": "Why should I use scripts?",
+    "text": "Why should I use scripts?\n\nscripts are a way for you to save and revisit your work, much the same way a recipe would allow you to cook the same dish again\nscripts help promote transparency and reproducibility"
+  },
+  {
+    "objectID": "session_2/session_2.html#scripts-in-rstudio",
+    "href": "session_2/session_2.html#scripts-in-rstudio",
+    "title": "Session 2: How can I import data?",
+    "section": "Scripts in RStudio",
+    "text": "Scripts in RStudio"
+  },
+  {
+    "objectID": "session_2/session_2.html#running-code",
+    "href": "session_2/session_2.html#running-code",
+    "title": "Session 2: How can I import data?",
+    "section": "Running code",
+    "text": "Running code\n\nyou can send code from scripts to your computer\nthis process is known as running the code, and will result in the code and output showing up in the console"
+  },
+  {
+    "objectID": "session_2/session_2.html#live-demonstration",
+    "href": "session_2/session_2.html#live-demonstration",
+    "title": "Session 2: How can I import data?",
+    "section": "Live demonstration",
+    "text": "Live demonstration\n🤸"
+  },
+  {
+    "objectID": "session_2/session_2.html#running-code-1",
+    "href": "session_2/session_2.html#running-code-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Running code",
+    "text": "Running code\n\nHighlight the code you want to run.\nSelect the Run icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ returnreturn on Mac or ctrlctrl enterenter on Windows.\nOr, equivalently, select Code &gt; Run Selected Line(s)."
+  },
+  {
+    "objectID": "session_2/session_2.html#one-line-for-each-statement",
+    "href": "session_2/session_2.html#one-line-for-each-statement",
+    "title": "Session 2: How can I import data?",
+    "section": "One line for each statement",
+    "text": "One line for each statement\n\n\n\n\n\n\nCaution\n\n\nEach statement (“message”) should be on its own line.\n\n\n\n\nfor example, you cannot do this:\n\n\nsqrt(81) pi^2 \n\n\nyou should, instead, do this:\n\n\nsqrt(81) \npi^2"
+  },
+  {
+    "objectID": "session_2/session_2.html#long-statements",
+    "href": "session_2/session_2.html#long-statements",
+    "title": "Session 2: How can I import data?",
+    "section": "Long statements",
+    "text": "Long statements\n\nif you wish, you can write a statement that spans more than one line:\n\n\n(0.25*0.4)/\n  (0.25*0.4+(1-0.9)*(1-0.4))"
+  },
+  {
+    "objectID": "session_2/session_2.html#long-statements-1",
+    "href": "session_2/session_2.html#long-statements-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Long statements",
+    "text": "Long statements\n\n\n\n\n\n\nCaution\n\n\nIf you write a statement that spans more than one line, always place mathematical operators before the line break rather than after the line break."
+  },
+  {
+    "objectID": "session_2/session_2.html#long-statements-2",
+    "href": "session_2/session_2.html#long-statements-2",
+    "title": "Session 2: How can I import data?",
+    "section": "Long statements",
+    "text": "Long statements\n\nthis will work as intended:\n\n\n5*12+\n  2\n\n\nthis will not work as intended and will not result in an error:\n\n\n5*12\n  +2\n\n\nwhy?"
+  },
+  {
+    "objectID": "session_2/session_2.html#comments",
+    "href": "session_2/session_2.html#comments",
+    "title": "Session 2: How can I import data?",
+    "section": "Comments",
+    "text": "Comments\n\nyou can include human-language comments in scripts\ncomments serve as notes for yourself and for your collaborators"
+  },
+  {
+    "objectID": "session_2/session_2.html#adding-comments",
+    "href": "session_2/session_2.html#adding-comments",
+    "title": "Session 2: How can I import data?",
+    "section": "Adding comments",
+    "text": "Adding comments\n\nto include comments in scripts, begin the line with the pound sign\n\n\n# calculate positive predictive value when prevalence is 0.4\n(0.25*0.4)/(0.25*0.4+(1-0.9)*(1-0.4))\n\n# calculate positive predictive value when prevalence is 0.3\n(0.25*0.3)/(0.25*0.3+(1-0.9)*(1-0.3))"
+  },
+  {
+    "objectID": "session_2/session_2.html#live-demonstration-1",
+    "href": "session_2/session_2.html#live-demonstration-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Live demonstration",
+    "text": "Live demonstration\n🤸"
+  },
+  {
+    "objectID": "session_2/session_2.html#saving-scripts",
+    "href": "session_2/session_2.html#saving-scripts",
+    "title": "Session 2: How can I import data?",
+    "section": "Saving scripts",
+    "text": "Saving scripts\n\nSelect the save icon at the top of the pane.\n\nOr, equivalently, use the keyboard shortcut: ⌘⌘ SS on Mac or ctrlctrl SS on Windows.\nOr, equivalently, select File &gt; Save.\n\nSelect a folder on your computer that you are using for this workshop series or this session, such as session_2.\nPick a filename, making sure to add .r or .R to the end."
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-1-1",
+    "href": "session_2/session_2.html#exercise-1-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nCheck whether or not a blank script is already open. The tab might be labeled Untitled1). If not, open a new script by selecting File &gt; New File &gt; R Script.\nA common cutoff for a borderline high LDL cholesterol level is 130 mg/dL. In the first line of your script, type code that stores the value of 130 as ldl_borderline, using object assignment."
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-1-2",
+    "href": "session_2/session_2.html#exercise-1-2",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nA common cutoff for a high LDL cholesterol level is 160 mg/dL. In the second line, type code that stores the value of 160 as ldl_high, using object assignment.\nAdd a comment above each object assignment that describes the object assignment. For readability, include a blank line between the first object assignment and the second comment."
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-1-3",
+    "href": "session_2/session_2.html#exercise-1-3",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nSelect and run your code.\nIn the console, check to see that ldl_borderline and ldl_high were properly defined: type each object name and press returnreturn or enterenter on your keyboard.\nSave the script, picking some filename that makes sense to you, such as session_2.r. Make sure to add .r or .R at the end. You might first create a folder on your computer for this workshop series."
+  },
+  {
+    "objectID": "session_2/session_2.html#slide-formatting",
+    "href": "session_2/session_2.html#slide-formatting",
+    "title": "Session 2: How can I import data?",
+    "section": "Slide formatting",
+    "text": "Slide formatting\n\nto facilitate copying-and-pasting, throughout the remainder of the workshop series, I will omit the prompt\nfor example:\n\n\n(0.25*0.4)/(0.25*0.4+(1-0.9)*(1-0.4))\n#| [1] 0.625\n\n\nthis does not necessarily mean that you should use a script over a console"
+  },
+  {
+    "objectID": "session_2/session_2.html#should-i-use-the-script-or-the-console",
+    "href": "session_2/session_2.html#should-i-use-the-script-or-the-console",
+    "title": "Session 2: How can I import data?",
+    "section": "Should I use the script or the console?",
+    "text": "Should I use the script or the console?\n\n\n\n\n\n\nTip\n\n\nGo back and forth between the script and the console.\n\n\n\n\nthere are two ways to do this:\n\ntry things out in the console and then copy and paste code into your script\ntype in the script, run your code, and examine the output in the console"
+  },
+  {
+    "objectID": "session_2/session_2.html#should-i-use-the-script-or-the-console-1",
+    "href": "session_2/session_2.html#should-i-use-the-script-or-the-console-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Should I use the script or the console?",
+    "text": "Should I use the script or the console?\n\nas you get more experienced with R, you will probably do most of your typing in scripts"
+  },
+  {
+    "objectID": "session_2/session_2.html#whats-so-great-about-scripts",
+    "href": "session_2/session_2.html#whats-so-great-about-scripts",
+    "title": "Session 2: How can I import data?",
+    "section": "What’s so great about scripts?",
+    "text": "What’s so great about scripts?\n\n\n\n\n\n\nTip\n\n\nUse scripts as a way to save work!\n\n\n\n\nI discourage you from trying to save work by relying on objects\ninstead, lean on scripts"
+  },
+  {
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts",
+    "title": "Session 2: How can I import data?",
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nYour scripts should have a sequence.\n\n\n\n\nas with the recipes analogy, the idea is that the script should serve as a record of your work, and have a general top-to-bottom flow"
+  },
+  {
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-1",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-1",
+    "title": "Session 2: How can I import data?",
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nOnly include code and comments.\n\n\n\n\ndo not include un-commented human-language text!\ndo not include output!"
+  },
+  {
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-2",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-2",
+    "title": "Session 2: How can I import data?",
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nWrite comments!"
+  },
+  {
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-3",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-3",
+    "title": "Session 2: How can I import data?",
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\nI like to write short but frequent comments\nI like to begin every comment with a verb\n\n\n# import data\nnhanes&lt;-read.csv('~/Downloads/data/acs/2019/psam_p06.csv.gz')\n\n# rename variables\nnames(nhanes)&lt;-tolower(names(nhanes))\n\n# subset to individuals 18-65 years of age\nnhanes&lt;-subset(nhanes,agep&gt;=18&agep&lt;=65)"
+  },
+  {
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-4",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-4",
+    "title": "Session 2: How can I import data?",
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n“I kinda thought the subtitles would be more helpful.”\n\n\n\n\nBy Asher Perlman, from The New Yorker, November 4, 2024."
+  },
+  {
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-5",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-5",
+    "title": "Session 2: How can I import data?",
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nYou can use more than one script.\n\n\n\n\nthe scripts should have a natural sequence from one to another, such as:\n\nimport and prepare data.r\nanalyze data.r"
+  },
+  {
+    "objectID": "session_2/session_2.html#how-can-i-write-good-scripts-6",
+    "href": "session_2/session_2.html#how-can-i-write-good-scripts-6",
+    "title": "Session 2: How can I import data?",
+    "section": "How can I write good scripts?",
+    "text": "How can I write good scripts?\n\n\n\n\n\n\nTip\n\n\nContinually revisit your scripts!\n\n\n\n\nthink of a script as being like a work-in-progress manuscript\nbe willing to continually edit it"
+  },
+  {
+    "objectID": "session_2/session_2.html#nhanes",
+    "href": "session_2/session_2.html#nhanes",
+    "title": "Session 2: How can I import data?",
+    "section": "NHANES",
+    "text": "NHANES\n\nthe National Health and Nutrition Examination Survey (NHANES) is a large, CDC survey of American health:\n\n\nThe National Health and Nutrition Examination Survey (NHANES) collects data about the health of adults and children in the United States. We also collect data about what participants eat, drink, and take as supplements to determine how many nutrients are in their diet."
+  },
+  {
+    "objectID": "session_2/session_2.html#nhanes-1",
+    "href": "session_2/session_2.html#nhanes-1",
+    "title": "Session 2: How can I import data?",
+    "section": "NHANES",
+    "text": "NHANES\n\nnhanes_l.csv, available on the CLE, contains data from the 2021–2023 implementation of NHANES\nI created the file by combining (merging) several CDC data files, from across several dimensions\nI restricted the data to individuals 18 years of age or older\nI added a handful of variables, using existing variables\nthe original data, and data descriptions, are available here"
+  },
+  {
+    "objectID": "session_2/session_2.html#importing-the-data",
+    "href": "session_2/session_2.html#importing-the-data",
+    "title": "Session 2: How can I import data?",
+    "section": "Importing the data",
+    "text": "Importing the data\n\nas mentioned in the orientation, there are often many ways to do something in R\nI’m going to show you how to use RStudio’s drop-down menu to import the data\nas a preview, this process will result in object assignment"
+  },
+  {
+    "objectID": "session_2/session_2.html#live-demonstration-2",
+    "href": "session_2/session_2.html#live-demonstration-2",
+    "title": "Session 2: How can I import data?",
+    "section": "Live demonstration",
+    "text": "Live demonstration\n🤸"
+  },
+  {
+    "objectID": "session_2/session_2.html#importing-the-data-1",
+    "href": "session_2/session_2.html#importing-the-data-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Importing the data",
+    "text": "Importing the data\n\nIn RStudio, select File &gt; Import Dataset &gt; From Text (base)… and look for your file.\nChange two parts in the pop-up window:\n\nName: I suggest simply nhanes rather than nhanes_l.\nHeading change this to Yes so that the variable names are properly recognized\n\nCopy the code from the console to a script. Copy just the object assignment, not View()."
+  },
+  {
+    "objectID": "session_2/session_2.html#the-corresponding-code",
+    "href": "session_2/session_2.html#the-corresponding-code",
+    "title": "Session 2: How can I import data?",
+    "section": "The corresponding code",
+    "text": "The corresponding code\n\n\n\n\n\n\nTip\n\n\nExamine the code to begin to understand it."
+  },
+  {
+    "objectID": "session_2/session_2.html#the-corresponding-code-1",
+    "href": "session_2/session_2.html#the-corresponding-code-1",
+    "title": "Session 2: How can I import data?",
+    "section": "The corresponding code",
+    "text": "The corresponding code\n\n\n\n\n\n\nTip\n\n\nCopy and paste the corresponding code to a script so you can later reproduce the import without having to rely on the import tool.\n\n\n\n\nit is not necessary to copy the View() portion of the code"
+  },
+  {
+    "objectID": "session_2/session_2.html#the-view-tab",
+    "href": "session_2/session_2.html#the-view-tab",
+    "title": "Session 2: How can I import data?",
+    "section": "The view tab",
+    "text": "The view tab\n\nby default, the import tool will automatically show the data in a new tab in the Source pane\nyou can close the tab if you want (the object itself will not be removed)\nyou can always open the view tab again by using View()"
+  },
+  {
+    "objectID": "session_2/session_2.html#the-view-tab-1",
+    "href": "session_2/session_2.html#the-view-tab-1",
+    "title": "Session 2: How can I import data?",
+    "section": "The view tab",
+    "text": "The view tab\n\n\n\n\n\n\nTip\n\n\nExamine the data carefully after importing a data file for the first time.\n\n\n\n\ncheck that variable names are there (if they should be there)\nscroll through to check to see that columns are lined up properly"
+  },
+  {
+    "objectID": "session_2/session_2.html#other-ways-to-explore-the-data",
+    "href": "session_2/session_2.html#other-ways-to-explore-the-data",
+    "title": "Session 2: How can I import data?",
+    "section": "Other ways to explore the data",
+    "text": "Other ways to explore the data\n\nnames(): for all the variable names\nhead(): for the first few rows\ntail(): for the last few rows\nstr(): for a glimpse of the data that shows variable names, object classes (more about this later), and the first few values"
+  },
+  {
+    "objectID": "session_2/session_2.html#other-ways-to-explore-the-data-1",
+    "href": "session_2/session_2.html#other-ways-to-explore-the-data-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Other ways to explore the data",
+    "text": "Other ways to explore the data\n\ndim(): for the number of rows and the number of columns, in that order\nnrow(): for the number of rows\nncol(): for the number of columns"
+  },
+  {
+    "objectID": "session_2/session_2.html#other-ways-to-explore-the-data-2",
+    "href": "session_2/session_2.html#other-ways-to-explore-the-data-2",
+    "title": "Session 2: How can I import data?",
+    "section": "Other ways to explore the data",
+    "text": "Other ways to explore the data\n\ndim(nhanes)\n#| [1] 8153  195\nnrow(nhanes)\n#| [1] 8153\nncol(nhanes)\n#| [1] 195"
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-2-1",
+    "href": "session_2/session_2.html#exercise-2-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nDownload the data from the CLE, by clicking on the link, and then browsing for a folder on your computer where you would like to save the file. If the data opens in your browser instead, go back to the CLE page and instead right-click on the link (or control-click or two-finger click), and select save.\nUse RStudio’s drop-down menu to import the data: File &gt; Import Dataset &gt; From Text (base). Please make sure to select the base option."
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-2-2",
+    "href": "session_2/session_2.html#exercise-2-2",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nIn the pop-up window, select Yes under the Heading option.\nOptionally, change the name of the object in the Name field to just nhanes.\nConfirm that the data look OK in the preview section at the bottom right. If so, select the Import button."
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-2-3",
+    "href": "session_2/session_2.html#exercise-2-3",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nConfirm that the data look OK in the viewer that pops up in the Source pane. You can optionally close the tab when you’re done.\nCopy and paste the code for importing the data from the console into your script.\nUse head() to view the first few rows of the data."
+  },
+  {
+    "objectID": "session_2/session_2.html#an-error-message",
+    "href": "session_2/session_2.html#an-error-message",
+    "title": "Session 2: How can I import data?",
+    "section": "An error message",
+    "text": "An error message\n\nthe mean() function will find the mean of a set of numbers\nthere is a variable in the data called ridageyr, which stores ages in years\nwe might be inclined to try this:\n\n\nmean(ridageyr)\n#| Error:\n#| ! object 'ridageyr' not found\n\n\nwhy do we get an error message?"
+  },
+  {
+    "objectID": "session_2/session_2.html#an-error-message-1",
+    "href": "session_2/session_2.html#an-error-message-1",
+    "title": "Session 2: How can I import data?",
+    "section": "An error message",
+    "text": "An error message\n\nwe get an error message because R allows multiple data sets to be available at a time\nso, any time we refer to a variable we also have to refer to the data set"
+  },
+  {
+    "objectID": "session_2/session_2.html#dollar-sign-notation-1",
+    "href": "session_2/session_2.html#dollar-sign-notation-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Dollar-sign notation",
+    "text": "Dollar-sign notation\n\nmean(nhanes$ridageyr)\n#| [1] 52.14436\n\n\nmean(): a function for finding the arithmetic mean\nnhanes: the label we gave for our data when we imported it\n$: indicates that ridageyr is a column in nhanes\nridageyr: the variable name"
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-3-1",
+    "href": "session_2/session_2.html#exercise-3-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\nThe head() and tail() functions, mentioned earlier, can be used not only to preview data but also to preview variables within data. Use these functions to view the first few, and the last few, values of the gender variable.\nThe range() function will show the range of a variable (this is, the minimum and maximum values). Use range() to find the age range of individuals in the NHANES data (the age variable is ridageyr)."
+  },
+  {
+    "objectID": "session_2/session_2.html#another-error-message",
+    "href": "session_2/session_2.html#another-error-message",
+    "title": "Session 2: How can I import data?",
+    "section": "Another error message",
+    "text": "Another error message\n\nmean(nhanes$gender)\n#| Warning in mean.default(nhanes$gender): argument is not numeric or logical:\n#| returning NA\n#| [1] NA\n\n\nthere is a variable in the NHANES data called gender\nwe are using dollar-sign notation\nso, why does this result in an error?"
+  },
+  {
+    "objectID": "session_2/session_2.html#another-error-message-1",
+    "href": "session_2/session_2.html#another-error-message-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Another error message",
+    "text": "Another error message\n\nwe got an error message because gender does not include numbers:\n\n\nhead(nhanes$gender)\n#| [1] \"Male\"   \"Male\"   \"Female\" \"Male\"   \"Female\" \"Male\""
+  },
+  {
+    "objectID": "session_2/session_2.html#object-classes-1",
+    "href": "session_2/session_2.html#object-classes-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Object classes",
+    "text": "Object classes\n\na more general way to check is to use the class() function:\n\n\nclass(nhanes$gender)\n#| [1] \"character\""
+  },
+  {
+    "objectID": "session_2/session_2.html#object-classes-2",
+    "href": "session_2/session_2.html#object-classes-2",
+    "title": "Session 2: How can I import data?",
+    "section": "Object classes",
+    "text": "Object classes\n\nthe class() function reports the object type\nR has many different object types\nthe formal term for object types is object classes\nusing the jar analogy, you can think of object classes as being like the different types of ingredients you might have inside of jars"
+  },
+  {
+    "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes",
+    "href": "session_2/session_2.html#a-taxonomy-of-object-classes",
+    "title": "Session 2: How can I import data?",
+    "section": "A taxonomy of object classes",
+    "text": "A taxonomy of object classes"
+  },
+  {
+    "objectID": "session_2/session_2.html#vectors",
+    "href": "session_2/session_2.html#vectors",
+    "title": "Session 2: How can I import data?",
+    "section": "Vectors",
+    "text": "Vectors\n\nclass(nhanes$ridageyr)\n#| [1] \"integer\"\nis.vector(nhanes$ridageyr)\n#| [1] TRUE\nclass(nhanes$gender)\n#| [1] \"character\"\nis.vector(nhanes$gender)\n#| [1] TRUE\n\n\ninteger and character objects are examples of vectors"
+  },
+  {
+    "objectID": "session_2/session_2.html#numeric-objects",
+    "href": "session_2/session_2.html#numeric-objects",
+    "title": "Session 2: How can I import data?",
+    "section": "Numeric objects",
+    "text": "Numeric objects\n\nis.numeric(nhanes$ridageyr)\n#| [1] TRUE\nis.integer(nhanes$ridageyr)\n#| [1] TRUE\nis.numeric(22.52)\n#| [1] TRUE\nis.integer(22.52)\n#| [1] FALSE\n\n\ninteger objects are themselves examples of numeric objects, but not all numeric objects are integers"
+  },
+  {
+    "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes-1",
+    "href": "session_2/session_2.html#a-taxonomy-of-object-classes-1",
+    "title": "Session 2: How can I import data?",
+    "section": "A taxonomy of object classes",
+    "text": "A taxonomy of object classes\n\n\n\n\n\n\n\nBy Jorge Penné, from The New Yorker, April 1, 2024."
+  },
+  {
+    "objectID": "session_2/session_2.html#data-frames-and-functions",
+    "href": "session_2/session_2.html#data-frames-and-functions",
+    "title": "Session 2: How can I import data?",
+    "section": "Data frames and functions",
+    "text": "Data frames and functions\n\nclass(nhanes)\n#| [1] \"data.frame\"\nclass(mean)\n#| [1] \"function\""
+  },
+  {
+    "objectID": "session_2/session_2.html#a-taxonomy-of-object-classes-2",
+    "href": "session_2/session_2.html#a-taxonomy-of-object-classes-2",
+    "title": "Session 2: How can I import data?",
+    "section": "A taxonomy of object classes",
+    "text": "A taxonomy of object classes"
+  },
+  {
+    "objectID": "session_2/session_2.html#why-do-i-need-to-know-this",
+    "href": "session_2/session_2.html#why-do-i-need-to-know-this",
+    "title": "Session 2: How can I import data?",
+    "section": "Why do I need to know this?",
+    "text": "Why do I need to know this?\n\nmostly I just want you to begin to be aware of all of this\nclasses will determine what you can and cannot do with objects, as illustrated in the first example"
+  },
+  {
+    "objectID": "session_2/session_2.html#exercise-4-1",
+    "href": "session_2/session_2.html#exercise-4-1",
+    "title": "Session 2: How can I import data?",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nThe bpxodi1 variable stores measurements of diastolic blood pressure. Try to find the mean of this variable. You should see a value of NA.\nNow check the class of this variable. You should see that the variable is in fact a numeric object.\nFinally, use head() to take a look at the first few values of the variable. Why do you think might mean() returned NA in the first problem here? We’ll talk next week about how to approach this!"
   },
   {
     "objectID": "session_3/session_3.html#the-na-mean",

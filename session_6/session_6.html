@@ -101,7 +101,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8d8bbfcb02da2208d1512b39fdef3a6e.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5b449ce53ba07115910b5e42ce3f5092.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -215,12 +215,290 @@ Yea-Hung Chen, PhD, MS
     </div>
 </div>
 
-  <p class="date">Sunday, December 6, 2026</p>
+  <p class="date">Friday, November 6, 2026</p>
 </section>
 <section>
-<section id="restricting-to-non-missing-values" class="title-slide slide level1 center" data-stack-name="Restricting to non-missing values">
-<h1>Restricting to non-missing values</h1>
+<section id="subsetting-data" class="title-slide slide level1 center" data-stack-name="Subsetting">
+<h1>Subsetting data</h1>
 
+</section>
+<section id="the-pelican-trial" class="slide level2">
+<h2>The PELICAN trial</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="saugel.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><a href="https://doi.org/10.1001/jama.2026.18574">doi:10.1001/jama.2026.18574</a></p>
+</div></aside></section>
+<section id="subsetting-data-1" class="slide level2">
+<h2>Subsetting data</h2>
+<ul>
+<li><strong>subsetting data</strong> = excluding certain rows</li>
+<li>for example, subsetting to individiuals who are 18–65 years of age</li>
+<li>synonyms for subsetting include:
+<ul>
+<li>filtering data</li>
+<li>restricting data</li>
+</ul></li>
+</ul>
+</section>
+<section id="options-for-subsetting-data-in-r" class="slide level2">
+<h2>Options for subsetting data in R</h2>
+<ul>
+<li><strong><code>subset()</code></strong>: the focus of the next few sections</li>
+<li><code>filter()</code>: a function in <code>dplyr</code> that is very similar to <code>subset()</code></li>
+<li>bracket notation: a core feature in base R</li>
+</ul>
+</section>
+<section id="setup-for-some-coming-examples" class="slide level2">
+<h2>Setup for some coming examples</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Please focus on following along. I’m including the code for the setup in case you want to reproduce any of the examples on your own later.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>minidata <span class="ot">&lt;-</span> nhanes <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select=</span> <span class="fu">c</span>(seqn, ridageyr, asthma, bpxosy1, bpxodi1, hypertension)) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="setup-for-some-coming-examples-1" class="slide level2">
+<h2>Setup for some coming examples</h2>
+<ul>
+<li><code>minidata</code> looks like this:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43                No     135      98      Stage 2</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66                No     121      84      Stage 1</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                No     111      79           No</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34                No     110      72           No</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                No     143      76      Stage 2</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27                No     130      95      Stage 2</span></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59                No     145      76      Stage 2</span></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-for-individuals-60-years-of-age-or-older" class="slide level2">
+<h2>Data for individuals 60 years of age or older</h2>
+<ul>
+<li>to subset to individuals 60 years of age or older:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>there are two arguments to <code>subset()</code> here:
+<ul>
+<li><strong><code>minidata</code></strong>: the data I want to subset</li>
+<li><strong><code>ridageyr&gt;=60</code></strong>: the rule defining how I want to subset</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-for-individuals-60-years-of-age-or-older-1" class="slide level2">
+<h2>Data for individuals 60 years of age or older</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>dollar-sign notation is not needed in the second argument</li>
+<li>in <code>subset()</code>, it is understood that any variable in the second argument is about the data in the first argument</li>
+</ul>
+</section></section>
+<section>
+<section id="subsetting-with-comparisons" class="title-slide slide level1 center" data-stack-name="Subsetting with comparisons">
+<h1>Subsetting with comparisons</h1>
+
+</section>
+<section id="comparisons" class="slide level2">
+<h2>Comparisons</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><code>ridageyr &gt;= 60</code> is an example of a <strong>comparison</strong></li>
+</ul>
+
+<aside><div>
+<p>A more technical term for symbols like <code>&gt;=</code> is <strong>relational operator</strong>.</p>
+</div></aside></section>
+<section id="comparisons-1" class="slide level2">
+<h2>Comparisons</h2>
+<ul>
+<li><code>ridageyr &gt;= 60</code> is a sequence of <code>TRUE</code> or <code>FALSE</code> values:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 43 66 44 43 65 34 68 27 59 31</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="subset-and-comparisons" class="slide level2">
+<h2><code>subset()</code> and comparisons</h2>
+<ul>
+<li>in general, <code>subset()</code> keeps the rows that are <code>TRUE</code> in the second argument</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="comparisons-2" class="slide level2">
+<h2>Comparisons</h2>
+<ul>
+<li><strong><code>==</code></strong> for equal</li>
+<li><strong><code>!=</code></strong> for not equal</li>
+<li><strong><code>&gt;</code></strong> for greater than</li>
+<li><strong><code>&gt;=</code></strong> for greater than or equal to</li>
+<li><strong><code>&lt;</code></strong> for less than</li>
+<li><strong><code>&lt;=</code></strong> for less than or equal to</li>
+</ul>
+</section>
+<section id="comparisons-3" class="slide level2">
+<h2>Comparisons</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 43 66 44 43 65 34 68 27 59 31</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr <span class="sc">==</span> <span class="dv">43</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr <span class="sc">&lt;</span> <span class="dv">59</span></span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="subset-and-comparisons-1" class="slide level2">
+<h2><code>subset()</code> and comparisons</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&lt;</span> <span class="dv">59</span>)</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     No     135      98      Stage 2</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     No     111      79           No</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43     No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     No     110      72           No</span></span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     No     130      95      Stage 2</span></span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="subset-and-comparisons-2" class="slide level2">
+<h2><code>subset()</code> and comparisons</h2>
+<ul>
+<li>to subset to people with Stage 2 hypertension:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, hypertension <span class="sc">==</span> <span class="st">'Stage 2'</span>)</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43     No     135      98      Stage 2</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68     No     143      76      Stage 2</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8 130388       27     No     130      95      Stage 2</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9 130389       59     No     145      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>notice that I’ve placed the value in quotes</li>
+</ul>
+</section></section>
+<section>
+<section id="exercise-1" class="title-slide slide level1 center" data-stack-name="E1">
+<h1>Exercise 1</h1>
+
+</section>
+<section id="exercise-1-1" class="slide level2">
+<h2>Exercise 1</h2>
+<ol type="1">
+<li><p>At the top of a new script, include code for loading the <code>ggplot2</code> package and importing the data. Run your code.</p></li>
+<li><p>Copy the code for defining <code>exercises</code> into your script. Run that code.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>exercises <span class="ot">&lt;-</span> nhanes <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="sc">!</span><span class="fu">is.na</span>(lbxglu) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(lbdhdd)) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(ridageyr, lbxglu, lbdhdd, country, smoking)) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+</ol>
+</section>
+<section id="exercise-1-2" class="slide level2">
+<h2>Exercise 1</h2>
+<ol start="3" type="1">
+<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who are between 40 of age (<code>ridageyr</code>) or older.</p></li>
+<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who have a fasting glucose level (<code>lbxglu</code>) under 100 mg/dL.</p></li>
+<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who were born in the USA.</p></li>
+</ol>
+</section>
+<section id="exercise-1-3" class="slide level2">
+<h2>Exercise 1</h2>
+<ol start="6" type="1">
+<li><p>Many of the functions for hypothesis testing support a <code>data</code> argument. This argument allows you to omit dollar-sign notation. So, these two examples are equivalent:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxosy1<span class="sc">~</span>nhanes<span class="sc">$</span>asthma)</span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bpxosy1<span class="sc">~</span>asthma,<span class="at">data=</span>nhanes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Modify the <code>data</code> argument in the second example to examine the relationship between systolic blood pressure and asthma among individuals with a history of smoking (<code>smoking</code>). Remember to omit dollar-sign notation.</p></li>
+</ol>
+</section></section>
+<section>
+<section id="subsetting-to-non-missing-data" class="title-slide slide level1 center" data-stack-name="Subsetting to non-missing data">
+<h1>Subsetting to non-missing data</h1>
+
+</section>
+<section id="logical-objects" class="slide level2">
+<h2>Logical objects</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(minidata<span class="sc">$</span>ridageyr <span class="sc">==</span> <span class="dv">43</span>)</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "logical"</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(minidata<span class="sc">$</span>ridageyr <span class="sc">==</span> <span class="dv">43</span>)</span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="logical-objects-1" class="slide level2">
+<h2>Logical objects</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="classes.svg" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</section>
+<section id="negation" class="slide level2">
+<h2>Negation</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr <span class="sc">==</span> <span class="dv">43</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr <span class="sc">!=</span> <span class="dv">43</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span> minidata<span class="sc">$</span>ridageyr <span class="sc">==</span> <span class="dv">43</span></span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><strong><code>!</code> at the beginning</strong> of a logical object <strong>negates</strong> it</li>
+<li>in other words, <code>!</code> reverses the <code>TRUE</code>/<code>FALSE</code> values</li>
+</ul>
 </section>
 <section id="systolic-versus-hypertension" class="slide level2">
 <h2>Systolic versus hypertension</h2>
@@ -233,76 +511,44 @@ Yea-Hung Chen, PhD, MS
 </section>
 <section id="systolic-versus-hypertension-1" class="slide level2">
 <h2>Systolic versus hypertension</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nhanes,<span class="fu">aes</span>(<span class="at">x=</span>hypertension,<span class="at">y=</span>bpxosy1))<span class="sc">+</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Hypertension'</span>,<span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="systolic-versus-hypertension-2" class="slide level2">
-<h2>Systolic versus hypertension</h2>
 
-<img data-src="session_6_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="terminology" class="slide level2">
-<h2>Terminology</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Synonyms of restricting include <strong>subsetting</strong> and filtering.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="mini-data" class="slide level2">
-<h2>Mini data</h2>
-<ul>
-<li>as a teaching example, I’ve created a smaller version of the NHANES data</li>
-<li>as always, I encourage you to <strong>focus on watching</strong> rather than practicing during the mini lectures</li>
-<li>but, here is code for <code>minidata</code> if you want to work through these examples later:</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="ot">&lt;-</span>nhanes[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="fu">c</span>(<span class="st">'seqn'</span>,<span class="st">'ridageyr'</span>,<span class="st">'bpxosy1'</span>,<span class="st">'bpxodi1'</span>,<span class="st">'hypertension'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="mini-data-1" class="slide level2">
-<h2>Mini data</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     121      84      Stage 1</span></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No</span></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No</span></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     143      76      Stage 2</span></span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2</span></span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     145      76      Stage 2</span></span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
+<img data-src="session_6_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
 <section id="data-for-individuals-not-missing-hypertension" class="slide level2">
-<h2>Data for individuals not missing hypertension?</h2>
+<h2>Data for individuals not missing hypertension</h2>
 <ul>
-<li>to subset the data to individuals not missing hypertension, <strong>use <code>subset()</code> and <code>is.na()</code></strong>:</li>
+<li>let’s return to <code>minidata</code> for a moment:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,<span class="sc">!</span><span class="fu">is.na</span>(hypertension))</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     121      84      Stage 1</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No</span></span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No</span></span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     143      76      Stage 2</span></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2</span></span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     145      76      Stage 2</span></span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43                No     135      98      Stage 2</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66                No     121      84      Stage 1</span></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                No     111      79           No</span></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34                No     110      72           No</span></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                No     143      76      Stage 2</span></span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27                No     130      95      Stage 2</span></span>
+<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59                No     145      76      Stage 2</span></span>
+<span id="cb15-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-for-individuals-not-missing-hypertension-1" class="slide level2">
+<h2>Data for individuals not missing hypertension</h2>
+<ul>
+<li>to subset the data to individuals not missing hypertension:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, <span class="sc">!</span><span class="fu">is.na</span>(hypertension))</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     No     135      98      Stage 2</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     No     121      84      Stage 1</span></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     No     111      79           No</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     No     110      72           No</span></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     No     143      76      Stage 2</span></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     No     130      95      Stage 2</span></span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     No     145      76      Stage 2</span></span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="is.na" class="slide level2">
@@ -311,29 +557,29 @@ Yea-Hung Chen, PhD, MS
 <li>the values of <code>hypertension</code> are:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>hypertension</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "Stage 2" "Stage 1" "No"      NA        NA        "No"      "Stage 2"</span></span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [8] "Stage 2" "Stage 2" "No"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>hypertension</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] "Stage 2" "Stage 1" "No"      NA        NA        "No"      "Stage 2"</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [8] "Stage 2" "Stage 2" "No"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>is.na()</code> shows whether the values are missing:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension)</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension)</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>placing an exclamation point in front reverses the values:</li>
+<li>an exclamation point in front reverses the values:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension)</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension)</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="subset" class="slide level2">
-<h2><code>subset()</code></h2>
+<section id="data-for-individuals-not-missing-hypertension-2" class="slide level2">
+<h2>Data for individuals not missing hypertension</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,<span class="sc">!</span><span class="fu">is.na</span>(hypertension))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, <span class="sc">!</span><span class="fu">is.na</span>(hypertension))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>there are two arguments to <code>subset()</code> here:
@@ -341,181 +587,48 @@ Yea-Hung Chen, PhD, MS
 <li><strong><code>minidata</code></strong>: the data I want to subset</li>
 <li><strong><code>!is.na(hypertension)</code></strong>: a rule defining how I want to subset</li>
 </ul></li>
-<li><code>subset()</code> will keep rows that are <code>TRUE</code> in the second argument</li>
+<li>as mentioned in the prior section, <code>subset()</code> keeps the rows that are <code>TRUE</code> in the second argument</li>
 </ul>
 </section>
-<section id="subset-1" class="slide level2">
-<h2><code>subset()</code></h2>
+<section id="data-for-individuals-not-missing-hypertension-3" class="slide level2">
+<h2>Data for individuals not missing hypertension</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,<span class="sc">!</span><span class="fu">is.na</span>(hypertension))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>dollar-sign notation is not needed in the second argument</li>
-<li>in <code>subset()</code>, it is understood that any variable in the second argument is about the data in the first argument</li>
-</ul>
-</section>
-<section id="systolic-versus-hypertension-3" class="slide level2">
-<h2>Systolic versus hypertension</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes,<span class="sc">!</span><span class="fu">is.na</span>(hypertension)),<span class="fu">aes</span>(<span class="at">x=</span>hypertension,<span class="at">y=</span>bpxosy1))<span class="sc">+</span></span>
-<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
-<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Hypertension'</span>,<span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes, <span class="sc">!</span><span class="fu">is.na</span>(hypertension)), <span class="fu">aes</span>(<span class="at">x =</span> hypertension, <span class="at">y =</span> bpxosy1)) <span class="sc">+</span></span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Hypertension'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="systolic-versus-hypertension-4" class="slide level2">
+<section id="systolic-versus-hypertension-2" class="slide level2">
 <h2>Systolic versus hypertension</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="session_6_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="session_6_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 
 <aside><div>
-<p>Notice that the groups are still out of order. We’ll talk about how to handle this next week!</p>
+<p>Notice that the groups are still out of order. I’ll show you how to handle this next week!</p>
 </div></aside></section></section>
 <section>
-<section id="exercise-1" class="title-slide slide level1 center" data-stack-name="E1">
-<h1>Exercise 1</h1>
+<section id="exercise-2" class="title-slide slide level1 center" data-stack-name="E2">
+<h1>Exercise 2</h1>
 
 </section>
-<section id="exercise-1-1" class="slide level2">
-<h2>Exercise 1</h2>
+<section id="exercise-2-1" class="slide level2">
+<h2>Exercise 2</h2>
 <ol type="1">
-<li><p>At the top of a new script, include code for loading the <code>ggplot2</code> package and importing the data. Run your code.</p></li>
-<li><p>Using <code>ggplot2</code>, create density plots of systolic blood pressure (<code>bpxosy1</code>), with faceting by <code>asthma</code> (defining the rows). In <code>ggplot()</code>, define <code>data</code> to be a subset of the NHANES data that only includes individuals who are non-missing for <code>asthma</code>.</p></li>
+<li><p>At the top of a new script, include code for loading the <code>ggplot2</code> package. Run your code.</p></li>
+<li><p>Using <code>ggplot2</code>, create density plots of systolic blood pressure (<code>bpxosy1</code>), with faceting by <code>asthma</code> (defining the rows). In <code>ggplot()</code>, define <code>data</code> to be a subset of the NHANES data that only includes individuals who are not missing a value of <code>asthma</code>.</p></li>
 </ol>
 </section></section>
 <section>
-<section id="numerical-comparisons" class="title-slide slide level1 center" data-stack-name="Numerical comparisons">
-<h1>Numerical comparisons</h1>
+<section id="and-and-or" class="title-slide slide level1 center" data-stack-name="And and or">
+<h1>And and or</h1>
 
-</section>
-<section id="data-for-individuals-60-years-of-age-or-older" class="slide level2">
-<h2>Data for individuals 60 years of age or older?</h2>
-<ul>
-<li>suppose I want to look at the data for just individuals who are <strong>60 years of age or older</strong></li>
-</ul>
-</section>
-<section id="data-for-individuals-60-years-of-age-or-older-1" class="slide level2">
-<h2>Data for individuals 60 years of age or older?</h2>
-<ul>
-<li>to subset to individuals 60 years of age or older, <strong>use <code>subset()</code> and a numerical comparison</strong>:</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,ridageyr<span class="sc">&gt;=</span><span class="dv">60</span>)</span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66     121      84      Stage 1</span></span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="data-for-individuals-60-years-of-age-or-older-2" class="slide level2">
-<h2>Data for individuals 60 years of age or older?</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,ridageyr<span class="sc">&gt;=</span><span class="dv">60</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>there are two arguments to <code>subset()</code> here:
-<ul>
-<li><strong><code>minidata</code></strong>: the data I want to subset</li>
-<li><strong><code>ridageyr&gt;=60</code></strong>: the rule defining how I want to subset</li>
-</ul></li>
-</ul>
-</section>
-<section id="numerical-comparisons-1" class="slide level2">
-<h2>Numerical comparisons</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr</span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 43 66 44 43 65 34 68 27 59 31</span></span>
-<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">&gt;=</span><span class="dv">60</span></span>
-<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="numerical-comparisons-2" class="slide level2">
-<h2>Numerical comparisons</h2>
-<ul>
-<li><strong><code>==</code></strong> for equal</li>
-<li><strong><code>!=</code></strong> for not equal</li>
-<li><strong><code>&gt;</code></strong> for greater than</li>
-<li><strong><code>&gt;=</code></strong> for greater than or equal to</li>
-<li><strong><code>&lt;</code></strong> for less than</li>
-<li><strong><code>&lt;=</code></strong> for less than or equal to</li>
-</ul>
-</section>
-<section id="numerical-comparisons-3" class="slide level2">
-<h2>Numerical comparisons</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] 43 66 44 43 65 34 68 27 59 31</span></span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span></span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">&lt;</span><span class="dv">59</span></span>
-<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="subset-and-numerical-comparisons" class="slide level2">
-<h2><code>subset()</code> and numerical comparisons</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata,ridageyr<span class="sc">&lt;</span><span class="dv">59</span>)</span>
-<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2</span></span>
-<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No</span></span>
-<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No</span></span>
-<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2</span></span>
-<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section></section>
-<section>
-<section id="logical-objects" class="title-slide slide level1 center" data-stack-name="Logical objects">
-<h1>Logical objects</h1>
-
-</section>
-<section id="logical-objects-1" class="slide level2">
-<h2>Logical objects</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span>)</span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "logical"</span></span>
-<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension))</span>
-<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] "logical"</span></span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span>)</span>
-<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
-<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(<span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension))</span>
-<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="logical-objects-2" class="slide level2">
-<h2>Logical objects</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="classes.svg" class="quarto-figure quarto-figure-center" height="500"></p>
-</figure>
-</div>
-</section>
-<section id="negation" class="slide level2">
-<h2>Negation</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span></span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
-<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr<span class="sc">!=</span><span class="dv">43</span></span>
-<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span>
-<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>minidata<span class="sc">$</span>ridageyr<span class="sc">==</span><span class="dv">43</span></span>
-<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>to negate (reverse) a logical object, <strong>place <code>!</code> at the beginning</strong></li>
-</ul>
-</section>
-<section id="and-and-or" class="slide level2">
-<h2>And and or</h2>
-<ul>
-<li><strong><code>&amp;</code></strong> = and</li>
-<li><strong><code>|</code></strong> = or</li>
-</ul>
 </section>
 <section id="and" class="slide level2">
 <h2>And</h2>
@@ -523,6 +636,29 @@ Yea-Hung Chen, PhD, MS
 <figure>
 <p><img data-src="intersect.svg" class="quarto-figure quarto-figure-center" height="400"></p>
 </figure>
+</div>
+</section>
+<section id="and-1" class="slide level2">
+<h2>And</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="and-2" class="slide level2">
+<h2>And</h2>
+<ul>
+<li>individuals with asthma and Stage 2 hypertension:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, asthma <span class="sc">==</span> <span class="st">'History of asthma'</span> <span class="sc">&amp;</span> hypertension <span class="sc">==</span> <span class="st">'Stage 2'</span>)</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] seqn         ridageyr     asthma       bpxosy1      bpxodi1     </span></span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [6] hypertension</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| &lt;0 rows&gt; (or 0-length row.names)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="or" class="slide level2">
@@ -533,91 +669,42 @@ Yea-Hung Chen, PhD, MS
 </figure>
 </div>
 </section>
-<section id="and-and-or-1" class="slide level2">
-<h2>And and or</h2>
-<ul>
-<li>individuals without hypertension are partially defined by:</li>
-</ul>
+<section id="or-1" class="slide level2">
+<h2>Or</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>bpxosy1<span class="sc">&lt;</span><span class="dv">120</span> <span class="sc">&amp;</span> minidata<span class="sc">$</span>bpxodi1<span class="sc">&lt;</span><span class="dv">80</span></span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE FALSE  TRUE    NA    NA  TRUE FALSE FALSE FALSE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>individuals with Stage 2 hypertension are defined by:</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>bpxosy1<span class="sc">&gt;=</span><span class="dv">140</span> <span class="sc">|</span> minidata<span class="sc">$</span>bpxodi1<span class="sc">&gt;=</span><span class="dv">90</span></span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE    NA    NA FALSE  TRUE  TRUE  TRUE FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
+<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="logical-objects-and-math" class="slide level2">
-<h2>Logical objects and math</h2>
+<section id="or-2" class="slide level2">
+<h2>Or</h2>
 <ul>
-<li>when combining math with logical objects, <strong><code>TRUE</code> values are treated as 1</strong> and <code>FALSE</code> values are treated as 0</li>
-<li>this can be very useful</li>
-</ul>
-</section>
-<section id="logical-objects-and-math-1" class="slide level2">
-<h2>Logical objects and math</h2>
-<ul>
-<li>to count missing values:</li>
+<li>individuals with Stage 2 hypertension:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(minidata<span class="sc">$</span>hypertension))</span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>or, to count the number of people within an age range:</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(minidata<span class="sc">$</span>ridageyr<span class="sc">&gt;=</span><span class="dv">30</span>)</span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 9</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, bpxosy1<span class="sc">&gt;=</span><span class="dv">140</span> <span class="sc">|</span> bpxodi1<span class="sc">&gt;=</span><span class="dv">90</span>)</span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43     No     135      98      Stage 2</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68     No     143      76      Stage 2</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8 130388       27     No     130      95      Stage 2</span></span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9 130389       59     No     145      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
-<section id="exercise-2" class="title-slide slide level1 center" data-stack-name="E2">
-<h1>Exercise 2</h1>
+<section id="exercise-3" class="title-slide slide level1 center" data-stack-name="E3">
+<h1>Exercise 3</h1>
 
 </section>
-<section id="exercise-2-1" class="slide level2">
-<h2>Exercise 2</h2>
+<section id="exercise-3-1" class="slide level2">
+<h2>Exercise 3</h2>
 <ol type="1">
-<li><p>Copy and paste the following code for defining <code>ex2</code>. Run that code.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>ex2<span class="ot">&lt;-</span><span class="fu">subset</span>(nhanes,<span class="sc">!</span><span class="fu">is.na</span>(lbxglu)<span class="sc">&amp;!</span><span class="fu">is.na</span>(lbdhdd))</span>
-<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>ex2<span class="ot">&lt;-</span>ex2[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="fu">c</span>(<span class="st">'ridageyr'</span>,<span class="st">'dmdborn4'</span>,<span class="st">'dmdeduc2'</span>,<span class="st">'lbxglu'</span>,<span class="st">'lbdhdd'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-</ol>
-</section>
-<section id="exercise-2-2" class="slide level2">
-<h2>Exercise 2</h2>
-<ol start="2" type="1">
-<li><p>Use <code>subset()</code> to get the subset of <code>ex2</code> individuals who are between 40 and 49 years of age (<code>ridageyr</code>), inclusive of both endpoints.</p></li>
-<li><p>Use <code>subset()</code> to get the subset of <code>ex2</code> individuals who have a fasting glucose level (<code>lbxglu</code>) greater or equal to 100 mg/dL and an HDL cholesterol level (<code>lbdhdd</code>) greater or equal to 50 mg/dL.</p></li>
-</ol>
-</section>
-<section id="exercise-2-3" class="slide level2">
-<h2>Exercise 2</h2>
-<ol start="4" type="1">
-<li><p>Count the number of <code>ex2</code> individuals who were born in the US (a <code>dmbdorn4</code> value equal to <code>1</code>) and have a high-school degree (a <code>dmdedu2</code> value equal to <code>3</code>).</p></li>
-<li><p>Count the number of <code>ex2</code> individuals who are 50 years of age (<code>ridageyr</code>) or older and have a fasting glucose level (<code>lbxglu</code>) greater or equal to 100 mg/dL.</p></li>
-</ol>
-</section>
-<section id="exercise-2-4" class="slide level2">
-<h2>Exercise 2</h2>
-<ol start="6" type="1">
-<li><p>Many of the functions for hypothesis testing support a <code>data</code> argument. This argument allows you to omit dollar-sign notation. So, these two examples are equivalent:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxosy1<span class="sc">~</span>nhanes<span class="sc">$</span>asthma)</span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bpxosy1<span class="sc">~</span>asthma,<span class="at">data=</span>nhanes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Modify the <code>data</code> argument in the second example to examine the relationship between systolic blood pressure and asthma among individuals with a history of smoking (a value of <code>smoking</code> equal to <code>History of smoking</code>). Remember to omit dollar-sign notation.</p></li>
-</ol>
-</section>
-<section id="exercise-2-5" class="slide level2">
-<h2>Exercise 2</h2>
-<ol start="7" type="1">
-<li>Using the <code>data</code> argument, fit a simple linear regression model for the relationship between systolic blood pressure (<code>bpxosy1</code>) and diastolic blood pressure (<code>bpxodi1</code>), with systolic blood pressure as the <em>y</em> variable, restricting to individuals with a history of smoking. Remember to omit dollar-sign notation.</li>
+<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who are between 40 and 49 years of age (<code>ridageyr</code>), inclusive of both endpoints.</p></li>
+<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who were born in the USA (<code>country</code>) and do not have a history of smoking (<code>smoking</code>).</p></li>
+<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who were born in the USA (<code>country</code>) or have a history of smoking (<code>smoking</code>).</p></li>
 </ol>
 </section></section>
 <section>
@@ -628,10 +715,10 @@ Yea-Hung Chen, PhD, MS
 <section id="defining-new-variables" class="slide level2">
 <h2>Defining new variables</h2>
 <ul>
-<li>to define a new variable, <strong>use dollar-sign notation and object assignment</strong>:</li>
+<li>to define a new variable, use <strong>dollar-sign notation and object assignment</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>new<span class="ot">&lt;-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>new<span class="ot">&lt;-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>new</code> is an arbitrary name for the new variable</li>
@@ -640,18 +727,18 @@ Yea-Hung Chen, PhD, MS
 <section id="defining-new-variables-1" class="slide level2">
 <h2>Defining new variables</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr bpxosy1 bpxodi1 hypertension new</span></span>
-<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     135      98      Stage 2   1</span></span>
-<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     121      84      Stage 1   1</span></span>
-<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     111      79           No   1</span></span>
-<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43      NA      NA         &lt;NA&gt;   1</span></span>
-<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65      NA      NA         &lt;NA&gt;   1</span></span>
-<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     110      72           No   1</span></span>
-<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     143      76      Stage 2   1</span></span>
-<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     130      95      Stage 2   1</span></span>
-<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     145      76      Stage 2   1</span></span>
-<span id="cb25-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     113      78           No   1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension new</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43                No     135      98      Stage 2   1</span></span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66                No     121      84      Stage 1   1</span></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                No     111      79           No   1</span></span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                No      NA      NA         &lt;NA&gt;   1</span></span>
+<span id="cb27-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;   1</span></span>
+<span id="cb27-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34                No     110      72           No   1</span></span>
+<span id="cb27-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                No     143      76      Stage 2   1</span></span>
+<span id="cb27-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27                No     130      95      Stage 2   1</span></span>
+<span id="cb27-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59                No     145      76      Stage 2   1</span></span>
+<span id="cb27-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                No     113      78           No   1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vigorous-physical-activity" class="slide level2">
@@ -665,15 +752,18 @@ Yea-Hung Chen, PhD, MS
 </section>
 <section id="vigorous-physical-activity-1" class="slide level2">
 <h2>Vigorous physical activity</h2>
+<ul>
+<li><code>pad820</code> looks like this:</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
-<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
-<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
-<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb28-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb28-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb28-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
+<span id="cb28-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vigorous-physical-activity-2" class="slide level2">
@@ -691,19 +781,19 @@ Yea-Hung Chen, PhD, MS
 <h2>Vigorous physical activity</h2>
 <ul>
 <li><code>7777</code> and <code>9999</code> are not actual minutes of vigorous physical activity</li>
-<li>so, we might want to <strong>recode <code>7777</code> and <code>9999</code> to be <code>NA</code></strong></li>
+<li>so, we should <strong>recode <code>7777</code> and <code>9999</code> to be <code>NA</code></strong></li>
 </ul>
 </section>
 <section id="vigorous-physical-activity-4" class="slide level2">
 <h2>Vigorous physical activity</h2>
 <ul>
 <li>there are several possible ways to define missing values</li>
-<li>one approach is to <strong>use the <code>replace()</code> function</strong>:</li>
+<li>one approach is to use the <strong><code>replace()</code></strong> function:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
-<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
-<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <aside><div>
@@ -712,9 +802,9 @@ Yea-Hung Chen, PhD, MS
 <section id="vigorous-physical-activity-5" class="slide level2">
 <h2>Vigorous physical activity</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
-<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
-<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>there are three arguments to <code>replace()</code> here:
@@ -727,43 +817,30 @@ Yea-Hung Chen, PhD, MS
 </section>
 <section id="vigorous-physical-activity-6" class="slide level2">
 <h2>Vigorous physical activity</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>When cleaning variables, avoid replacing existing variables. Instead, define new variables.</p>
+</div>
+</div>
+</div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
-<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
-<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
+<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>notice that I defined a new variable, <code>ltpa_vigorous</code></li>
 </ul>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>When cleaning variables, <strong>define new variables</strong>, rather than replacing existing variables.</p>
-</div>
-</div>
-</div>
 </section>
 <section id="vigorous-physical-activity-7" class="slide level2">
 <h2>Vigorous physical activity</h2>
-<ul>
-<li>to check the work, <strong>use <code>table()</code></strong>:</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ltpa_vigorous,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
-<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
-<span id="cb30-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
-<span id="cb30-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb30-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 &lt;NA&gt; </span></span>
-<span id="cb30-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2 4480</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -773,38 +850,66 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Always check your work</strong> after doing any data cleaning.</p>
+<p>Always check your work after doing any data wrangling.</p>
 </div>
 </div>
+</div>
+</section>
+<section id="vigorous-physical-activity-8" class="slide level2">
+<h2>Vigorous physical activity</h2>
+<ul>
+<li><code>ltpa_vigorous</code> looks like this:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ltpa_vigorous,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb32-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb32-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb32-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb32-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 &lt;NA&gt; </span></span>
+<span id="cb32-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2 4480</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="vigorous-physical-activity-9" class="slide level2">
+<h2>Vigorous physical activity</h2>
+<ul>
+<li><code>pad820</code> looks like this:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb33-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb33-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb33-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
+<span id="cb33-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
-<section id="exercise-3" class="title-slide slide level1 center" data-stack-name="E3">
-<h1>Exercise 3</h1>
+<section id="exercise-4" class="title-slide slide level1 center" data-stack-name="E4">
+<h1>Exercise 4</h1>
 
 </section>
-<section id="exercise-3-1" class="slide level2">
-<h2>Exercise 3</h2>
+<section id="exercise-4-1" class="slide level2">
+<h2>Exercise 4</h2>
 <ol type="1">
 <li><code>pad800</code> stores minutes of moderate physical activity. Values of <code>7777</code> indicate “refused” while values of <code>9999</code> indicate “don’t know” (the codebook is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/PAQ_L.htm#PAD800">here</a>). Use object assignment and <code>replace()</code> to define a new variable for moderate physical activity, with values of <code>7777</code> and <code>9999</code> replaced with <code>NA</code>. Check your work.</li>
 </ol>
 </section>
-<section id="exercise-3-2" class="slide level2">
-<h2>Exercise 3</h2>
+<section id="exercise-4-2" class="slide level2">
+<h2>Exercise 4</h2>
 <ol start="2" type="1">
 <li><code>alq130</code> stores responses to the question, “During the past 12 months, on those days that you drank alcoholic beverages, on average, how many drinks did you have?” Values of <code>777</code> indicate “refused” while values of <code>999</code> indicate “don’t know.” Use object assignment and <code>replace()</code> to define a new alcohol-use variable, with values of <code>777</code> and <code>999</code> replaced with <code>NA</code>. Check your work.</li>
 </ol>
 </section>
-<section id="exercise-3-3" class="slide level2">
-<h2>Exercise 3</h2>
+<section id="exercise-4-3" class="slide level2">
+<h2>Exercise 4</h2>
 <ol start="3" type="1">
-<li><p>Install the <code>baseverse</code> package, which we will discuss next week:</p>
+<li><p>Install the <code>baseverse</code> package, which we will discuss next week. In the console:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'baseverse'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-<li><p>Install the <code>dplyr</code> package, which we will discuss next week:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'dplyr'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'baseverse'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 </ol>
 

@@ -222,8 +222,8 @@ Yea-Hung Chen, PhD, MS
 <h1>Subsetting data</h1>
 
 </section>
-<section id="the-pelican-trial" class="slide level2">
-<h2>The PELICAN trial</h2>
+<section id="a-flow-diagram" class="slide level2">
+<h2>A flow diagram</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="saugel.png" class="quarto-figure quarto-figure-center" height="500"></p>
@@ -270,7 +270,7 @@ Yea-Hung Chen, PhD, MS
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>minidata <span class="ot">&lt;-</span> nhanes <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select=</span> <span class="fu">c</span>(seqn, ridageyr, asthma, bpxosy1, bpxodi1, hypertension)) <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select=</span> <span class="fu">c</span>(seqn, ridageyr, smoking, bpxosy1, bpxodi1, hypertension)) <span class="sc">|&gt;</span></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -281,17 +281,17 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43                No     135      98      Stage 2</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66                No     121      84      Stage 1</span></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                No     111      79           No</span></span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                No      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34                No     110      72           No</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                No     143      76      Stage 2</span></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27                No     130      95      Stage 2</span></span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59                No     145      76      Stage 2</span></span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                 No     111      79           No</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34 History of smoking     110      72           No</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                 No     143      76      Stage 2</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59 History of smoking     145      76      Stage 2</span></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                 No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-for-individuals-60-years-of-age-or-older" class="slide level2">
@@ -301,10 +301,10 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                 No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>there are two arguments to <code>subset()</code> here:
@@ -318,10 +318,10 @@ Yea-Hung Chen, PhD, MS
 <h2>Data for individuals 60 years of age or older</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                 No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>dollar-sign notation is not needed in the second argument</li>
@@ -337,10 +337,10 @@ Yea-Hung Chen, PhD, MS
 <h2>Comparisons</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                 No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>ridageyr &gt;= 60</code> is an example of a <strong>comparison</strong></li>
@@ -368,10 +368,10 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span>)</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66                No     121      84      Stage 1</span></span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5 130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                 No     143      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="comparisons-2" class="slide level2">
@@ -400,13 +400,13 @@ Yea-Hung Chen, PhD, MS
 <h2><code>subset()</code> and comparisons</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">&lt;</span> <span class="dv">59</span>)</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     No     135      98      Stage 2</span></span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     No     111      79           No</span></span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43     No      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     No     110      72           No</span></span>
-<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     No     130      95      Stage 2</span></span>
-<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                 No     111      79           No</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34 History of smoking     110      72           No</span></span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                 No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="subset-and-comparisons-2" class="slide level2">
@@ -416,11 +416,11 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, hypertension <span class="sc">==</span> <span class="st">'Stage 2'</span>)</span>
-<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43     No     135      98      Stage 2</span></span>
-<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68     No     143      76      Stage 2</span></span>
-<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8 130388       27     No     130      95      Stage 2</span></span>
-<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9 130389       59     No     145      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68                 No     143      76      Stage 2</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8 130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9 130389       59 History of smoking     145      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>notice that I’ve placed the value in quotes</li>
@@ -457,8 +457,8 @@ Yea-Hung Chen, PhD, MS
 <ol start="6" type="1">
 <li><p>Many of the functions for hypothesis testing support a <code>data</code> argument. This argument allows you to omit dollar-sign notation. So, these two examples are equivalent:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxosy1<span class="sc">~</span>nhanes<span class="sc">$</span>asthma)</span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bpxosy1<span class="sc">~</span>asthma,<span class="at">data=</span>nhanes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(nhanes<span class="sc">$</span>bpxosy1 <span class="sc">~</span> nhanes<span class="sc">$</span>asthma)</span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bpxosy1 <span class="sc">~</span> asthma, <span class="at">data =</span> nhanes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Modify the <code>data</code> argument in the second example to examine the relationship between systolic blood pressure and asthma among individuals with a history of smoking (<code>smoking</code>). Remember to omit dollar-sign notation.</p></li>
 </ol>
@@ -516,21 +516,21 @@ Yea-Hung Chen, PhD, MS
 <section id="data-for-individuals-not-missing-hypertension" class="slide level2">
 <h2>Data for individuals not missing hypertension</h2>
 <ul>
-<li>let’s return to <code>minidata</code> for a moment:</li>
+<li>returning to <code>minidata</code>:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
-<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43                No     135      98      Stage 2</span></span>
-<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66                No     121      84      Stage 1</span></span>
-<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                No     111      79           No</span></span>
-<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                No      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;</span></span>
-<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34                No     110      72           No</span></span>
-<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                No     143      76      Stage 2</span></span>
-<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27                No     130      95      Stage 2</span></span>
-<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59                No     145      76      Stage 2</span></span>
-<span id="cb15-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                 No     111      79           No</span></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34 History of smoking     110      72           No</span></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                 No     143      76      Stage 2</span></span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59 History of smoking     145      76      Stage 2</span></span>
+<span id="cb15-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                 No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-for-individuals-not-missing-hypertension-1" class="slide level2">
@@ -540,15 +540,15 @@ Yea-Hung Chen, PhD, MS
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, <span class="sc">!</span><span class="fu">is.na</span>(hypertension))</span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43     No     135      98      Stage 2</span></span>
-<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66     No     121      84      Stage 1</span></span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44     No     111      79           No</span></span>
-<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34     No     110      72           No</span></span>
-<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68     No     143      76      Stage 2</span></span>
-<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27     No     130      95      Stage 2</span></span>
-<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59     No     145      76      Stage 2</span></span>
-<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31     No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                 No     111      79           No</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34 History of smoking     110      72           No</span></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                 No     143      76      Stage 2</span></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59 History of smoking     145      76      Stage 2</span></span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                 No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="is.na" class="slide level2">
@@ -652,13 +652,34 @@ Yea-Hung Chen, PhD, MS
 <section id="and-2" class="slide level2">
 <h2>And</h2>
 <ul>
-<li>individuals with asthma and Stage 2 hypertension:</li>
+<li>returning to <code>minidata</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, asthma <span class="sc">==</span> <span class="st">'History of asthma'</span> <span class="sc">&amp;</span> hypertension <span class="sc">==</span> <span class="st">'Stage 2'</span>)</span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] seqn         ridageyr     asthma       bpxosy1      bpxodi1     </span></span>
-<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [6] hypertension</span></span>
-<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| &lt;0 rows&gt; (or 0-length row.names)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                 No     111      79           No</span></span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb23-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb23-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34 History of smoking     110      72           No</span></span>
+<span id="cb23-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                 No     143      76      Stage 2</span></span>
+<span id="cb23-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb23-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59 History of smoking     145      76      Stage 2</span></span>
+<span id="cb23-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                 No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="and-3" class="slide level2">
+<h2>And</h2>
+<ul>
+<li>individuals who smoke and have Stage 2 hypertension:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, smoking <span class="sc">==</span> <span class="st">'History of smoking'</span> <span class="sc">&amp;</span> hypertension <span class="sc">==</span> <span class="st">'Stage 2'</span>)</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8 130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9 130389       59 History of smoking     145      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="or" class="slide level2">
@@ -672,26 +693,24 @@ Yea-Hung Chen, PhD, MS
 <section id="or-1" class="slide level2">
 <h2>Or</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span>
-<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
-<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
-<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
-<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
-<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="or-2" class="slide level2">
 <h2>Or</h2>
 <ul>
-<li>individuals with Stage 2 hypertension:</li>
+<li>individuals who are 43 years of age or have Stage 1 hypertension:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, bpxosy1<span class="sc">&gt;=</span><span class="dv">140</span> <span class="sc">|</span> bpxodi1<span class="sc">&gt;=</span><span class="dv">90</span>)</span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr asthma bpxosy1 bpxodi1 hypertension</span></span>
-<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43     No     135      98      Stage 2</span></span>
-<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7 130387       68     No     143      76      Stage 2</span></span>
-<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8 130388       27     No     130      95      Stage 2</span></span>
-<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9 130389       59     No     145      76      Stage 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">==</span> <span class="dv">43</span> <span class="sc">|</span> hypertension <span class="sc">==</span> <span class="st">'Smoking'</span>)</span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4 130384       43                 No      NA      NA         &lt;NA&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -715,68 +734,90 @@ Yea-Hung Chen, PhD, MS
 <section id="defining-new-variables" class="slide level2">
 <h2>Defining new variables</h2>
 <ul>
+<li>returning to <code>minidata</code>:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43 History of smoking     135      98      Stage 2</span></span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                 No     111      79           No</span></span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb27-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65                 No      NA      NA         &lt;NA&gt;</span></span>
+<span id="cb27-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34 History of smoking     110      72           No</span></span>
+<span id="cb27-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                 No     143      76      Stage 2</span></span>
+<span id="cb27-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27 History of smoking     130      95      Stage 2</span></span>
+<span id="cb27-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59 History of smoking     145      76      Stage 2</span></span>
+<span id="cb27-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                 No     113      78           No</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="defining-new-variables-1" class="slide level2">
+<h2>Defining new variables</h2>
+<ul>
 <li>to define a new variable, use <strong>dollar-sign notation and object assignment</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>new<span class="ot">&lt;-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>new<span class="ot">&lt;-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>new</code> is an arbitrary name for the new variable</li>
 </ul>
 </section>
-<section id="defining-new-variables-1" class="slide level2">
+<section id="defining-new-variables-2" class="slide level2">
 <h2>Defining new variables</h2>
+<ul>
+<li><code>minidata</code> now looks like this:</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
-<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension new</span></span>
-<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43                No     135      98      Stage 2   1</span></span>
-<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66                No     121      84      Stage 1   1</span></span>
-<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                No     111      79           No   1</span></span>
-<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                No      NA      NA         &lt;NA&gt;   1</span></span>
-<span id="cb27-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;   1</span></span>
-<span id="cb27-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34                No     110      72           No   1</span></span>
-<span id="cb27-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                No     143      76      Stage 2   1</span></span>
-<span id="cb27-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27                No     130      95      Stage 2   1</span></span>
-<span id="cb27-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59                No     145      76      Stage 2   1</span></span>
-<span id="cb27-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                No     113      78           No   1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>minidata</span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension new</span></span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1  130378       43 History of smoking     135      98      Stage 2   1</span></span>
+<span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2  130379       66 History of smoking     121      84      Stage 1   1</span></span>
+<span id="cb29-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 3  130380       44                 No     111      79           No   1</span></span>
+<span id="cb29-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4  130384       43                 No      NA      NA         &lt;NA&gt;   1</span></span>
+<span id="cb29-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 5  130385       65                 No      NA      NA         &lt;NA&gt;   1</span></span>
+<span id="cb29-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6  130386       34 History of smoking     110      72           No   1</span></span>
+<span id="cb29-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 7  130387       68                 No     143      76      Stage 2   1</span></span>
+<span id="cb29-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 8  130388       27 History of smoking     130      95      Stage 2   1</span></span>
+<span id="cb29-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 9  130389       59 History of smoking     145      76      Stage 2   1</span></span>
+<span id="cb29-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 10 130390       31                 No     113      78           No   1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vigorous-physical-activity" class="slide level2">
 <h2>Vigorous physical activity</h2>
 <ul>
-<li>from <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/PAQ_L.htm#PAD820">NHANES</a>, the <strong><code>pad820</code></strong> variable records answers to the question:</li>
+<li>the <strong><code>pad820</code></strong> variable records answers to the question:</li>
 </ul>
 <blockquote>
 <p>About how long {do you/does SP} do these vigorous leisure-time physical activities each time?</p>
 </blockquote>
-</section>
+
+<aside><div>
+<p><code>pad820</code> is documented <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/PAQ_L.htm#PAD820">here</a>.</p>
+</div></aside></section>
 <section id="vigorous-physical-activity-1" class="slide level2">
 <h2>Vigorous physical activity</h2>
 <ul>
 <li><code>pad820</code> looks like this:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
-<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
-<span id="cb28-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
-<span id="cb28-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb28-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
-<span id="cb28-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb30-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb30-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb30-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
+<span id="cb30-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vigorous-physical-activity-2" class="slide level2">
 <h2>Vigorous physical activity</h2>
 <ul>
-<li>from <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/PAQ_L.htm#PAD820">NHANES</a>:</li>
+<li>from the <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/PAQ_L.htm#PAD820">NHANES</a> codebook:</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="pad820.png" class="quarto-figure quarto-figure-center" height="400"></p>
-</figure>
-</div>
-</section>
+
+<img data-src="pad820.png" class="quarto-figure quarto-figure-center r-stretch" width="400"></section>
 <section id="vigorous-physical-activity-3" class="slide level2">
 <h2>Vigorous physical activity</h2>
 <ul>
@@ -791,9 +832,8 @@ Yea-Hung Chen, PhD, MS
 <li>one approach is to use the <strong><code>replace()</code></strong> function:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
-<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
-<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820, nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">7777</span> <span class="sc">|</span></span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>                                  nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">9999</span>, <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <aside><div>
@@ -802,9 +842,8 @@ Yea-Hung Chen, PhD, MS
 <section id="vigorous-physical-activity-5" class="slide level2">
 <h2>Vigorous physical activity</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
-<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
-<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820, nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">7777</span> <span class="sc">|</span></span>
+<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a>                                  nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">9999</span>, <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>there are three arguments to <code>replace()</code> here:
@@ -831,9 +870,8 @@ Yea-Hung Chen, PhD, MS
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous<span class="ot">&lt;-</span><span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820,</span>
-<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>                              nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">7777</span><span class="sc">|</span>nhanes<span class="sc">$</span>pad820<span class="sc">==</span><span class="dv">9999</span>,</span>
-<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ltpa_vigorous <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820, nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">7777</span> <span class="sc">|</span></span>
+<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a>                                  nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">9999</span>, <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>notice that I defined a new variable, <code>ltpa_vigorous</code></li>
@@ -850,7 +888,7 @@ Yea-Hung Chen, PhD, MS
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Always check your work after doing any data wrangling.</p>
+<p>Always check your work after defining a new variable.</p>
 </div>
 </div>
 </div>
@@ -861,14 +899,14 @@ Yea-Hung Chen, PhD, MS
 <li><code>ltpa_vigorous</code> looks like this:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ltpa_vigorous,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
-<span id="cb32-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
-<span id="cb32-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
-<span id="cb32-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb32-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 &lt;NA&gt; </span></span>
-<span id="cb32-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2 4480</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ltpa_vigorous, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb34-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb34-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb34-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb34-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 &lt;NA&gt; </span></span>
+<span id="cb34-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2 4480</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vigorous-physical-activity-9" class="slide level2">
@@ -877,14 +915,14 @@ Yea-Hung Chen, PhD, MS
 <li><code>pad820</code> looks like this:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
-<span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
-<span id="cb33-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
-<span id="cb33-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb33-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
-<span id="cb33-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb35-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
+<span id="cb35-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
+<span id="cb35-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
+<span id="cb35-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
+<span id="cb35-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; </span></span>
+<span id="cb35-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2    1   13 4466</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -909,7 +947,7 @@ Yea-Hung Chen, PhD, MS
 <ol start="3" type="1">
 <li><p>Install the <code>baseverse</code> package, which we will discuss next week. In the console:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'baseverse'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'baseverse'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 </ol>
 

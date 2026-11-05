@@ -301,11 +301,11 @@
     "text": "Other topics you might pursue\n\nbracket notation (indexing): a base-R technique for subsetting data and manipulating data\nrepetition: for() loops, the apply functions, and other tools\nwriting your own functions\nregular expressions: for searching through text and replacing text\npackages for parallel computing"
   },
   {
-    "objectID": "session_6/session_6.html#the-pelican-trial",
-    "href": "session_6/session_6.html#the-pelican-trial",
+    "objectID": "session_6/session_6.html#a-flow-diagram",
+    "href": "session_6/session_6.html#a-flow-diagram",
     "title": "Session 6: How can I get started with data wrangling?",
-    "section": "The PELICAN trial",
-    "text": "The PELICAN trial\n\n\n\n\n\n\n\ndoi:10.1001/jama.2026.18574"
+    "section": "A flow diagram",
+    "text": "A flow diagram\n\n\n\n\n\n\n\ndoi:10.1001/jama.2026.18574"
   },
   {
     "objectID": "session_6/session_6.html#subsetting-data-1",
@@ -326,35 +326,35 @@
     "href": "session_6/session_6.html#setup-for-some-coming-examples",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Setup for some coming examples",
-    "text": "Setup for some coming examples\n\n\n\n\n\n\nTip\n\n\nPlease focus on following along. I’m including the code for the setup in case you want to reproduce any of the examples on your own later.\n\n\n\n\nminidata &lt;- nhanes |&gt;\n  subset(select= c(seqn, ridageyr, asthma, bpxosy1, bpxodi1, hypertension)) |&gt;\n  head(n = 10)"
+    "text": "Setup for some coming examples\n\n\n\n\n\n\nTip\n\n\nPlease focus on following along. I’m including the code for the setup in case you want to reproduce any of the examples on your own later.\n\n\n\n\nminidata &lt;- nhanes |&gt;\n  subset(select= c(seqn, ridageyr, smoking, bpxosy1, bpxodi1, hypertension)) |&gt;\n  head(n = 10)"
   },
   {
     "objectID": "session_6/session_6.html#setup-for-some-coming-examples-1",
     "href": "session_6/session_6.html#setup-for-some-coming-examples-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Setup for some coming examples",
-    "text": "Setup for some coming examples\n\nminidata looks like this:\n\n\nminidata\n#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension\n#| 1  130378       43                No     135      98      Stage 2\n#| 2  130379       66                No     121      84      Stage 1\n#| 3  130380       44                No     111      79           No\n#| 4  130384       43                No      NA      NA         &lt;NA&gt;\n#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;\n#| 6  130386       34                No     110      72           No\n#| 7  130387       68                No     143      76      Stage 2\n#| 8  130388       27                No     130      95      Stage 2\n#| 9  130389       59                No     145      76      Stage 2\n#| 10 130390       31                No     113      78           No"
+    "text": "Setup for some coming examples\n\nminidata looks like this:\n\n\nminidata\n#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1  130378       43 History of smoking     135      98      Stage 2\n#| 2  130379       66 History of smoking     121      84      Stage 1\n#| 3  130380       44                 No     111      79           No\n#| 4  130384       43                 No      NA      NA         &lt;NA&gt;\n#| 5  130385       65                 No      NA      NA         &lt;NA&gt;\n#| 6  130386       34 History of smoking     110      72           No\n#| 7  130387       68                 No     143      76      Stage 2\n#| 8  130388       27 History of smoking     130      95      Stage 2\n#| 9  130389       59 History of smoking     145      76      Stage 2\n#| 10 130390       31                 No     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#data-for-individuals-60-years-of-age-or-older",
     "href": "session_6/session_6.html#data-for-individuals-60-years-of-age-or-older",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Data for individuals 60 years of age or older",
-    "text": "Data for individuals 60 years of age or older\n\nto subset to individuals 60 years of age or older:\n\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension\n#| 2 130379       66                No     121      84      Stage 1\n#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;\n#| 7 130387       68                No     143      76      Stage 2\n\n\nthere are two arguments to subset() here:\n\nminidata: the data I want to subset\nridageyr&gt;=60: the rule defining how I want to subset"
+    "text": "Data for individuals 60 years of age or older\n\nto subset to individuals 60 years of age or older:\n\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 2 130379       66 History of smoking     121      84      Stage 1\n#| 5 130385       65                 No      NA      NA         &lt;NA&gt;\n#| 7 130387       68                 No     143      76      Stage 2\n\n\nthere are two arguments to subset() here:\n\nminidata: the data I want to subset\nridageyr&gt;=60: the rule defining how I want to subset"
   },
   {
     "objectID": "session_6/session_6.html#data-for-individuals-60-years-of-age-or-older-1",
     "href": "session_6/session_6.html#data-for-individuals-60-years-of-age-or-older-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Data for individuals 60 years of age or older",
-    "text": "Data for individuals 60 years of age or older\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension\n#| 2 130379       66                No     121      84      Stage 1\n#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;\n#| 7 130387       68                No     143      76      Stage 2\n\n\ndollar-sign notation is not needed in the second argument\nin subset(), it is understood that any variable in the second argument is about the data in the first argument"
+    "text": "Data for individuals 60 years of age or older\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 2 130379       66 History of smoking     121      84      Stage 1\n#| 5 130385       65                 No      NA      NA         &lt;NA&gt;\n#| 7 130387       68                 No     143      76      Stage 2\n\n\ndollar-sign notation is not needed in the second argument\nin subset(), it is understood that any variable in the second argument is about the data in the first argument"
   },
   {
     "objectID": "session_6/session_6.html#comparisons",
     "href": "session_6/session_6.html#comparisons",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Comparisons",
-    "text": "Comparisons\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension\n#| 2 130379       66                No     121      84      Stage 1\n#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;\n#| 7 130387       68                No     143      76      Stage 2\n\n\nridageyr &gt;= 60 is an example of a comparison\n\n\n\nA more technical term for symbols like &gt;= is relational operator."
+    "text": "Comparisons\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 2 130379       66 History of smoking     121      84      Stage 1\n#| 5 130385       65                 No      NA      NA         &lt;NA&gt;\n#| 7 130387       68                 No     143      76      Stage 2\n\n\nridageyr &gt;= 60 is an example of a comparison\n\n\n\nA more technical term for symbols like &gt;= is relational operator."
   },
   {
     "objectID": "session_6/session_6.html#comparisons-1",
@@ -368,7 +368,7 @@
     "href": "session_6/session_6.html#subset-and-comparisons",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "subset() and comparisons",
-    "text": "subset() and comparisons\n\nin general, subset() keeps the rows that are TRUE in the second argument\n\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension\n#| 2 130379       66                No     121      84      Stage 1\n#| 5 130385       65 History of asthma      NA      NA         &lt;NA&gt;\n#| 7 130387       68                No     143      76      Stage 2"
+    "text": "subset() and comparisons\n\nin general, subset() keeps the rows that are TRUE in the second argument\n\n\nsubset(minidata, ridageyr &gt;= 60)\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 2 130379       66 History of smoking     121      84      Stage 1\n#| 5 130385       65                 No      NA      NA         &lt;NA&gt;\n#| 7 130387       68                 No     143      76      Stage 2"
   },
   {
     "objectID": "session_6/session_6.html#comparisons-2",
@@ -389,14 +389,14 @@
     "href": "session_6/session_6.html#subset-and-comparisons-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "subset() and comparisons",
-    "text": "subset() and comparisons\n\nsubset(minidata, ridageyr &lt; 59)\n#|      seqn ridageyr asthma bpxosy1 bpxodi1 hypertension\n#| 1  130378       43     No     135      98      Stage 2\n#| 3  130380       44     No     111      79           No\n#| 4  130384       43     No      NA      NA         &lt;NA&gt;\n#| 6  130386       34     No     110      72           No\n#| 8  130388       27     No     130      95      Stage 2\n#| 10 130390       31     No     113      78           No"
+    "text": "subset() and comparisons\n\nsubset(minidata, ridageyr &lt; 59)\n#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1  130378       43 History of smoking     135      98      Stage 2\n#| 3  130380       44                 No     111      79           No\n#| 4  130384       43                 No      NA      NA         &lt;NA&gt;\n#| 6  130386       34 History of smoking     110      72           No\n#| 8  130388       27 History of smoking     130      95      Stage 2\n#| 10 130390       31                 No     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#subset-and-comparisons-2",
     "href": "session_6/session_6.html#subset-and-comparisons-2",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "subset() and comparisons",
-    "text": "subset() and comparisons\n\nto subset to people with Stage 2 hypertension:\n\n\nsubset(minidata, hypertension == 'Stage 2')\n#|     seqn ridageyr asthma bpxosy1 bpxodi1 hypertension\n#| 1 130378       43     No     135      98      Stage 2\n#| 7 130387       68     No     143      76      Stage 2\n#| 8 130388       27     No     130      95      Stage 2\n#| 9 130389       59     No     145      76      Stage 2\n\n\nnotice that I’ve placed the value in quotes"
+    "text": "subset() and comparisons\n\nto subset to people with Stage 2 hypertension:\n\n\nsubset(minidata, hypertension == 'Stage 2')\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1 130378       43 History of smoking     135      98      Stage 2\n#| 7 130387       68                 No     143      76      Stage 2\n#| 8 130388       27 History of smoking     130      95      Stage 2\n#| 9 130389       59 History of smoking     145      76      Stage 2\n\n\nnotice that I’ve placed the value in quotes"
   },
   {
     "objectID": "session_6/session_6.html#exercise-1-1",
@@ -417,7 +417,7 @@
     "href": "session_6/session_6.html#exercise-1-3",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nMany of the functions for hypothesis testing support a data argument. This argument allows you to omit dollar-sign notation. So, these two examples are equivalent:\n\nt.test(nhanes$bpxosy1~nhanes$asthma)\nt.test(bpxosy1~asthma,data=nhanes)\n\nModify the data argument in the second example to examine the relationship between systolic blood pressure and asthma among individuals with a history of smoking (smoking). Remember to omit dollar-sign notation."
+    "text": "Exercise 1\n\nMany of the functions for hypothesis testing support a data argument. This argument allows you to omit dollar-sign notation. So, these two examples are equivalent:\n\nt.test(nhanes$bpxosy1 ~ nhanes$asthma)\nt.test(bpxosy1 ~ asthma, data = nhanes)\n\nModify the data argument in the second example to examine the relationship between systolic blood pressure and asthma among individuals with a history of smoking (smoking). Remember to omit dollar-sign notation."
   },
   {
     "objectID": "session_6/session_6.html#logical-objects",
@@ -459,14 +459,14 @@
     "href": "session_6/session_6.html#data-for-individuals-not-missing-hypertension",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Data for individuals not missing hypertension",
-    "text": "Data for individuals not missing hypertension\n\nlet’s return to minidata for a moment:\n\n\nminidata\n#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension\n#| 1  130378       43                No     135      98      Stage 2\n#| 2  130379       66                No     121      84      Stage 1\n#| 3  130380       44                No     111      79           No\n#| 4  130384       43                No      NA      NA         &lt;NA&gt;\n#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;\n#| 6  130386       34                No     110      72           No\n#| 7  130387       68                No     143      76      Stage 2\n#| 8  130388       27                No     130      95      Stage 2\n#| 9  130389       59                No     145      76      Stage 2\n#| 10 130390       31                No     113      78           No"
+    "text": "Data for individuals not missing hypertension\n\nreturning to minidata:\n\n\nminidata\n#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1  130378       43 History of smoking     135      98      Stage 2\n#| 2  130379       66 History of smoking     121      84      Stage 1\n#| 3  130380       44                 No     111      79           No\n#| 4  130384       43                 No      NA      NA         &lt;NA&gt;\n#| 5  130385       65                 No      NA      NA         &lt;NA&gt;\n#| 6  130386       34 History of smoking     110      72           No\n#| 7  130387       68                 No     143      76      Stage 2\n#| 8  130388       27 History of smoking     130      95      Stage 2\n#| 9  130389       59 History of smoking     145      76      Stage 2\n#| 10 130390       31                 No     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#data-for-individuals-not-missing-hypertension-1",
     "href": "session_6/session_6.html#data-for-individuals-not-missing-hypertension-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Data for individuals not missing hypertension",
-    "text": "Data for individuals not missing hypertension\n\nto subset the data to individuals not missing hypertension:\n\n\nsubset(minidata, !is.na(hypertension))\n#|      seqn ridageyr asthma bpxosy1 bpxodi1 hypertension\n#| 1  130378       43     No     135      98      Stage 2\n#| 2  130379       66     No     121      84      Stage 1\n#| 3  130380       44     No     111      79           No\n#| 6  130386       34     No     110      72           No\n#| 7  130387       68     No     143      76      Stage 2\n#| 8  130388       27     No     130      95      Stage 2\n#| 9  130389       59     No     145      76      Stage 2\n#| 10 130390       31     No     113      78           No"
+    "text": "Data for individuals not missing hypertension\n\nto subset the data to individuals not missing hypertension:\n\n\nsubset(minidata, !is.na(hypertension))\n#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1  130378       43 History of smoking     135      98      Stage 2\n#| 2  130379       66 History of smoking     121      84      Stage 1\n#| 3  130380       44                 No     111      79           No\n#| 6  130386       34 History of smoking     110      72           No\n#| 7  130387       68                 No     143      76      Stage 2\n#| 8  130388       27 History of smoking     130      95      Stage 2\n#| 9  130389       59 History of smoking     145      76      Stage 2\n#| 10 130390       31                 No     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#is.na",
@@ -522,7 +522,14 @@
     "href": "session_6/session_6.html#and-2",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "And",
-    "text": "And\n\nindividuals with asthma and Stage 2 hypertension:\n\n\nsubset(minidata, asthma == 'History of asthma' & hypertension == 'Stage 2')\n#| [1] seqn         ridageyr     asthma       bpxosy1      bpxodi1     \n#| [6] hypertension\n#| &lt;0 rows&gt; (or 0-length row.names)"
+    "text": "And\n\nreturning to minidata:\n\n\nminidata\n#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1  130378       43 History of smoking     135      98      Stage 2\n#| 2  130379       66 History of smoking     121      84      Stage 1\n#| 3  130380       44                 No     111      79           No\n#| 4  130384       43                 No      NA      NA         &lt;NA&gt;\n#| 5  130385       65                 No      NA      NA         &lt;NA&gt;\n#| 6  130386       34 History of smoking     110      72           No\n#| 7  130387       68                 No     143      76      Stage 2\n#| 8  130388       27 History of smoking     130      95      Stage 2\n#| 9  130389       59 History of smoking     145      76      Stage 2\n#| 10 130390       31                 No     113      78           No"
+  },
+  {
+    "objectID": "session_6/session_6.html#and-3",
+    "href": "session_6/session_6.html#and-3",
+    "title": "Session 6: How can I get started with data wrangling?",
+    "section": "And",
+    "text": "And\n\nindividuals who smoke and have Stage 2 hypertension:\n\n\nsubset(minidata, smoking == 'History of smoking' & hypertension == 'Stage 2')\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1 130378       43 History of smoking     135      98      Stage 2\n#| 8 130388       27 History of smoking     130      95      Stage 2\n#| 9 130389       59 History of smoking     145      76      Stage 2"
   },
   {
     "objectID": "session_6/session_6.html#or",
@@ -543,7 +550,7 @@
     "href": "session_6/session_6.html#or-2",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Or",
-    "text": "Or\n\nindividuals with Stage 2 hypertension:\n\n\nsubset(minidata, bpxosy1&gt;=140 | bpxodi1&gt;=90)\n#|     seqn ridageyr asthma bpxosy1 bpxodi1 hypertension\n#| 1 130378       43     No     135      98      Stage 2\n#| 7 130387       68     No     143      76      Stage 2\n#| 8 130388       27     No     130      95      Stage 2\n#| 9 130389       59     No     145      76      Stage 2"
+    "text": "Or\n\nindividuals who are 43 years of age or have Stage 1 hypertension:\n\n\nsubset(minidata, ridageyr == 43 | hypertension == 'Smoking')\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1 130378       43 History of smoking     135      98      Stage 2\n#| 4 130384       43                 No      NA      NA         &lt;NA&gt;"
   },
   {
     "objectID": "session_6/session_6.html#exercise-3-1",
@@ -557,35 +564,42 @@
     "href": "session_6/session_6.html#defining-new-variables",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Defining new variables",
-    "text": "Defining new variables\n\nto define a new variable, use dollar-sign notation and object assignment:\n\n\nminidata$new&lt;-1\n\n\nnew is an arbitrary name for the new variable"
+    "text": "Defining new variables\n\nreturning to minidata:\n\n\nminidata\n#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1  130378       43 History of smoking     135      98      Stage 2\n#| 2  130379       66 History of smoking     121      84      Stage 1\n#| 3  130380       44                 No     111      79           No\n#| 4  130384       43                 No      NA      NA         &lt;NA&gt;\n#| 5  130385       65                 No      NA      NA         &lt;NA&gt;\n#| 6  130386       34 History of smoking     110      72           No\n#| 7  130387       68                 No     143      76      Stage 2\n#| 8  130388       27 History of smoking     130      95      Stage 2\n#| 9  130389       59 History of smoking     145      76      Stage 2\n#| 10 130390       31                 No     113      78           No"
   },
   {
     "objectID": "session_6/session_6.html#defining-new-variables-1",
     "href": "session_6/session_6.html#defining-new-variables-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Defining new variables",
-    "text": "Defining new variables\n\nminidata\n#|      seqn ridageyr            asthma bpxosy1 bpxodi1 hypertension new\n#| 1  130378       43                No     135      98      Stage 2   1\n#| 2  130379       66                No     121      84      Stage 1   1\n#| 3  130380       44                No     111      79           No   1\n#| 4  130384       43                No      NA      NA         &lt;NA&gt;   1\n#| 5  130385       65 History of asthma      NA      NA         &lt;NA&gt;   1\n#| 6  130386       34                No     110      72           No   1\n#| 7  130387       68                No     143      76      Stage 2   1\n#| 8  130388       27                No     130      95      Stage 2   1\n#| 9  130389       59                No     145      76      Stage 2   1\n#| 10 130390       31                No     113      78           No   1"
+    "text": "Defining new variables\n\nto define a new variable, use dollar-sign notation and object assignment:\n\n\nminidata$new&lt;-1\n\n\nnew is an arbitrary name for the new variable"
+  },
+  {
+    "objectID": "session_6/session_6.html#defining-new-variables-2",
+    "href": "session_6/session_6.html#defining-new-variables-2",
+    "title": "Session 6: How can I get started with data wrangling?",
+    "section": "Defining new variables",
+    "text": "Defining new variables\n\nminidata now looks like this:\n\n\nminidata\n#|      seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension new\n#| 1  130378       43 History of smoking     135      98      Stage 2   1\n#| 2  130379       66 History of smoking     121      84      Stage 1   1\n#| 3  130380       44                 No     111      79           No   1\n#| 4  130384       43                 No      NA      NA         &lt;NA&gt;   1\n#| 5  130385       65                 No      NA      NA         &lt;NA&gt;   1\n#| 6  130386       34 History of smoking     110      72           No   1\n#| 7  130387       68                 No     143      76      Stage 2   1\n#| 8  130388       27 History of smoking     130      95      Stage 2   1\n#| 9  130389       59 History of smoking     145      76      Stage 2   1\n#| 10 130390       31                 No     113      78           No   1"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity",
     "href": "session_6/session_6.html#vigorous-physical-activity",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\nfrom NHANES, the pad820 variable records answers to the question:\n\n\nAbout how long {do you/does SP} do these vigorous leisure-time physical activities each time?"
+    "text": "Vigorous physical activity\n\nthe pad820 variable records answers to the question:\n\n\nAbout how long {do you/does SP} do these vigorous leisure-time physical activities each time?\n\n\n\npad820 is documented here."
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-1",
     "href": "session_6/session_6.html#vigorous-physical-activity-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\npad820 looks like this:\n\n\ntable(nhanes$pad820,useNA='always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; \n#|   10    1    8    1    1    1    2    1   13 4466"
+    "text": "Vigorous physical activity\n\npad820 looks like this:\n\n\ntable(nhanes$pad820, useNA = 'always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; \n#|   10    1    8    1    1    1    2    1   13 4466"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-2",
     "href": "session_6/session_6.html#vigorous-physical-activity-2",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\nfrom NHANES:"
+    "text": "Vigorous physical activity\n\nfrom the NHANES codebook:"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-3",
@@ -599,42 +613,42 @@
     "href": "session_6/session_6.html#vigorous-physical-activity-4",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\nthere are several possible ways to define missing values\none approach is to use the replace() function:\n\n\nnhanes$ltpa_vigorous&lt;-replace(nhanes$pad820,\n                              nhanes$pad820==7777|nhanes$pad820==9999,\n                              NA)\n\n\n\nThis week’s homework mentions an alternate approach for defining missing values."
+    "text": "Vigorous physical activity\n\nthere are several possible ways to define missing values\none approach is to use the replace() function:\n\n\nnhanes$ltpa_vigorous &lt;- replace(nhanes$pad820, nhanes$pad820 == 7777 |\n                                  nhanes$pad820 == 9999, NA)\n\n\n\nThis week’s homework mentions an alternate approach for defining missing values."
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-5",
     "href": "session_6/session_6.html#vigorous-physical-activity-5",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\nnhanes$ltpa_vigorous&lt;-replace(nhanes$pad820,\n                              nhanes$pad820==7777|nhanes$pad820==9999,\n                              NA)\n\n\nthere are three arguments to replace() here:\n\nnhanes$pad820: the variable that we want to modify\nnhanes$pad820==7777|nhanes$pad820==9999: a rule (specifically, a logical object) that indicates which values should be replaced\nNA: the replacement value"
+    "text": "Vigorous physical activity\n\nnhanes$ltpa_vigorous &lt;- replace(nhanes$pad820, nhanes$pad820 == 7777 |\n                                  nhanes$pad820 == 9999, NA)\n\n\nthere are three arguments to replace() here:\n\nnhanes$pad820: the variable that we want to modify\nnhanes$pad820==7777|nhanes$pad820==9999: a rule (specifically, a logical object) that indicates which values should be replaced\nNA: the replacement value"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-6",
     "href": "session_6/session_6.html#vigorous-physical-activity-6",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\n\n\n\n\n\nTip\n\n\nWhen cleaning variables, avoid replacing existing variables. Instead, define new variables.\n\n\n\n\nnhanes$ltpa_vigorous&lt;-replace(nhanes$pad820,\n                              nhanes$pad820==7777|nhanes$pad820==9999,\n                              NA)\n\n\nnotice that I defined a new variable, ltpa_vigorous"
+    "text": "Vigorous physical activity\n\n\n\n\n\n\nTip\n\n\nWhen cleaning variables, avoid replacing existing variables. Instead, define new variables.\n\n\n\n\nnhanes$ltpa_vigorous &lt;- replace(nhanes$pad820, nhanes$pad820 == 7777 |\n                                  nhanes$pad820 == 9999, NA)\n\n\nnotice that I defined a new variable, ltpa_vigorous"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-7",
     "href": "session_6/session_6.html#vigorous-physical-activity-7",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\n\n\n\n\n\nTip\n\n\nAlways check your work after doing any data wrangling."
+    "text": "Vigorous physical activity\n\n\n\n\n\n\nTip\n\n\nAlways check your work after defining a new variable."
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-8",
     "href": "session_6/session_6.html#vigorous-physical-activity-8",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\nltpa_vigorous looks like this:\n\n\ntable(nhanes$ltpa_vigorous,useNA='always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 &lt;NA&gt; \n#|   10    1    8    1    1    1    2 4480"
+    "text": "Vigorous physical activity\n\nltpa_vigorous looks like this:\n\n\ntable(nhanes$ltpa_vigorous, useNA = 'always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 &lt;NA&gt; \n#|   10    1    8    1    1    1    2 4480"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-9",
     "href": "session_6/session_6.html#vigorous-physical-activity-9",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\npad820 looks like this:\n\n\ntable(nhanes$pad820,useNA='always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; \n#|   10    1    8    1    1    1    2    1   13 4466"
+    "text": "Vigorous physical activity\n\npad820 looks like this:\n\n\ntable(nhanes$pad820, useNA = 'always')\n#| \n#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 \n#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 \n#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 \n#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 \n#|  360  420  480  540  600  660  900 7777 9999 &lt;NA&gt; \n#|   10    1    8    1    1    1    2    1   13 4466"
   },
   {
     "objectID": "session_6/session_6.html#exercise-4-1",

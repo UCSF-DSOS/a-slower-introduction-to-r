@@ -435,7 +435,7 @@ Yea-Hung Chen, PhD, MS
 <h2>Exercise 1</h2>
 <ol type="1">
 <li><p>At the top of a new script, include code for loading the <code>ggplot2</code> package and importing the data. Run your code.</p></li>
-<li><p>Copy the code for defining <code>exercises</code> into your script. Run that code.</p>
+<li><p>Copy the code below for defining <code>exercises</code> into your script. Run that code.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>exercises <span class="ot">&lt;-</span> nhanes <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="sc">!</span><span class="fu">is.na</span>(lbxglu) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(lbdhdd)) <span class="sc">|&gt;</span></span>
@@ -492,7 +492,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>ridageyr <span class="sc">!=</span> <span class="dv">43</span></span>
 <span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span> minidata<span class="sc">$</span>ridageyr <span class="sc">==</span> <span class="dv">43</span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>minidata<span class="sc">$</span>ridageyr <span class="sc">==</span> <span class="dv">43</span></span>
 <span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -632,14 +632,6 @@ Yea-Hung Chen, PhD, MS
 </section>
 <section id="and" class="slide level2">
 <h2>And</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="intersect.svg" class="quarto-figure quarto-figure-center" height="400"></p>
-</figure>
-</div>
-</section>
-<section id="and-1" class="slide level2">
-<h2>And</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span>
 <span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
@@ -647,6 +639,14 @@ Yea-Hung Chen, PhD, MS
 <span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span>
 <span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span>
 <span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="and-1" class="slide level2">
+<h2>And</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="intersect.svg" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
 </div>
 </section>
 <section id="and-2" class="slide level2">
@@ -684,14 +684,6 @@ Yea-Hung Chen, PhD, MS
 </section>
 <section id="or" class="slide level2">
 <h2>Or</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="union.svg" class="quarto-figure quarto-figure-center" height="400"></p>
-</figure>
-</div>
-</section>
-<section id="or-1" class="slide level2">
-<h2>Or</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span>
 <span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] TRUE</span></span>
@@ -701,16 +693,25 @@ Yea-Hung Chen, PhD, MS
 <span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
+<section id="or-1" class="slide level2">
+<h2>Or</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="union.svg" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</section>
 <section id="or-2" class="slide level2">
 <h2>Or</h2>
 <ul>
 <li>individuals who are 43 years of age or have Stage 1 hypertension:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">==</span> <span class="dv">43</span> <span class="sc">|</span> hypertension <span class="sc">==</span> <span class="st">'Smoking'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(minidata, ridageyr <span class="sc">==</span> <span class="dv">43</span> <span class="sc">|</span> hypertension <span class="sc">==</span> <span class="st">'Stage 1'</span>)</span>
 <span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension</span></span>
 <span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 1 130378       43 History of smoking     135      98      Stage 2</span></span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4 130384       43                 No      NA      NA         &lt;NA&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 2 130379       66 History of smoking     121      84      Stage 1</span></span>
+<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 4 130384       43                 No      NA      NA         &lt;NA&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -757,7 +758,7 @@ Yea-Hung Chen, PhD, MS
 <li>to define a new variable, use <strong>dollar-sign notation and object assignment</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>new<span class="ot">&lt;-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>minidata<span class="sc">$</span>new <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>new</code> is an arbitrary name for the new variable</li>

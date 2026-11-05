@@ -403,7 +403,7 @@
     "href": "session_6/session_6.html#exercise-1-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nAt the top of a new script, include code for loading the ggplot2 package and importing the data. Run your code.\nCopy the code for defining exercises into your script. Run that code.\n\nexercises &lt;- nhanes |&gt;\n  subset(!is.na(lbxglu) & !is.na(lbdhdd)) |&gt;\n  subset(select = c(ridageyr, lbxglu, lbdhdd, country, smoking)) |&gt;\n  head(n = 10)"
+    "text": "Exercise 1\n\nAt the top of a new script, include code for loading the ggplot2 package and importing the data. Run your code.\nCopy the code below for defining exercises into your script. Run that code.\n\nexercises &lt;- nhanes |&gt;\n  subset(!is.na(lbxglu) & !is.na(lbdhdd)) |&gt;\n  subset(select = c(ridageyr, lbxglu, lbdhdd, country, smoking)) |&gt;\n  head(n = 10)"
   },
   {
     "objectID": "session_6/session_6.html#exercise-1-2",
@@ -438,7 +438,7 @@
     "href": "session_6/session_6.html#negation",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Negation",
-    "text": "Negation\n\nminidata$ridageyr == 43\n#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE\nminidata$ridageyr != 43\n#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n! minidata$ridageyr == 43\n#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n\n\n! at the beginning of a logical object negates it\nin other words, ! reverses the TRUE/FALSE values"
+    "text": "Negation\n\nminidata$ridageyr == 43\n#|  [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE\nminidata$ridageyr != 43\n#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n!minidata$ridageyr == 43\n#|  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n\n\n! at the beginning of a logical object negates it\nin other words, ! reverses the TRUE/FALSE values"
   },
   {
     "objectID": "session_6/session_6.html#systolic-versus-hypertension",
@@ -508,14 +508,14 @@
     "href": "session_6/session_6.html#and",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "And",
-    "text": "And"
+    "text": "And\n\nTRUE & TRUE\n#| [1] TRUE\nTRUE & FALSE\n#| [1] FALSE\nFALSE & FALSE\n#| [1] FALSE"
   },
   {
     "objectID": "session_6/session_6.html#and-1",
     "href": "session_6/session_6.html#and-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "And",
-    "text": "And\n\nTRUE & TRUE\n#| [1] TRUE\nTRUE & FALSE\n#| [1] FALSE\nFALSE & FALSE\n#| [1] FALSE"
+    "text": "And"
   },
   {
     "objectID": "session_6/session_6.html#and-2",
@@ -536,21 +536,21 @@
     "href": "session_6/session_6.html#or",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Or",
-    "text": "Or"
+    "text": "Or\n\nTRUE | TRUE\n#| [1] TRUE\nTRUE | FALSE\n#| [1] TRUE\nFALSE | FALSE\n#| [1] FALSE"
   },
   {
     "objectID": "session_6/session_6.html#or-1",
     "href": "session_6/session_6.html#or-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Or",
-    "text": "Or\n\nTRUE | TRUE\n#| [1] TRUE\nTRUE | FALSE\n#| [1] TRUE\nFALSE | FALSE\n#| [1] FALSE"
+    "text": "Or"
   },
   {
     "objectID": "session_6/session_6.html#or-2",
     "href": "session_6/session_6.html#or-2",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Or",
-    "text": "Or\n\nindividuals who are 43 years of age or have Stage 1 hypertension:\n\n\nsubset(minidata, ridageyr == 43 | hypertension == 'Smoking')\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1 130378       43 History of smoking     135      98      Stage 2\n#| 4 130384       43                 No      NA      NA         &lt;NA&gt;"
+    "text": "Or\n\nindividuals who are 43 years of age or have Stage 1 hypertension:\n\n\nsubset(minidata, ridageyr == 43 | hypertension == 'Stage 1')\n#|     seqn ridageyr            smoking bpxosy1 bpxodi1 hypertension\n#| 1 130378       43 History of smoking     135      98      Stage 2\n#| 2 130379       66 History of smoking     121      84      Stage 1\n#| 4 130384       43                 No      NA      NA         &lt;NA&gt;"
   },
   {
     "objectID": "session_6/session_6.html#exercise-3-1",
@@ -571,7 +571,7 @@
     "href": "session_6/session_6.html#defining-new-variables-1",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Defining new variables",
-    "text": "Defining new variables\n\nto define a new variable, use dollar-sign notation and object assignment:\n\n\nminidata$new&lt;-1\n\n\nnew is an arbitrary name for the new variable"
+    "text": "Defining new variables\n\nto define a new variable, use dollar-sign notation and object assignment:\n\n\nminidata$new &lt;- 1\n\n\nnew is an arbitrary name for the new variable"
   },
   {
     "objectID": "session_6/session_6.html#defining-new-variables-2",

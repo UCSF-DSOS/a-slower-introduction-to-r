@@ -627,7 +627,7 @@
     "href": "session_6/session_6.html#vigorous-physical-activity-6",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Vigorous physical activity",
-    "text": "Vigorous physical activity\n\n\n\n\n\n\nTip\n\n\nWhen cleaning variables, avoid replacing existing variables. Instead, define new variables.\n\n\n\n\nnhanes$ltpa_vigorous &lt;- replace(nhanes$pad820, nhanes$pad820 == 7777 |\n                                  nhanes$pad820 == 9999, NA)\n\n\nnotice that I defined a new variable, ltpa_vigorous"
+    "text": "Vigorous physical activity\n\n\n\n\n\n\nTip\n\n\nWhen cleaning variables, avoid replacing existing variables. Instead, define new variables.\n\n\n\n\nnotice that I defined a new variable, ltpa_vigorous:\n\n\nnhanes$ltpa_vigorous &lt;- replace(nhanes$pad820, nhanes$pad820 == 7777 |\n                                  nhanes$pad820 == 9999, NA)"
   },
   {
     "objectID": "session_6/session_6.html#vigorous-physical-activity-7",

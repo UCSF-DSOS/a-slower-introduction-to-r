@@ -140,7 +140,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../homework.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -195,8 +195,9 @@ window.Quarto = {
 <ol type="1">
 <li><p>Suppose that we’ve fit a model for the odds of a specific disease. Using that model, we would estimate that a smoker’s odds for developing the disease is:</p>
 <p><span class="math display">\[  e^{-2 + (0.8)(1)} \]</span></p>
-<p>Use R, and the expression above, to estimate a smoker’s odds for the disease. Type your solution all in one line, without relying on any mental math.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Use R, and the expression above, to estimate a smoker’s odds for the disease. Type your solution all in one line, without relying on any mental math.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -212,7 +213,7 @@ Tip
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -230,9 +231,11 @@ Tip
 </div>
 </div>
 </div>
-</div></li>
-<li><p>In genetics, the <a href="https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle">Hardy–Weinberg principle</a> states that the frequency of heterozygotes is given by <span class="math inline">\(2p(1-p)\)</span>, where <span class="math inline">\(p\)</span> is the frequency of the dominant allele. Use R, and the expression above, to find the frequency of heterozygotes when <span class="math inline">\(p=0.8\)</span>. Type your solution all in one line, without relying on any mental math.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="2" type="1">
+<li>In genetics, the <a href="https://en.wikipedia.org/wiki/Hardy%E2%80%93Weinberg_principle">Hardy–Weinberg principle</a> states that the frequency of heterozygotes is given by <span class="math inline">\(2p(1-p)\)</span>, where <span class="math inline">\(p\)</span> is the frequency of the dominant allele. Use R, and the expression above, to find the frequency of heterozygotes when <span class="math inline">\(p=0.8\)</span>. Type your solution all in one line, without relying on any mental math.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -250,11 +253,13 @@ Tip
 </div>
 </div>
 </div>
-</div></li>
+</div>
+<ol start="3" type="1">
 <li><p>In diagnostic testing, <a href="https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values">positive predictive value</a> is given by:</p>
 <p><span class="math display">\[ \frac{\text{sensitivity}\times{\text{prevalence}}}{\text{sensitivity}\times{\text{prevalence}}+(1-\text{specificity})\times(1-{\text{prevalence}})} \]</span></p>
-<p>You may notice that the numerator also appears in the denominator. Suppose that a diagnostic test has sensitivity of 0.7 and specificity of 0.9. Use object assignment to temporarily store the product of sensitivity and prevalence.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<p>You may notice that the numerator also appears in the denominator. Suppose that a diagnostic test has sensitivity of 0.7 and specificity of 0.9. Use object assignment to temporarily store the product of sensitivity and prevalence.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -271,9 +276,11 @@ Tip
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Now, use the object you assigned above, and the expression above, to calculate the positive predictive value of the diagnostic test in settings where the prevalence of the disease is 0.3. Type your solution all in one line, without relying on any mental math.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="4" type="1">
+<li>Now, use the object you assigned above, and the expression above, to calculate the positive predictive value of the diagnostic test in settings where the prevalence of the disease is 0.3. Type your solution all in one line, without relying on any mental math.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -291,10 +298,12 @@ Tip
 </div>
 </div>
 </div>
-</div></li>
+</div>
+<ol start="5" type="1">
 <li><p>When you use object assignment, your computer will automatically replace any existing objects, without warning you. Use object assignment to store the number 5 as <code>x</code>. Verify that <code>x</code> is 5. Then, use object assignment to store the number 100 as <code>x</code>. Notice that your computer does not provide any warning about replacing <code>x</code>. Now, verify that <code>x</code> is 100.</p>
-<p>Using the jar analogy, replacing an existing object is like taking an existing jar, emptying out the contents, and putting something else in the jar.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<p>Using the jar analogy, replacing an existing object is like taking an existing jar, emptying out the contents, and putting something else in the jar.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -316,7 +325,8 @@ Tip
 </div>
 </div>
 </div>
-</div></li>
+</div>
+<ol start="6" type="1">
 <li><p>Continuing the discussion above, your computer will <em>seemingly</em> replace objects like <code>pi</code>, which I mentioned is automatically included in R.</p>
 <p>Verify that the value of <code>pi</code> prints as 3.141593 (for those wondering, yes, there are more digits behind this than you can see). Use object assignment to <a href="https://en.wikipedia.org/wiki/Approximations_of_%CF%80">store 25/8</a> as <code>pi</code>. Verify that <code>pi</code> is now 3.125. Now, remove your object, using the <code>rm()</code> function: <code>rm(pi)</code>. Verify that <code>pi</code> is now 3.141593 again (<em>phew</em>).</p>
 <p>What’s going on here? First, I want to emphasize that <code>rm()</code> is <em>not</em> an undo operation. In the exercise above, for example, applying <code>rm(x)</code> would truly make <code>x</code> unavailable, rather than restoring the value of <code>x</code> back to 5.</p>
@@ -326,24 +336,22 @@ Tip
 <li>computer’s pantry: <code>pi</code> is 3.141593…</li>
 </ul>
 <p>Since we’re the chef, when we ask the computer for the <code>pi</code> jar, it’s going to first look in our own pantry, and bring us the <code>pi</code> jar of 25/8.</p>
-<p>After we remove our <code>pi</code> jar of 25/8 using <code>rm()</code> there is no longer a <code>pi</code> jar in the chef’s pantry. At that point, when we ask our computer for the <code>pi</code> jar, it will still look in the chef’s pantry (the default), but because it won’t be able to find it, it will then look in its own pantry.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<p>After we remove our <code>pi</code> jar of 25/8 using <code>rm()</code> there is no longer a <code>pi</code> jar in the chef’s pantry. At that point, when we ask our computer for the <code>pi</code> jar, it will still look in the chef’s pantry (the default), but because it won’t be able to find it, it will then look in its own pantry.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>rm()</code> originated as a shorthand for “remove”.</p>
 </div>
 </div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -367,42 +375,37 @@ Note
 </div>
 </div>
 </div>
-</div></li>
+</div>
+<ol start="7" type="1">
 <li><p>Continuing the jar analogy, you might ask: well, what’s in my pantry? Type <code>ls()</code> to see a list of all the objects in your pantry. You should see <code>x</code>, unless you ended up removing it. You may also see other objects.</p>
-<p>In RStudio, you can also look in the Environment tab to see a list of objects.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<p>In RStudio, you can also look in the Environment tab to see a list of objects.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In R lingo, the chef’s pantry is known as a workspace (and pantries in general are known as environments).</p>
 </div>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="indent callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>ls()</code> originated as a shorthand for “list”.</p>
 </div>
 </div>
-</div></li>
-</ol>
 
 
 

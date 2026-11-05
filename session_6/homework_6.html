@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐢</text></svg>">    
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../homework.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -164,16 +164,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ol type="1">
-<li><p>At the top of a new script, include code for loading <em>ggplot2</em> and for importing the <code>nhanes_l.csv</code> data file. Run that code.</p></li>
+<li><p>At the top of a new script, include code for loading <code>ggplot2</code> and for importing the <code>nhanes_l.csv</code> data file. Run that code.</p></li>
 <li><p>In Exercise 3, we used <code>replace()</code> to define missing values for the alcohol-use variable. An alternate way to define missing values is to combine <code>is.na()</code> and object assignment, as shown in the code below.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>alcohol_use<span class="ot">&lt;-</span>nhanes<span class="sc">$</span>alq130</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(nhanes<span class="sc">$</span>alcohol_use)<span class="ot">&lt;-</span>(nhanes<span class="sc">$</span>alcohol_use<span class="sc">==</span><span class="dv">777</span>)<span class="sc">|</span>(nhanes<span class="sc">$</span>alcohol_use<span class="sc">==</span><span class="dv">999</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>alcohol_use <span class="ot">&lt;-</span> nhanes<span class="sc">$</span>alq130</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(nhanes<span class="sc">$</span>alcohol_use) <span class="ot">&lt;-</span> (nhanes<span class="sc">$</span>alcohol_use <span class="sc">==</span> <span class="dv">777</span>) <span class="sc">|</span> (nhanes<span class="sc">$</span>alcohol_use <span class="sc">==</span> <span class="dv">999</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In the first line, we use object assignment to copy the original alcohol-use variable, <code>alq130</code>, to a new variable, <code>alcohol_use</code>.</p>
 <p>On the right-hand side of the second line, we use a logical object to define the desired missingness. We then use object assignment to redefine missingness. Notice that <code>is.na()</code> is on the left-hand side of the object assignment, and recall that it is a <code>TRUE</code>/<code>FALSE</code> vector indicating whether values are missing. (If you are wondering: the object assignment in this line will preserve any existing missingness in <code>alcohol_use</code>, and add the additional missing values defined by the right-hand side.)</p>
-<p>Copy and paste the above code into your script. Run the code. Verify that the code works as intended.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<p>Copy and paste the above code into your script. Run the code. Verify that the code works as intended.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -186,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>education,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>education, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|              9th-11th grade     College degree or later </span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#|                         666                        2625 </span></span>
@@ -194,16 +195,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#|                         373                        1749 </span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#|   Some college or AA degree                        &lt;NA&gt; </span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|                        2370                         370</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    9 &lt;NA&gt; </span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#|  373  666 1749 2370 2625   11  359</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Use <code>sum()</code> and <code>is.na()</code> to find the number of people who are missing a value for <code>hypertension</code>. Verify that this matches the number of people who are missing <code>bpxosy1</code> or missing <code>bpxodi1</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="3" type="1">
+<li>Use <code>sum()</code> and <code>is.na()</code> to find the number of people who are missing a value for <code>hypertension</code>. Verify that this matches the number of people who are missing <code>bpxosy1</code> or missing <code>bpxodi1</code>.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -218,14 +221,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(nhanes<span class="sc">$</span>hypertension))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 2030</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxosy1)<span class="sc">|</span><span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxodi1))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxosy1) <span class="sc">|</span> <span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxodi1))</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 2030</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Use <code>sum()</code>, <code>is.na()</code>, and negation to find the number of people who are not missing a value of hypertension.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="4" type="1">
+<li>Use <code>sum()</code>, <code>is.na()</code>, and negation to find the number of people who are not missing a value of hypertension.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -243,9 +248,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Use <code>sum()</code> and <code>!is.na()</code> to find the number of people who are not missing <code>bpxodi1</code> and not missing <code>bpxodi2</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="5" type="1">
+<li>Use <code>sum()</code> and <code>!is.na()</code> to find the number of people who are not missing <code>bpxodi1</code> and not missing <code>bpxodi2</code>.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -258,14 +265,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxosy1)<span class="sc">&amp;!</span><span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxodi1))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxosy1) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(nhanes<span class="sc">$</span>bpxodi1))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 6123</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Make a violin plot of systolic blood pressure (<code>bpxosy1</code>) versus hypertension status (<code>hypertension</code>), but subset the data to individuals who are 60 years of age (<code>ridageyr</code>) or older and omit people who have a missing value of <code>hypertension</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="6" type="1">
+<li>Make a violin plot of systolic blood pressure (<code>bpxosy1</code>) versus hypertension status (<code>hypertension</code>), but subset the data to individuals who are 60 years of age (<code>ridageyr</code>) or older and omit people who have a missing value of <code>hypertension</code>.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -278,12 +287,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes,ridageyr<span class="sc">&gt;=</span><span class="dv">60</span><span class="sc">&amp;!</span><span class="fu">is.na</span>(hypertension)),</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>bpxodi1,<span class="at">y=</span>bpxosy1,<span class="at">color=</span>hypertension))<span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Diastolic blood pressure (mmHg)'</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">'Systolic blood pressure (mmHg)'</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">color=</span><span class="st">'Hypertension'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">subset</span>(nhanes, ridageyr <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(hypertension)),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">aes</span>(<span class="at">x =</span> bpxodi1, <span class="at">y =</span> bpxosy1, <span class="at">color =</span> hypertension)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Diastolic blood pressure (mmHg)'</span>, <span class="at">y =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>, <span class="at">color =</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Hypertension'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -294,8 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
-</ol>
+</div>
 
 
 

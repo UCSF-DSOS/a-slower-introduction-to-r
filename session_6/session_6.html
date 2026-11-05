@@ -434,7 +434,7 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-1-1" class="slide level2">
 <h2>Exercise 1</h2>
 <ol type="1">
-<li><p>At the top of a new script, include code for loading the <code>ggplot2</code> package and importing the data. Run your code.</p></li>
+<li><p>At the top of a new script, include code for loading the <code>ggplot2</code> package and importing the NHANES data. Run your code.</p></li>
 <li><p>Copy the code below for defining <code>exercises</code> into your script. Run that code.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>exercises <span class="ot">&lt;-</span> nhanes <span class="sc">|&gt;</span></span>
@@ -447,7 +447,7 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-1-2" class="slide level2">
 <h2>Exercise 1</h2>
 <ol start="3" type="1">
-<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who are between 40 of age (<code>ridageyr</code>) or older.</p></li>
+<li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who are 40 of age (<code>ridageyr</code>) or older.</p></li>
 <li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who have a fasting glucose level (<code>lbxglu</code>) under 100 mg/dL.</p></li>
 <li><p>Use <code>subset()</code> to get the subset of <code>exercises</code> individuals who were born in the USA.</p></li>
 </ol>
@@ -621,8 +621,7 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-1" class="slide level2">
 <h2>Exercise 2</h2>
 <ol type="1">
-<li><p>At the top of a new script, include code for loading the <code>ggplot2</code> package. Run your code.</p></li>
-<li><p>Using <code>ggplot2</code>, create density plots of systolic blood pressure (<code>bpxosy1</code>), with faceting by <code>asthma</code> (defining the rows). In <code>ggplot()</code>, define <code>data</code> to be a subset of the NHANES data that only includes individuals who are not missing a value of <code>asthma</code>.</p></li>
+<li>Using <code>ggplot2</code>, create density plots of systolic blood pressure (<code>bpxosy1</code>), with faceting by <code>asthma</code> (defining the rows). In <code>ggplot()</code>, define <code>data</code> to be a subset of the NHANES data that only includes individuals who are not missing a value of <code>asthma</code>.</li>
 </ol>
 </section></section>
 <section>

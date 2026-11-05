@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐢</text></svg>">    
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../homework.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -164,8 +164,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ol type="1">
-<li><p>At the top of a new script, include code for importing the <code>nhanes_l.csv</code> data file. Run that code.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<li>At the top of a new script, include code for importing the <code>nhanes_l.csv</code> data file. Run that code.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -182,10 +183,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
+</div>
+<ol start="2" type="1">
 <li><p>Create a box plot of the typical number of sleep hours (<code>sld012</code>) versus occupation status (<code>ocd150</code>). Label the <em>y</em> axis and optionally remove the label for the <em>x</em> axis. The occupation variable codes groups using numbers; a description is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/OCQ_L.htm#OCD150">here</a>. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.</p>
-<p>You may notice that <code>9</code> codes people who indicated that they don’t know how much sleep they typically get. We’ll talk in Session 6 about how to properly encode missing values.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<p>You may notice that <code>9</code> codes people who indicated that they don’t know how much sleep they typically get. We’ll talk in Session 6 about how to properly encode missing values.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -198,7 +201,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(nhanes<span class="sc">$</span>sld012 <span class="sc">~</span> nhanes<span class="sc">$</span>ocd150, <span class="at">ylab =</span> <span class="st">'Hours of sleep'</span>, <span class="at">xlab =</span> <span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(nhanes<span class="sc">$</span>sld012 <span class="sc">~</span> nhanes<span class="sc">$</span>ocd150,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">'Hours of sleep'</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -209,9 +214,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Create a box plot of the typical number of sleep hours (<code>sld012</code>) versus gender (<code>gender</code>). Label the <em>y</em> axis and optionally remove the label for the <em>x</em> axis.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="3" type="1">
+<li>Create a box plot of the typical number of sleep hours (<code>sld012</code>) versus gender (<code>gender</code>). Label the <em>y</em> axis and optionally remove the label for the <em>x</em> axis.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -224,7 +231,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(nhanes<span class="sc">$</span>sld012 <span class="sc">~</span> nhanes<span class="sc">$</span>gender, <span class="at">ylab =</span> <span class="st">'Hours of sleep'</span>, <span class="at">xlab =</span> <span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(nhanes<span class="sc">$</span>sld012 <span class="sc">~</span> nhanes<span class="sc">$</span>gender,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">'Hours of sleep'</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">''</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -235,9 +244,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Conduct a <em>t</em>-test for the association between the typical number of sleep hours (<code>sld012</code>) and gender (<code>gender</code>).</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="4" type="1">
+<li>Conduct a <em>t</em>-test for the association between the typical number of sleep hours (<code>sld012</code>) and gender (<code>gender</code>).</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -252,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(nhanes<span class="sc">$</span>sld012 <span class="sc">~</span> nhanes<span class="sc">$</span>gender)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|   Welch Two Sample t-test</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|  Welch Two Sample t-test</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| data:  nhanes$sld012 by nhanes$gender</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| t = 4.8356, df = 7638.6, p-value = 1.353e-06</span></span>
@@ -265,10 +276,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
+</div>
+<ol start="5" type="1">
 <li><p>Create a contingency table for country of birth (<code>dmdborn4</code>) and asthma (<code>asthma</code>), with country of birth placed along the rows.</p>
-<p>The country variable codes groups using numbers; a description is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm#DMDBORN4">here</a>. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<p>The country variable codes groups using numbers; a description is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm#DMDBORN4">here</a>. We’ll talk in Session 7 about how to “label” categorical variables that use numeric codes.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -289,9 +302,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Find the row-wise percents.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="6" type="1">
+<li>Find the row-wise percents.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -312,9 +327,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Conduct a chi-squared test for the association between the two variables.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="7" type="1">
+<li>Conduct a chi-squared test for the association between the two variables.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -329,15 +346,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">table</span>(nhanes<span class="sc">$</span>dmdborn4, nhanes<span class="sc">$</span>asthma))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|   Pearson's Chi-squared test with Yates' continuity correction</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|  Pearson's Chi-squared test with Yates' continuity correction</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| data:  table(nhanes$dmdborn4, nhanes$asthma)</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| X-squared = 48.114, df = 1, p-value = 4.022e-12</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</div></li>
-</ol>
+</div>
 
 
 

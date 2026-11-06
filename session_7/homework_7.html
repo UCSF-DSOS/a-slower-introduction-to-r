@@ -163,8 +163,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ol type="1">
-<li><p>At the top of a new script, include code for loading <code>baseverse</code> and <code>ggplot2</code>. Also include code for importing the <code>nhanes_l.csv</code> data file. Run your code.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<li>At the top of a new script, include code for loading <code>baseverse</code> and <code>ggplot2</code>. Also include code for importing the <code>nhanes_l.csv</code> data file. Run your code.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -179,13 +180,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(baseverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nhanes<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">'nhanes_l.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nhanes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'nhanes_l.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Use <code>base_match()</code> to create a labeled version of the original arthritis variable (<code>mcq160a</code>). Values of 1 represent people with a history of arthritis and values of 0 represent people without a history of arthritis. The NHANES documentation for <code>mcq106a</code> is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/MCQ_L.htm#MCQ160a">here</a>. List the no group first. Check your work and verify that the groups are listed in the desired order.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="2" type="1">
+<li>Use <code>base_match()</code> to create a labeled version of the original arthritis variable (<code>mcq160a</code>). Values of 1 represent people with a history of arthritis and values of 0 represent people without a history of arthritis. The NHANES documentation for <code>mcq106a</code> is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/MCQ_L.htm#MCQ160a">here</a>. List the no group first. Check your work and verify that the groups are listed in the desired order.</li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -198,27 +201,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>arthritis<span class="ot">&lt;-</span><span class="fu">base_match</span>(nhanes<span class="sc">$</span>mcq160a,<span class="st">'No'</span><span class="ot">=</span><span class="dv">2</span>,<span class="st">'Arthritis'</span><span class="ot">=</span><span class="dv">1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>mcq160a,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>arthritis <span class="ot">&lt;-</span> <span class="fu">base_match</span>(nhanes<span class="sc">$</span>mcq160a, <span class="st">'No'</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">'Arthritis'</span> <span class="ot">=</span> <span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>mcq160a, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    9 &lt;NA&gt; </span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| 2532 5258   17  346</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>arthritis,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>arthritis, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|        No Arthritis      &lt;NA&gt; </span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#|      5258      2532       363</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</div></li>
+</div>
+<ol start="3" type="1">
 <li><p>Use <code>base_when()</code> and the original glucose variable (<code>lbxglu</code>) to define a categorical variable for glucose, using the following <a href="https://diabetes.org/about-diabetes/diagnosis">definitions</a>:</p>
 <ul>
 <li><code>lbxglu</code> &lt; 100 → Normal</li>
 <li>100 ≤ <code>lbxglu</code> &lt; 126 → Prediabetes</li>
 <li><code>lbxglu</code> ≥ 126 → Diabetes</li>
 </ul>
-<p>List the groups in the above order. Check your work and verify that the groups are listed in <code>table()</code> in the desired order.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<p>List the groups in the above order. Check your work and verify that the groups are listed in <code>table()</code> in the desired order.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -231,27 +236,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>diabetes<span class="ot">&lt;-</span><span class="fu">base_when</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Normal'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>lbxglu<span class="sc">&lt;</span><span class="dv">100</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Prediabetes'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>lbxglu<span class="sc">&gt;=</span><span class="dv">100</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>lbxglu<span class="sc">&lt;</span><span class="dv">126</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Diabetes'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>lbxglu<span class="sc">&gt;=</span><span class="dv">126</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>diabetes <span class="ot">&lt;-</span> <span class="fu">base_when</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Normal'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>lbxglu <span class="sc">&lt;</span> <span class="dv">100</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Prediabetes'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>lbxglu <span class="sc">&gt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>lbxglu <span class="sc">&lt;</span> <span class="dv">126</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Diabetes'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>lbxglu <span class="sc">&gt;=</span> <span class="dv">126</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxglu<span class="sc">&lt;</span><span class="dv">100</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxglu <span class="sc">&lt;</span> <span class="dv">100</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1499</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxglu<span class="sc">&gt;=</span><span class="dv">100</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>lbxglu<span class="sc">&lt;</span><span class="dv">126</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxglu <span class="sc">&gt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>lbxglu <span class="sc">&lt;</span> <span class="dv">126</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1401</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxglu<span class="sc">&gt;=</span><span class="dv">126</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxglu <span class="sc">&gt;=</span> <span class="dv">126</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 429</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>diabetes,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>diabetes, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#|      Normal Prediabetes    Diabetes        &lt;NA&gt; </span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#|        1499        1401         429        4824</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</div></li>
-<li><p>Use <code>ggplot2</code> to create a violin plot for the new categorical variable (above) versus the continuous glucose variable (<code>lbxglu</code>). Exclude people missing <code>lbxglu</code>. You can interpret your plot as a proof or check of how the categorical variable was defined.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+</div>
+<ol start="4" type="1">
+<li><p>In Session 7, we discussed two strategies for categorizing continuous variables: <code>cut()</code> and <code>base_match()</code>. A third strategy relies on summing logical objects, taking advantage of the fact that, when used in math, <code>TRUE</code> values are treated as <code>1</code> and <code>FALSE</code> values are treated as <code>0</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>age4 <span class="ot">&lt;-</span> (nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">+</span> (nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">35</span>) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   (nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">50</span>) <span class="sc">+</span> (nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">65</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>age4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>age4, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="fu">c</span>(<span class="st">'18-34'</span>, <span class="st">'35-49'</span>, <span class="st">'50-64'</span>, <span class="st">'65+'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>There are 4 logical objects in the summation in the first line. Somebody who is 36 years of age will be <code>TRUE</code>, <code>TRUE</code>, <code>FALSE</code>, and <code>FALSE</code>, receiving a sum of 4. In total, there are 4 possible sums. The sum is 1 if the individual is 18–34, the sum is 2 if the individual is 35–49, and so forth.</p>
+<p>The second line uses <code>factor()</code> to label the values.</p>
+<p>Copy the above code into your script. Run the code. <code>table()</code> the variable.</p></li>
+<li><p>Use <code>ggplot2</code> to create a violin plot for the new categorical variable (above) versus the continuous glucose variable (<code>lbxglu</code>). Exclude people missing <code>lbxglu</code>. You can interpret your plot as a proof or check of how the categorical variable was defined.</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -264,21 +280,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes,<span class="sc">!</span><span class="fu">is.na</span>(lbxglu)),<span class="fu">aes</span>(<span class="at">x=</span>diabetes,<span class="at">y=</span>lbxglu))<span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Diabetes status'</span>,<span class="at">y=</span><span class="st">'Fasting glucose (mg/dL)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes, <span class="sc">!</span><span class="fu">is.na</span>(lbxglu)), <span class="fu">aes</span>(<span class="at">x =</span> diabetes, <span class="at">y =</span> lbxglu)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'Diabetes status'</span>, <span class="at">y =</span> <span class="st">'Fasting glucose (mg/dL)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="homework_7_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="homework_7_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div></li>
-</ol>
+</div>
 
 
 

@@ -184,32 +184,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to individuals born in usa</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(exercises, country <span class="sc">==</span> <span class="st">'USA'</span>)</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># create density plots of systolic blood pressure, with faceting by asthma</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes, <span class="sc">!</span><span class="fu">is.na</span>(asthma)), <span class="fu">aes</span>(<span class="at">x =</span> bpxosy1)) <span class="sc">+</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">'Density'</span>, <span class="at">x =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>   <span class="fu">facet_grid</span>(asthma <span class="sc">~</span> .)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to individuals between 40 and 49</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(exercises, ridageyr <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">&amp;</span> ridageyr <span class="sc">&lt;=</span> <span class="dv">49</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to individuals born in usa who don't smoke</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(exercises, country <span class="sc">==</span> <span class="st">'USA'</span> <span class="sc">&amp;</span> smoking <span class="sc">==</span> <span class="st">'No'</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to individuals born in usa or who smoke</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(exercises, country <span class="sc">==</span> <span class="st">'USA'</span> <span class="sc">|</span> smoking <span class="sc">==</span> <span class="st">'History of smoking'</span>)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># define moderate physical activity</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>moderate_activity <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>pad800, nhanes<span class="sc">$</span>pad800 <span class="sc">==</span> <span class="dv">7777</span> <span class="sc">|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>                                      nhanes<span class="sc">$</span>pad800 <span class="sc">==</span> <span class="dv">9999</span>, <span class="cn">NA</span>)</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad800, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>moderate_activity, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># define alcohol use</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>alcohol_use <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>alq130, nhanes<span class="sc">$</span>alq130 <span class="sc">==</span> <span class="dv">777</span> <span class="sc">|</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>                                nhanes<span class="sc">$</span>alq130 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>alq130, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>alcohol_use, <span class="at">useNA =</span> <span class="st">'always'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># examine systolic versus asthma among smokers</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bpxosy1 <span class="sc">~</span> asthma, <span class="at">data =</span> <span class="fu">subset</span>(nhanes, smoking <span class="sc">==</span> <span class="st">'History of smoking'</span>))</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># create density plots of systolic blood pressure, with faceting by asthma</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(nhanes, <span class="sc">!</span><span class="fu">is.na</span>(asthma)), <span class="fu">aes</span>(<span class="at">x =</span> bpxosy1)) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">'Density'</span>, <span class="at">x =</span> <span class="st">'Systolic blood pressure (mmHg)'</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>   <span class="fu">facet_grid</span>(asthma <span class="sc">~</span> .)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to individuals between 40 and 49</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(exercises, ridageyr <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">&amp;</span> ridageyr <span class="sc">&lt;=</span> <span class="dv">49</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to individuals born in usa who don't smoke</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(exercises, country <span class="sc">==</span> <span class="st">'USA'</span> <span class="sc">&amp;</span> smoking <span class="sc">==</span> <span class="st">'No'</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to individuals born in usa or who smoke</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(exercises, country <span class="sc">==</span> <span class="st">'USA'</span> <span class="sc">|</span> smoking <span class="sc">==</span> <span class="st">'History of smoking'</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># define moderate physical activity</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>moderate_activity <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>pad800, nhanes<span class="sc">$</span>pad800 <span class="sc">==</span> <span class="dv">7777</span> <span class="sc">|</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>                                      nhanes<span class="sc">$</span>pad800 <span class="sc">==</span> <span class="dv">9999</span>, <span class="cn">NA</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad800, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>moderate_activity, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># define alcohol use</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>alcohol_use <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>alq130, nhanes<span class="sc">$</span>alq130 <span class="sc">==</span> <span class="dv">777</span> <span class="sc">|</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>                                nhanes<span class="sc">$</span>alq130 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>alq130, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>alcohol_use, <span class="at">useNA =</span> <span class="st">'always'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

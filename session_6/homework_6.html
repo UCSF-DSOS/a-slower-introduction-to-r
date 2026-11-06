@@ -367,6 +367,99 @@ Note
 </div>
 </div>
 </div>
+<ol start="7" type="1">
+<li><p>The first argument of <code>subset()</code> can be a vector rather than a data frame. For example, to list the identification numbers of people who are smokers:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(nhanes<span class="sc">$</span>seqn, nhanes<span class="sc">$</span>smoking <span class="sc">==</span> <span class="st">'History of smoking'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Use <code>subset()</code> to list measurements of systolic blood pressure (<code>bpxosy1</code>) among people who have Stage 2 hypertension (<code>hypertension</code>).</p></li>
+</ol>
+<div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(nhanes<span class="sc">$</span>bpxosy1, nhanes<span class="sc">$</span>hypertension <span class="sc">==</span> <span class="st">'Stage 2'</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|    [1] 135 143 130 145 154 139 157 152 151 167 141 151 142 153 162 146 147 121</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|   [19] 146 144 143 159 131 158 148 126 193 180 159 136 151 142 121 154 130 187</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#|   [37] 140 147 127 123 165 142 150 152 130 149 142 153 158 148 161 157 195 149</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#|   [55] 168 148 177 134 147 156 145 133 171 140 180 138 153 166 141 175 147 148</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#|   [73] 211 131 155 153 151 141 126 151 170 134 122 157 141 164 142 173 153 181</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#|   [91] 126 141 141 171 137 170 142 143 141 164 190 145 143 147 145 147 143 117</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [109] 162 127 142 145 157 149 156 180 142 127 141 154 115 158 149 146 144 147</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [127] 138 141 130 147 131 147 158 149 155 146 147 141 140 147 188 126 152 121</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [145] 147 142 144 149 128 134 140 151 143 148 144 138 155 142 137 130 115 165</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [163] 156 144 145 147 148 143 154 150 140 147 141 147 141 147 148 202 151 157</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [181] 143 141 126 122 148 146 135 162 174 138 141 168 139 152 148 137 153 158</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [199] 155 140 145 150 146 147 146 134 174 139 154 140 152 161 135 149 141 148</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [217] 181 155 145 143 145 136 141 177 113 134 138 142 123 148 146 133 129 126</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [235] 123 144 130 141 131 166 143 147 147 141 232 154 155 155 152 162 168 173</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [253] 155 121 202 145 130 154 173 191 185 180 145 142 142 156 158 151 119 140</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [271] 126 152 128 152 140 153 155 173 146 162 155 136 153 140 140 161 138 152</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [289] 147 144 126 165 147 142 146 224 154 139 117 143 142 120 137 122 161 144</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [307] 133 147 131 159 123 147 148 148 142 140 148 117 144 135 158 159 143 165</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [325] 143 147 143 182 143 144 166 141 143 134 180 142 145 140 156 143 140 133</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [343] 141 132 169 124 121 121 150 141 131 147 131 143 134 150 124 145 153 144</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [361] 146 150 140 161 155 149 145 146 184 160 164 141 152 141 143 146 150 143</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [379] 148 128 148 161 141 216 140 143 158 126 148 122 134 130 142 124 141 165</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [397] 173 153 162 167 139 152 142 148 148 148 151 144 148 145 182 140 147 192</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [415] 138 149 150 141 131 132 178 156 154 168 163 132 153 143 141 166 137 131</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [433] 146 147 145 145 153 125 162 142 158 156 140 142 147 168 145 125 146 147</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [451] 173 163 138 160 152 145 129 137 175 189 143 141 153 149 142 152 151 128</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [469] 141 158 123 160 136 160 160 141 140 166 153 145 149 147 142 132 147 162</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [487] 139 162 171 113 148 158 150 142 139 190 127 152 164 170 133 146 117 134</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [505] 116 137 189 157 150 193 153 142 169 132 146 142 162 145 191 134 121 159</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [523] 155 149 153 133 180 164 150 156 142 150 172 144 137 161 143 155 123 162</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [541] 153 225 209 162 150 140 148 140 145 131 163 183 124 144 145 143 139 138</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [559] 137 174 141 147 166 145 180 159 159 145 180 141 131 143 146 146 113 146</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [577] 115 143 146 163 133 133 180 143 141 121 120 125 134 159 142 142 140 159</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [595] 126 120 143 150 150 150 141 143 159 158 165 156 137 153 143 144 143 166</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [613] 146 151 149 143 144 143 132 151 139 166 142 145 143 162 181 144 149 138</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [631] 131 162 154 133 144 129 123 148 124 160 145 143 145 144 140 125 203 147</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [649] 151 145 123 148 193 144 136 129 144 140 166 172 125 142 163 133 140 160</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [667] 141 147 159 146 143 143 146 203 128 153 142 163 139 140 147 147 139 165</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [685] 144 151 148 118 154 148 155 140 120 132 129 119 158 181 136 145 141 160</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [703] 202 118 201 148 167 193 151 162 151 180 156 156 153 159 151 146 152 132</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [721] 150 140 140 152 131 149 140 195 148 176 148 153 155 152 141 160 143 152</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [739] 141 210 168 157 153 156 158 179 157 156 178 128 143 158 156 126 126 189</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [757] 146 177 145 135 133 150 138 161 176 199 160 141 156 158 154 147 137 155</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [775] 146 169 163 171 140 141 141 138 143 153 144 172 133 139 140 139 119 135</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [793] 146 151 147 139 146 145 148 129 142 137 141 195 170 145 175 140 134 128</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [811] 150 141 155 159 153 156 153 130 164 145 154 128 141 154 152 156 176 147</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [829] 158 175 137 144 144 145 159 189 158 159 160 140 145 144 140 137 140 154</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [847] 142 171 154 148 114 147 159 127 157 185 122 149 163 130 117 127 136 178</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [865] 143 150 130 171 148 168 147 150 166 182 164 154 148 157 146 177 152 141</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [883] 167 159 111 153 162 137 142 142 148 154 158 118 140 145 141 141 150 154</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [901] 141 163 171 161 163 133 141 170 150 155 141 131 141 163 159 151 155 142</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [919] 145 151 156 129 152 161 134 157 153 143 168 149 145 151 152 145 148 157</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [937] 130 145 169 152 146 142 131 160 152 145 150 166 157 164 147 138 144 153</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [955] 144 142 175 143 148 152 148 141 141 141 132 141 152 161 113 149 145 155</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [973] 166 135 133 137 125 138 155 179 153 143 169 153 170 146 162 126 162 144</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="co">#|  [991] 143 140 123 133 153 156 149 144 141 147 152 116 130 146 142 142 135 159</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1009] 192 162 136 163 148 146 141 141 153 141 113 118 135 142 150 147 143 149</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1027] 130 141 146 148 141 134 167 141 141 130 134 155 153 147 145 197 157 123</span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1045] 147 174 143 150 149 152 146 164 194 173 170 134 143 145 130 158 148 143</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1063] 143 132 137 132 136 145 177 131 170 115 149 141 130 149 142 152 150 127</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1081] 147 121 133 147 169 158 122 157 131 144 150 155 142 169 139 130 188 152</span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1099] 171 170 150 160 156 162 167 166 158 134 137 159 133 161 162 119 159 154</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1117] 153 175 136 157 140 141 144 150 129 148 144 148 170 163 152 154 146 154</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1135] 153 121 124 139 153 146 147 145 196 154 192 147 147 153 155 181 149 177</span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1153] 145 153 130 142 144 145 162 180 147 147 130 172 140 148 148 157 123 140</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1171] 141 182 141 141 155 153 120 134 161 161 146 147 211 141 144 142 131 167</span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1189] 147 141 149 162 150 142 145 150 144 161 164 146 139 140 157 165 180 140</span></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| [1207] 200 171 196 154 147 152 144 156 152 142</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
 
 
 

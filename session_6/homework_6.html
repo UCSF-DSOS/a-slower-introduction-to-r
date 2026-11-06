@@ -164,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ol type="1">
-<li>At the top of a new script, include code for loading <code>ggplot2</code> and for importing the <code>nhanes_l.csv</code> data file. Run that code.</li>
+<li>At the top of a new script, include code for loading <code>ggplot2</code> and for importing the <code>nhanes_l.csv</code> data file. Run the code.</li>
 </ol>
 <div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -290,7 +290,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A more popular way to avoid dollar-sign notation is piping, which I discuss in <a href="https://ucsf-dsos.github.io/data-wrangling-in-r/"><em>Data Wrangling in R</em></a>.</p>
+<p>A more popular way of omitting dollar-sign notation is to use piping, which I discuss in <a href="https://ucsf-dsos.github.io/data-wrangling-in-r/"><em>Data Wrangling in R</em></a>.</p>
 </div>
 </div>
 <div class="indent callout callout-style-default callout-tip callout-titled" title="Solution">
@@ -306,14 +306,14 @@ Note
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ltpa_vigorous)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>ltpa_vigorous, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    6    7    8   10   12   15   20   25   30   32   35 </span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#|   12    3    6    2   36    2    1    2  108    5  190  212   30  909    1   12 </span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#|   40   45   46   50   55   60   70   75   90  100  105  120  150  180  240  300 </span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#|   70  262    1   19    3 1064    5   13  145    2    3  364    4   93   49   21 </span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#|  360  420  480  540  600  660  900 &lt;NA&gt; </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|   10    1    8    1    1    1    2 4480</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

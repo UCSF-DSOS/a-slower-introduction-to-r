@@ -164,8 +164,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ol type="1">
-<li><p>Create a new script for this homework. Type your solutions to the problems below in the script.</p></li>
-<li><p>Download the <code>west_nile_virus_cases.csv</code> data file from the CLE, and import it into R using RStudio’s drop-down menu. Make sure to select the <strong>From Text (base)</strong> option. Feel free to type any name that makes sense to you in the import tool’s <strong>Name</strong> field. In the import tool’s preview window (at the bottom right), make sure that the data look OK, and then select <strong>Import</strong>.</p>
+<li><p>Create a new script for this homework.</p></li>
+<li><p>Download the <code>west_nile_virus_cases.csv</code> data file from the CLE, and import it using RStudio’s drop-down menu. Make sure to select the <strong>From Text (base)</strong> option. Feel free to type any name that makes sense to you in the import tool’s <strong>Name</strong> field. In the import tool’s preview window (at the bottom right), make sure that the data look OK, and then select <strong>Import</strong>.</p>
+<p>Copy the code from the console to the top of your script. You should not include the <code>View()</code> portion of the code.</p>
 <p>The data are from the California Department of Public Health (and available, and documented, <a href="https://data.ca.gov/dataset/west-nile-virus-cases-2006-present/resource/03fa9108-fccd-47b2-930f-5487921473dd">here</a>). They contain the number of reported cases of West Nile Virus, by week and county, from 2006 through 2024.</p>
 <p>Scroll through the data view (it should automatically pop up after the data import) to understand the data structure. You may close the tab when you are done. Also, use <code>head()</code> and <code>tail()</code> to examine the data structure. Notice from the data view and the data glances that the data appear to be sorted by year, and then week, and then county.</p>
 <p>The data set omits the row if no cases were reported. For example, if no cases were reported in San Francisco during the 3rd week of 2021, there will be no corresponding row in the data.</p>

@@ -215,7 +215,7 @@ Yea-Hung Chen, PhD, MS
     </div>
 </div>
 
-  <p class="date">Thursday, November 20, 2025</p>
+  <p class="date">Friday, November 13, 2026</p>
 </section>
 <section>
 <section id="reordering-groups" class="title-slide slide level1 center" data-stack-name="Reordering groups">
@@ -248,14 +248,14 @@ Yea-Hung Chen, PhD, MS
 <section id="hypertension-3" class="slide level2">
 <h2>Hypertension</h2>
 <ul>
-<li>to specify the desired order of the groups, <strong>convert the object type to a factor</strong>:</li>
+<li>to specify the desired order of the groups:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ht<span class="ot">&lt;-</span><span class="fu">factor</span>(nhanes<span class="sc">$</span>hypertension,</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>                  <span class="at">levels=</span><span class="fu">c</span>(<span class="st">'No'</span>,<span class="st">'Elevated'</span>,<span class="st">'Stage 1'</span>,<span class="st">'Stage 2'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>ht <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>hypertension,</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>                    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">'No'</span>, <span class="st">'Elevated'</span>, <span class="st">'Stage 1'</span>, <span class="st">'Stage 2'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>there are two arguments to <code>factor()</code> here:
+<li>there are two arguments to <strong><code>factor()</code></strong> here:
 <ul>
 <li><strong><code>nhanes$hypertension</code></strong>: the original variable</li>
 <li><strong><code>c('No',...)</code></strong>: the groups listed in the desired order</li>
@@ -370,14 +370,14 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-1-1" class="slide level2">
 <h2>Exercise 1</h2>
 <ol type="1">
-<li><p>At the top of a new script, include code for importing the data. Run your code.</p></li>
+<li><p>At the top of a new script, include code for importing the data. Run the code.</p></li>
 <li><p><code>table()</code> the cholesterol variable (<code>cholesterol</code>). Which group is listed first? Check the object type. What is the object type?</p></li>
 </ol>
 </section>
 <section id="exercise-1-2" class="slide level2">
 <h2>Exercise 1</h2>
 <ol start="3" type="1">
-<li>Use <code>factor()</code> to re-order the groups in <code>cholesterol</code> so that they are in the following order: <code>Desirable</code>, <code>Borderline high</code>, and <code>High</code>. You can create a new variable (such as <code>cholesterol_factor</code>) or overwrite the existing <code>cholesterol</code> variable. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
+<li>Use <code>factor()</code> to define a new <code>cholesterol</code> variable (such as <code>cholesterol_3</code>) with the groups listed in the desired order: <code>Desirable</code>, <code>Borderline high</code>, and <code>High</code>. ble. Check your work. Verify that the groups are listed in the desired order.</li>
 </ol>
 </section></section>
 <section>
@@ -388,7 +388,7 @@ Yea-Hung Chen, PhD, MS
 <section id="country-of-birth" class="slide level2">
 <h2>Country of birth</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdborn4,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdborn4, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2 &lt;NA&gt; </span></span>
 <span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6519 1617   17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -408,59 +408,68 @@ Yea-Hung Chen, PhD, MS
 <section id="country-of-birth-2" class="slide level2">
 <h2>Country of birth</h2>
 <ul>
-<li>to label the groups, <strong>convert the variable to a factor and include the <code>labels</code> argument</strong>:</li>
+<li>to label the groups:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country<span class="ot">&lt;-</span><span class="fu">factor</span>(nhanes<span class="sc">$</span>dmdborn4,</span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>                       <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels=</span><span class="fu">c</span>(<span class="st">'USA'</span>,<span class="st">'Other'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>dmdborn4,</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'USA'</span>, <span class="st">'Other'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>the order of the groups in <code>levels</code> and <code>labels</code> must match</li>
 </ul>
+</section>
+<section id="country-of-birth-3" class="slide level2">
+<h2>Country of birth</h2>
+<ul>
+<li>checking the work:</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
 <span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="country-of-birth-3" class="slide level2">
+<section id="country-of-birth-4" class="slide level2">
 <h2>Country of birth</h2>
 <ul>
-<li>alternatively, <strong>use the <code>base_match()</code> function in <code>baseverse</code></strong>:</li>
+<li>alternatively, use <strong><code>base_match()</code> in <code>baseverse</code></strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country<span class="ot">&lt;-</span><span class="fu">base_match</span>(nhanes<span class="sc">$</span>dmdborn4,<span class="st">'USA'</span><span class="ot">=</span><span class="dv">1</span>,<span class="st">'Other'</span><span class="ot">=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">base_match</span>(nhanes<span class="sc">$</span>dmdborn4, <span class="st">'USA'</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">'Other'</span> <span class="ot">=</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>the second argument lists the value–label mappings in a <code>'label'=value</code> format</li>
 <li><code>base_match()</code> will honor the order of the groups</li>
 </ul>
 </section>
-<section id="country-of-birth-4" class="slide level2">
+<section id="country-of-birth-5" class="slide level2">
 <h2>Country of birth</h2>
+<ul>
+<li>checking the work:</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
 <span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li><code>base_match()</code> orders the groups in the order specified in the second argument</li>
+<li>the groups are in the desired order</li>
 </ul>
 </section>
-<section id="country-of-birth-5" class="slide level2">
+<section id="country-of-birth-6" class="slide level2">
 <h2>Country of birth</h2>
 <ul>
-<li>to check the work, <strong>use <code>table()</code></strong>:</li>
+<li>checking the work:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdborn4,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdborn4, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2 &lt;NA&gt; </span></span>
 <span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6519 1617   17</span></span>
-<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
 <span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -469,7 +478,7 @@ Yea-Hung Chen, PhD, MS
 <section id="education" class="slide level2">
 <h2>Education</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    9 &lt;NA&gt; </span></span>
 <span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  373  666 1749 2370 2625   11  359</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -489,28 +498,30 @@ Yea-Hung Chen, PhD, MS
 <section id="education-2" class="slide level2">
 <h2>Education</h2>
 <ul>
-<li>to collapse groups and label them, <strong>use <code>base_match()</code> and list the groups more than once</strong>:</li>
+<li>to collapse groups and label them:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>education4<span class="ot">&lt;-</span><span class="fu">base_match</span>(nhanes<span class="sc">$</span>dmdeduc2,</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>                              <span class="st">'No high-school degree'</span><span class="ot">=</span><span class="dv">1</span>,</span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>                              <span class="st">'No high-school degree'</span><span class="ot">=</span><span class="dv">2</span>,</span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>                              <span class="st">'High-school degree'</span><span class="ot">=</span><span class="dv">3</span>,</span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>                              <span class="st">'Some college'</span><span class="ot">=</span><span class="dv">4</span>,</span>
-<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>                              <span class="st">'College degree'</span><span class="ot">=</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>education4 <span class="ot">&lt;-</span> <span class="fu">base_match</span>(</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  nhanes<span class="sc">$</span>dmdeduc2,</span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'No high-school degree'</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'No high-school degree'</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'High-school degree'</span> <span class="ot">=</span> <span class="dv">3</span>,</span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Some college'</span> <span class="ot">=</span> <span class="dv">4</span>,</span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'College degree'</span> <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="education-3" class="slide level2">
 <h2>Education</h2>
 <ul>
-<li>to check the work, <strong>use <code>table()</code></strong>:</li>
+<li>checking the work:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>dmdeduc2, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    9 &lt;NA&gt; </span></span>
 <span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  373  666 1749 2370 2625   11  359</span></span>
-<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>education4,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>education4, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| No high-school degree    High-school degree          Some college </span></span>
 <span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                  1039                  1749                  2370 </span></span>
@@ -526,13 +537,13 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-1" class="slide level2">
 <h2>Exercise 2</h2>
 <ol type="1">
-<li>Add code for loading <code>baseverse</code> to the top of your script. Run your code.</li>
+<li>Add code for loading <code>baseverse</code> to the top of your script. Run the code.</li>
 </ol>
 </section>
 <section id="exercise-2-2" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="2" type="1">
-<li>Use <code>factor()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_factor</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
+<li>Use <code>factor()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_2</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
 </ol>
 
 <aside><div>
@@ -541,7 +552,7 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-3" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="3" type="1">
-<li>Use <code>base_match()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_factor</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
+<li>Use <code>base_match()</code> to create a labeled version of the original gender variable (<code>riagendr</code>). Name the new variable <code>gender_2</code>. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
 </ol>
 
 <aside><div>
@@ -550,7 +561,7 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-2-4" class="slide level2">
 <h2>Exercise 2</h2>
 <ol start="4" type="1">
-<li>Use <code>base_match()</code> to create a labeled version of race/ethnicity (<code>ridreth3</code>). You can call this variable <code>race</code> or <code>race_ethnicity</code> or whatever else makes sense to you. You may list the groups in whatever order you like. The NHANES documentation for <code>ridreth3</code> is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm#RIDRETH3">here</a>. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
+<li>Use <code>base_match()</code> to create a labeled version of race/ethnicity (<code>ridreth3</code>). You can call this variable <code>race_6</code> or <code>race_ethnicity</code> or whatever else makes sense to you. You may list the groups in whatever order you like. The NHANES documentation for <code>ridreth3</code> is available <a href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm#RIDRETH3">here</a>. Check your work. Verify that the groups are listed in the desired order in <code>table()</code>.</li>
 </ol>
 </section></section>
 <section>
@@ -585,10 +596,7 @@ Yea-Hung Chen, PhD, MS
 </div>
 <ul>
 <li><code>nhanes$lbxtc</code>: the original variable</li>
-<li><code>breaks</code>: notice that there are 4 breaks but 3 groups
-<ul>
-<li><code>Inf</code> means ∞</li>
-</ul></li>
+<li><strong><code>breaks</code></strong>: notice that there are 4 breaks but 3 groups</li>
 <li><code>right = FALSE</code>: makes it so that the groups are left-inclusive</li>
 </ul>
 </section>
@@ -598,7 +606,7 @@ Yea-Hung Chen, PhD, MS
 <li><code>cholesterol</code> looks like this:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
 <span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -639,7 +647,7 @@ Yea-Hung Chen, PhD, MS
 <section id="total-cholesterol-5" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
-<li>to omit dollar-sign notation, <strong>use <code>with()</code></strong>:</li>
+<li>to omit dollar-sign notation:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol<span class="ot">&lt;-</span><span class="fu">with</span>(nhanes,<span class="fu">base_when</span>(</span>
@@ -650,28 +658,41 @@ Yea-Hung Chen, PhD, MS
 </div>
 
 <aside><div>
-<p>A more popular way for omitting dollar-sign notation is to use piping, which I discuss in <a href="https://ucsf-dsos.github.io/data-wrangling-in-r"><em>Data Wrangling in R</em></a>.</p>
+<p>A more popular way of omitting dollar-sign notation is to use piping, which I discuss in <a href="https://ucsf-dsos.github.io/data-wrangling-in-r"><em>Data Wrangling in R</em></a>.</p>
 </div></aside></section>
 <section id="logical-objects-and-math" class="slide level2">
 <h2>Logical objects and math</h2>
-<p>SOMETHING HERE</p>
+<ul>
+<li>when used in math, <code>TRUE</code> values are treated as <code>1</code> and <code>FALSE</code> values are treated as <code>0</code>:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">*</span> <span class="dv">1</span></span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>this means that a sum of logical objects can be interpreted as <strong>the number of <code>TRUE</code> values</strong>:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>))</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="total-cholesterol-6" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
-<li>to check the work, <strong>use <code>sum()</code> and <code>table()</code></strong>:</li>
+<li>checking the work:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">200</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 3695</span></span>
-<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">200</span>)<span class="sc">&amp;</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&lt;</span><span class="dv">240</span>),<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1397</span></span>
-<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc<span class="sc">&gt;=</span><span class="dv">240</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 625</span></span>
-<span id="cb22-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol,<span class="at">useNA=</span><span class="st">'always'</span>)</span>
-<span id="cb22-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb22-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
-<span id="cb22-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">200</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 3695</span></span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">200</span>) <span class="sc">&amp;</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">240</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1397</span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">240</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 625</span></span>
+<span id="cb24-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb24-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb24-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb24-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -705,7 +726,7 @@ Yea-Hung Chen, PhD, MS
 <ul>
 <li><a href="https://ucsf-dsos.github.io/data-wrangling-in-r"><strong><em>Data Wrangling in R</em></strong></a>: in Winter quarter
 <ul>
-<li>introduces piping</li>
+<li>introduces <strong>piping</strong></li>
 <li>introduces <code>dplyr</code></li>
 <li>covers techniques for <strong>merging data</strong> and <strong>reshaping data</strong></li>
 </ul></li>
@@ -719,32 +740,32 @@ Yea-Hung Chen, PhD, MS
 <section id="other-workshops-i-teach-1" class="slide level2">
 <h2>Other workshops I teach</h2>
 <ul>
-<li><strong><em>Advanced R</em></strong>: in Spring quarter</li>
+<li><strong><em>Advanced R</em></strong>: in Spring quarter
+<ul>
+<li><code>for()</code> loops</li>
+<li>writing functions</li>
+<li>the apply functions</li>
+<li>lists</li>
+<li><code>if()</code></li>
+</ul></li>
 </ul>
 </section>
 <section id="other-topics-you-might-pursue" class="slide level2">
 <h2>Other topics you might pursue</h2>
 <ul>
-<li><strong>mapping</strong> and GIS</li>
+<li><strong>data visualization</strong>
+<ul>
+<li>mapping and GIS</li>
 <li>interactive data visualizations</li>
 <li>Shiny: a tool for creative interactive websites</li>
-</ul>
-</section>
-<section id="other-topics-you-might-pursue-1" class="slide level2">
-<h2>Other topics you might pursue</h2>
+</ul></li>
+<li><strong>advanced data analysis</strong>
 <ul>
-<li><strong>multiple imputation</strong> and other approaches for dealing with missing data</li>
-<li>packages for <strong>survey analysis</strong></li>
-</ul>
-</section>
-<section id="other-topics-you-might-pursue-2" class="slide level2">
-<h2>Other topics you might pursue</h2>
-<ul>
-<li><strong>bracket notation</strong> (indexing): a base-R technique for subsetting data and manipulating data</li>
-<li><strong>repetition</strong>: <code>for()</code> loops, the apply functions, and other tools</li>
-<li>writing your own functions</li>
-<li><strong>regular expressions</strong>: for searching through text and replacing text</li>
-<li>packages for <strong>parallel computing</strong></li>
+<li>survey analysis</li>
+<li>survival analysis</li>
+<li>machine learning</li>
+<li>multiple imputation</li>
+</ul></li>
 </ul>
 
 

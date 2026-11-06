@@ -424,7 +424,7 @@
     "href": "session_6/session_6.html#exercise-1-2",
     "title": "Session 6: How can I get started with data wrangling?",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nUse subset() to get the subset of exercises individuals who are 40 of age (ridageyr) or older.\nUse subset() to get the subset of exercises individuals who have a fasting glucose level (lbxglu) under 100 mg/dL.\nUse subset() to get the subset of exercises individuals who were born in the USA."
+    "text": "Exercise 1\n\nUse subset() to get the subset of exercises individuals who are 40 of age (ridageyr) or older.\nUse subset() to get the subset of exercises individuals who have a fasting glucose level (lbxglu) under 100 mg/dL.\nUse subset() to get the subset of exercises individuals who were born in the USA (country)."
   },
   {
     "objectID": "session_6/session_6.html#exercise-1-3",

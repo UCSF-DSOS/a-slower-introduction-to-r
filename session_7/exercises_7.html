@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -75,35 +110,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐢</text></svg>">    
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -156,64 +162,85 @@ window.Quarto = {
 </header>
 
 
-<p>#| eval: false # load packages library(baseverse)</p>
-<section id="import-data" class="level1">
-<h1>import data</h1>
-<p>nhanes &lt;- read.csv(‘nhanes_l.csv’)</p>
-</section>
-<section id="re-order-the-cholesterol-groups" class="level1">
-<h1>re-order the cholesterol groups</h1>
-<p>nhanes<span class="math inline">\(cholesterol_3 &lt;- factor(nhanes\)</span>cholesterol, c(‘Desirable’, ‘Borderline high’, ‘High’)) table(nhanes<span class="math inline">\(cholesterol_3, useNA = 'always')
-table(nhanes\)</span>cholesterol, useNA = ‘always’)</p>
-</section>
-<section id="define-a-gender-variable-with-labeled-groups" class="level1">
-<h1>define a gender variable with labeled groups</h1>
-<p>nhanes<span class="math inline">\(gender_factor &lt;- factor(nhanes\)</span>riagendr, c(1, 2), c(‘Male’, ‘Female’)) table(nhanes<span class="math inline">\(riagendr, useNA = 'always')
-table(nhanes\)</span>gender_factor, useNA = ‘always’)</p>
-</section>
-<section id="define-a-gender-variable-with-labeled-groups-1" class="level1">
-<h1>define a gender variable with labeled groups</h1>
-<p>nhanes<span class="math inline">\(gender_base_match &lt;- base_match(nhanes\)</span>riagendr, ‘Male’ = 1, ‘Female’ = 2) table(nhanes<span class="math inline">\(riagendr, useNA = 'always')
-table(nhanes\)</span>gender_base_match, useNA = ‘always’)</p>
-</section>
-<section id="define-a-raceethnicity-variable-with-labeled-groups" class="level1">
-<h1>define a race/ethnicity variable with labeled groups</h1>
-<p>nhanes<span class="math inline">\(race_6 &lt;- base_match(
-   nhanes\)</span>ridreth3, ‘Asian’ = 6, ‘Mexican American’ = 1, ‘White’ = 3, ‘Other Hispanic’ = 2, ‘Black’ = 4, ‘Other’ = 7 ) table(nhanes<span class="math inline">\(race_6, useNA = 'always')
-table(nhanes\)</span>re, useNA = ‘always’)</p>
-</section>
-<section id="define-age-group" class="level1">
-<h1>define age group</h1>
-<p>nhanes<span class="math inline">\(age3_cut &lt;- cut(
-   nhanes\)</span>ridageyr, breaks = c(18, 35, 55, Inf), labels = c(‘Youngest’, ‘Middle’, ‘Oldest’), right = FALSE ) sum(nhanes<span class="math inline">\(ridageyr &gt;= 18 &amp; nhanes\)</span>ridageyr &lt;= 34) sum(nhanes<span class="math inline">\(ridageyr &gt;= 35 &amp; nhanes\)</span>ridageyr &lt;= 54) sum(nhanes<span class="math inline">\(ridageyr &gt;= 55)
-table(nhanes\)</span>age3_cut, useNA = ‘always’)</p>
-</section>
-<section id="define-age-group-1" class="level1">
-<h1>define age group</h1>
-<p>nhanes<span class="math inline">\(age3_base_when &lt;- base_when(
-   'Youngest' = nhanes\)</span>ridageyr &gt;= 18 &amp; nhanes<span class="math inline">\(ridageyr &lt;= 34,
-   'Middle' = nhanes\)</span>ridageyr &gt;= 35 &amp; nhanes<span class="math inline">\(ridageyr &lt;= 54,
-   'Oldest' = nhanes\)</span>ridageyr &gt;= 55 ) sum(nhanes<span class="math inline">\(ridageyr &gt;= 18 &amp; nhanes\)</span>ridageyr &lt;= 34) sum(nhanes<span class="math inline">\(ridageyr &gt;= 35 &amp; nhanes\)</span>ridageyr &lt;= 54) sum(nhanes<span class="math inline">\(ridageyr &gt;= 55)
-table(nhanes\)</span>age3_base_when, useNA = ‘always’)</p>
-</section>
-<section id="define-vigorous-physical-activity-with-missing-values-encoded" class="level1">
-<h1>define vigorous physical activity, with missing values encoded</h1>
-<p>nhanes<span class="math inline">\(vigorous_cont &lt;- replace(nhanes\)</span>pad820, nhanes<span class="math inline">\(pad820 == 7777 |
-                                   nhanes\)</span>pad820 == 9999, NA) table(nhanes<span class="math inline">\(pad820, useNA = 'always')
-table(nhanes\)</span>vigorous_cont, useNA = ‘always’)</p>
-</section>
-<section id="define-a-categorical-variable-for-vigorous-physical-activity" class="level1">
-<h1>define a categorical variable for vigorous physical activity</h1>
-<p>nhanes<span class="math inline">\(vigorous &lt;- base_when(
-   'Less than 1 hour' = nhanes\)</span>vigorous_cont &lt; 60, ‘1-2 hours’ = nhanes<span class="math inline">\(vigorous_cont &gt;= 60 &amp;
-      nhanes\)</span>vigorous_cont &lt; 120, ‘2+ hours’ = nhanes<span class="math inline">\(vigorous_cont &gt;= 120
-)
-sum(nhanes\)</span>vigorous_cont &lt; 60, na.rm = TRUE) sum(nhanes<span class="math inline">\(vigorous_cont &gt;= 60 &amp;
-       nhanes\)</span>vigorous_cont &lt; 120, na.rm = TRUE) sum(nhanes<span class="math inline">\(vigorous_cont &gt;= 120, na.rm = TRUE)
-table(nhanes\)</span>vigorous, useNA = ‘always’)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(baseverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># import data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>nhanes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'nhanes_l.csv'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># re-order the cholesterol groups</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol_3 <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>cholesterol, <span class="fu">c</span>(<span class="st">'Desirable'</span>, <span class="st">'Borderline high'</span>, <span class="st">'High'</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># define a gender variable with labeled groups</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>gender_factor <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>riagendr, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="st">'Male'</span>, <span class="st">'Female'</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>riagendr, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>gender_factor, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># define a gender variable with labeled groups</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>gender_base_match <span class="ot">&lt;-</span> <span class="fu">base_match</span>(nhanes<span class="sc">$</span>riagendr, <span class="st">'Male'</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">'Female'</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>riagendr, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>gender_base_match, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># define a race/ethnicity variable with labeled groups</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>race_6 <span class="ot">&lt;-</span> <span class="fu">base_match</span>(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>   nhanes<span class="sc">$</span>ridreth3,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Asian'</span> <span class="ot">=</span> <span class="dv">6</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Mexican American'</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>   <span class="st">'White'</span> <span class="ot">=</span> <span class="dv">3</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Other Hispanic'</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Black'</span> <span class="ot">=</span> <span class="dv">4</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Other'</span> <span class="ot">=</span> <span class="dv">7</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>race_6, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>re, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># define age group</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>age3_cut <span class="ot">&lt;-</span> <span class="fu">cut</span>(</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>   nhanes<span class="sc">$</span>ridageyr,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>   <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">35</span>, <span class="dv">55</span>, <span class="cn">Inf</span>),</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Youngest'</span>, <span class="st">'Middle'</span>, <span class="st">'Oldest'</span>),</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>   <span class="at">right =</span> <span class="cn">FALSE</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&lt;=</span> <span class="dv">34</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">35</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&lt;=</span> <span class="dv">54</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">55</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>age3_cut, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co"># define age group</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>age3_base_when <span class="ot">&lt;-</span> <span class="fu">base_when</span>(</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Youngest'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&lt;=</span> <span class="dv">34</span>,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Middle'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">35</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&lt;=</span> <span class="dv">54</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Oldest'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">55</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&lt;=</span> <span class="dv">34</span>)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">35</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>ridageyr <span class="sc">&lt;=</span> <span class="dv">54</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>ridageyr <span class="sc">&gt;=</span> <span class="dv">55</span>)</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>age3_base_when, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="co"># define vigorous physical activity, with missing values encoded</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>vigorous_cont <span class="ot">&lt;-</span> <span class="fu">replace</span>(nhanes<span class="sc">$</span>pad820, nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">7777</span> <span class="sc">|</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>                                   nhanes<span class="sc">$</span>pad820 <span class="sc">==</span> <span class="dv">9999</span>, <span class="cn">NA</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>pad820, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>vigorous_cont, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># define a categorical variable for vigorous physical activity</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>vigorous <span class="ot">&lt;-</span> <span class="fu">base_when</span>(</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>   <span class="st">'Less than 1 hour'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&lt;</span> <span class="dv">60</span>,</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>   <span class="st">'1-2 hours'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&lt;</span> <span class="dv">120</span>,</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>   <span class="st">'2+ hours'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&gt;=</span> <span class="dv">120</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&lt;</span> <span class="dv">60</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>       nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&lt;</span> <span class="dv">120</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>vigorous_cont <span class="sc">&gt;=</span> <span class="dv">120</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>vigorous, <span class="at">useNA =</span> <span class="st">'always'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

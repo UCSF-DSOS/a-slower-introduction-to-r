@@ -380,14 +380,13 @@ Yea-Hung Chen, PhD, MS
 <li>Use <code>factor()</code> to define a new <code>cholesterol</code> variable (such as <code>cholesterol_3</code>) with the groups listed in the desired order: <code>Desirable</code>, <code>Borderline high</code>, and <code>High</code>. Check your work. Verify that the groups are listed in the desired order.</li>
 </ol>
 </section></section>
+<section>
 <section id="labeling-groups" class="title-slide slide level1 center" data-stack-name="Labeling groups">
 <h1>Labeling groups</h1>
 
 </section>
-
-<section>
-<section id="labeling-groups-1" class="title-slide slide level1 center">
-<h1>Labeling groups</h1>
+<section id="labeling-groups-1" class="slide level2">
+<h2>Labeling groups</h2>
 <ul>
 <li>the <code>hypertension</code> section was somewhat artificial</li>
 <li>more commonly, your data will have <strong>categorical variables that are coded with numbers</strong></li>
@@ -550,7 +549,7 @@ Yea-Hung Chen, PhD, MS
 </ol>
 
 <aside><div>
-<p>I don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that <code>base_match()</code> will provide a non-alphabetical order, if you request it.</p>
+<p>I don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that <code>factor()</code> will provide a non-alphabetical order, if you request it.</p>
 </div></aside></section>
 <section id="exercise-2-2" class="slide level2">
 <h2>Exercise 2</h2>
@@ -631,14 +630,11 @@ Yea-Hung Chen, PhD, MS
 <li>each argument of <code>base_when()</code> is a rule–label mapping in a <code>label=</code><em>rule</em> format</li>
 <li><code>base_when()</code> will honor the order of the groups</li>
 </ul>
-
-<aside><div>
-<p>The <code>nhanes_l.csv</code> data file already includes a <code>cholesterol</code> variable. I’m overwriting it here.</p>
-</div></aside></section>
+</section>
 <section id="total-cholesterol-4" class="slide level2">
 <h2>Total cholesterol</h2>
 <ul>
-<li><code>cholesterol</code> looks like this:</li>
+<li><code>cholesterol_3</code> looks like this:</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
@@ -735,9 +731,12 @@ Yea-Hung Chen, PhD, MS
 <section id="exercise-3-2" class="slide level2">
 <h2>Exercise 3</h2>
 <ol start="2" type="1">
-<li>Use <code>base_when()</code> to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. Name the variable <code>age3_base_when</code>. Check your work. Use <code>table()</code> to verify that the groups are listed in the desired order.</li>
+<li>Use <code>base_when()</code> to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. Name the variable <code>age3_base_when</code>. Use the following labels: <code>Youngest</code>, <code>Middle</code>, and <code>Oldest</code>, and list the groups in that order. Check your work. Check your work. Use <code>table()</code> to verify that the groups are listed in the desired order.</li>
 </ol>
-</section>
+
+<aside><div>
+<p>I wouldn’t actually use these group names in practice. I’m suggesting them here just so you can verify a non-alphabetical order of the groups later.</p>
+</div></aside></section>
 <section id="exercise-3-3" class="slide level2">
 <h2>Exercise 3</h2>
 <ol start="3" type="1">
@@ -752,15 +751,10 @@ Yea-Hung Chen, PhD, MS
 <section id="piping" class="slide level2">
 <h2>Piping</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>nhanes <span class="ot">&lt;-</span> nhanes <span class="sc">|&gt;</span> <span class="fu">transform</span>(</span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">hypertension =</span> <span class="fu">base_when</span>(</span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'No'</span> <span class="ot">=</span> bpxosy1 <span class="sc">&lt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> bpxodi1 <span class="sc">&lt;</span> <span class="dv">80</span>,</span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'Elevated'</span> <span class="ot">=</span> bpxosy1 <span class="sc">&gt;=</span> <span class="dv">120</span> <span class="sc">&amp;</span> bpxosy1 <span class="sc">&lt;</span> <span class="dv">130</span> <span class="sc">&amp;</span> bpxodi1 <span class="sc">&lt;</span> <span class="dv">80</span>,</span>
-<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'Stage 1'</span> <span class="ot">=</span> (bpxosy1 <span class="sc">&gt;=</span> <span class="dv">130</span> <span class="sc">&amp;</span> bpxosy1 <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">&amp;</span> bpxodi1 <span class="sc">&lt;</span> <span class="dv">90</span>) <span class="sc">|</span></span>
-<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a>      (bpxosy1 <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">&amp;</span> bpxodi1 <span class="sc">&gt;=</span> <span class="dv">80</span> <span class="sc">&amp;</span> bpxodi1 <span class="sc">&lt;</span> <span class="dv">90</span>),</span>
-<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">'Stage 2'</span> <span class="ot">=</span> bpxosy1 <span class="sc">&gt;=</span> <span class="dv">140</span> <span class="sc">|</span> bpxodi1 <span class="sc">&gt;=</span> <span class="dv">90</span></span>
-<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb26-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>nhanes <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(smoking <span class="sc">==</span> <span class="st">'History of smoking'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(hypertension, smoking)) <span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="other-workshops-i-teach" class="slide level2">
@@ -1137,7 +1131,7 @@ Yea-Hung Chen, PhD, MS
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/UCSF-DSOS\.github\.io\/a-slower-introduction-to-r\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

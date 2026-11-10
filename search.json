@@ -4,7 +4,7 @@
     "href": "session_7/exercises_7.html",
     "title": "Exercise guide for Session 7",
     "section": "",
-    "text": "# load packages\nlibrary(baseverse)\n\n# import data\nnhanes &lt;- read.csv('nhanes_l.csv')\n\n# re-order the cholesterol groups\nnhanes$cholesterol_3 &lt;- factor(nhanes$cholesterol, c('Desirable', 'Borderline high', 'High'))\ntable(nhanes$cholesterol_3, useNA = 'always')\ntable(nhanes$cholesterol, useNA = 'always')\n\n# define a gender variable with labeled groups\nnhanes$gender_factor &lt;- factor(nhanes$riagendr, c(1, 2), c('Male', 'Female'))\ntable(nhanes$riagendr, useNA = 'always')\ntable(nhanes$gender_factor, useNA = 'always')\n\n# define a gender variable with labeled groups\nnhanes$gender_base_match &lt;- base_match(nhanes$riagendr, 'Male' = 1, 'Female' = 2)\ntable(nhanes$riagendr, useNA = 'always')\ntable(nhanes$gender_base_match, useNA = 'always')\n\n# define a race/ethnicity variable with labeled groups\nnhanes$race_6 &lt;- base_match(\n   nhanes$ridreth3,\n   'Asian' = 6,\n   'Mexican American' = 1,\n   'White' = 3,\n   'Other Hispanic' = 2,\n   'Black' = 4,\n   'Other' = 7\n)\ntable(nhanes$race_6, useNA = 'always')\ntable(nhanes$re, useNA = 'always')\n\n# define age group\nnhanes$age3_cut &lt;- cut(\n   nhanes$ridageyr,\n   breaks = c(18, 35, 55, Inf),\n   labels = c('Youngest', 'Middle', 'Oldest'),\n   right = FALSE\n)\nsum(nhanes$ridageyr &gt;= 18 & nhanes$ridageyr &lt;= 34)\nsum(nhanes$ridageyr &gt;= 35 & nhanes$ridageyr &lt;= 54)\nsum(nhanes$ridageyr &gt;= 55)\ntable(nhanes$age3_cut, useNA = 'always')\n\n# define age group\nnhanes$age3_base_when &lt;- base_when(\n   'Youngest' = nhanes$ridageyr &gt;= 18 & nhanes$ridageyr &lt;= 34,\n   'Middle' = nhanes$ridageyr &gt;= 35 & nhanes$ridageyr &lt;= 54,\n   'Oldest' = nhanes$ridageyr &gt;= 55\n)\nsum(nhanes$ridageyr &gt;= 18 & nhanes$ridageyr &lt;= 34)\nsum(nhanes$ridageyr &gt;= 35 & nhanes$ridageyr &lt;= 54)\nsum(nhanes$ridageyr &gt;= 55)\ntable(nhanes$age3_base_when, useNA = 'always')\n\n# define vigorous physical activity, with missing values encoded\nnhanes$vigorous_cont &lt;- replace(nhanes$pad820, nhanes$pad820 == 7777 |\n                                   nhanes$pad820 == 9999, NA)\ntable(nhanes$pad820, useNA = 'always')\ntable(nhanes$vigorous_cont, useNA = 'always')\n\n# define a categorical variable for vigorous physical activity\nnhanes$vigorous &lt;- base_when(\n   'Less than 1 hour' = nhanes$vigorous_cont &lt; 60,\n   '1-2 hours' = nhanes$vigorous_cont &gt;= 60 &\n      nhanes$vigorous_cont &lt; 120,\n   '2+ hours' = nhanes$vigorous_cont &gt;= 120\n)\nsum(nhanes$vigorous_cont &lt; 60, na.rm = TRUE)\nsum(nhanes$vigorous_cont &gt;= 60 &\n       nhanes$vigorous_cont &lt; 120, na.rm = TRUE)\nsum(nhanes$vigorous_cont &gt;= 120, na.rm = TRUE)\ntable(nhanes$vigorous, useNA = 'always')"
+    "text": "# load packages\nlibrary(baseverse)\n\n# import data\nnhanes &lt;- read.csv('nhanes_l.csv')\n\n# examine the cholesterol variable\ntable(nhanes$cholesterol, useNA = 'always')\nclass(nhanes$cholesterol)\n\n# re-order the cholesterol groups\nnhanes$cholesterol_3 &lt;- factor(nhanes$cholesterol, c('Desirable', 'Borderline high', 'High'))\ntable(nhanes$cholesterol_3, useNA = 'always')\ntable(nhanes$cholesterol, useNA = 'always')\n\n# define a gender variable with labeled groups\nnhanes$gender_factor &lt;- factor(nhanes$riagendr, c(1, 2), c('Male', 'Female'))\ntable(nhanes$riagendr, useNA = 'always')\ntable(nhanes$gender_factor, useNA = 'always')\n\n# define a gender variable with labeled groups\nnhanes$gender_base_match &lt;- base_match(nhanes$riagendr, 'Male' = 1, 'Female' = 2)\ntable(nhanes$riagendr, useNA = 'always')\ntable(nhanes$gender_base_match, useNA = 'always')\n\n# define a race/ethnicity variable with labeled groups\nnhanes$race_6 &lt;- base_match(\n   nhanes$ridreth3,\n   'Asian' = 6,\n   'Mexican American' = 1,\n   'White' = 3,\n   'Other Hispanic' = 2,\n   'Black' = 4,\n   'Other' = 7\n)\ntable(nhanes$race_6, useNA = 'always')\ntable(nhanes$re, useNA = 'always')\n\n# define age group\nnhanes$age3_cut &lt;- cut(\n   nhanes$ridageyr,\n   breaks = c(18, 35, 55, Inf),\n   labels = c('Youngest', 'Middle', 'Oldest'),\n   right = FALSE\n)\nsum(nhanes$ridageyr &gt;= 18 & nhanes$ridageyr &lt;= 34)\nsum(nhanes$ridageyr &gt;= 35 & nhanes$ridageyr &lt;= 54)\nsum(nhanes$ridageyr &gt;= 55)\ntable(nhanes$age3_cut, useNA = 'always')\n\n# define age group\nnhanes$age3_base_when &lt;- base_when(\n   'Youngest' = nhanes$ridageyr &gt;= 18 & nhanes$ridageyr &lt;= 34,\n   'Middle' = nhanes$ridageyr &gt;= 35 & nhanes$ridageyr &lt;= 54,\n   'Oldest' = nhanes$ridageyr &gt;= 55\n)\nsum(nhanes$ridageyr &gt;= 18 & nhanes$ridageyr &lt;= 34)\nsum(nhanes$ridageyr &gt;= 35 & nhanes$ridageyr &lt;= 54)\nsum(nhanes$ridageyr &gt;= 55)\ntable(nhanes$age3_base_when, useNA = 'always')\n\n# define vigorous physical activity, with missing values encoded\nnhanes$vigorous_cont &lt;- replace(nhanes$pad820, nhanes$pad820 == 7777 |\n                                   nhanes$pad820 == 9999, NA)\ntable(nhanes$pad820, useNA = 'always')\ntable(nhanes$vigorous_cont, useNA = 'always')\n\n# define a categorical variable for vigorous physical activity\nnhanes$vigorous &lt;- base_when(\n   'Less than 1 hour' = nhanes$vigorous_cont &lt; 60,\n   '1-2 hours' = nhanes$vigorous_cont &gt;= 60 &\n      nhanes$vigorous_cont &lt; 120,\n   '2+ hours' = nhanes$vigorous_cont &gt;= 120\n)\nsum(nhanes$vigorous_cont &lt; 60, na.rm = TRUE)\nsum(nhanes$vigorous_cont &gt;= 60 &\n       nhanes$vigorous_cont &lt; 120, na.rm = TRUE)\nsum(nhanes$vigorous_cont &gt;= 120, na.rm = TRUE)\ntable(nhanes$vigorous, useNA = 'always')"
   },
   {
     "objectID": "session_7/homework_7.html",
@@ -2856,6 +2856,13 @@
     "text": "Exercise 1\n\nUse factor() to define a new cholesterol variable (such as cholesterol_3) with the groups listed in the desired order: Desirable, Borderline high, and High. Check your work. Verify that the groups are listed in the desired order."
   },
   {
+    "objectID": "session_7/session_7.html#labeling-groups-1",
+    "href": "session_7/session_7.html#labeling-groups-1",
+    "title": "Session 7: How can I create new categorical variable?",
+    "section": "Labeling groups",
+    "text": "Labeling groups\n\nthe hypertension section was somewhat artificial\nmore commonly, your data will have categorical variables that are coded with numbers\nyou may want to label those variables"
+  },
+  {
     "objectID": "session_7/session_7.html#country-of-birth",
     "href": "session_7/session_7.html#country-of-birth",
     "title": "Session 7: How can I create new categorical variable?",
@@ -2937,7 +2944,7 @@
     "href": "session_7/session_7.html#exercise-2-1",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nUse factor() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_factor. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Use table() to verify that the groups are listed in the desired order.\n\n\n\nI don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that base_match() will provide a non-alphabetical order, if you request it."
+    "text": "Exercise 2\n\nUse factor() to create a labeled version of the original gender variable (riagendr). Name the new variable gender_factor. Values of 1 represent males and values of 2 represent females. List the male group first. Check your work. Use table() to verify that the groups are listed in the desired order.\n\n\n\nI don’t have a personal preference regarding whether male or female is listed first! I’m only having you list male first to prove that factor() will provide a non-alphabetical order, if you request it."
   },
   {
     "objectID": "session_7/session_7.html#exercise-2-2",
@@ -2979,14 +2986,14 @@
     "href": "session_7/session_7.html#total-cholesterol-3",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\nalternatively, we can use base_when() from baseverse:\n\n\nnhanes$cholesterol_3 &lt;- base_when(\n  'Desirable' = (nhanes$lbxtc &lt; 200),\n  'Borderline high' = (nhanes$lbxtc &gt;= 200) & (nhanes$lbxtc &lt; 240),\n  'High' = (nhanes$lbxtc &gt;= 240)\n)\n\n\neach argument of base_when() is a rule–label mapping in a label=rule format\nbase_when() will honor the order of the groups\n\n\n\nThe nhanes_l.csv data file already includes a cholesterol variable. I’m overwriting it here."
+    "text": "Total cholesterol\n\nalternatively, we can use base_when() from baseverse:\n\n\nnhanes$cholesterol_3 &lt;- base_when(\n  'Desirable' = (nhanes$lbxtc &lt; 200),\n  'Borderline high' = (nhanes$lbxtc &gt;= 200) & (nhanes$lbxtc &lt; 240),\n  'High' = (nhanes$lbxtc &gt;= 240)\n)\n\n\neach argument of base_when() is a rule–label mapping in a label=rule format\nbase_when() will honor the order of the groups"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-4",
     "href": "session_7/session_7.html#total-cholesterol-4",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Total cholesterol",
-    "text": "Total cholesterol\n\ncholesterol looks like this:\n\n\ntable(nhanes$cholesterol_3, useNA = 'always')\n#| \n#|       Desirable Borderline high            High            &lt;NA&gt; \n#|            3695            1397             625            2436"
+    "text": "Total cholesterol\n\ncholesterol_3 looks like this:\n\n\ntable(nhanes$cholesterol_3, useNA = 'always')\n#| \n#|       Desirable Borderline high            High            &lt;NA&gt; \n#|            3695            1397             625            2436"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-5",
@@ -3028,7 +3035,7 @@
     "href": "session_7/session_7.html#exercise-3-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nUse base_when() to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. Name the variable age3_base_when. Check your work. Use table() to verify that the groups are listed in the desired order."
+    "text": "Exercise 3\n\nUse base_when() to define a variable for age group, with the following groups: 18–34, 35–54, and ≥ 55. Name the variable age3_base_when. Use the following labels: Youngest, Middle, and Oldest, and list the groups in that order. Check your work. Check your work. Use table() to verify that the groups are listed in the desired order.\n\n\n\nI wouldn’t actually use these group names in practice. I’m suggesting them here just so you can verify a non-alphabetical order of the groups later."
   },
   {
     "objectID": "session_7/session_7.html#exercise-3-3",
@@ -3042,7 +3049,7 @@
     "href": "session_7/session_7.html#piping",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Piping",
-    "text": "Piping\n\nnhanes &lt;- nhanes |&gt; transform(\n  hypertension = base_when(\n    'No' = bpxosy1 &lt; 120 & bpxodi1 &lt; 80,\n    'Elevated' = bpxosy1 &gt;= 120 & bpxosy1 &lt; 130 & bpxodi1 &lt; 80,\n    'Stage 1' = (bpxosy1 &gt;= 130 & bpxosy1 &lt; 140 & bpxodi1 &lt; 90) |\n      (bpxosy1 &lt; 140 & bpxodi1 &gt;= 80 & bpxodi1 &lt; 90),\n    'Stage 2' = bpxosy1 &gt;= 140 | bpxodi1 &gt;= 90\n  )\n)"
+    "text": "Piping\n\nnhanes |&gt;\n  subset(smoking == 'History of smoking') |&gt;\n  subset(select = c(hypertension, smoking)) |&gt;\n  head()"
   },
   {
     "objectID": "session_7/session_7.html#other-workshops-i-teach",

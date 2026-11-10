@@ -3007,7 +3007,7 @@
     "href": "session_7/session_7.html#logical-objects-and-math",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Logical objects and math",
-    "text": "Logical objects and math\n\nwhen used in math, TRUE values are treated as 1 and FALSE values are treated as 0:\n\n\nTRUE * 1\n#| [1] 1\n\n\nthis means that a sum of logical objects can be interpreted as the number of TRUE values:\n\n\nsum(c(TRUE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE))\n#| [1] 4"
+    "text": "Logical objects and math\n\nwhen used in math, TRUE values are treated as 1 and FALSE values are treated as 0:\n\n\nTRUE * 1\n#| [1] 1\nFALSE * 1\n#| [1] 0\n\n\nthis means that a sum of logical objects can be interpreted as the number of TRUE values:\n\n\nsum(c(TRUE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE))\n#| [1] 4"
   },
   {
     "objectID": "session_7/session_7.html#total-cholesterol-6",

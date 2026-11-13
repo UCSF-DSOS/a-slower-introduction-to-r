@@ -2881,35 +2881,35 @@
     "href": "session_7/session_7.html#country-of-birth-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\nto label the groups:\n\n\nnhanes$country &lt;- factor(nhanes$dmdborn4,\n                         levels = c(1, 2),\n                         labels = c('USA', 'Other'))\n\n\nthe order of the groups in levels and labels must match"
+    "text": "Country of birth\n\nto label the groups:\n\n\nnhanes$country_2 &lt;- factor(nhanes$dmdborn4,\n                         levels = c(1, 2),\n                         labels = c('USA', 'Other'))\n\n\nthe order of the groups in levels and labels must match"
   },
   {
     "objectID": "session_7/session_7.html#country-of-birth-3",
     "href": "session_7/session_7.html#country-of-birth-3",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\nchecking the work:\n\n\ntable(nhanes$country, useNA = 'always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17"
+    "text": "Country of birth\n\nchecking the work:\n\n\ntable(nhanes$country_2, useNA = 'always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17"
   },
   {
     "objectID": "session_7/session_7.html#country-of-birth-4",
     "href": "session_7/session_7.html#country-of-birth-4",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\nalternatively, use base_match() in baseverse:\n\n\nnhanes$country &lt;- base_match(nhanes$dmdborn4, 'USA' = 1, 'Other' = 2)\n\n\nthe second argument lists the value–label mappings in a 'label'=value format\nbase_match() will honor the order of the groups"
+    "text": "Country of birth\n\nalternatively, use base_match() in baseverse:\n\n\nnhanes$country_2 &lt;- base_match(nhanes$dmdborn4, 'USA' = 1, 'Other' = 2)\n\n\nthe second argument lists the value–label mappings in a 'label'=value format\nbase_match() will honor the order of the groups"
   },
   {
     "objectID": "session_7/session_7.html#country-of-birth-5",
     "href": "session_7/session_7.html#country-of-birth-5",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\nchecking the work:\n\n\ntable(nhanes$country, useNA = 'always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17\n\n\nthe groups are in the desired order"
+    "text": "Country of birth\n\nchecking the work:\n\n\ntable(nhanes$country_2, useNA = 'always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17\n\n\nthe groups are in the desired order"
   },
   {
     "objectID": "session_7/session_7.html#country-of-birth-6",
     "href": "session_7/session_7.html#country-of-birth-6",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Country of birth",
-    "text": "Country of birth\n\nchecking the work:\n\n\ntable(nhanes$dmdborn4, useNA = 'always')\n#| \n#|    1    2 &lt;NA&gt; \n#| 6519 1617   17\ntable(nhanes$country, useNA = 'always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17"
+    "text": "Country of birth\n\nchecking the work:\n\n\ntable(nhanes$dmdborn4, useNA = 'always')\n#| \n#|    1    2 &lt;NA&gt; \n#| 6519 1617   17\ntable(nhanes$country_2, useNA = 'always')\n#| \n#|   USA Other  &lt;NA&gt; \n#|  6519  1617    17"
   },
   {
     "objectID": "session_7/session_7.html#education",
@@ -2930,14 +2930,14 @@
     "href": "session_7/session_7.html#education-2",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Education",
-    "text": "Education\n\nto collapse groups and label them:\n\n\nnhanes$education4 &lt;- base_match(\n  nhanes$dmdeduc2,\n  'No high-school degree' = 1,\n  'No high-school degree' = 2,\n  'High-school degree' = 3,\n  'Some college' = 4,\n  'College degree' = 5\n)"
+    "text": "Education\n\nto collapse groups and label them:\n\n\nnhanes$education_4 &lt;- base_match(\n  nhanes$dmdeduc2,\n  'No high-school degree' = 1,\n  'No high-school degree' = 2,\n  'High-school degree' = 3,\n  'Some college' = 4,\n  'College degree' = 5\n)"
   },
   {
     "objectID": "session_7/session_7.html#education-3",
     "href": "session_7/session_7.html#education-3",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Education",
-    "text": "Education\n\nchecking the work:\n\n\ntable(nhanes$dmdeduc2, useNA = 'always')\n#| \n#|    1    2    3    4    5    9 &lt;NA&gt; \n#|  373  666 1749 2370 2625   11  359\ntable(nhanes$education4, useNA = 'always')\n#| \n#| No high-school degree    High-school degree          Some college \n#|                  1039                  1749                  2370 \n#|        College degree                  &lt;NA&gt; \n#|                  2625                   370"
+    "text": "Education\n\nchecking the work:\n\n\ntable(nhanes$dmdeduc2, useNA = 'always')\n#| \n#|    1    2    3    4    5    9 &lt;NA&gt; \n#|  373  666 1749 2370 2625   11  359\ntable(nhanes$education_4, useNA = 'always')\n#| \n#| No high-school degree    High-school degree          Some college \n#|                  1039                  1749                  2370 \n#|        College degree                  &lt;NA&gt; \n#|                  2625                   370"
   },
   {
     "objectID": "session_7/session_7.html#exercise-2-1",

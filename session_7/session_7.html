@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.18">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Yea-Hung Chen, PhD, MS">
   <title>A Slower Introduction to R – Session 7: How can I create new categorical variable?</title>
@@ -419,7 +419,7 @@ Yea-Hung Chen, PhD, MS
 <li>to label the groups:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>dmdborn4,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country_2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>dmdborn4,</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'USA'</span>, <span class="st">'Other'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -433,7 +433,7 @@ Yea-Hung Chen, PhD, MS
 <li>checking the work:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country_2, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
 <span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -445,7 +445,7 @@ Yea-Hung Chen, PhD, MS
 <li>alternatively, use <strong><code>base_match()</code> in <code>baseverse</code></strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">base_match</span>(nhanes<span class="sc">$</span>dmdborn4, <span class="st">'USA'</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">'Other'</span> <span class="ot">=</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country_2 <span class="ot">&lt;-</span> <span class="fu">base_match</span>(nhanes<span class="sc">$</span>dmdborn4, <span class="st">'USA'</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">'Other'</span> <span class="ot">=</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>the second argument lists the value–label mappings in a <code>'label'=value</code> format</li>
@@ -458,7 +458,7 @@ Yea-Hung Chen, PhD, MS
 <li>checking the work:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country_2, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
 <span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -477,7 +477,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2 &lt;NA&gt; </span></span>
 <span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| 6519 1617   17</span></span>
-<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>country_2, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|   USA Other  &lt;NA&gt; </span></span>
 <span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  6519  1617    17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -509,7 +509,7 @@ Yea-Hung Chen, PhD, MS
 <li>to collapse groups and label them:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>education4 <span class="ot">&lt;-</span> <span class="fu">base_match</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>education_4 <span class="ot">&lt;-</span> <span class="fu">base_match</span>(</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  nhanes<span class="sc">$</span>dmdeduc2,</span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'No high-school degree'</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
 <span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'No high-school degree'</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
@@ -529,7 +529,7 @@ Yea-Hung Chen, PhD, MS
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|    1    2    3    4    5    9 &lt;NA&gt; </span></span>
 <span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|  373  666 1749 2370 2625   11  359</span></span>
-<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>education4, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>education_4, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
 <span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
 <span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| No high-school degree    High-school degree          Some college </span></span>
 <span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|                  1039                  1749                  2370 </span></span>

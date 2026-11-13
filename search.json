@@ -2940,6 +2940,13 @@
     "text": "Education\n\nchecking the work:\n\n\ntable(nhanes$dmdeduc2, useNA = 'always')\n#| \n#|    1    2    3    4    5    9 &lt;NA&gt; \n#|  373  666 1749 2370 2625   11  359\ntable(nhanes$education_4, useNA = 'always')\n#| \n#| No high-school degree    High-school degree          Some college \n#|                  1039                  1749                  2370 \n#|        College degree                  &lt;NA&gt; \n#|                  2625                   370"
   },
   {
+    "objectID": "session_7/session_7.html#label-value-mappings-without-base_match",
+    "href": "session_7/session_7.html#label-value-mappings-without-base_match",
+    "title": "Session 7: How can I create new categorical variable?",
+    "section": "Label-value mappings without base_match()",
+    "text": "Label-value mappings without base_match()\n\nif you don’t want to load baseverse, or can’t…\nyou can first define a codebook of the label-value mappings:\n\n\ndmdborn4_codebook &lt;- c('USA' = 1, 'Other' = 2)\n\n\nyou can then refer to that codebook in factor():\n\n\nnhanes$country &lt;- factor(nhanes$dmdborn4,\n                         levels = dmdborn4_codebook,\n                         labels = names(dmdborn4_codebook))\n\n\nthis is what base_match() does under the hood"
+  },
+  {
     "objectID": "session_7/session_7.html#exercise-2-1",
     "href": "session_7/session_7.html#exercise-2-1",
     "title": "Session 7: How can I create new categorical variable?",

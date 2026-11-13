@@ -540,19 +540,13 @@ Yea-Hung Chen, PhD, MS
 <section id="label-value-mappings-without-base_match" class="slide level2">
 <h2>Label-value mappings without <code>base_match()</code></h2>
 <ul>
-<li>if you don’t want to load <code>baseverse</code>, or can’t…</li>
-<li>you can first define a codebook of the label-value mappings:</li>
+<li>if you don’t want to load <code>baseverse</code>, or can’t:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>dmdborn4_codebook <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'USA'</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">'Other'</span> <span class="ot">=</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>you can then refer to that codebook in <code>factor()</code>:</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>dmdborn4,</span>
-<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> dmdborn4_codebook,</span>
-<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">names</span>(dmdborn4_codebook))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>dmdborn4_codebook <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'USA'</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">'Other'</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">factor</span>(nhanes<span class="sc">$</span>dmdborn4,</span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> dmdborn4_codebook,</span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">names</span>(dmdborn4_codebook))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>this is what <code>base_match()</code> does under the hood</li>
@@ -595,8 +589,8 @@ Yea-Hung Chen, PhD, MS
 <section id="total-cholesterol" class="slide level2">
 <h2>Total cholesterol</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(nhanes<span class="sc">$</span>lbxtc, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1]  62 438</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(nhanes<span class="sc">$</span>lbxtc, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1]  62 438</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>lbxtc</code> &lt; 200 mg/dL → <strong>desirable</strong></li>
@@ -610,12 +604,12 @@ Yea-Hung Chen, PhD, MS
 <li>we can categorize <code>lbxtc</code> using <code>cut()</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol_3 <span class="ot">&lt;-</span> <span class="fu">cut</span>(</span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>  nhanes<span class="sc">$</span>lbxtc,</span>
-<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="dv">240</span>, <span class="cn">Inf</span>),</span>
-<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Desirable'</span>, <span class="st">'Borderline high'</span>, <span class="st">'High'</span>),</span>
-<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">right =</span> <span class="cn">FALSE</span></span>
-<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol_3 <span class="ot">&lt;-</span> <span class="fu">cut</span>(</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>  nhanes<span class="sc">$</span>lbxtc,</span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="dv">240</span>, <span class="cn">Inf</span>),</span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Desirable'</span>, <span class="st">'Borderline high'</span>, <span class="st">'High'</span>),</span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">right =</span> <span class="cn">FALSE</span></span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>nhanes$lbxtc</code>: the original variable</li>
@@ -629,10 +623,10 @@ Yea-Hung Chen, PhD, MS
 <li><code>cholesterol</code> looks like this:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
-<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="total-cholesterol-3" class="slide level2">
@@ -641,11 +635,11 @@ Yea-Hung Chen, PhD, MS
 <li>alternatively, we can use <code>base_when()</code> from <code>baseverse</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol_3 <span class="ot">&lt;-</span> <span class="fu">base_when</span>(</span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Desirable'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">200</span>),</span>
-<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Borderline high'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">200</span>) <span class="sc">&amp;</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">240</span>),</span>
-<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'High'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">240</span>)</span>
-<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol_3 <span class="ot">&lt;-</span> <span class="fu">base_when</span>(</span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Desirable'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">200</span>),</span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Borderline high'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">200</span>) <span class="sc">&amp;</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">240</span>),</span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'High'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">240</span>)</span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>each argument of <code>base_when()</code> is a rule–label mapping in a <code>label=</code><em>rule</em> format</li>
@@ -658,10 +652,10 @@ Yea-Hung Chen, PhD, MS
 <li><code>cholesterol_3</code> looks like this:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
-<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
-<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="total-cholesterol-5" class="slide level2">
@@ -670,12 +664,12 @@ Yea-Hung Chen, PhD, MS
 <li>to omit dollar-sign notation:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol_3 <span class="ot">&lt;-</span> <span class="fu">with</span>(nhanes,</span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>                             <span class="fu">base_when</span>(</span>
-<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>                               <span class="st">'Desirable'</span> <span class="ot">=</span> (lbxtc <span class="sc">&lt;</span> <span class="dv">200</span>),</span>
-<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a>                               <span class="st">'Borderline high'</span> <span class="ot">=</span> (lbxtc <span class="sc">&gt;=</span> <span class="dv">200</span>) <span class="sc">&amp;</span> (lbxtc <span class="sc">&lt;</span> <span class="dv">240</span>),</span>
-<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a>                               <span class="st">'High'</span> <span class="ot">=</span> (lbxtc <span class="sc">&gt;=</span> <span class="dv">240</span>)</span>
-<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a>                             ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>cholesterol_3 <span class="ot">&lt;-</span> <span class="fu">with</span>(nhanes,</span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>                             <span class="fu">base_when</span>(</span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>                               <span class="st">'Desirable'</span> <span class="ot">=</span> (lbxtc <span class="sc">&lt;</span> <span class="dv">200</span>),</span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a>                               <span class="st">'Borderline high'</span> <span class="ot">=</span> (lbxtc <span class="sc">&gt;=</span> <span class="dv">200</span>) <span class="sc">&amp;</span> (lbxtc <span class="sc">&lt;</span> <span class="dv">240</span>),</span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a>                               <span class="st">'High'</span> <span class="ot">=</span> (lbxtc <span class="sc">&gt;=</span> <span class="dv">240</span>)</span>
+<span id="cb22-6"><a aria-hidden="true" tabindex="-1"></a>                             ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <aside><div>
@@ -687,17 +681,17 @@ Yea-Hung Chen, PhD, MS
 <li>when used in math, <code>TRUE</code> values are treated as <code>1</code> and <code>FALSE</code> values are treated as <code>0</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">*</span> <span class="dv">1</span></span>
-<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1</span></span>
-<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">*</span> <span class="dv">1</span></span>
-<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">*</span> <span class="dv">1</span></span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1</span></span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">*</span> <span class="dv">1</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>this means that a sum of logical objects can be interpreted as <strong>the number of <code>TRUE</code> values</strong>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>))</span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>))</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="total-cholesterol-6" class="slide level2">
@@ -706,16 +700,16 @@ Yea-Hung Chen, PhD, MS
 <li>checking the work:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">200</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 3695</span></span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">200</span>) <span class="sc">&amp;</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">240</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1397</span></span>
-<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">240</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 625</span></span>
-<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
-<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
-<span id="cb26-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
-<span id="cb26-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">200</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 3695</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">200</span>) <span class="sc">&amp;</span> (nhanes<span class="sc">$</span>lbxtc <span class="sc">&lt;</span> <span class="dv">240</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 1397</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(nhanes<span class="sc">$</span>lbxtc <span class="sc">&gt;=</span> <span class="dv">240</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| [1] 625</span></span>
+<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nhanes<span class="sc">$</span>cholesterol_3, <span class="at">useNA =</span> <span class="st">'always'</span>)</span>
+<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| </span></span>
+<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|       Desirable Borderline high            High            &lt;NA&gt; </span></span>
+<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">#|            3695            1397             625            2436</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="hypertension-6" class="slide level2">
@@ -725,16 +719,16 @@ Yea-Hung Chen, PhD, MS
 <li>I defined the <code>hypertension</code> variable using something like this:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>hypertension <span class="ot">&lt;-</span> <span class="fu">base_when</span>(</span>
-<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'No'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">80</span>,</span>
-<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Elevated'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&gt;=</span> <span class="dv">120</span> <span class="sc">&amp;</span></span>
-<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a>    nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">130</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">80</span>,</span>
-<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Stage 1'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&gt;=</span> <span class="dv">130</span> <span class="sc">&amp;</span></span>
-<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a>                 nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">90</span>) <span class="sc">|</span></span>
-<span id="cb27-7"><a aria-hidden="true" tabindex="-1"></a>    (nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">&amp;</span></span>
-<span id="cb27-8"><a aria-hidden="true" tabindex="-1"></a>       nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&gt;=</span> <span class="dv">80</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">90</span>),</span>
-<span id="cb27-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Stage 2'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&gt;=</span> <span class="dv">140</span> <span class="sc">|</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&gt;=</span> <span class="dv">90</span></span>
-<span id="cb27-10"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>nhanes<span class="sc">$</span>hypertension <span class="ot">&lt;-</span> <span class="fu">base_when</span>(</span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'No'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">80</span>,</span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Elevated'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&gt;=</span> <span class="dv">120</span> <span class="sc">&amp;</span></span>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a>    nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">130</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">80</span>,</span>
+<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Stage 1'</span> <span class="ot">=</span> (nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&gt;=</span> <span class="dv">130</span> <span class="sc">&amp;</span></span>
+<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a>                 nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">90</span>) <span class="sc">|</span></span>
+<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a>    (nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">&amp;</span></span>
+<span id="cb26-8"><a aria-hidden="true" tabindex="-1"></a>       nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&gt;=</span> <span class="dv">80</span> <span class="sc">&amp;</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&lt;</span> <span class="dv">90</span>),</span>
+<span id="cb26-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">'Stage 2'</span> <span class="ot">=</span> nhanes<span class="sc">$</span>bpxosy1 <span class="sc">&gt;=</span> <span class="dv">140</span> <span class="sc">|</span> nhanes<span class="sc">$</span>bpxodi1 <span class="sc">&gt;=</span> <span class="dv">90</span></span>
+<span id="cb26-10"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -774,10 +768,10 @@ Yea-Hung Chen, PhD, MS
 <section id="piping" class="slide level2">
 <h2>Piping</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>nhanes <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(smoking <span class="sc">==</span> <span class="st">'History of smoking'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(hypertension, smoking)) <span class="sc">|&gt;</span></span>
-<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>nhanes <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(smoking <span class="sc">==</span> <span class="st">'History of smoking'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(<span class="at">select =</span> <span class="fu">c</span>(hypertension, smoking)) <span class="sc">|&gt;</span></span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="other-workshops-i-teach" class="slide level2">

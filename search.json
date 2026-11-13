@@ -2944,7 +2944,7 @@
     "href": "session_7/session_7.html#label-value-mappings-without-base_match",
     "title": "Session 7: How can I create new categorical variable?",
     "section": "Label-value mappings without base_match()",
-    "text": "Label-value mappings without base_match()\n\nif you don’t want to load baseverse, or can’t…\nyou can first define a codebook of the label-value mappings:\n\n\ndmdborn4_codebook &lt;- c('USA' = 1, 'Other' = 2)\n\n\nyou can then refer to that codebook in factor():\n\n\nnhanes$country &lt;- factor(nhanes$dmdborn4,\n                         levels = dmdborn4_codebook,\n                         labels = names(dmdborn4_codebook))\n\n\nthis is what base_match() does under the hood"
+    "text": "Label-value mappings without base_match()\n\nif you don’t want to load baseverse, or can’t:\n\n\ndmdborn4_codebook &lt;- c('USA' = 1, 'Other' = 2)\nnhanes$country &lt;- factor(nhanes$dmdborn4,\n                         levels = dmdborn4_codebook,\n                         labels = names(dmdborn4_codebook))\n\n\nthis is what base_match() does under the hood"
   },
   {
     "objectID": "session_7/session_7.html#exercise-2-1",
